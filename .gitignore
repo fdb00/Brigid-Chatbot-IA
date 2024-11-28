@@ -1,2 +1,53 @@
 # no alle librerie da 20GB
 venv/
+
+# generale
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+.idea
+*.iws
+*.iml
+*.ipr
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+.vscode/
+
+# Cartella virtual environment
+venv/
+.env/
+
+# File generati da PyCharm
+.idea/
+
+# File Python compilati
+*.pyc
+__pycache__/
+
+# File di log
+*.log
+
+# File di sistema (macOS, Windows, Linux)
+.DS_Store
+Thumbs.db
+
+# File temporanei di sviluppo
+*.swp
+*.swo
+*~
+
