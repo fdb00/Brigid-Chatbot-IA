@@ -7,38 +7,67 @@ import tensorflow as tf
 import spacy
 
 # Assicurati di avere spaCy e il modello "en_core_web_sm" installato
-# Installazione:python -m pip install spacy
+# Installazione: python -m pip install spacy
 # Modello: python -m spacy download en_core_web_sm
 
 # Carica il modello spaCy
 nlp = spacy.load('en_core_web_sm')
 
-# Verifica che il percorso del file esista prima di aprirlo
-file_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'intents.json')
+# Funzione per caricare dataset
+def load_dataset(file_path):
+    if os.path.exists(file_path):
+        with open(file_path, 'r') as f:
+            data = json.load(f)
+            print(f"Il file {file_path} è stato caricato!")
+            return data
+    else:
+        print(f"Il file {file_path} non esiste!")
+        return None
 
-if os.path.exists(file_path):
-    with open(file_path, 'r') as f:
-        intents = json.load(f)
-        print(f"Il file {file_path} esiste!")
-else:
-    print(f"Il file {file_path} non esiste!")
+# Percorsi ai file dei dataset
+file_path_1 = os.path.join(os.path.dirname(__file__), '..', 'data', 'intents.json')
+file_path_2 = os.path.join(os.path.dirname(__file__), '..', 'data', 'intents_2.json')
 
+# Carica i dataset
+intents_1 = load_dataset(file_path_1)
+intents_2 = load_dataset(file_path_2)
+
+if intents_1 is None or intents_2 is None:
+    print("Errore: uno dei file non è stato trovato!")
+    exit()
+
+# Inizializza contenitori
 words = []
 classes = []
 documents = []
-ignore_letters = ['?', '!', '.', ',']
+ignore_letters = ['?', '!', '.', ',', '\n']
 
-# Processa le frasi negli intenti
-for intent in intents['intents']:
+# Processa il primo dataset
+for intent in intents_1['intents']:
     for pattern in intent['patterns']:
-        # Analizza il testo con spaCy
         doc = nlp(pattern)
-        # Estrai le radici (lemmi) delle parole, ignorando i caratteri non desiderati
         word_list = [token.lemma_.lower() for token in doc if token.text not in ignore_letters]
         words.extend(word_list)
         documents.append((word_list, intent['tag']))
         if intent['tag'] not in classes:
             classes.append(intent['tag'])
+
+# Processa il secondo dataset
+for item in intents_2:
+    context = item['Context']
+    response = item['Response']
+    context_doc = nlp(context)
+    response_doc = nlp(response)
+
+    # Combina parole da contesto e risposta
+    context_words = [token.lemma_.lower() for token in context_doc if token.text not in ignore_letters]
+    response_words = [token.lemma_.lower() for token in response_doc if token.text not in ignore_letters]
+    all_words = context_words + response_words
+
+    words.extend(all_words)
+    documents.append((all_words, context))  # Usa il contesto come "classe"
+    if context not in classes:
+        classes.append(context)
 
 # Ordina le parole uniche e le classi
 words = sorted(set(words))
@@ -72,12 +101,13 @@ trainX = training[:, :len(words)]
 trainY = training[:, len(words):]
 
 # Crea il modello di rete neurale
-model = tf.keras.Sequential()
-model.add(tf.keras.layers.Dense(128, input_shape=(len(trainX[0]),), activation='relu'))
-model.add(tf.keras.layers.Dropout(0.5))
-model.add(tf.keras.layers.Dense(64, activation='relu'))
-model.add(tf.keras.layers.Dropout(0.5))
-model.add(tf.keras.layers.Dense(len(trainY[0]), activation='softmax'))
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(128, input_shape=(len(trainX[0]),), activation='relu'),
+    tf.keras.layers.Dropout(0.5),
+    tf.keras.layers.Dense(64, activation='relu'),
+    tf.keras.layers.Dropout(0.5),
+    tf.keras.layers.Dense(len(trainY[0]), activation='softmax')
+])
 
 # Compila il modello
 sgd = tf.keras.optimizers.SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
@@ -87,5 +117,5 @@ model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy
 model.fit(trainX, trainY, epochs=200, batch_size=5, verbose=1)
 
 # Salva il modello addestrato
-model.save('chatbot_model.h5')
-print('Done')
+model.save('combined_chatbot_model.h5')
+print('Modello combinato addestrato e salvato con successo!')

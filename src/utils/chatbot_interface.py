@@ -1,1 +1,1 @@
-//Contiene l interfaccia principale del chatbot
+#Contiene l'interfaccia principale del chatbot
