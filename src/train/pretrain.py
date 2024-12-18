@@ -5,10 +5,8 @@ import pickle
 import numpy as np
 import tensorflow as tf
 import spacy
+from tensorflow.keras import layers
 
-# Assicurati di avere spaCy e il modello "en_core_web_sm" installato
-# Installazione: python -m pip install spacy
-# Modello: python -m spacy download en_core_web_sm
 
 # Carica il modello spaCy
 nlp = spacy.load('en_core_web_sm')
@@ -18,7 +16,7 @@ def load_dataset(file_path):
     if os.path.exists(file_path):
         with open(file_path, 'r') as f:
             data = json.load(f)
-            print(f"Il file {file_path} è stato caricato correttamente!")
+            print(f"Loaded {file_path}: {len(data.get('intents', []))} intents found.")
             return data
     else:
         raise FileNotFoundError(f"Il file {file_path} non esiste!")
@@ -48,36 +46,19 @@ def preprocess_text(text):
     doc = nlp(text)
     return [token.lemma_.lower() for token in doc if token.text not in ignore_letters and not token.is_stop and token.is_alpha]
 
-# Processa il primo dataset
-for intent in intents_1['intents']:
-    for pattern in intent['patterns']:
-        word_list = preprocess_text(pattern)
-        words.extend(word_list)
-        documents.append((word_list, intent['tag']))
-        if intent['tag'] not in classes:
-            classes.append(intent['tag'])
+# Processa i dataset
+def process_intents(intents_data):
+    for intent in intents_data['intents']:
+        for pattern in intent['patterns']:
+            word_list = preprocess_text(pattern)
+            words.extend(word_list)
+            documents.append((word_list, intent['tag']))
+            if intent['tag'] not in classes:
+                classes.append(intent['tag'])
 
-# Processa il secondo dataset con tag dinamici
-for idx, item in enumerate(intents_2):
-    context_words = preprocess_text(item['Context'])
-    response_words = preprocess_text(item['Response']) if item['Response'] else []
-    all_words = context_words + response_words
-
-    words.extend(all_words)
-    tag = f"context_{idx}"  # Crea un tag univoco basato sull'indice
-    documents.append((all_words, tag))
-    if tag not in classes:
-        classes.append(tag)
-
-# Processa il terzo dataset con tag dinamici
-for idx, intent in enumerate(intents_3['intents']):
-    for pattern in intent['patterns']:
-        word_list = preprocess_text(pattern)
-        words.extend(word_list)
-        tag = f"intent_{idx}"  # Crea un tag univoco basato sull'indice
-        documents.append((word_list, tag))
-        if tag not in classes:
-            classes.append(tag)
+process_intents(intents_1)
+process_intents(intents_2)
+process_intents(intents_3)
 
 # Ordina le parole uniche e le classi
 words = sorted(set(words))
@@ -112,22 +93,22 @@ trainY = training[:, len(words):]
 
 # Crea il modello di rete neurale
 model = tf.keras.Sequential([
-    tf.keras.layers.Dense(256, input_shape=(len(trainX[0]),), activation='relu'),
-    tf.keras.layers.Dropout(0.5),
-    tf.keras.layers.Dense(128, activation='relu'),
-    tf.keras.layers.Dropout(0.5),
-    tf.keras.layers.Dense(64, activation='relu'),
-    tf.keras.layers.Dropout(0.5),
-    tf.keras.layers.Dense(len(trainY[0]), activation='softmax')
+    layers.Input(shape=(len(trainX[0]),)),  # Specifica la forma dell'input nel primo layer
+    layers.Dense(256, activation='relu', kernel_regularizer=tf.keras.regularizers.l2(0.01)),
+    layers.Dropout(0.5),
+    layers.Dense(128, activation='relu', kernel_regularizer=tf.keras.regularizers.l2(0.01)),
+    layers.Dropout(0.5),
+    layers.Dense(64, activation='relu', kernel_regularizer=tf.keras.regularizers.l2(0.01)),
+    layers.Dropout(0.5),
+    layers.Dense(len(trainY[0]), activation='softmax')
 ])
-
 # Compila il modello
 sgd = tf.keras.optimizers.SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 # Allena il modello
 print("Inizio del training del modello...")
-model.fit(trainX, trainY, epochs=200, batch_size=5, verbose=1)
+model.fit(trainX, trainY, epochs=300, batch_size=5, verbose=1)
 
 # Salva il modello addestrato
 model_save_path = os.path.join(os.path.dirname(__file__), '..', 'models', 'combined_chatbot_model.h5')

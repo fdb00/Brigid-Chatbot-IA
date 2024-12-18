@@ -1,93 +1,13 @@
 import os
-import numpy as np
-import pickle
-import tensorflow as tf
-import spacy
 import random
 import json
+import pickle
+import numpy as np
+import tensorflow as tf
+import spacy
 
-# Carica il modello di spaCy
+# Carica il modello spaCy
 nlp = spacy.load('en_core_web_sm')
-
-# Percorsi relativi
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))  # Livello base del progetto
-MODEL_PATH = os.path.join(BASE_DIR, 'models', 'combined_chatbot_model.h5')
-WORDS_PATH = os.path.join(BASE_DIR, 'models', 'words.pkl')
-CLASSES_PATH = os.path.join(BASE_DIR, 'models', 'classes.pkl')
-INTENTS_PATH = os.path.join(BASE_DIR, 'data', 'intents.json')
-INTENTS_2_PATH = os.path.join(BASE_DIR, 'data', 'intents_2.json')
-INTENTS_3_PATH = os.path.join(BASE_DIR, 'data', 'intents_3.json')  # Nuovo file
-
-# Carica il modello addestrato
-model = tf.keras.models.load_model(MODEL_PATH)
-
-# Carica le parole e le classi salvate
-words = pickle.load(open(WORDS_PATH, 'rb'))
-classes = pickle.load(open(CLASSES_PATH, 'rb'))
-
-
-# Funzione per creare la "bag of words" dall'input dell'utente
-def clean_up_sentence(sentence):
-    sentence_doc = nlp(sentence)
-    return [token.lemma_.lower() for token in sentence_doc if not token.is_punct]
-
-
-def bow(sentence, words):
-    # Crea una "bag of words" per l'input dell'utente
-    sentence_words = clean_up_sentence(sentence)
-    bag = [0] * len(words)
-    for w in sentence_words:
-        for i, word in enumerate(words):
-            if word == w:
-                bag[i] = 1
-    return np.array(bag)
-
-
-# Funzione per fare la previsione della risposta
-def predict_class(sentence):
-    # Ottieni la "bag of words"
-    bow_input = bow(sentence, words)
-    # Previsione del modello
-    prediction = model.predict(np.array([bow_input]))[0]
-    ERROR_THRESHOLD = 0.25
-    # Ottieni l'indice della classe con la previsione più alta
-    predicted_class_index = np.argmax(prediction)
-    probability = prediction[predicted_class_index]
-
-    # Se la probabilità è abbastanza alta, restituisci la classe
-    if probability > ERROR_THRESHOLD:
-        return classes[predicted_class_index]
-    else:
-        return None
-
-
-# Funzione per ottenere la risposta dalla classe prevista
-def get_response(intent):
-    # Carica i dati degli intenti
-    intents_data = load_dataset(INTENTS_PATH)
-    intents_2_data = load_dataset(INTENTS_2_PATH)
-    intents_3_data = load_dataset(INTENTS_3_PATH)  # Carica il terzo dataset
-
-    # Cerca nei dataset standard
-    if intents_data:
-        for intent_data in intents_data['intents']:
-            if intent_data['tag'] == intent:
-                return random.choice(intent_data['responses'])
-
-    # Cerca nei contesti del secondo dataset
-    if intents_2_data:
-        for context_data in intents_2_data:
-            if context_data['Context'] == intent:
-                return context_data.get('Response', "Non ho una risposta per questo contesto.")
-
-    # Cerca nei contesti del terzo dataset (intents_3.json)
-    if intents_3_data:
-        for intent_data in intents_3_data['intents']:
-            if intent_data['tag'] == intent:
-                return random.choice(intent_data['responses'])
-
-    return "I'm sorry, I don't understand that."
-
 
 # Funzione per caricare il dataset
 def load_dataset(file_path):
@@ -99,6 +19,67 @@ def load_dataset(file_path):
         print(f"Il file {file_path} non esiste!")
         return None
 
+# Percorsi ai file dei dataset
+file_path_1 = os.path.join(os.path.dirname(__file__), '..', 'data', 'intents.json')
+file_path_2 = os.path.join(os.path.dirname(__file__), '..', 'data', 'intents_2.json')
+file_path_3 = os.path.join(os.path.dirname(__file__), '..', 'data', 'intents_3.json')
+
+# Carica i modelli e i dati necessari
+words = pickle.load(open('../models/words.pkl', 'rb'))
+classes = pickle.load(open('../models/classes.pkl', 'rb'))
+model = tf.keras.models.load_model('../models/combined_chatbot_model.h5')
+
+# Funzione di preprocessing del testo
+def preprocess_text(text):
+    doc = nlp(text)
+    return [token.lemma_.lower() for token in doc if not token.is_stop and token.is_alpha]
+
+# Funzione per fare la previsione della risposta
+def predict_class(sentence):
+    # Ottieni la "bag of words"
+    bow_input = bow(sentence, words)
+    prediction = model.predict(np.array([bow_input]))[0]
+    ERROR_THRESHOLD = 0.05
+    predicted_class_index = np.argmax(prediction)
+    probability = prediction[predicted_class_index]
+
+    if probability > ERROR_THRESHOLD:
+        return classes[predicted_class_index]
+    else:
+        return None
+
+# Funzione per creare la "bag of words"
+def bow(sentence, words):
+    sentence_words = preprocess_text(sentence)
+    bag = [0] * len(words)
+    for w in sentence_words:
+        for i, word in enumerate(words):
+            if word == w:
+                bag[i] = 1
+    return np.array(bag)
+
+# Funzione per ottenere la risposta dalla classe prevista
+def get_response(intent):
+    intents_data = load_dataset(file_path_1)
+    intents_2_data = load_dataset(file_path_2)
+    intents_3_data = load_dataset(file_path_3)
+
+    if intents_data:
+        for intent_data in intents_data['intents']:
+            if intent_data['tag'] == intent:
+                return random.choice(intent_data['responses'])
+
+    if intents_2_data:
+        for context_data in intents_2_data['intents']:
+            if context_data.get('tag') == intent:
+                return random.choice(context_data.get('responses', ["Non ho una risposta per questo contesto."]))
+
+    if intents_3_data:
+        for intent_data in intents_3_data['intents']:
+            if intent_data['tag'] == intent:
+                return random.choice(intent_data['responses'])
+
+    return "Sorry, I didn't understand that. Could you please try another way?"
 
 # Interfaccia a riga di comando per il chatbot
 def chat():
@@ -122,7 +103,6 @@ def chat():
             print(f"Chatbot: {response}")
         else:
             print("Chatbot: I'm sorry, I couldn't understand that. Could you please try again?")
-
 
 # Avvia il chatbot
 if __name__ == "__main__":
