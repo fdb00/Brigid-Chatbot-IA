@@ -1,116 +1,84 @@
-import os
 import random
+import numpy as np
 import json
 import pickle
-import numpy as np
-import tensorflow as tf
-import spacy
-from tensorflow.keras import layers
+import nltk
+from nltk.stem import WordNetLemmatizer
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
+from tensorflow.keras.optimizers import SGD
 
+lemmatizer = WordNetLemmatizer()
 
-# Carica il modello spaCy
-nlp = spacy.load('en_core_web_sm')
+# Load intents
+intents = json.loads(open('../data/intents.json').read())
 
-# Funzione per caricare il dataset
-def load_dataset(file_path):
-    if os.path.exists(file_path):
-        with open(file_path, 'r') as f:
-            data = json.load(f)
-            print(f"Loaded {file_path}: {len(data.get('intents', []))} intents found.")
-            return data
-    else:
-        raise FileNotFoundError(f"Il file {file_path} non esiste!")
-
-# Percorsi ai file dei dataset
-file_path_1 = os.path.join(os.path.dirname(__file__), '..', 'data', 'intents.json')
-file_path_2 = os.path.join(os.path.dirname(__file__), '..', 'data', 'intents_2.json')
-file_path_3 = os.path.join(os.path.dirname(__file__), '..', 'data', 'intents_3.json')
-
-# Carica i dataset
-try:
-    intents_1 = load_dataset(file_path_1)
-    intents_2 = load_dataset(file_path_2)
-    intents_3 = load_dataset(file_path_3)
-except FileNotFoundError as e:
-    print(e)
-    exit()
-
-# Inizializza contenitori
 words = []
 classes = []
 documents = []
-ignore_letters = ['?', '!', '.', ',', '\n']
+ignore_letters = ['?', '!', '.', ',']
 
-# Funzione di preprocessing del testo
-def preprocess_text(text):
-    doc = nlp(text)
-    return [token.lemma_.lower() for token in doc if token.text not in ignore_letters and not token.is_stop and token.is_alpha]
+# Tokenize and preprocess patterns
+for intent in intents['intents']:
+    for pattern in intent['patterns']:
+        word_list = nltk.word_tokenize(pattern)
+        words.extend(word_list)
+        documents.append((word_list, intent['tag']))
+        if intent['tag'] not in classes:
+            classes.append(intent['tag'])
 
-# Processa i dataset
-def process_intents(intents_data):
-    for intent in intents_data['intents']:
-        for pattern in intent['patterns']:
-            word_list = preprocess_text(pattern)
-            words.extend(word_list)
-            documents.append((word_list, intent['tag']))
-            if intent['tag'] not in classes:
-                classes.append(intent['tag'])
-
-process_intents(intents_1)
-process_intents(intents_2)
-process_intents(intents_3)
-
-# Ordina le parole uniche e le classi
+# Lemmatize and sort words and classes
+words = [lemmatizer.lemmatize(word.lower()) for word in words if word not in ignore_letters]
 words = sorted(set(words))
 classes = sorted(set(classes))
 
-# Salva le parole e le classi
+# Save words and classes
 pickle.dump(words, open('../models/words.pkl', 'wb'))
 pickle.dump(classes, open('../models/classes.pkl', 'wb'))
 
-# Crea il set di dati di allenamento
 training = []
 output_empty = [0] * len(classes)
 
+# Create bag of words and output row
 for document in documents:
     bag = []
     word_patterns = document[0]
+    word_patterns = [lemmatizer.lemmatize(word.lower()) for word in word_patterns]
 
-    # Crea una "bag of words"
+    # Create a "bag of words"
     for word in words:
-        bag.append(1) if word in word_patterns else bag.append(0)
+        if word in word_patterns:
+            bag.append(1)
+        else:
+            bag.append(0)
 
     output_row = list(output_empty)
     output_row[classes.index(document[1])] = 1
-    training.append(bag + output_row)
+    training.append([bag, output_row])
 
-# Mescola i dati e li converte in numpy array
+# Shuffle and convert to numpy arrays
 random.shuffle(training)
-training = np.array(training)
 
-trainX = training[:, :len(words)]
-trainY = training[:, len(words):]
+# Ensure that the training data is a consistent 2D array
+training = np.array(training, dtype=object)
 
-# Crea il modello di rete neurale
-model = tf.keras.Sequential([
-    layers.Input(shape=(len(trainX[0]),)),  # Specifica la forma dell'input nel primo layer
-    layers.Dense(256, activation='relu', kernel_regularizer=tf.keras.regularizers.l2(0.01)),
-    layers.Dropout(0.5),
-    layers.Dense(128, activation='relu', kernel_regularizer=tf.keras.regularizers.l2(0.01)),
-    layers.Dropout(0.5),
-    layers.Dense(64, activation='relu', kernel_regularizer=tf.keras.regularizers.l2(0.01)),
-    layers.Dropout(0.5),
-    layers.Dense(len(trainY[0]), activation='softmax')
-])
-# Compila il modello
-sgd = tf.keras.optimizers.SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
+train_x = np.array(list(training[:, 0]), dtype=int)  # Features (bag of words)
+train_y = np.array(list(training[:, 1]), dtype=int)  # Output classes (one-hot encoded)
+
+# Create and compile the model
+model = Sequential()
+model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(64, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(len(train_y[0]), activation='softmax'))
+
+sgd = SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
-# Allena il modello
-print("Inizio del training del modello...")
-model.fit(trainX, trainY, epochs=300, batch_size=5, verbose=1)
+# Train the model
+hist = model.fit(train_x, train_y, epochs=300, batch_size=5, verbose=1)
 
-# Salva il modello addestrato
-model_save_path = os.path.join(os.path.dirname(__file__), '..', 'models', 'combined_chatbot_model.h5')
-model.save(model_save_path)
-print(f"Modello combinato addestrato e salvato con successo in {model_save_path}!")
+# Save the model
+model.save('../models/chatbot_model.keras', hist)
+print("done")
