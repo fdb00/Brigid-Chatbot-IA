@@ -1,6 +1,8 @@
 import random
 import json
 import pickle
+from contextlib import suppress
+
 import numpy as np
 
 import nltk
@@ -54,7 +56,7 @@ def get_response(intents_list, intents_json):
 
 def parseDict2String(intents_list): #modifica che servirà per la raccolta dati
     intentStr = str(intents_list[0])
-    print(type(intentStr) is str)
+    print(intentStr)
 
 print("Hi there! I'm Brigid, and I'm here to help you!")
 while True:
@@ -62,7 +64,7 @@ while True:
     ints = predict_class(message)
     res = get_response(ints, intents) #ints contiene anche il tag della conversazione
     print(res)
-   # parseDict2String(ints)
+    #parseDict2String(ints)
 
 
 

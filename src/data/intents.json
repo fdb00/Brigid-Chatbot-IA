@@ -686,7 +686,7 @@
     ]
 },
     {
-    "tag": "fact-13",
+    "tag": "to_help",
     "patterns": [
         "What can I do if someone has mental health symptoms?",
         "How can I help a friend with a mental disorder?",
@@ -700,7 +700,7 @@
         "Suggest they talk to a counselor and offer your support in the process."
     ]
 },{
-  "tag": "fact-14",
+  "tag": "search_therapist",
   "patterns": [
     "How can I find a mental health professional for myself or my child?",
     "Where can I find a mental health professional?",
@@ -728,7 +728,7 @@
 },
 
   {
-  "tag": "fact-15",
+  "tag": "treatments_options",
   "patterns": [
     "What treatment options are available?",
     "What kinds of treatment are there for mental health?",
@@ -1719,19 +1719,6 @@
 ]
 },
 {
-"tag": "social_connection_and_emotions",
-"patterns": [
-"In the past year, two of my best and only close friends moved to different states. Now I have nobody to hang out with. I'm always alone, and I honestly haven't hung out with anyone since they left. I'm super lonely. What should I do to make new friends? Because they moved and I have no friends now, I think I'm falling into a depression or something. I just need help.",
-"I am the problem. I make my family argue because of me. My mom has even said it. It's constantly like this. I cause problems. I am worthless. I can't stop crying. Sometimes I have to cry myself to sleep. I can't even leave my room because my family can't stand me.",
-"I'm depressed often, and my mind goes a million miles a minute. Every once in a while, things are okay for a few days. After a bit, I start noticing that I am picking at my skin profusely. After roughly a week, the anxiety is back and still picking. Sometimes I find myself causing fights to have change."
-],
-"responses": [
-"Definitely it is sad to lose friends who are a regular part of daily life. How did you meet the two friends who just moved away? It's possible that you could look for similar situations and see if anyone catches your interest to know as a friend. Keeping in mind that friendship is based on trust and common interests, and that these qualities require time to observe and develop, think of what you can do to keep happy while these paths unfold. In addition to being open to meeting new friends, involve yourself in projects from which you'll feel satisfied by your own results.",
-"I am so very sorry for how pressured and sad you feel right now. Definitely, all family members have an effect on the other ones. From what you write, your family members are not considering the effect their negative comments have on you. Also, keep in mind that each person is responsible for deciding to argue or find a different way to discuss a problem. You are not in control of the other people in your family. More likely they take the easy way out and blame you for what they don't want to know about themselves. Stay aware that the family's decision to target you doesn't mean that you are doing something wrong. Certainly, your existence is not wrong, which is the degree to which the unfairness seems to have spread. What to do about it is read about family systems to see more explanations on how you are being unfairly treated. Also, stay in touch with friends because these are the people who value and respect you.",
-"One way to know yourself a little better and why the dynamics you describe take place is to understand the particular dynamics of your life context. Look at your major areas of where you spend your time, whether you are happy with the people with whom you socialize, how you feel toward family members and how they seem to feel toward you. If you examine your relationships and life this way, then you may start to notice areas where you have some control or at least a say in how your life is going. If you are socializing among people whom you don't like, have a job you don't like and your family mistreats you and you mistreat them, for example, then anxiety and depression are an understandable natural result. If you make improvements in your life and relationships, even tiny improvements and even the effort and intention to improve, you may find your anxiety and depression dissipating. People usually feel their worst when they feel lack of control in their life. Look for ways you can regain and/or strengthen yours."
-]
-},
-{
 "tag": "depression_and_self_worth",
 "patterns": [
 "I'm constantly in a bad mood and I have no energy. Is that depression?",
@@ -1765,7 +1752,6 @@
 ],
 "responses": [
 "Love yourself more and treat yourself kindly, with empathy and compassion. Often, when people feel depressed, they also feel lonely and isolated. Since you prefer not to share how you feel right now, consider offering yourself the emotional support you need. Over time, you might find it helpful to eventually open up to someone you trust who can empathize with you. This can alleviate feelings of shame, unworthiness, and guilt. Sending you good luck!",
-"Dealing with depression on your own can be a big challenge. While telling someone about your feelings might seem overwhelming, consider small steps like reading helpful books or finding online resources. A great book to start with is 'Feeling Good' by Dr. David Burns for practical advice or 'Radical Acceptance' by Tara Brach for a spiritual perspective. Professional help can provide private and effective support as well.",
 "It's understandable that you want to keep your feelings private. Starting with self-care is a good first step. Consider reaching out to a therapist, as therapy is confidential and tailored to your needs. A therapist can guide you through coping mechanisms and help address the root causes of depression. Remember, seeking help is a sign of strength, and it can make a significant difference in your journey toward feeling better."
 ]
 },
@@ -2015,39 +2001,46 @@
 ]
 },
 {
-"tag": "lgbtq_mental_health",
-"patterns": [
-"I feel isolated because I'm part of the LGBTQ+ community. How can I improve my mental health?",
-"As a transgender person, I’m struggling with anxiety. What can I do to cope?",
-"I feel rejected by my family because of my sexuality. How can I handle this?",
-"Being LGBTQ+ in an unsupportive environment is really affecting my mental health. What should I do?",
-"How can I build my self-esteem as a queer person in a heteronormative society?"
-],
-"responses": [
-"It's important to find supportive spaces where you can express yourself freely, whether online or in-person. Connecting with LGBTQ+ support groups or seeking therapy from professionals who specialize in LGBTQ+ issues can help you navigate feelings of isolation and anxiety.",
-"Transgender individuals often face unique mental health challenges, especially with societal discrimination. Therapy with a counselor experienced in transgender issues, along with connecting with a supportive community, can make a big difference in improving your mental health.",
-"Family rejection can be incredibly painful, but remember that you are not alone. Many LGBTQ+ people find comfort in support groups, either in-person or online. A therapist with experience in LGBTQ+ issues can also help you navigate family conflict and work on strategies to strengthen your resilience.",
-"Living in an unsupportive environment can make life difficult, but it’s crucial to reach out to communities that affirm your identity. Whether through support groups, LGBTQ+ affirming therapists, or online spaces, there are resources that can help you feel seen and supported.",
-"Navigating a heteronormative society can be exhausting, but building self-esteem starts with affirming your identity and finding pride in who you are. It may help to work with a therapist who specializes in LGBTQ+ issues and to connect with positive, supportive communities."
-]
-},
+  "tag": "lgbtq_mental_health",
+  "patterns": [
+    "I feel isolated because I'm part of the LGBTQ+ community. How can I improve my mental health?",
+    "As a transgender person, I’m struggling with anxiety. What can I do to cope?",
+    "I feel rejected by my family because of my sexuality. How can I handle this?",
+    "Being LGBTQ+ in an unsupportive environment is really affecting my mental health. What should I do?",
+    "How can I build my self-esteem as a queer person in a heteronormative society?",
+    "I feel like I don’t belong anywhere because of my gender identity. What can I do?",
+    "What do I do if I’m struggling to come out to my friends and family?",
+    "I'm dealing with discrimination because of my sexuality. How do I cope with the stress?",
+    "I don’t know how to navigate dating as an LGBTQ+ person. Any advice?",
+    "How do I find acceptance as a bisexual person when people constantly question my identity?"
+  ],
+  "responses": [
+    "Building a strong support network is key. Consider reaching out to LGBTQ+ communities online or in person for understanding and encouragement. Talking to an affirming therapist can also help you process feelings of isolation and build strategies for coping.",
+    "Feeling rejected or isolated can be really difficult, but it’s important to remember that there are people who care and understand. Online communities and LGBTQ+ organizations can provide a safe space. Talking about your experiences with someone who is supportive can ease the emotional burden.",
+    "Remember that self-acceptance is a journey. Give yourself the grace to take it one step at a time. Learning to embrace your identity and finding people who truly support you can help navigate periods of doubt and frustration.",
+    "Working through your experiences in a supportive environment can help ease some of the tension you're feeling. Group therapy and peer support programs are designed to help you build strength through shared experiences.",
+    "Dealing with an unsupportive environment is tough, but there are people out there who understand and can offer validation. Consider reaching out to community spaces or online groups where you can find connection and support.",
+    "Self-esteem starts with affirmation. Continue to acknowledge and celebrate the small victories in your journey. Engage with groups who lift you up, and remember, your worth is inherent, regardless of societal views."
+  ]
+    },
 {
-"tag": "racial_mental_health",
-"patterns": [
-"As a person of color, I feel stressed dealing with racism at work. How can I handle it?",
-"I face discrimination every day, and it’s affecting my mental health. What can I do?",
-"Being Black in a predominantly white space is making me anxious. How do I cope?",
-"I feel like my mental health is not taken seriously because of my ethnicity. How can I advocate for myself?",
-"The stress of constantly facing microaggressions is overwhelming. How can I manage it?"
-],
-"responses": [
-"Dealing with racism can be extremely draining. It’s important to seek out communities of people who share your experiences and can offer support. Therapy with a counselor experienced in racial trauma and stress can also help you process these challenges and develop coping strategies.",
-"Facing discrimination on a regular basis is a form of trauma that can significantly impact your mental health. It's important to seek therapy with someone who understands the specific challenges of racial discrimination and microaggressions. Support groups for people of color can also provide a safe space to share and heal.",
-"Navigating predominantly white spaces can create anxiety and stress, but finding community with others who understand your experience can help. It’s essential to practice self-care and set boundaries when necessary. Seeking support from a therapist of color, or one familiar with racial stress, can help you manage these feelings.",
-"It’s unfortunate that people of color often face challenges when advocating for their mental health. A therapist who is culturally competent or from a similar background can offer more understanding and support. Additionally, it can help to educate others on the importance of mental health care and advocate for yourself when needed.",
-"Microaggressions are a form of ongoing stress that can accumulate over time. Coping mechanisms like mindfulness, grounding techniques, and seeking solidarity from communities that understand can help. Therapy focused on racial stress and trauma can also provide the tools to manage these feelings."
-]
-},
+  "tag": "racial_mental_health",
+  "patterns": [
+    "How do I deal with the emotional toll of constantly having to educate others about my culture?",
+    "I'm feeling exhausted from always having to explain my experiences with racism. How can I manage this burden?",
+    "How can I find a therapist who understands the complexities of racial trauma?",
+    "As an immigrant, I feel alienated and misunderstood. How can I navigate these feelings?",
+    "I struggle with feeling both pride and frustration with my cultural identity. How can I reconcile these emotions?"
+  ],
+  "responses": [
+    "Educating others about your culture can be draining, especially when you feel like you're constantly repeating yourself. It's okay to set boundaries and decide when you're willing to teach and when you'd prefer to prioritize your mental well-being.",
+    "Explaining your experiences with racism can take an emotional toll. It’s important to recognize that you don’t owe anyone your labor or emotional energy. Consider surrounding yourself with supportive people and seeking therapy to process this emotional strain.",
+    "Finding a therapist who understands racial trauma can make a significant difference. Look for therapists who specialize in cultural competency or those with lived experience who can offer a deeper level of understanding and empathy.",
+    "Immigrant experiences come with a unique set of challenges. Embracing support from other immigrants or finding culturally competent professionals can help you manage feelings of alienation. Explore groups or therapy where you can process your experiences in a supportive environment.",
+    "Balancing pride in your cultural identity with feelings of frustration is common. Try acknowledging both sides of your identity and finding space to express both the pride and the difficulty. Speaking with a therapist who understands racial identity struggles may help you work through these complex emotions."
+  ]
+}
+,
 {
 "tag": "immigrant_mental_health",
 "patterns": [
@@ -2457,7 +2450,8 @@
     "I tried to start a hot air balloon business, but it never really took off. 😅",
     "Why did the chatbot go to therapy? It had too many unresolved issues! 😜",
     "If you ever feel down, just remember that even a broken pencil is still ‘pointless’. 😆",
-    "I’m not saying I’m a comedian, but I’ve definitely ‘pun’ for the job. 😉"
+    "I’m not saying I’m a comedian, but I’ve definitely ‘pun’ for the job. 😉",
+    "Fangù :)"
   ]
 },
 
@@ -2714,13 +2708,2030 @@
     "patterns": ["Where can I find information about disability rights?", "What are the disability laws in my country?", "Can you help me understand disability legislation?", "Are there resources to learn about the rights of people with disabilities?", "Where can I find a forum to discuss disability rights?"],
     "responses": ["You can find comprehensive information about disability rights and laws on our dedicated page: [https://example.com/disability-laws].", "To better understand disability legislation, visit: [https://example.com/disability-laws].", "We’ve created a guide to help you understand disability laws. Find it here: [https://example.com/disability-laws].", "If you need clarity on your rights as a person with a disability, check out our page: [https://example.com/disability-laws].", "Explore our page on disability laws for information and support: [https://example.com/disability-laws].", "You can visit our forum on disability to share experiences, find support, and learn more about rights: [https://example.com/disability-forum]."]
 },
+{
+            "tag": "anxiety",
+            "patterns": [
+                "I always feel anxious",
+                "I can't calm down, everything worries me",
+                "Something feels off, I have this constant tension"
+            ],
+            "responses": [
+                "I understand, would you like to tell me more about it?",
+                "Anxiety can be tough to manage. Would you like to try a breathing exercise?",
+                "I'm here to listen. Can you share what's making you feel this way?"
+            ]
+        },
+        {
+            "tag": "self-doubt",
+            "patterns": [
+                "I never feel good enough",
+                "I always think I'm messing everything up",
+                "I'm not confident in myself"
+            ],
+            "responses": [
+                "I'm sorry you're feeling this way. What thoughts are making you doubt yourself?",
+                "We all have self-doubt sometimes. Would you like to talk about what's worrying you?",
+                "Remember, you're stronger than you think. I'm here to help you regain confidence."
+            ]
+        },
+        {
+            "tag": "minority-support",
+            "patterns": [
+                "I feel excluded because I'm different",
+                "I don't know if anyone can understand what I'm going through",
+                "Being part of a minority is really hard"
+            ],
+            "responses": [
+                "Being in a minority can be challenging. Would you like to share how you feel?",
+                "I'm sorry you're going through this. I'm here to support you.",
+                "Tell me more about what you're experiencing. You are important, and your voice matters."
+            ]
+        },
+        {
+            "tag": "loneliness",
+            "patterns": [
+                "I feel very lonely",
+                "I have no one to talk to",
+                "The loneliness is becoming unbearable"
+            ],
+            "responses": [
+                "Loneliness can be hard. Would you like to talk about what you're going through?",
+                "Being alone is never easy. I can listen and try to support you.",
+                "You are important, and you are not alone. Tell me how you're feeling."
+            ]
+        },
+        {
+            "tag": "motivation",
+            "patterns": [
+                "I can't find the motivation to do anything",
+                "I feel stuck",
+                "I've lost enthusiasm for everything"
+            ],
+            "responses": [
+                "Sometimes it's normal to feel this way. Would you like to explore what might help you get unstuck?",
+                "I'm here to help. Would you like to talk about what's holding you back?",
+                "Even small steps can make a difference. What could we try doing today to start?"
+            ]
+        },
+        {
+            "tag": "stress",
+            "patterns": [
+                "I'm feeling so stressed lately",
+                "Everything feels overwhelming",
+                "I can't handle all the pressure"
+            ],
+            "responses": [
+                "Stress can be overwhelming. What’s causing you to feel this way?",
+                "I’m here to help. Would you like to talk about what’s making you feel stressed?",
+                "Let’s take it one step at a time. What’s the biggest stressor right now?"
+            ]
+        },
+        {
+            "tag": "relationship-issues",
+            "patterns": [
+                "I'm having trouble with my partner",
+                "My relationships feel strained",
+                "I feel like no one understands me"
+            ],
+            "responses": [
+                "Relationships can be tough. Would you like to talk about what’s happening?",
+                "It’s okay to feel this way. What’s been going on with your relationships?",
+                "I'm here to listen. Can you share what’s been troubling you?"
+            ]
+        },
+        {
+            "tag": "identity-struggles",
+            "patterns": [
+                "I don't know who I am anymore",
+                "I'm struggling to figure out my identity",
+                "I feel like I don't fit anywhere"
+            ],
+            "responses": [
+                "It’s okay to feel unsure. Do you want to explore this together?",
+                "Identity struggles can be challenging. I’m here to support you.",
+                "Take your time to find yourself. Let’s talk about what’s on your mind."
+            ]
+        },
+        {
+            "tag": "discrimination",
+            "patterns": [
+                "I feel judged for being who I am",
+                "People treat me differently because of my background",
+                "I face discrimination every day"
+            ],
+            "responses": [
+                "I’m sorry you’re experiencing this. Would you like to share more?",
+                "Discrimination is painful. I’m here to support you however I can.",
+                "Your experiences matter, and I’m here to listen. Tell me what’s happening."
+            ]
+        },
+        {
+            "tag": "burnout",
+            "patterns": [
+                "I feel completely burned out",
+                "I don't have the energy to do anything anymore",
+                "Work and life are just too much for me"
+            ],
+            "responses": [
+                "Burnout is tough. Would you like to talk about what’s draining your energy?",
+                "It’s important to take care of yourself. How can I support you right now?",
+                "Let’s think about ways to help you recharge. What’s been the hardest part?"
+            ]
+        },
+        {
+            "tag": "body-image",
+            "patterns": [
+                "I don't like the way I look",
+                "I feel uncomfortable in my own body",
+                "I wish I could change how I appear"
+            ],
+            "responses": [
+                "It’s hard to feel this way. Would you like to share more about how you’re feeling?",
+                "You’re not alone in feeling this. Let’s talk about it together.",
+                "Your worth isn’t defined by your appearance. Let’s focus on what makes you unique."
+            ]
+        },
+        {
+            "tag": "grief",
+            "patterns": [
+                "I lost someone I cared about",
+                "I don't know how to cope with this loss",
+                "Grief is overwhelming me"
+            ],
+            "responses": [
+                "I’m sorry for your loss. Would you like to share what you’re feeling?",
+                "Grief can be a heavy burden. I’m here to listen and support you.",
+                "Take all the time you need. Let’s talk about what’s on your mind."
+            ]
+        },
+        {
+            "tag": "hope",
+            "patterns": [
+                "I feel like there's no hope",
+                "Things will never get better for me",
+                "I’ve lost all faith in the future"
+            ],
+            "responses": [
+                "It’s okay to feel this way, but you don’t have to face it alone. I’m here.",
+                "Sometimes hope feels distant, but it’s still there. Let’s talk about it.",
+                "You’re stronger than you think. Let’s take a step towards finding hope again."
+            ]
+        },
+      {
+            "tag": "racial-discrimination",
+            "patterns": [
+                "I feel judged because of my race",
+                "People make comments about my skin color",
+                "I experience racism every day"
+            ],
+            "responses": [
+                "I’m sorry you’re going through this. Would you like to share more about your experiences?",
+                "Racism is unfair and painful. I’m here to listen and support you.",
+                "Your feelings are valid. Let’s talk about how we can address this together."
+            ]
+        },
+        {
+            "tag": "religious-intolerance",
+            "patterns": [
+                "I feel excluded because of my religion",
+                "People mock my beliefs",
+                "My faith makes me feel like an outsider"
+            ],
+            "responses": [
+                "I’m here to listen. Would you like to talk about what’s happening?",
+                "It’s hard to face intolerance. Let’s explore ways to navigate these challenges.",
+                "Your beliefs are important, and so are you. Let’s talk about how you feel."
+            ]
+        },
+        {
+            "tag": "sexual-orientation",
+            "patterns": [
+                "I’m afraid to come out as LGBTQ+",
+                "People judge me for who I love",
+                "I feel unsafe because of my sexual orientation"
+            ],
+            "responses": [
+                "Coming out is a personal journey. I’m here to support you, no matter what.",
+                "I’m sorry you feel unsafe. Let’s talk about what’s making you feel this way.",
+                "Your identity is valid, and you deserve to feel accepted. How can I help?"
+            ]
+        },
+        {
+            "tag": "gender-identity",
+            "patterns": [
+                "I don’t feel like people respect my gender identity",
+                "It’s hard being non-binary in a binary world",
+                "I feel like no one understands my gender journey"
+            ],
+            "responses": [
+                "Your gender identity matters. I’m here to listen to what you’re going through.",
+                "Navigating gender identity can be challenging, but you’re not alone. Let’s talk about it.",
+                "You deserve respect and understanding. How can I support you today?"
+            ]
+        },
+        {
+            "tag": "disability-stigma",
+            "patterns": [
+                "People treat me differently because of my disability",
+                "I feel overlooked because of my condition",
+                "I struggle with the stigma around my disability"
+            ],
+            "responses": [
+                "I’m sorry you’re experiencing this. Your feelings are valid, and I’m here to listen.",
+                "Stigma is unfair, and it doesn’t define you. Let’s talk about how you feel.",
+                "You’re not alone in this. Tell me more about what you’re going through."
+            ]
+        },
+        {
+            "tag": "gender-discrimination",
+            "patterns": [
+                "I’m not treated equally because of my gender",
+                "People assume things about me because I’m a woman",
+                "Gender bias at work is making things hard for me"
+            ],
+            "responses": [
+                "Gender discrimination is unjust. Would you like to talk more about what’s happening?",
+                "Your experiences matter, and I’m here to support you. Tell me how you’re feeling.",
+                "You deserve to be treated equally. Let’s explore what’s troubling you."
+            ]
+        },
+        {
+            "tag": "microaggressions",
+            "patterns": [
+                "People say subtle things that make me uncomfortable",
+                "I feel like I’m constantly facing small acts of discrimination",
+                "Microaggressions are draining me"
+            ],
+            "responses": [
+                "Microaggressions can be exhausting. Would you like to share more about your experiences?",
+                "I’m sorry you’re feeling this way. Let’s talk about how these actions are affecting you.",
+                "You deserve respect and understanding. How can I support you in dealing with this?"
+            ]
+        },
+        {
+            "tag": "intersectionality",
+            "patterns": [
+                "It’s hard being part of multiple minority groups",
+                "I feel like no one understands the intersection of my identities",
+                "I face challenges because of my race, gender, and more"
+            ],
+            "responses": [
+                "Intersectional experiences can be complex. I’m here to listen to your story.",
+                "You are not alone in this. Let’s talk about what’s on your mind.",
+                "Your identity is multifaceted and important. How can I support you today?"
+            ]
+        },
+       {
+            "tag": "ethnic-stereotypes",
+            "patterns": [
+                "People assume things about me because of my ethnicity",
+                "I hate being reduced to a stereotype",
+                "I feel like I’m constantly fighting ethnic biases"
+            ],
+            "responses": [
+                "Stereotypes can be incredibly hurtful. Would you like to share what happened?",
+                "Your individuality matters more than any stereotype. I’m here to support you.",
+                "Let’s talk about how these assumptions make you feel. You deserve respect."
+            ]
+        },
+        {
+            "tag": "religious-visibility",
+            "patterns": [
+                "I feel targeted because of my religious clothing",
+                "Wearing a hijab makes me feel exposed to judgment",
+                "People stare at me because of my religious symbols"
+            ],
+            "responses": [
+                "I’m sorry you feel this way. Your choice to express your faith is valid.",
+                "It’s unfair to be judged for expressing your beliefs. Would you like to talk more about it?",
+                "You deserve to feel safe in your expression of faith. How can I help you?"
+            ]
+        },
+        {
+            "tag": "transphobia",
+            "patterns": [
+                "I’m afraid to use public spaces because I’m trans",
+                "People misgender me all the time, and it hurts",
+                "I feel unsafe being open about my gender identity"
+            ],
+            "responses": [
+                "Misgendering is painful, and I’m sorry you’re experiencing this. Let’s talk about it.",
+                "Your gender identity deserves respect. Would you like to share more about how you feel?",
+                "I’m here to support you. You don’t have to face this alone."
+            ]
+        },
+        {
+            "tag": "ableism",
+            "patterns": [
+                "People act like I’m less capable because of my disability",
+                "I feel like I’m constantly underestimated",
+                "Ableist comments make me feel invisible"
+            ],
+            "responses": [
+                "Ableism is unfair and wrong. Would you like to talk about what happened?",
+                "Your abilities and worth are not defined by others' perceptions. I’m here for you.",
+                "You matter, and your experiences are valid. Let’s discuss what’s troubling you."
+            ]
+        },
+        {
+            "tag": "mental-health-stigma",
+            "patterns": [
+                "People don’t take my mental health issues seriously",
+                "I feel judged for going to therapy",
+                "I can’t talk about my depression without being misunderstood"
+            ],
+            "responses": [
+                "It’s hard to face stigma about mental health. I’m here to listen to you.",
+                "Seeking help is a sign of strength, not weakness. Let’s talk about how you’re feeling.",
+                "Your struggles are valid, and I’m here to support you however I can."
+            ]
+        },
+        {
+            "tag": "coming-out-fears",
+            "patterns": [
+                "I don’t know how to tell my family I’m gay",
+                "I’m scared of how people will react if I come out",
+                "Coming out feels like an impossible step for me"
+            ],
+            "responses": [
+                "Coming out is a deeply personal journey. Take your time, and I’m here for you.",
+                "It’s okay to feel scared. Would you like to talk about what’s making you hesitant?",
+                "You deserve love and acceptance. Let’s discuss how to navigate this step."
+            ]
+        },
+        {
+            "tag": "chronic-illness",
+            "patterns": [
+                "Living with a chronic illness makes me feel so isolated",
+                "No one understands how hard it is to live with this pain every day",
+                "I feel like my condition defines me"
+            ],
+            "responses": [
+                "Living with a chronic illness is challenging. I’m here to listen and support you.",
+                "Your condition doesn’t define you. Let’s talk about what’s weighing on your mind.",
+                "You’re not alone in this. Would you like to share more about how you’re feeling?"
+            ]
+        },
+        {
+            "tag": "family-rejection",
+            "patterns": [
+                "My family doesn’t accept my identity",
+                "I feel so hurt by my family’s rejection",
+                "It’s hard to be myself when my family disapproves"
+            ],
+            "responses": [
+                "Family rejection is painful, and I’m sorry you’re going through this. I’m here for you.",
+                "You deserve acceptance for who you are. Let’s talk about how you’re feeling.",
+                "It’s hard when loved ones don’t understand. Would you like to share more about this?"
+            ]
+        },
+        {
+            "tag": "intersectional-fatigue",
+            "patterns": [
+                "Dealing with racism and sexism together is exhausting",
+                "I feel like I’m always fighting battles on multiple fronts",
+                "Intersectional discrimination drains me"
+            ],
+            "responses": [
+                "Facing multiple forms of discrimination is incredibly challenging. I’m here to support you.",
+                "Your experiences are valid, and I’m here to listen. Would you like to share more?",
+                "Let’s talk about how these challenges are affecting you. You don’t have to face them alone."
+            ]
+        },
+        {
+            "tag": "accessibility-barriers",
+            "patterns": [
+                "I feel excluded because places aren’t accessible to me",
+                "It’s so hard to navigate spaces that aren’t designed for my needs",
+                "I’m tired of fighting for basic accessibility"
+            ],
+            "responses": [
+                "Accessibility should be a right, not a fight. Would you like to talk about this?",
+                "Your frustration is valid, and I’m here to listen. Let’s discuss how you feel.",
+                "You deserve spaces that accommodate your needs. How can I support you today?"
+            ]
+        },
+       {
+            "tag": "racial-bias-experience",
+            "patterns": [
+                "I was treated differently today because of my skin color",
+                "It’s so frustrating when people assume things about me just because of how I look",
+                "Someone made a racist comment to me, and I didn’t know how to respond"
+            ],
+            "responses": [
+                "That sounds really upsetting. Do you want to talk more about what happened?",
+                "I’m sorry you experienced that. It’s not okay to be treated like that.",
+                "You don’t deserve to be judged like that. Let’s unpack what’s on your mind."
+            ]
+        },
+        {
+            "tag": "religious-prejudice",
+            "patterns": [
+                "I feel like people judge me for my faith before they even get to know me",
+                "It’s exhausting explaining my religion to people all the time",
+                "Someone made a joke about my religion, and it really hurt"
+            ],
+            "responses": [
+                "That must feel so draining. Would you like to share more about it?",
+                "I’m here to listen. How did that comment make you feel?",
+                "It’s hard when people don’t respect your beliefs. Let’s talk about it."
+            ]
+        },
+        {
+            "tag": "sexual-orientation-doubt",
+            "patterns": [
+                "I’m not sure if I’m ready to come out yet",
+                "I feel conflicted about my sexual orientation, and it’s confusing",
+                "What if people reject me for being who I am?"
+            ],
+            "responses": [
+                "It’s okay to take your time. Your journey is personal, and I’m here for you.",
+                "Figuring things out can be tough, but you’re not alone in this.",
+                "You deserve love and acceptance, no matter what. Let’s talk it through."
+            ]
+        },
+        {
+            "tag": "gender-dysphoria",
+            "patterns": [
+                "I hate looking in the mirror because it doesn’t feel like me",
+                "Sometimes I feel like I’m trapped in the wrong body",
+                "I can’t stand when people use the wrong pronouns for me"
+            ],
+            "responses": [
+                "That sounds really hard. How can I help you feel more at ease?",
+                "Your feelings are completely valid. Would you like to share more about this?",
+                "You deserve to be seen for who you are. Let’s talk about what’s bothering you."
+            ]
+        },
+        {
+            "tag": "disability-challenges",
+            "patterns": [
+                "I feel invisible when people ignore my needs",
+                "Sometimes I just want to be treated like everyone else",
+                "I hate having to constantly explain my disability to people"
+            ],
+            "responses": [
+                "That sounds really exhausting. I’m here to listen if you want to talk.",
+                "You deserve to be respected and understood. Let’s unpack this together.",
+                "It’s not fair that you have to fight for basic understanding. How are you feeling right now?"
+            ]
+        },
+        {
+            "tag": "fear-of-discrimination",
+            "patterns": [
+                "I’m scared of applying for jobs because I think they’ll reject me for who I am",
+                "Sometimes I feel like I have to hide parts of myself to be accepted",
+                "I don’t feel safe being open about my identity"
+            ],
+            "responses": [
+                "That’s a heavy burden to carry. Let’s talk about how we can ease it.",
+                "You shouldn’t have to hide who you are to feel safe. I’m here for you.",
+                "Your identity is important, and you deserve a space where you can be yourself. Let’s discuss what’s on your mind."
+            ]
+        },
+        {
+            "tag": "chronic-pain-isolation",
+            "patterns": [
+                "Living with chronic pain makes me feel so alone",
+                "No one understands what it’s like to hurt all the time",
+                "I feel like I can’t even explain my pain to people anymore"
+            ],
+            "responses": [
+                "I’m sorry you’re feeling this way. Chronic pain can be so isolating.",
+                "Your pain is valid, even if others don’t understand it. Let’s talk about it.",
+                "You don’t have to go through this alone. How are you holding up today?"
+            ]
+        },
+        {
+            "tag": "intersectional-struggles",
+            "patterns": [
+                "I feel like my experiences as a queer person of color are so unique that no one gets it",
+                "It’s hard navigating the world when so many things seem stacked against me",
+                "I feel like I’m constantly trying to explain who I am to everyone"
+            ],
+            "responses": [
+                "Navigating multiple identities can be exhausting. I’m here to support you.",
+                "You don’t have to explain yourself to everyone. Let’s talk about what you’re feeling.",
+                "Your experiences are valid, and you’re not alone. Let’s unpack this together."
+            ]
+        },
+        {
+            "tag": "microaggressions",
+            "patterns": [
+                "I hate those subtle comments that make me feel less than",
+                "Someone said something small, but it really hurt, and I can’t stop thinking about it",
+                "Microaggressions might seem minor to some, but they’re really draining"
+            ],
+            "responses": [
+                "Microaggressions can feel so invalidating. Would you like to share what happened?",
+                "It’s okay to feel hurt by those moments. Let’s talk about it together.",
+                "Even small comments can have a big impact. How can I support you right now?"
+            ]
+        },
+        {
+            "tag": "workplace-bias",
+            "patterns": [
+                "I feel like I’m not taken seriously at work because of who I am",
+                "It’s exhausting being the only one like me in the office",
+                "I feel like I have to work twice as hard to be treated equally"
+            ],
+            "responses": [
+                "That sounds incredibly frustrating. How has this been affecting you?",
+                "You deserve to be treated fairly at work. Let’s discuss what’s going on.",
+                "It’s not fair that you feel this way. I’m here to support you through it."
+            ]
+        },
+       {
+            "tag": "adopted-cultural-identity",
+            "patterns": [
+                "As an adopted child, I feel disconnected from my birth culture",
+                "I want to learn about where I come from, but it feels overwhelming",
+                "People always ask me about my ethnicity, and I don’t know how to respond"
+            ],
+            "responses": [
+                "Navigating cultural identity as an adoptee can be tough. Let’s talk about it.",
+                "You deserve to explore your roots at your own pace. How are you feeling about this?",
+                "It’s okay not to have all the answers about your identity. I’m here to support you."
+            ]
+        },
+        {
+            "tag": "intersectional-bias",
+            "patterns": [
+                "Being a disabled queer person makes me feel like I’m fighting battles on every front",
+                "I feel like no one understands the unique struggles I face as a woman of color",
+                "My experiences as a trans person with a disability feel invisible"
+            ],
+            "responses": [
+                "Your experiences are valid, even if they feel unseen. Let’s talk about it.",
+                "Facing bias from multiple angles is exhausting. I’m here to support you.",
+                "You deserve understanding and respect. How can I help lighten this load?"
+            ]
+        },
+        {
+            "tag": "language-barriers",
+            "patterns": [
+                "I’m scared to speak up because of my accent",
+                "It’s so frustrating when people dismiss me because English isn’t my first language",
+                "I feel like my ideas aren’t taken seriously because of how I speak"
+            ],
+            "responses": [
+                "Your voice deserves to be heard, no matter your accent. Let’s talk about this.",
+                "Language barriers can be frustrating, but your ideas are important. I’m here to listen.",
+                "You have so much to offer. How can we work through these feelings together?"
+            ]
+        },
+        {
+            "tag": "public-transport-accessibility",
+            "patterns": [
+                "Using public transport in a wheelchair is such a struggle",
+                "I feel excluded when I can’t even get on a bus because it’s not accessible",
+                "The lack of ramps and elevators makes getting around so hard"
+            ],
+            "responses": [
+                "That’s incredibly frustrating. Accessibility should be a basic right. How are you feeling?",
+                "You deserve to feel independent when traveling. Let’s talk about this.",
+                "It’s unfair that public transport isn’t more inclusive. How has this been affecting you?"
+            ]
+        },
+        {
+            "tag": "pride-parade-exclusion",
+            "patterns": [
+                "I don’t feel like Pride events include people like me",
+                "It’s hard to feel part of the LGBTQ+ community when I’m disabled",
+                "I wish there were more spaces at Pride for people of color"
+            ],
+            "responses": [
+                "You deserve to feel included in these spaces. How can I support you right now?",
+                "It’s hard to feel left out of something meant to celebrate diversity. Let’s talk about it.",
+                "Your voice matters in the LGBTQ+ community. Would you like to share more about this?"
+            ]
+        },
+        {
+            "tag": "family-pressure-to-conform",
+            "patterns": [
+                "My family wants me to follow traditions I don’t believe in",
+                "I feel guilty for not living up to my family’s expectations",
+                "They say I’m letting them down because I’m not religious like them"
+            ],
+            "responses": [
+                "Balancing family expectations with your own beliefs is tough. I’m here for you.",
+                "You deserve to live authentically, even if it’s hard for your family to understand. Let’s talk.",
+                "Family pressure can feel overwhelming. How are you holding up with all this?"
+            ]
+        },
+        {
+            "tag": "unspoken-racism-in-friendship",
+            "patterns": [
+                "I feel like my friends make subtle racist jokes and expect me to laugh",
+                "It’s hard to call out microaggressions when they come from people I care about",
+                "My friends don’t understand how their comments hurt me"
+            ],
+            "responses": [
+                "It’s painful when friends don’t realize the impact of their words. Let’s talk about this.",
+                "Your feelings are valid, even if it’s hard to speak up. I’m here to support you.",
+                "Navigating these situations with friends can be tough. How can I help you work through this?"
+            ]
+        },
+        {
+            "tag": "inaccessible-medical-care",
+            "patterns": [
+                "It’s hard to explain my disability to doctors who don’t listen",
+                "I feel like my chronic illness isn’t taken seriously in the healthcare system",
+                "Medical buildings are so inaccessible it’s exhausting just to get an appointment"
+            ],
+            "responses": [
+                "Healthcare should be a safe space for everyone. I’m here to listen to your frustrations.",
+                "You deserve care that meets your needs. Would you like to share more about this?",
+                "It’s exhausting to face barriers in healthcare. Let’s unpack how this makes you feel."
+            ]
+        },
+        {
+            "tag": "rural-lgbtq-challenges",
+            "patterns": [
+                "Living in a small town as a gay person feels so isolating",
+                "There’s no LGBTQ+ community here, and I feel like I’m the only one",
+                "I can’t even be open about who I am because everyone knows each other"
+            ],
+            "responses": [
+                "Isolation can feel overwhelming. Let’s talk about how you’re coping with this.",
+                "You’re not alone, even if it feels that way. I’m here to support you.",
+                "Your feelings are valid, and it’s okay to want connection. How can I help you today?"
+            ]
+        },
+        {
+            "tag": "workplace-tokenism",
+            "patterns": [
+                "I feel like I’m just here to check a diversity box at my job",
+                "They always highlight me as the ‘example’ minority employee, and it feels fake",
+                "I want to be valued for my work, not just my identity"
+            ],
+            "responses": [
+                "That must feel so frustrating. You deserve recognition for who you are and your work.",
+                "Tokenism is hurtful. How can I help you process what’s happening?",
+                "Your value goes beyond any label. Let’s talk about how this is making you feel."
+            ]
+        },
+      {
+    "tag": "crisis-support",
+    "patterns": [
+        "I don’t want to live anymore",
+        "I feel like everything is falling apart and I can’t handle it",
+        "I’m thinking about hurting myself"
+    ],
+    "responses": [
+        "I’m so sorry to hear you’re feeling this way. You’re not alone, and help is available. Please consider reaching out to a trusted person or a crisis hotline in your area.",
+        "Your feelings are valid, and it’s important to talk to someone who can help you. Do you want me to help you find support resources?",
+        "I care about you, and your life matters. Please consider contacting a professional who can provide support."
+    ]
+},
+      {
+    "tag": "self-esteem-boost",
+    "patterns": [
+        "I don’t feel good enough",
+        "I always compare myself to others and feel like I’m failing",
+        "I hate the way I look"
+    ],
+    "responses": [
+        "It’s okay to feel this way sometimes, but remember that you are unique and valuable just as you are.",
+        "Comparisons can be so hard, but your journey is your own. Let’s focus on what makes you amazing.",
+        "You deserve to treat yourself with kindness. What’s one small thing you can appreciate about yourself today?"
+    ]
+},
+{
+    "tag": "anxiety-coping",
+    "patterns": [
+        "I feel so overwhelmed right now",
+        "I can’t stop worrying about everything",
+        "My anxiety feels out of control"
+    ],
+    "responses": [
+        "I’m here with you. Can we try some deep breathing together? Inhale for 4 seconds, hold for 4, exhale for 4.",
+        "It’s okay to feel this way. Sometimes, taking a short break or a walk can help. Would you like to try that?",
+        "Your feelings are valid. Let’s take it step by step—what’s one small thing we can focus on right now?"
+    ]
+},
+{
+    "tag": "minority-empowerment",
+    "patterns": [
+        "I feel like my voice doesn’t matter because I’m different",
+        "It’s hard being the only person like me in the room",
+        "I feel so isolated in my identity"
+    ],
+    "responses": [
+        "Your voice matters more than you know, and the world is better with your unique perspective.",
+        "Being different can feel lonely, but it also makes you strong and resilient. Let’s talk about what’s on your mind.",
+        "You are not alone, even when it feels that way. Let’s find ways to connect and empower you."
+    ]
+},
+{
+    "tag": "practical-coping-tips",
+    "patterns": [
+        "What can I do to feel better?",
+        "How do I calm down when I’m stressed?",
+        "I need help to distract myself"
+    ],
+    "responses": [
+        "Have you tried journaling your thoughts? It can help organize your mind.",
+        "A quick grounding exercise: Name 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, and 1 you can taste.",
+        "Sometimes, even a small activity like drawing, cooking, or stretching can help shift your mood. What sounds good to you?"
+    ]
+},
+{
+    "tag": "finding-community",
+    "patterns": [
+        "I feel like I don’t belong anywhere",
+        "How do I find people who understand me?",
+        "I wish I had more friends like me"
+    ],
+    "responses": [
+        "It can feel lonely, but there are communities out there for you. Have you considered joining online groups or local meetups?",
+        "Sometimes connecting starts with small steps—like finding forums or spaces where people share similar experiences.",
+        "You deserve to feel connected. Let’s brainstorm ways to help you find that support."
+    ]
+},
+{
+    "tag": "follow-up-anxiety",
+    "patterns": [
+        "I’m back",
+        "We talked about my anxiety before",
+        "Can we continue our last chat?"
+    ],
+    "responses": [
+        "Welcome back! Last time you mentioned feeling anxious before presentations. Has anything changed?",
+        "It’s good to see you again. How are you feeling about the challenges we discussed before?",
+        "I’m here to continue where we left off. What’s on your mind today?"
+    ]
+},
+{
+    "tag": "get-to-know-user",
+    "patterns": [
+        "Can you help me?",
+        "I need some support",
+        "I’m feeling lost"
+    ],
+    "responses": [
+        "Of course! Can you tell me a bit about what’s on your mind or what you’re going through?",
+        "I’m here for you. Could you share a bit about yourself or what’s troubling you?",
+        "I’d love to help. What’s been going on recently that you’d like to talk about?"
+    ]
+},
+{
+    "tag": "positive-feedback",
+    "patterns": [
+        "I’m feeling good today",
+        "I had a great day",
+        "Things are going well"
+    ],
+    "responses": [
+        "That’s wonderful to hear! What made today so great?",
+        "I’m so glad you’re feeling good. Tell me more about it!",
+        "That’s amazing! What’s been going well for you?"
+    ]
+},
+{
+    "tag": "negative-feedback",
+    "patterns": [
+        "I feel terrible",
+        "Today was really hard",
+        "I’m struggling"
+    ],
+    "responses": [
+        "I’m sorry you’re feeling this way. Do you want to share what’s been going on?",
+        "It’s okay to have tough days. How can I help you feel a bit better?",
+        "That sounds difficult. Let’s talk through what’s making today so hard."
+    ]
+},
+{
+    "tag": "cultural-isolation",
+    "patterns": [
+        "I feel so out of place in this country",
+        "People don’t understand my culture here",
+        "It’s hard to adapt to a new way of life"
+    ],
+    "responses": [
+        "It’s tough feeling out of place. What’s been the hardest part of adapting?",
+        "Your feelings are valid. Let’s talk about how you can feel more at home here.",
+        "Cultural change is challenging, but you’re not alone. What can we focus on to help?"
+    ]
+},
+{
+    "tag": "interracial-relationships",
+    "patterns": [
+        "My partner’s family doesn’t accept me because of my race",
+        "We come from such different backgrounds, and it’s causing tension",
+        "How can I navigate cultural differences in my relationship?"
+    ],
+    "responses": [
+        "Cultural and racial tensions can be challenging in relationships. Let’s unpack this together.",
+        "You deserve respect and understanding. What’s been the biggest challenge in this situation?",
+        "Navigating differences is tough, but communication is key. Let’s explore some ways to approach this."
+    ]
+},
+{
+    "tag": "microaggressions",
+    "patterns": [
+        "People say things that feel off, but I don’t know how to respond",
+        "I’m tired of subtle comments about my identity",
+        "Why do people think these small jokes are okay?"
+    ],
+    "responses": [
+        "It’s exhausting to deal with microaggressions. How do they usually make you feel?",
+        "Your feelings are valid, and it’s okay to call out hurtful comments. Would you like advice on how to respond?",
+        "Those experiences can be so frustrating. Let’s talk about how you can protect your peace."
+    ]
+},
+{
+    "tag": "disability-frustration",
+    "patterns": [
+        "People treat me like I’m invisible because of my disability",
+        "I feel like no one understands what I go through",
+        "It’s exhausting having to advocate for myself all the time"
+    ],
+    "responses": [
+        "That sounds incredibly frustrating. You deserve to be seen and heard for who you are.",
+        "It’s not fair to carry that burden alone. Would you like tips on finding support networks?",
+        "You are not alone in feeling this way. Let’s talk about how we can make things feel a bit easier."
+    ]
+},
+{
+    "tag": "intersectional-challenges",
+    "patterns": [
+        "Being both queer and a person of color is so isolating",
+        "I feel like my identities clash and no one understands",
+        "It’s hard balancing my culture with my sexuality"
+    ],
+    "responses": [
+        "Your experience is valid, and navigating multiple identities can feel overwhelming. Let’s explore how you can find balance.",
+        "It’s okay to feel this way. Your identities make you unique, and there are spaces where all of you can be accepted.",
+        "Balancing different aspects of yourself can be tough. Would you like help finding communities that celebrate all of you?"
+    ]
+},
+{
+    "tag": "social-barriers",
+    "patterns": [
+        "I feel left out of social activities because of my disability",
+        "People don’t know how to act around me, and it’s awkward",
+        "I wish I could participate more fully in life"
+    ],
+    "responses": [
+        "Social barriers can be isolating. Let’s talk about how we can make interactions more comfortable for you.",
+        "You deserve inclusion and respect. How can we work on building confidence in social settings?",
+        "It’s tough when others don’t understand. Have you considered advocacy or educating those around you?"
+    ]
+},
+{
+    "tag": "processing-microaggressions",
+    "patterns": [
+        "Someone said something that felt off, but I’m not sure if it was offensive",
+        "How do I respond to subtle racism or sexism?",
+        "I hate these small comments people make about my accent"
+    ],
+    "responses": [
+        "It can be confusing to navigate these situations. Do you want to talk through what happened?",
+        "Your feelings are valid. Even subtle comments can hurt. Let’s explore how to address them.",
+        "You’re not imagining it—microaggressions are real and impactful. Let’s figure out how you can respond."
+    ]
+},
+{
+    "tag": "coming-out-support",
+    "patterns": [
+        "I’m thinking about coming out to my family, but I’m scared",
+        "How do I tell people about my true self?",
+        "I don’t know if it’s safe to come out"
+    ],
+    "responses": [
+        "Coming out is a big step, and it’s okay to feel scared. Do you want to talk through your concerns?",
+        "It’s important to prioritize your safety and well-being. Let’s explore how you can approach this.",
+        "Your feelings matter. Coming out is personal, and there’s no right or wrong way to do it."
+    ]
+},
+{
+    "tag": "disclosing-disability",
+    "patterns": [
+        "I don’t know how to tell people about my mental health issues",
+        "Should I tell my employer about my chronic illness?",
+        "I feel judged when I mention my condition"
+    ],
+    "responses": [
+        "It’s your choice to disclose or not. Let’s discuss the pros and cons together.",
+        "Your condition doesn’t define you, but it’s okay to seek accommodations if you need them.",
+        "You deserve to be treated with respect. Would you like tips on how to approach this conversation?"
+    ]
+},
+{
+    "tag": "dealing-with-stigma",
+    "patterns": [
+        "I hate how people judge me for my religion",
+        "There’s so much stigma about being trans",
+        "I feel like everyone assumes the worst about me"
+    ],
+    "responses": [
+        "Facing stigma is incredibly hard. Let’s talk about how you can protect your mental space.",
+        "You deserve respect, no matter what others think. What can we do to focus on your well-being?",
+        "Stigma doesn’t define your worth. Let’s work on ways to navigate these challenges together."
+    ]
+},
+{
+    "tag": "identity-celebration",
+    "patterns": [
+        "I wish I wasn’t so different from everyone else",
+        "Why do I feel ashamed of who I am?",
+        "I don’t think I’ll ever fully accept myself"
+    ],
+    "responses": [
+        "Your uniqueness is your strength. Let’s explore what makes you amazing.",
+        "Shame can be heavy, but it doesn’t define you. You’re deserving of self-love and acceptance.",
+        "Self-acceptance is a journey, and it’s okay to take it step by step. I’m here to support you."
+    ]
+},
+{
+    "tag": "workplace-sexism",
+    "patterns": [
+        "I feel like I’m not taken seriously at work because I’m a woman",
+        "Men always talk over me in meetings",
+        "Why do I have to work twice as hard to prove myself?"
+    ],
+    "responses": [
+        "That’s incredibly frustrating. You deserve to be treated with respect and equality. Let’s talk about how you can navigate this.",
+        "It’s exhausting to deal with these situations. Would you like to explore strategies to assert yourself?",
+        "Your contributions matter, and it’s unfair to face this kind of bias. Let’s work on ways to address it."
+    ]
+},
+{
+    "tag": "sexist-comments",
+    "patterns": [
+        "I hate the way people comment on my appearance instead of my skills",
+        "Why do people still make sexist jokes?",
+        "I’m tired of being underestimated because I’m a woman"
+    ],
+    "responses": [
+        "It’s not okay to be treated that way. How do these comments usually make you feel?",
+        "Sexist remarks can be so hurtful. Let’s talk about how to respond to them confidently.",
+        "Your skills and value go far beyond appearances. Would you like tips on how to address this behavior?"
+    ]
+},
+{
+    "tag": "motherhood-pressure",
+    "patterns": [
+        "Everyone expects me to have children, but I’m not sure I want to",
+        "I feel judged for not being a mother",
+        "Why is there so much pressure to start a family?"
+    ],
+    "responses": [
+        "It’s your life and your choice. Let’s talk about what feels right for you.",
+        "The pressure can be overwhelming, but your worth isn’t tied to motherhood. What’s been on your mind about this?",
+        "It’s okay to question societal expectations. Would you like to explore what you truly want?"
+    ]
+},
+{
+    "tag": "motherhood-struggles",
+    "patterns": [
+        "I feel like I’m failing as a mother",
+        "It’s so hard to balance work and family",
+        "Why do I feel so alone as a mom?"
+    ],
+    "responses": [
+        "Motherhood can be incredibly challenging. You’re not alone, and you’re doing your best.",
+        "Balancing everything is tough. Would you like to explore ways to find support or manage stress?",
+        "It’s okay to feel overwhelmed. Let’s talk about what’s been the hardest part for you."
+    ]
+},
+{
+    "tag": "women-health-issues",
+    "patterns": [
+        "My doctor doesn’t take my pain seriously",
+        "I’m struggling with PCOS, and it’s affecting my mental health",
+        "Why is endometriosis so misunderstood?"
+    ],
+    "responses": [
+        "It’s frustrating when health concerns aren’t taken seriously. Let’s talk about what you’ve been experiencing.",
+        "Chronic conditions can take a toll. How are you coping with both the physical and emotional challenges?",
+        "Your pain and struggles are real. Would you like tips on advocating for yourself in medical settings?"
+    ]
+},
+{
+    "tag": "menstrual-menopause-issues",
+    "patterns": [
+        "My periods make me so anxious and exhausted",
+        "Menopause is affecting my mood and my confidence",
+        "I feel like I can’t talk to anyone about my menstrual health"
+    ],
+    "responses": [
+        "These issues are more common than you might think. Let’s talk about how they’re impacting you.",
+        "It’s okay to feel this way. Would you like advice on managing these changes?",
+        "Your health is important. Let’s explore ways to cope with these challenges."
+    ]
+},
+{
+    "tag": "toxic-relationships",
+    "patterns": [
+        "I don’t feel safe in my relationship",
+        "My partner controls everything I do",
+        "I’m scared to leave, but I know this relationship isn’t healthy"
+    ],
+    "responses": [
+        "Your safety and well-being are the most important. Would you like help finding resources or creating a plan?",
+        "It’s hard to leave a toxic relationship, but you deserve love and respect. Let’s talk about your options.",
+        "You’re not alone in this. Would you like support in finding a safe way to move forward?"
+    ]
+},
+{
+    "tag": "abuse-trauma",
+    "patterns": [
+        "I can’t stop thinking about what happened to me",
+        "I feel broken after what I’ve been through",
+        "Will I ever feel safe again?"
+    ],
+    "responses": [
+        "Healing from trauma takes time, but you are not broken. Let’s talk about how you’re feeling.",
+        "It’s okay to feel this way. You’re not alone, and recovery is possible. Would you like to explore ways to start healing?",
+        "Your experiences don’t define your worth. Let’s focus on helping you feel safe and supported."
+    ]
+},
+{
+    "tag": "gender-stereotypes",
+    "patterns": [
+        "I’m tired of being told what I should or shouldn’t do as a woman",
+        "Why do people think I can’t succeed in my field because I’m a woman?",
+        "I hate how society expects me to act a certain way"
+    ],
+    "responses": [
+        "It’s exhausting to deal with stereotypes. Let’s talk about how they’ve been affecting you.",
+        "You are capable of achieving anything. Would you like support in navigating these challenges?",
+        "Your worth isn’t defined by societal expectations. Let’s focus on your goals and strengths."
+    ]
+},
+{
+    "tag": "building-confidence",
+    "patterns": [
+        "I feel like I’m not good enough",
+        "Why is it so hard to believe in myself?",
+        "I’m scared of failing, so I don’t even try"
+    ],
+    "responses": [
+        "You are more capable than you realize. Let’s explore what’s holding you back.",
+        "Fear of failure is common, but it doesn’t define you. What’s one small step you can take?",
+        "You are enough, just as you are. Let’s work on building that belief together."
+    ]
+},
+{
+    "tag": "abortion-decision",
+    "patterns": [
+        "I’m scared about the idea of having an abortion",
+        "I don’t know if I’m making the right decision",
+        "What if I regret having an abortion?"
+    ],
+    "responses": [
+        "It’s natural to feel scared and unsure. Let’s talk through your feelings and explore what’s right for you.",
+        "This is a deeply personal decision, and whatever you choose, it should be what feels best for you.",
+        "Regret is a fear many have, but focusing on what’s right for your life now can help. How are you feeling about this choice?"
+    ]
+},
+{
+    "tag": "abortion-stigma",
+    "patterns": [
+        "I’m worried about what people will think if I have an abortion",
+        "I feel ashamed even considering abortion",
+        "Why is there so much stigma around this decision?"
+    ],
+    "responses": [
+        "Your choice is yours alone, and you don’t owe anyone an explanation. How can I support you in this?",
+        "Shame and stigma can be so heavy, but your feelings and decisions are valid. Let’s work through this together.",
+        "Society’s opinions don’t define your worth or the validity of your choices. How are you managing this pressure?"
+    ]
+},
+{
+    "tag": "post-abortion-emotions",
+    "patterns": [
+        "I feel so guilty after my abortion",
+        "Why do I feel so sad even though I know it was the right choice?",
+        "I can’t stop thinking about my abortion"
+    ],
+    "responses": [
+        "It’s okay to feel a mix of emotions. Let’s talk about what you’re experiencing and how you can process it.",
+        "Even when a decision feels right, it can still bring complex feelings. You’re not alone in this.",
+        "Your feelings are valid, no matter what they are. Would you like to explore ways to cope and heal?"
+    ]
+},
+{
+    "tag": "post-abortion-judgment",
+    "patterns": [
+        "People are making me feel horrible about my decision",
+        "I feel like I can’t talk to anyone about my abortion",
+        "Why do people judge me when they don’t know my story?"
+    ],
+    "responses": [
+        "You don’t owe anyone your story or justification. How can I support you in setting boundaries?",
+        "It’s hard to face judgment, but your decision is yours alone. Let’s focus on your healing.",
+        "You deserve compassion and understanding. Would you like tips on finding supportive spaces?"
+    ]
+},
+{
+    "tag": "abortion-procedure",
+    "patterns": [
+        "I’m so scared about the abortion procedure",
+        "What if something goes wrong during the abortion?",
+        "I don’t know what to expect during an abortion"
+    ],
+    "responses": [
+        "Feeling scared is normal. Would you like to talk through the procedure step by step?",
+        "Abortion procedures are generally safe, but it’s okay to feel anxious. How can I help ease your concerns?",
+        "Knowing what to expect can reduce fear. Would you like some resources or information on the process?"
+    ]
+},
+{
+    "tag": "abortion-pain",
+    "patterns": [
+        "I’m worried about the pain during the abortion",
+        "How do I cope with the physical recovery?",
+        "I feel so drained after my abortion"
+    ],
+    "responses": [
+        "Recovery can be challenging, both physically and emotionally. Let’s focus on ways to take care of yourself.",
+        "It’s okay to feel this way. Rest and self-care are important. Would you like advice on recovery?",
+        "Pain is temporary, but it can feel overwhelming. Let’s talk about what might help you feel better."
+    ]
+},
+{
+    "tag": "miscarriage-grief",
+    "patterns": [
+        "I feel like I lost a part of myself after my miscarriage",
+        "Why do I feel so empty after the miscarriage?",
+        "I can’t stop crying about my miscarriage"
+    ],
+    "responses": [
+        "Grief is a natural response to loss. Let’s talk about how you’re feeling and what you need right now.",
+        "It’s okay to feel this pain deeply. You’re not alone, and healing takes time. How can I support you?",
+        "Your feelings are valid, and it’s okay to mourn this loss. Let’s explore ways to process this together."
+    ]
+},
+{
+    "tag": "miscarriage-guilt",
+    "patterns": [
+        "I feel like it’s my fault I had a miscarriage",
+        "Why didn’t my body protect my baby?",
+        "I feel like I failed as a woman"
+    ],
+    "responses": [
+        "This is not your fault. Miscarriages are common, and you did nothing wrong.",
+        "It’s natural to feel this way, but you are not to blame. Let’s work through these thoughts together.",
+        "Your worth is not defined by this experience. Let’s focus on your healing and self-compassion."
+    ]
+},
+{
+    "tag": "abortion-resources",
+    "patterns": [
+        "Where can I get a safe abortion?",
+        "How do I find a trustworthy clinic?",
+        "What are my rights when it comes to abortion?"
+    ],
+    "responses": [
+        "It’s important to have accurate information. Would you like help finding safe resources near you?",
+        "Access to safe care is your right. Let’s talk about the options available to you.",
+        "I can guide you to resources that prioritize your safety and well-being. Let’s explore them together."
+    ]
+},
+{
+    "tag": "abortion-rights",
+    "patterns": [
+        "Is abortion legal where I live?",
+        "What if I face barriers to getting an abortion?",
+        "How do I advocate for my reproductive rights?"
+    ],
+    "responses": [
+        "Knowing your rights is empowering. Let’s explore the legal options in your area.",
+        "Barriers can feel overwhelming, but there are organizations that can help. Would you like to learn more?",
+        "Advocating for your rights is important. Let’s talk about how you can take action or seek support."
+    ]
+},
+{
+    "tag": "low-self-esteem",
+    "patterns": [
+        "I feel like I’m not good enough",
+        "Why do I always feel like a failure?",
+        "I can’t stop comparing myself to others"
+    ],
+    "responses": [
+        "It’s tough to feel this way, but please remember: you are enough, just as you are. Let’s unpack these feelings together.",
+        "Everyone has moments of doubt, but your worth is not defined by comparison. What makes you feel this way right now?",
+        "You have strengths and qualities that are uniquely yours. Let’s take a moment to acknowledge those, shall we?"
+    ]
+},
+{
+    "tag": "criticism",
+    "patterns": [
+        "Why does everyone always criticize me?",
+        "I feel like no one sees the good in me",
+        "I can’t handle being judged all the time"
+    ],
+    "responses": [
+        "Criticism can sting deeply, especially when it feels constant. Let’s talk about what’s been happening lately.",
+        "You are more than the opinions of others. What makes you feel most yourself?",
+        "It’s okay to feel hurt by judgment. Let’s focus on how to protect your inner peace and self-worth."
+    ]
+},
+{
+    "tag": "loneliness",
+    "patterns": [
+        "I feel so alone all the time",
+        "No one understands me",
+        "Why does it feel like I don’t belong anywhere?"
+    ],
+    "responses": [
+        "Loneliness can feel overwhelming, but you are not truly alone. I’m here to listen—what’s been on your mind?",
+        "Feeling misunderstood can be painful. Let’s explore how you can feel more connected to others.",
+        "You deserve to feel seen and valued. What’s one small way we can make today feel a bit brighter?"
+    ]
+},
+{
+    "tag": "neglected-by-friends",
+    "patterns": [
+        "I feel like my friends don’t care about me anymore",
+        "Why do I always have to reach out first?",
+        "I feel invisible to the people I care about"
+    ],
+    "responses": [
+        "It’s hard to feel overlooked by those you care about. Let’s talk about how you’re feeling and what you need from them.",
+        "Friendships can go through ups and downs. How can I help you feel more supported right now?",
+        "You deserve relationships that make you feel valued. Let’s think about what you need most in this moment."
+    ]
+},
+{
+    "tag": "identity-crisis",
+    "patterns": [
+        "I don’t know who I am anymore",
+        "I feel lost in life",
+        "Why do I feel like I’m just pretending to be someone I’m not?"
+    ],
+    "responses": [
+        "It’s okay to feel lost sometimes—it’s part of the journey. Let’s start by exploring what truly matters to you.",
+        "You are allowed to take time to discover yourself. What feels most authentic to you right now?",
+        "It’s brave to confront these questions. Let’s work together to help you feel more grounded."
+    ]
+},
+{
+    "tag": "multiple-identities",
+    "patterns": [
+        "I feel torn between my culture and the country I live in",
+        "Why do I feel like I have to hide parts of myself?",
+        "I’m struggling to balance my personal life and expectations from my family"
+    ],
+    "responses": [
+        "Navigating multiple identities can be challenging. Let’s talk about what feels most conflicting for you right now.",
+        "You are a blend of so many beautiful things, and it’s okay to take your time finding harmony. What feels most you?",
+        "It’s hard to meet everyone’s expectations. Let’s focus on what makes you feel whole and true to yourself."
+    ]
+},
+{
+    "tag": "relationship-struggles",
+    "patterns": [
+        "I feel like my partner doesn’t understand me",
+        "We keep fighting about the same things",
+        "Is it normal to feel so distant in a relationship?"
+    ],
+    "responses": [
+        "Relationships can be tricky to navigate, but your feelings matter. What’s been the hardest part lately?",
+        "Conflict can be a sign of growth if handled with care. Let’s think about how to approach this together.",
+        "It’s okay to feel distant sometimes. How can I help you reconnect with your partner?"
+    ]
+},
+{
+    "tag": "breakup",
+    "patterns": [
+        "I can’t stop thinking about my ex",
+        "Why does it hurt so much to let go?",
+        "How do I move on from someone I loved?"
+    ],
+    "responses": [
+        "Breakups are deeply painful, but healing is possible. Let’s talk about what’s been hardest for you.",
+        "It’s okay to mourn the end of a relationship. How can I help you take small steps toward moving forward?",
+        "Your feelings are valid, and it’s okay to take your time. Let’s focus on what brings you comfort and strength."
+    ]
+},
+{
+    "tag": "social-injustice",
+    "patterns": [
+        "Why is the world so unfair?",
+        "I feel helpless seeing so much inequality",
+        "I want to make a difference, but I don’t know where to start"
+    ],
+    "responses": [
+        "It’s hard to face the weight of injustice, but your desire to make a difference is powerful. Let’s explore how you can start.",
+        "The world can feel overwhelming, but even small actions can create ripples of change. What matters most to you?",
+        "Your voice and actions matter. Let’s talk about how you can channel your energy into something meaningful."
+    ]
+},
+{
+    "tag": "feeling-powerless",
+    "patterns": [
+        "What’s the point of trying if nothing ever changes?",
+        "I feel like my efforts don’t make a difference",
+        "Why do I always feel so small against the world’s problems?"
+    ],
+    "responses": [
+        "It’s natural to feel this way, but your efforts do matter, even if the results aren’t immediate. Let’s talk about what inspires you.",
+        "Change takes time, but you’re not alone in wanting to make things better. What’s one thing you can focus on right now?",
+        "The fact that you care already makes a difference. Let’s find ways to help you feel more empowered."
+    ]
+},
+{
+    "tag": "social-anxiety",
+    "patterns": [
+        "I get so nervous around people",
+        "I feel like everyone is judging me",
+        "I can’t relax when I’m in a crowd"
+    ],
+    "responses": [
+        "Social anxiety can be really overwhelming. Let’s take a deep breath together and talk about what makes you feel this way.",
+        "It’s okay to feel anxious in social situations. Let’s explore ways to make you feel more comfortable.",
+        "You don’t have to face this alone. I’m here to help you manage these feelings, one step at a time."
+    ]
+},
+{
+    "tag": "panic-attack",
+    "patterns": [
+        "I feel like I can’t breathe, my heart is racing",
+        "Everything feels overwhelming and I don’t know how to calm down",
+        "What’s happening to me when I have a panic attack?"
+    ],
+    "responses": [
+        "Panic attacks can feel terrifying, but you’re safe in this moment. Let’s focus on grounding techniques to help you breathe and calm down.",
+        "It’s okay to feel out of control right now. Would you like me to guide you through a calming exercise?",
+        "Remember, panic attacks are temporary. Let’s take it step by step and work through this together."
+    ]
+},
+{
+    "tag": "self-care",
+    "patterns": [
+        "I don’t have time for self-care",
+        "I feel guilty when I take time for myself",
+        "What are some small things I can do for my mental health?"
+    ],
+    "responses": [
+        "Self-care is so important, even if it’s just small moments. What’s one thing you could do for yourself today?",
+        "Taking time for yourself doesn’t mean being selfish—it means you’re taking care of your needs. How can I support you in making time for yourself?",
+        "Self-care can be as simple as breathing deeply or enjoying a cup of tea. What would feel like a small act of kindness for yourself right now?"
+    ]
+},
+{
+    "tag": "stress",
+    "patterns": [
+        "I’m feeling so overwhelmed with everything",
+        "I don’t know how to handle all the stress I have",
+        "How do I manage my stress and still get everything done?"
+    ],
+    "responses": [
+        "Stress can be really draining, but it’s possible to manage it. Let’s talk about what’s weighing on you the most right now.",
+        "Taking a moment to pause and breathe can help. How about we explore some stress-relief techniques together?",
+        "It’s okay to feel overwhelmed sometimes. Let’s break things down and find a way to tackle them one step at a time."
+    ]
+},
+{
+    "tag": "moving-to-a-new-place",
+    "patterns": [
+        "I’m so scared about moving to a new city",
+        "How do I adjust to living in a new country?",
+        "Everything is so different here and I don’t know where to start"
+    ],
+    "responses": [
+        "Starting fresh in a new place can be both exciting and intimidating. How are you adjusting to your new environment?",
+        "It’s normal to feel overwhelmed, but this is a huge opportunity to grow. Let’s focus on making your new place feel more like home.",
+        "You’re not alone in this transition. Let’s explore ways to help you feel more connected and at ease in your new surroundings."
+    ]
+},
+{
+    "tag": "career-change",
+    "patterns": [
+        "I’m scared I won’t succeed in this new job",
+        "Changing careers feels so risky",
+        "What if I regret leaving my old job?"
+    ],
+    "responses": [
+        "Career changes are scary, but they’re also an opportunity for growth. Let’s talk about what excites you about this new chapter.",
+        "It’s natural to feel uncertain, but remember, you’re taking a bold step toward something better. What can I do to help you feel more confident?",
+        "Regret is a common fear, but it doesn’t define your path. Let’s focus on the positive aspects of your new journey."
+    ]
+},
+{
+    "tag": "parental-relationships",
+    "patterns": [
+        "My parents don’t understand me",
+        "I feel like they’re always criticizing me",
+        "How can I talk to my parents without feeling judged?"
+    ],
+    "responses": [
+        "It can be hard when you feel misunderstood by your parents. Let’s talk about how you can express yourself more clearly to them.",
+        "Parental relationships can be challenging, but it’s important to be kind to yourself. How can I help you approach this situation?",
+        "Sometimes, setting boundaries and being honest can open the door to better communication. What would you like to say to your parents right now?"
+    ]
+},
+{
+    "tag": "difficult-relationships-with-children",
+    "patterns": [
+        "My child doesn’t listen to me",
+        "I’m struggling to connect with my kid",
+        "Why does it feel like I’m failing as a parent?"
+    ],
+    "responses": [
+        "Parenting can be challenging, but you’re doing your best. Let’s talk about what’s making it difficult right now.",
+        "Every parent goes through rough patches. What do you feel would help improve your relationship with your child?",
+        "Your love and effort matter so much. Let’s focus on understanding what’s at the root of these difficulties."
+    ]
+},
+{
+    "tag": "supporting-a-friend",
+    "patterns": [
+        "My friend is going through a tough time, and I don’t know how to help",
+        "I wish I could do more for my friend who’s struggling",
+        "How can I be a better support for someone who is feeling low?"
+    ],
+    "responses": [
+        "It’s wonderful that you want to be there for your friend. Sometimes just listening is the most important thing you can do.",
+        "Supporting a friend can be tough, but your care and presence are invaluable. How do you think your friend would feel most supported?",
+        "Sometimes the best way to help is to offer your support without trying to fix everything. Would you like tips on how to do that?"
+    ]
+},
+{
+    "tag": "supporting-loss",
+    "patterns": [
+        "My friend just lost someone, and I don’t know what to say",
+        "I feel helpless when my friend is grieving",
+        "How can I be there for someone who is mourning?"
+    ],
+    "responses": [
+        "Grief can be hard to talk about, but your presence means so much. Sometimes, just being there is all your friend needs.",
+        "It’s okay if you don’t have all the answers. What matters is that your friend feels supported and loved by you.",
+        "Loss is one of the hardest things to face, but your empathy and care are powerful. Let’s think about how you can offer comfort in this difficult time."
+    ]
+},
+{
+    "tag": "racial-discrimination",
+    "patterns": [
+        "I feel like I’m treated differently because of my race",
+        "Why do people judge me based on the color of my skin?",
+        "How can I cope with racial discrimination?"
+    ],
+    "responses": [
+        "It’s painful to experience discrimination, and I’m so sorry you’re facing this. Would you like to talk more about what’s been happening?",
+        "No one should feel treated unfairly because of their race. I’m here for you if you want to share more about your experience.",
+        "You are valued and deserve to be treated with dignity. Let’s explore ways to protect your mental health in situations like this."
+    ]
+},
+{
+    "tag": "gender-discrimination",
+    "patterns": [
+        "I feel like my opinions are ignored because I’m a woman",
+        "Why do people treat me differently because of my gender?",
+        "How do I deal with gender inequality at work?"
+    ],
+    "responses": [
+        "Gender discrimination is unfortunately still prevalent, and it can be draining. You are worthy of being heard and respected.",
+        "You have every right to be treated equally. Let’s talk about ways to empower you in these situations.",
+        "It’s difficult to face gender bias, but it’s important to stand up for yourself. How can I help you regain your confidence?"
+    ]
+},
+{
+    "tag": "substance-abuse",
+    "patterns": [
+        "I’ve been struggling with addiction and I don’t know where to turn",
+        "I can’t stop using, even though I want to",
+        "How do I start recovering from my addiction?"
+    ],
+    "responses": [
+        "Taking the first step toward recovery is incredibly brave. I’m here to support you every step of the way.",
+        "Addiction can feel like an unbreakable cycle, but recovery is possible. Let’s talk about how you can start your journey toward healing.",
+        "You’re not alone in this. There’s no shame in seeking help, and you can absolutely overcome this."
+    ]
+},
+{
+    "tag": "internet-addiction",
+    "patterns": [
+        "I can’t stop scrolling through my phone",
+        "I feel like I’m addicted to social media",
+        "I’ve lost so much time online, I don’t know how to stop"
+    ],
+    "responses": [
+        "It’s easy to get lost in the online world, but it’s possible to break free. Let’s talk about setting healthy boundaries for yourself.",
+        "Addiction to social media can take a toll on your mental health. What are some things you’d like to change about your habits?",
+        "Taking a break from the internet can feel difficult, but it’s a huge step toward regaining control of your life."
+    ]
+},
+{
+    "tag": "unwanted-pregnancy",
+    "patterns": [
+        "I don’t know what to do, I’m pregnant and I’m not ready",
+        "I feel scared and overwhelmed about this pregnancy",
+        "I can’t talk to anyone about this, I don’t know where to turn"
+    ],
+    "responses": [
+        "I’m so sorry you’re feeling this way. You don’t have to make any decisions alone. Let’s talk about your options and what support you need.",
+        "It’s okay to feel uncertain in this situation. You have choices and resources that can help you navigate this difficult time.",
+        "Take a deep breath, and remember that your feelings are valid. Let’s explore what would make you feel supported right now."
+    ]
+},
+{
+    "tag": "parenting-teenagers",
+    "patterns": [
+        "I don’t know how to communicate with my teenager",
+        "My child is rebelling against everything I say",
+        "How can I help my teenager without making things worse?"
+    ],
+    "responses": [
+        "Adolescence can be a turbulent time for both parents and teens. Let’s explore ways to bridge the gap and improve communication.",
+        "It’s normal for teens to push boundaries, but that doesn’t mean you’re failing as a parent. What’s been most challenging for you?",
+        "Connecting with a teenager can be tough, but it’s possible to create a safe space for open communication. How can I help you with that?"
+    ]
+},
+{
+    "tag": "academic-anxiety",
+    "patterns": [
+        "I’m constantly worried about my grades",
+        "What if I fail my exams? I’m not good enough",
+        "How do I cope with the pressure to succeed?"
+    ],
+    "responses": [
+        "It’s normal to feel stressed about school, but remember that your worth is not defined by your grades. Let’s talk about managing this pressure.",
+        "You don’t have to carry all this stress alone. How can we break down the pressure and tackle it step by step?",
+        "Failure is not the end—it’s part of the learning process. You can do this, and I’m here to help you manage the anxiety."
+    ]
+},
+{
+    "tag": "academic-loneliness",
+    "patterns": [
+        "I feel so isolated at school",
+        "I don’t fit in at university",
+        "It’s hard to make friends in a new school"
+    ],
+    "responses": [
+        "It’s tough to feel alone when you’re trying to succeed in school. Let’s talk about what’s making you feel isolated.",
+        "You deserve to feel connected and supported, even in a new environment. What’s one small step you could take to reach out to others?",
+        "Remember, you’re not the only one who feels this way. Let’s explore how you can build a sense of belonging."
+    ]
+},
+{
+    "tag": "holiday-loneliness",
+    "patterns": [
+        "I feel so lonely during the holidays",
+        "The holidays remind me of what I don’t have",
+        "I can’t get into the holiday spirit this year"
+    ],
+    "responses": [
+        "The holidays can be really hard, especially if you’re feeling alone. Let’s talk about how you can take care of yourself during this time.",
+        "It’s okay if you’re not feeling festive. How can I support you in finding peace and comfort during the holidays?",
+        "You don’t have to celebrate in the traditional way. What would make you feel a sense of peace and connection this season?"
+    ]
+},
+{
+    "tag": "divorce-separation",
+    "patterns": [
+        "I’m going through a divorce and I feel lost",
+        "I don’t know how to move on after a breakup",
+        "How do I rebuild my life after a separation?"
+    ],
+    "responses": [
+        "A breakup or divorce can shake you to your core. You’re not alone in this, and we can take it one step at a time as you heal.",
+        "It’s okay to grieve the loss of a relationship, even if it was the right decision. Let’s talk about how you can move forward at your own pace.",
+        "You are worthy of love and peace. Let’s explore how to start rebuilding your life and taking care of your emotional needs."
+    ]
+},
+{
+    "tag": "anger-frustration",
+    "patterns": [
+        "I get so angry all the time",
+        "I don’t know how to control my anger",
+        "I feel frustrated with everything around me"
+    ],
+    "responses": [
+        "It’s okay to feel angry, but it’s important to express that emotion in a healthy way. Would you like some tips on how to manage anger?",
+        "Anger often hides deeper emotions like hurt or frustration. Let’s talk about what’s really bothering you and find ways to release that anger safely.",
+        "I understand that it can be difficult to manage anger. Let’s explore some calming techniques to help you regain control of your emotions."
+    ]
+},
+{
+    "tag": "sadness-depression",
+    "patterns": [
+        "I feel so down and can’t shake it off",
+        "I’m so tired, I don’t know how to get out of this sadness",
+        "I don’t think I can ever feel happy again"
+    ],
+    "responses": [
+        "It sounds like you’re going through a really tough time. Your feelings are valid, and I’m here to listen and support you.",
+        "Sadness can be overwhelming, but it doesn’t last forever. Let’s talk about what might help lift your spirits, even in small ways.",
+        "You are not alone in feeling this way. It’s okay to take things one day at a time. What’s one thing that might bring you comfort right now?"
+    ]
+},
+{
+    "tag": "pregnancy-anxiety",
+    "patterns": [
+        "I’m so scared about becoming a mother",
+        "I don’t feel ready for this pregnancy",
+        "What if I’m not a good mother?"
+    ],
+    "responses": [
+        "It’s normal to feel anxious during pregnancy. Becoming a mother is a huge life change. Let’s talk about what’s worrying you most.",
+        "You don’t have to have all the answers now. What’s important is that you care about being the best mother you can be.",
+        "You are already doing your best. It’s okay to feel uncertain, and I’m here to help you explore your thoughts and feelings."
+    ]
+},
+{
+    "tag": "fear-of-childbirth",
+    "patterns": [
+        "I’m terrified of giving birth",
+        "What if something goes wrong during labor?",
+        "I don’t know how I can handle the pain of childbirth"
+    ],
+    "responses": [
+        "It’s completely normal to feel scared about childbirth. Let’s talk about what specifically worries you, and I can help you feel more prepared.",
+        "Childbirth is an intense experience, but you’re stronger than you think. How can I help you feel more confident about the process?",
+        "There are many ways to prepare for childbirth, both physically and mentally. Let’s discuss some techniques that can help you manage fear and pain."
+    ]
+},
+{
+    "tag": "physical-chronic-disability",
+    "patterns": [
+        "It’s hard to live with my disability",
+        "I feel limited by my chronic condition",
+        "How do I cope with my physical disability every day?"
+    ],
+    "responses": [
+        "Living with a disability can be incredibly challenging, but you are strong and resilient. Let’s talk about ways to manage the difficulties you face.",
+        "It’s okay to feel frustrated by your condition. How can I support you in finding ways to make life a little easier day by day?",
+        "You are capable, and your worth is not defined by your physical limitations. Let’s explore the resources and tools that might help you."
+    ]
+},
+{
+    "tag": "fear-of-future",
+    "patterns": [
+        "I’m terrified about what’s going to happen in the future",
+        "I don’t know what I’m doing with my life",
+        "Everything feels so uncertain, I don’t know where I’m going"
+    ],
+    "responses": [
+        "The future can be scary, especially when everything feels uncertain. Let’s talk about what’s making you feel overwhelmed, so we can tackle it together.",
+        "It’s okay not to have everything figured out. Sometimes, taking things one step at a time can help ease that fear.",
+        "You don’t have to have all the answers right now. Let’s explore ways to cope with uncertainty and focus on what you can control."
+    ]
+},
+{
+    "tag": "racial-discrimination-workplace",
+    "patterns": [
+        "I feel like I’m being treated differently at work because of my race",
+        "I’m passed over for promotions because of my ethnicity",
+        "How do I handle racial discrimination in the workplace?"
+    ],
+    "responses": [
+        "I'm so sorry you're experiencing this. You deserve respect and equality at work. Would you like to talk about specific instances and how we can approach this?",
+        "Workplaces should be safe spaces for everyone. If you feel comfortable, addressing this with HR could help, but I’m here to guide you through other options if you prefer.",
+        "You are deserving of fair treatment and opportunities. Let’s explore ways to cope with this situation and protect your mental and emotional well-being."
+    ]
+},
+{
+    "tag": "racial-microaggressions",
+    "patterns": [
+        "People make subtle racist comments and I don’t know how to respond",
+        "It feels like people are always making jokes about my race",
+        "I don’t know how to deal with microaggressions"
+    ],
+    "responses": [
+        "Microaggressions are harmful, even when they seem small. It’s important to protect your peace, and I’m here to help you navigate these situations.",
+        "It can be exhausting to constantly face microaggressions. Would you like to talk about strategies to assert yourself or address these comments?",
+        "Your feelings are valid, and it’s okay to feel upset. Let’s discuss how you can respond in a way that protects your boundaries while keeping your peace."
+    ]
+},
+{
+    "tag": "gender-identity-struggles",
+    "patterns": [
+        "I’m struggling to understand my gender identity",
+        "I don’t feel like I fit into the gender norms",
+        "I’m scared to explore my gender identity"
+    ],
+    "responses": [
+        "It’s okay to be unsure about your gender identity. Take your time to explore who you are, and know that you are supported here.",
+        "You are not alone in this journey. Many people have felt the same way, and they’ve come to embrace who they truly are. Would you like to talk about your feelings or fears?",
+        "There’s no rush to define yourself. Let’s focus on creating a safe space for you to express yourself freely, without fear of judgment."
+    ]
+},
+{
+    "tag": "coming-out-struggles",
+    "patterns": [
+        "I don’t know how to come out to my family",
+        "I’m scared to tell my friends about my sexuality",
+        "What if people reject me when I come out?"
+    ],
+    "responses": [
+        "Coming out is a deeply personal decision. You deserve to do it when you're ready, and on your own terms. Would you like to talk about what’s holding you back?",
+        "It’s natural to fear rejection, but your true friends and family who love you will want to support you. Let’s discuss ways to approach this conversation.",
+        "Remember, you are loved just as you are. Coming out can be a difficult process, but you deserve to be authentic and true to yourself."
+    ]
+},
+{
+    "tag": "mental-disability-acceptance",
+    "patterns": [
+        "I feel ashamed of my mental health struggles",
+        "I don’t know how to talk about my mental illness with others",
+        "I’m afraid people will judge me if they find out about my condition"
+    ],
+    "responses": [
+        "Your mental health is nothing to be ashamed of. Many people face similar struggles, and there’s no shame in seeking support.",
+        "It can be difficult to open up about mental health, but talking to the right people can make a world of difference. Would you like some guidance on starting that conversation?",
+        "You deserve compassion, both from others and yourself. Let’s explore how you can start embracing your mental health as part of your journey."
+    ]
+},
+{
+    "tag": "disability-resources-access",
+    "patterns": [
+        "I don’t know where to find help for my physical disability",
+        "I need support with accessibility issues",
+        "What resources are available for people with mobility challenges?"
+    ],
+    "responses": [
+        "There are many resources out there, and you’re not alone. Let me help you find the support you need based on your specific needs.",
+        "Access to proper resources is crucial for your well-being. If you’re interested, I can guide you through some services or tools that might help you.",
+        "You deserve to have your needs met. Let’s work together to explore the best ways to access help for your physical challenges."
+    ]
+},
+{
+    "tag": "religious-discrimination-workplace",
+    "patterns": [
+        "I’m treated unfairly at work because of my religious beliefs",
+        "People make fun of my religion at the office",
+        "How can I deal with religious discrimination at work?"
+    ],
+    "responses": [
+        "Everyone deserves to feel respected, no matter their religion. I’m so sorry you’re going through this. Let’s talk about how to handle these situations with confidence.",
+        "Workplaces should be inclusive and respectful of all beliefs. If you’re comfortable, we can explore strategies to address this issue with HR or your coworkers.",
+        "Your religion is a vital part of who you are. Let’s figure out ways to protect your rights and maintain your mental well-being in these difficult situations."
+    ]
+},
+{
+    "tag": "religious-isolation",
+    "patterns": [
+        "I feel so alone because of my religious beliefs",
+        "I’m the only one in my community with my faith",
+        "How do I cope with feeling isolated because of my religion?"
+    ],
+    "responses": [
+        "It’s tough to feel isolated, but remember, your faith is something deeply personal and valuable. You don’t have to go through this alone.",
+        "There are communities out there who share your beliefs, even if they’re not close by. Would you like help finding online groups or local resources?",
+        "Being true to your faith is an act of strength, even when it feels lonely. Let’s talk about how we can make you feel more connected to your community."
+    ]
+},
+{
+    "tag": "gender-transition-struggles",
+    "patterns": [
+        "I’m struggling with my gender transition",
+        "I don’t know how to tell people I’m transitioning",
+        "I feel like I’m losing myself during this process"
+    ],
+    "responses": [
+        "Transitioning can be incredibly challenging, but you are brave for taking this journey. Let’s talk about what’s making this process difficult for you.",
+        "Your identity is yours to define, and this is your personal journey. If you want, we can discuss ways to feel more confident during your transition.",
+        "It’s okay to feel lost at times. I’m here for you, and together we can explore ways to reconnect with yourself and embrace who you are becoming."
+    ]
+},
+{
+    "tag": "lgbt-family-marginalization",
+    "patterns": [
+        "My family doesn’t accept my sexuality",
+        "I feel rejected by my family because I’m LGBTQ+",
+        "How do I deal with my family’s disapproval of my identity?"
+    ],
+    "responses": [
+        "You are worthy of love and acceptance, no matter who you are. It’s painful when family doesn’t support you, and I’m here to listen and help you navigate this.",
+        "It’s difficult when those closest to us don’t accept us. Let’s talk about your options for creating boundaries while protecting your mental health.",
+        "Family can be hard, but your chosen family can be just as important. Would you like some support in finding others who can give you the love and acceptance you deserve?"
+    ]
+},
+{
+    "tag": "emotional-support-general",
+    "patterns": [
+        "I’m feeling really down today",
+        "I just can’t shake this bad mood",
+        "I feel like everything is going wrong"
+    ],
+    "responses": [
+        "I’m really sorry you’re feeling this way right now. It’s completely okay to have days like this. Would you like to talk about what’s bothering you?",
+        "It sounds like you're carrying a lot. Just remember, it’s okay to not be okay sometimes. Let’s take a deep breath together, and if you want to share more, I’m here for you.",
+        "You're going through a tough time, but I believe in you. Let's take small steps together. Can you think of something, no matter how small, that made you smile today?"
+    ]
+},
+{
+    "tag": "self-compassion-support",
+    "patterns": [
+        "I feel like I'm not good enough",
+        "I can’t seem to do anything right",
+        "I’m just not happy with myself right now"
+    ],
+    "responses": [
+        "You are more than enough, just as you are. Nobody is perfect, and that’s okay. Be kind to yourself—you're doing the best you can, and that's worth so much.",
+        "It's okay to have those moments of doubt, but don’t let them define you. I see your strength, even when you don’t feel it yourself. What’s one thing you're proud of today?",
+        "You’re deserving of love and kindness, especially from yourself. Sometimes we are our toughest critics, but you don’t have to carry that burden alone. You are enough."
+    ]
+},
+{
+    "tag": "mood-lift-after-bad-day",
+    "patterns": [
+        "Today has been such a bad day",
+        "Everything went wrong today",
+        "I just want to forget about today"
+    ],
+    "responses": [
+        "I hear you—it’s been a tough day. But even after the hardest days, there’s always a new beginning tomorrow. Let’s focus on something small that you’re grateful for today.",
+        "It’s okay to feel like this after a bad day. But I promise you, tomorrow is a new day, and you have the chance to start fresh. What would make you feel a little better right now?",
+        "I know today might feel heavy, but remember: tough days don’t last forever. You’ve made it through every hard day so far, and that takes so much strength. You're resilient, and I believe in you."
+    ]
+},
+{
+    "tag": "relaxation-support",
+    "patterns": [
+        "I can’t stop thinking about everything",
+        "My mind is racing and I can’t relax",
+        "I feel so stressed out, I don’t know how to calm down"
+    ],
+    "responses": [
+        "It sounds like your mind is really busy right now. Let’s try to slow things down together. Take a deep breath in... and let it out slowly. Can you feel your body starting to relax?",
+        "Stress can be overwhelming, but you can take small moments to regain peace. How about we take a minute to close our eyes, breathe deeply, and just focus on the present moment?",
+        "It’s hard to relax when there’s so much on your mind, but you deserve to feel at peace. Let’s focus on one thing you can do right now to ease the tension, even just for a moment."
+    ]
+},
+{
+    "tag": "positive-reflection-motivation",
+    "patterns": [
+        "I don’t know how I’ll get through this",
+        "I don’t think I can do it",
+        "I’m feeling so unmotivated lately"
+    ],
+    "responses": [
+        "I know it might feel overwhelming right now, but take a moment to think about how far you’ve come. You’ve faced challenges before, and you can do it again. One step at a time.",
+        "You are stronger than you think. Even if you can’t see it right now, your efforts are moving you forward. You’ve already accomplished so much, and I know you’ll keep pushing through.",
+        "It’s okay to feel unmotivated at times, but remember: each day is a new chance to move closer to your goals. I believe in your strength and your ability to overcome whatever comes your way."
+    ]
+},
+{
+    "tag": "relationship-difficulties",
+    "patterns": [
+        "I feel distant from my partner",
+        "I don’t know how to fix things with my friend",
+        "I’m struggling to communicate with someone I care about"
+    ],
+    "responses": [
+        "Relationships can be really challenging, but communication is key. Sometimes it helps to take a step back and talk openly about how you’re feeling. Would you like help figuring out what to say?",
+        "It’s painful when we feel disconnected from people we care about. Let’s work on ways to express your feelings honestly and listen with compassion. You deserve healthy, fulfilling relationships.",
+        "You’re not alone in this. Many people go through ups and downs in relationships. Would you like to talk more about what’s been going on and how we can approach it together?"
+    ]
+},
+{
+    "tag": "loneliness",
+    "patterns": [
+        "I feel so alone",
+        "I don’t have anyone to talk to",
+        "I’m just feeling isolated lately"
+    ],
+    "responses": [
+        "I’m really sorry you’re feeling this way. Loneliness can be so heavy. You don’t have to go through this alone—I'm here to listen and talk with you.",
+        "Sometimes life can make us feel isolated, but it’s important to remember that you matter, and your feelings are valid. Would you like to share more about what’s been making you feel so alone?",
+        "I wish I could be there in person to give you a hug. But in this moment, I’m here, and I want to make sure you know you’re not alone in how you feel."
+    ]
+},
+{
+    "tag": "negative-thoughts",
+    "patterns": [
+        "I can’t stop thinking negatively",
+        "My thoughts are all negative, and I can’t break free",
+        "I’m overwhelmed by negative thoughts"
+    ],
+    "responses": [
+        "It’s tough when negative thoughts keep swirling around. Let’s take a moment to focus on something positive together. Can you think of one small thing that brings you joy?",
+        "Negative thoughts can sometimes take over, but you have the power to shift your focus. Let’s work on challenging those thoughts, one step at a time, and find a bit of peace together.",
+        "You don’t have to let those thoughts define you. Let’s try to reframe them with kindness and self-compassion. You are strong, and you are capable of overcoming these feelings."
+    ]
+},
+{
+    "tag": "general-despair",
+    "patterns": [
+        "I just feel like giving up",
+        "I don’t know if I can keep going",
+        "Nothing seems worth it anymore"
+    ],
+    "responses": [
+        "I’m really sorry you’re feeling this way. It’s completely okay to have these moments, but please know that it’s not the end of your journey. You're not alone in this.",
+        "It’s hard when you feel overwhelmed, but sometimes the best thing you can do is take a small step forward, even if it’s just focusing on the next moment. You’ve made it this far, and you have the strength to keep going.",
+        "I know it’s tough right now, but your journey isn’t over. Even in moments of darkness, there is light ahead. Can we talk about something that brings you comfort, no matter how small?"
+    ]
+},
+{
+    "tag": "life-frustration",
+    "patterns": [
+        "I’m not happy with where my life is right now",
+        "I feel stuck and frustrated with everything",
+        "I thought life would be different at this point"
+    ],
+    "responses": [
+        "I hear your frustration, and I want you to know it’s okay to feel this way. Life is full of unexpected twists, but your story isn’t finished yet. There’s still so much possibility ahead.",
+        "It’s easy to feel stuck when things don’t go the way we expect. But sometimes, even the smallest changes can lead to new opportunities. What would make you feel a little better, even in this moment?",
+        "You’re not alone in feeling this way. Many people go through periods where they question their path, but you have the power to redirect your journey. You’re worthy of a fulfilling and meaningful life."
+    ]
+},
+{
+    "tag": "future-anxiety",
+    "patterns": [
+        "I’m really scared about what the future holds",
+        "I don’t know what’s going to happen to me",
+        "I feel like the future is uncertain and I’m afraid"
+    ],
+    "responses": [
+        "The future can feel overwhelming, and it’s completely okay to be afraid. But remember, you don’t have to face it all at once. Let’s focus on what you can control today.",
+        "It’s normal to feel uncertain about the future, but you don’t have to figure everything out right now. Take it one day at a time, and trust that things will unfold as they’re meant to.",
+        "You’re strong enough to navigate whatever comes your way. Let’s take a deep breath and focus on what’s right in front of you, instead of worrying about the unknown."
+    ]
+},
+{
+    "tag": "body-image-struggles",
+    "patterns": [
+        "I hate the way I look",
+        "I feel so self-conscious about my body",
+        "I don’t feel good in my own skin"
+    ],
+    "responses": [
+        "I’m so sorry you're feeling this way. Your body is a beautiful part of who you are, and it deserves love and care. You don’t need to be perfect to be worthy of love.",
+        "It’s hard when you feel disconnected from your body. But remember, you are more than how you look—your worth comes from your heart and your soul. Would you like to talk about how we can nurture self-love?",
+        "I know it can be tough when you're struggling with body image, but please know that you are deserving of compassion, especially from yourself. Let's work together to embrace yourself, exactly as you are."
+    ]
+},
+{
+    "tag": "emotional-fatigue",
+    "patterns": [
+        "I’m so emotionally exhausted",
+        "I just don’t have the energy to keep going",
+        "I feel drained all the time"
+    ],
+    "responses": [
+        "It’s really hard to keep going when you feel emotionally drained. Remember, it’s okay to take a break and give yourself permission to rest. You’ve been doing your best, and that’s enough.",
+        "When you’re emotionally tired, sometimes the best thing you can do is slow down and take a moment for yourself. Let’s find a way to give your mind and heart the rest they need.",
+        "You’ve been carrying a lot, and it’s okay to feel exhausted. Let’s think about what brings you peace and how you can give yourself permission to recharge."
+    ]
+},
+{
+    "tag": "social-isolation",
+    "patterns": [
+        "I don’t feel like I belong anywhere",
+        "I’m struggling to connect with people",
+        "I feel so isolated from everyone"
+    ],
+    "responses": [
+        "I’m really sorry you feel this way. Social isolation can be so tough, but I want you to know that your feelings matter, and there are people who would be grateful to connect with you. Let’s explore ways to find those connections.",
+        "It can be hard when we feel disconnected, but sometimes the smallest step, like reaching out to someone, can make a difference. You are deserving of connection and support, no matter how far away it feels right now.",
+        "You are never alone in feeling isolated. Many people experience this, and it doesn’t define who you are. Let’s explore ways to make you feel more connected, even in small ways."
+    ]
+},
+{
+    "tag": "breakup-struggles",
+    "patterns": [
+        "I just broke up with someone and I don’t know how to cope",
+        "My heart hurts after the breakup",
+        "I can’t stop thinking about my ex"
+    ],
+    "responses": [
+        "Breakups can be incredibly painful, and it's okay to grieve. Your heart is healing, and it’s okay to feel a wide range of emotions right now. I’m here if you need to talk about it.",
+        "It’s normal to feel lost after a breakup, but remember, you will heal. You deserve to love yourself first and foremost. Let’s talk about ways to focus on self-care during this difficult time.",
+        "I’m really sorry you’re going through this. You are strong, even if it doesn’t feel that way right now. Let’s talk about small ways you can take care of your heart as you heal."
+    ]
+},
+{
+    "tag": "trust-issues",
+    "patterns": [
+        "I find it hard to trust anyone",
+        "I’ve been hurt so much, I don’t know who to trust anymore",
+        "I feel like people always let me down"
+    ],
+    "responses": [
+        "I’m really sorry you’ve been hurt. Trust is hard to rebuild once it’s been broken, but that doesn’t mean you can’t start again. It’s okay to take small steps, and I’m here to support you through that.",
+        "It’s difficult to trust after betrayal, and I can’t imagine how that feels. Let’s talk about how we can approach trust in a way that feels safe and manageable for you.",
+        "You deserve to feel safe and supported by others. It may take time, but you can heal, and when you’re ready, you can start building trust again, one person at a time."
+    ]
+},
+{
+    "tag": "self-awareness",
+    "patterns": [
+        "I don’t know what I want in life",
+        "I feel lost about who I am",
+        "I’m confused about my purpose"
+    ],
+    "responses": [
+        "It’s okay to not have everything figured out right now. Life is a journey, and self-discovery is a process. You’re exactly where you need to be to grow.",
+        "Sometimes we feel lost when we’re on the verge of discovering something new about ourselves. Let’s talk about what you’re feeling and explore what’s important to you.",
+        "You are enough as you are, even if you’re still figuring out your path. I’m here to help you reflect on your feelings and explore where you want to go from here."
+    ]
+},
     {"tag": "racism",
     "patterns": ["Where can I find information about anti-racism laws?", "What are the laws against racial discrimination in my country?", "Can you explain the rights to protect against racism?", "Are there resources to combat racism?", "Where can I find a forum on racism?"],
     "responses": ["You can find detailed information about anti-racism and anti-discrimination laws on our dedicated page: [https://example.com/anti-racism-laws].", "To learn more about legislation against racism, visit: [https://example.com/anti-racism-laws].", "We’ve created a guide to help you understand your rights against racial discrimination. Find it here: [https://example.com/anti-racism-laws].", "If you’re looking for clarity on laws protecting against racism, check out our page: [https://example.com/anti-racism-laws].", "Explore our page on racism and related laws to get information and support: [https://example.com/anti-racism-laws].", "You can visit our forum on racism to share your experiences, find support, and connect with others to discuss: [https://example.com/racism-forum]."]
 },
     {"tag": "gender_equality",
     "patterns": ["Where can I find information about gender equality?", "What are the gender equality laws in my country?", "Can you explain the rights related to gender equality?", "Are there resources to better understand gender equality?", "Where can I find a forum to discuss gender equality?" ],
-    "responses": ["You can find comprehensive information about gender equality and related rights on our dedicated page: [https://example.com/gender-equality].", "To learn more about gender equality legislation, visit: [https://example.com/gender-equality].", "We’ve created a guide to help you understand your rights regarding gender equality. Find it here: [https://example.com/gender-equality].", "If you need clarity on your rights in terms of gender equality, check out our page: [https://example.com/gender-equality].", "Explore our page on gender equality for detailed information and support: [https://example.com/gender-equality].", "You can also check out our forum on gender equality to connect with others and discuss important topics: [https://example.com/gender-equality-forum]."]
+    "responses": ["You can find comprehensive information about gender equality and related rights on our dedicated page: [https://example.com/gender-equality].", "To learn more about gender equality legislation, visit: [https://example.com/gender-equality].",
+      "We’ve created a guide to help you understand your rights regarding gender equality. Find it here: [https://example.com/gender-equality].", "If you need clarity on your rights in terms of gender equality, check out our page: [https://example.com/gender-equality].",
+      "Explore our page on gender equality for detailed information and support: [https://example.com/gender-equality].", "You can also check out our forum on gender equality to connect with others and discuss important topics: [https://example.com/gender-equality-forum]."]
 },
     {"tag": "Austria",
     "patterns": ["Where can I find a forum on the LGBTQ+ community in Austria?", "Is there a forum on religion in Austria?", "Where can I find a forum on abortion laws in Austria?", "Are there forums on disability laws in Austria?", "Where can I find a forum on racism in Austria?", "Is there a forum on gender equality in Austria?"],
