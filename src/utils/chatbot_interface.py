@@ -1,12 +1,9 @@
 import random
 import json
 import pickle
-from contextlib import suppress
-
 import numpy as np
 
 import nltk
-nltk.download('punkt_tab')
 from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
 
@@ -55,8 +52,11 @@ def get_response(intents_list, intents_json):
     return result
 
 def parseDict2String(intents_list): #modifica che servirà per la raccolta dati
-    intentStr = str(intents_list[0])
-    print(intentStr)
+    if not intents_list:
+        intent_str = "0"
+    else:
+        intent_str = str(intents_list[0]['intent'])
+    print(intent_str)
 
 print("Hi there! I'm Brigid, and I'm here to help you!")
 while True:
