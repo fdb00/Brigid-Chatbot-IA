@@ -2,11 +2,31 @@ import random
 import numpy as np
 import json
 import pickle
+
 import nltk
 from nltk.stem import WordNetLemmatizer
+from nltk.corpus import wordnet
+from nltk import pos_tag
+from nltk.corpus import stopwords
+
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.optimizers import SGD
+nltk.download('averaged_perceptron_tagger_eng')
+
+def get_wordnet_pos(tag):
+    if tag.startswith('J'):
+        return wordnet.ADJ
+    elif tag.startswith('V'):
+        return wordnet.VERB
+    elif tag.startswith('N'):
+        return wordnet.NOUN
+    elif tag.startswith('R'):
+        return wordnet.ADV
+    else:
+        return wordnet.NOUN  # Default to noun
+
+stop_words = set(stopwords.words('english'))
 
 lemmatizer = WordNetLemmatizer()
 
@@ -28,7 +48,7 @@ for intent in intents['intents']:
             classes.append(intent['tag'])
 
 # Lemmatize and sort words and classes
-words = [lemmatizer.lemmatize(word.lower()) for word in words if word not in ignore_letters]
+words = [lemmatizer.lemmatize(word.lower(), get_wordnet_pos(tag)) for word, tag in pos_tag(words) if word not in ignore_letters and word not in stop_words]
 words = sorted(set(words))
 classes = sorted(set(classes))
 
