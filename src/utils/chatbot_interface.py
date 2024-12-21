@@ -31,7 +31,7 @@ def bag_of_words(sentence):
 def predict_class(sentence):
     bow = bag_of_words(sentence)
     res = model.predict(np.array([bow]))[0]
-    ERROR_THRESHOLD = 0.23
+    ERROR_THRESHOLD = 0.25
     results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
 
     results.sort(key=lambda x: x[1], reverse=True)
@@ -64,7 +64,7 @@ while True:
     ints = predict_class(message)
     res = get_response(ints, intents) #ints contiene anche il tag della conversazione
     print(res)
-    #parseDict2String(ints)
+    parseDict2String(ints)
 
 
 

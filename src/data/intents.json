@@ -4,6 +4,9 @@
       "tag": "greeting",
       "patterns": [
         "Hi",
+        "Hiiii",
+        "Helloooo",
+        "Ciao",
         "Hey",
         "Is anyone there?",
         "Hi there",
@@ -2033,12 +2036,29 @@
       ]
     },
     {
-      "tag": "self_diagnosis_and_support",
-      "patterns": "I'm currently struggling with diagnosed depression, anxiety, and Misophonia. Also, I am 99% sure I have Borderline Personality Disorder and Avoidant Personality Disorder. I read the DSM-IV, taken college psychology, etc. I know it in my heart I have them. Is self-diagnosing okay with the right research?",
+      "tag": "depression_and_self_worth",
+      "patterns": [
+        "I'm constantly in a bad mood and I have no energy. Is that depression?",
+        "I'm in my late teens and live with my dad. The only time I go out is for my college classes. Sometimes when I see my friends I want to talk with them, but sometimes I won't want to talk to them for days or even weeks. Sometimes I feel I'm not worth knowing or I'm never going to do anything right. Are they right, am I depressed?",
+        "Sometimes I feel I'm not worth knowing or I'm never going to do anything right. I'm in my late teens and live with my dad. The only time I go out is for my college classes. Are they right, am I depressed?"
+      ],
       "responses": [
-        "Self-diagnosing can be a natural part of understanding your symptoms, but it's important to remember that a proper diagnosis is best made by a licensed professional. While research can be helpful in understanding the symptoms, a trained therapist can offer a more nuanced perspective on your mental health. They can help you understand the underlying causes of your feelings and provide support tailored to your specific needs.",
-        "It’s great that you’re trying to understand what you’re going through, but self-diagnosing can be tricky. While research is informative, a mental health professional can provide clarity and guide you toward the best treatment. Diagnoses require more than just symptom matching—they also involve assessments, interviews, and observations that a licensed therapist can provide. If you're feeling certain about your struggles, reaching out to a counselor is the next step in confirming what's going on and finding the right help for you."
+        "Depression has many different signs and symptoms and looks different for every person. Often times people think depression is more about feeling 'sad,' but depression can, in fact, express itself through irritability (or bad mood as you say) and lack of energy. According to the DSM-V (Diagnostic and Statistical Manual of Mental Disorders), depression includes symptoms such as depressed mood, irritable mood, decreased interest or pleasure in activities, significant weight change or change in appetite, sleep changes (insomnia or hypersomnia), fatigue or loss of energy, and feelings of worthlessness. I recommend seeing a therapist who can help determine how severe the depression is and suggest methods of addressing it that fit your lifestyle. Good luck!",
+        "Depression can look different for everybody. It sounds like your family is worried about you, and they may think this behavior could be a result of depression. It’s very common to have thoughts of doubt about yourself and your abilities, and it may help to open up about those thoughts to people you trust. Developing relationships with friends and family can be very rewarding, but it can take courage to reach out!"
       ]
+    },
+    {
+      "tag": "anxiety_and_emotional_numbness",
+      "patterns": [
+        "I can't seem to feel any emotion except anxiety, not even for myself.",
+        "I feel nothing but anxiety and I can't empathize with anyone.",
+        "Why do I only feel anxious all the time? I can't seem to feel anything else."
+      ],
+      "responses": [
+        "It can be really difficult to feel like anxiety is the only emotion you're experiencing. Anxiety often dominates our mental space, making it hard to connect with other feelings. A helpful step is to identify what triggers your anxiety and explore coping mechanisms such as grounding techniques, mindfulness, or talking to a mental health professional. You deserve support in navigating these overwhelming feelings.",
+        "Feeling constant anxiety can overshadow other emotions and leave you feeling disconnected. This could be a sign of an underlying issue that might benefit from professional support. Consider tracking your emotions throughout the day to identify moments when you feel differently, even briefly. Small observations can help pave the way for understanding and improvement.",
+        "Anxiety can be consuming and may block out other emotions. If this has been going on for a while, it might be worth exploring these feelings with a counselor or therapist. They can help uncover the roots of your anxiety and guide you toward strategies to reconnect with your emotions and reduce distress."
+        ]
     },
     {
       "tag": "depression_and_self_worth",
