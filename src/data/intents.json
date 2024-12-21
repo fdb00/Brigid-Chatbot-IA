@@ -1693,15 +1693,6 @@
     "It's important to acknowledge that your emotions, even when they feel confusing, are meaningful. Try exploring what may trigger them—whether it’s situations, certain people, or deeper unresolved feelings. Therapy can support you in navigating and understanding these emotions better."
   ]
 },
-
-{
-"tag": "mental_health_and_help",
-"patterns": "I'm a teenager. I have been experiencing major episodes of depression (if that's even what it is) for several years. It’s always getting worse. I have been having panic attacks, feeling like I can't control my fears, and I can't even bring myself to care if I live or die anymore. The problem is that I don't know who to ask for help. When I try to talk to my parents, I freeze completely and can't do anything but make a joke because never once in my life have we talked about our feelings.",
-"responses": [
-"It's completely understandable that talking about feelings can be challenging, especially when it's something you haven't done before. Making a joke is a natural way to deflect the awkwardness, but it’s important to acknowledge that you're seeking help. I encourage you to start with small conversations with your family to explain that you're experiencing emotional discomfort and would like to talk about it. It’s also crucial to ask for their help in making an appointment with a mental health professional. The feelings you're describing, including panic attacks and suicidal thoughts, are serious and require support from a trained professional.",
-"Talking about your mental health can be hard, especially when you feel like no one in your family has discussed it before. You might feel uncomfortable at first, but opening up is a first step in seeking the help you need. It could also be helpful to talk to a school counselor or seek out a therapist who can help you explore what you're going through. If you continue to feel overwhelmed, please reach out to a crisis hotline for support. You don't have to face this alone."
-]
-},
 {
 "tag": "depression_and_fatigue",
 "patterns": "I feel lazy and numb. I have no interest in things.",
@@ -2709,7 +2700,7 @@
     "responses": ["You can find comprehensive information about disability rights and laws on our dedicated page: [https://example.com/disability-laws].", "To better understand disability legislation, visit: [https://example.com/disability-laws].", "We’ve created a guide to help you understand disability laws. Find it here: [https://example.com/disability-laws].", "If you need clarity on your rights as a person with a disability, check out our page: [https://example.com/disability-laws].", "Explore our page on disability laws for information and support: [https://example.com/disability-laws].", "You can visit our forum on disability to share experiences, find support, and learn more about rights: [https://example.com/disability-forum]."]
 },
 {
-            "tag": "anxiety",
+  "tag": "anxiety",
             "patterns": [
                 "I always feel anxious",
                 "I can't calm down, everything worries me",
@@ -3368,10 +3359,10 @@
             "responses": [
                 "That must feel so frustrating. You deserve recognition for who you are and your work.",
                 "Tokenism is hurtful. How can I help you process what’s happening?",
-                "Your value goes beyond any label. Let’s talk about how this is making you feel."
-            ]
-        },
-      {
+      "Your value goes beyond any label. Let’s talk about how this is making you feel."
+   ]
+},
+{
     "tag": "crisis-support",
     "patterns": [
         "I don’t want to live anymore",
