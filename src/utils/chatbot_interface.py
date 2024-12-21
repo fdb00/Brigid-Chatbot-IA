@@ -42,7 +42,7 @@ def predict_class(sentence):
 
 def get_response(intents_list, intents_json):
     if not intents_list:  # Se intents_list è vuoto
-        return "Non ho capito la tua domanda. Puoi riformularla?"
+        return "Sorry, I didn't understand that. Could you please try again?"
     tag = intents_list[0]['intent']
     list_of_intents = intents_json['intents']
     for i in list_of_intents:
@@ -51,12 +51,17 @@ def get_response(intents_list, intents_json):
             break
     return result
 
+def parseDict2String(intents_list): #modifica che servirà per la raccolta dati
+    intentStr = str(intents_list[0])
+    print(type(intentStr) is str)
+
 print("Hi there! I'm Brigid, and I'm here to help you!")
 while True:
     message = input("> ")
     ints = predict_class(message)
-    res = get_response(ints, intents)
+    res = get_response(ints, intents) #ints contiene anche il tag della conversazione
     print(res)
+   # parseDict2String(ints)
 
 
 
