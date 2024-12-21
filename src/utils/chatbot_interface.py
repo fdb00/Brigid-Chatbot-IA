@@ -4,11 +4,12 @@ import pickle
 import numpy as np
 
 import nltk
+nltk.download('punkt_tab')
 from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
 
 lemmatizer = WordNetLemmatizer()
-intents = json.loads(open('../data/intents.json').read())
+intents = json.loads(open('../data/intents.json', encoding='utf-8').read())
 
 words = pickle.load(open('../models/words.pkl', 'rb'))
 classes = pickle.load(open('../models/classes.pkl', 'rb'))
