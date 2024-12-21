@@ -1,3 +1,4 @@
+import os
 import random
 import json
 import pickle
@@ -8,6 +9,8 @@ from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from tensorflow.keras.models import load_model
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('../data/intents.json', encoding='utf-8').read())
@@ -77,6 +80,12 @@ def get_best_match(user_input, patterns):
     best_match_index = cosine_similarities.argmax()  # Prendi il pattern con la similarità più alta
     return best_match_index
 
+def get_tag(match):
+    if match:
+        x = str(match['tag'])
+        print(x)
+    else:
+        print("tag not found")
 
 # Funzione per l'interazione con la chatbot
 print("Hi there! I'm Brigid, and I'm here to help you!")
@@ -104,7 +113,8 @@ while True:
     # Se troviamo un intent corrispondente, recuperiamo la risposta
     if matched_intent:
         res = get_response([{'intent': matched_intent['tag'], 'probability': 1.0}], intents)
+        get_tag(matched_intent)
     else:
         res = "Sorry, I didn't understand that. Could you please try again?"
-
+        get_tag(None)
     print(res)

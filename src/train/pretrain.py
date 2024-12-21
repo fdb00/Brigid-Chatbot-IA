@@ -13,6 +13,9 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.optimizers import SGD
 nltk.download('averaged_perceptron_tagger_eng')
+nltk.download('stopwords')
+nltk.download('punkt_tab')
+nltk.download('wordnet')
 
 def get_wordnet_pos(tag):
     if tag.startswith('J'):
@@ -31,7 +34,7 @@ stop_words = set(stopwords.words('english'))
 lemmatizer = WordNetLemmatizer()
 
 # Load intents
-intents = json.loads(open('../data/intents.json').read())
+intents = json.loads(open('../data/intents.json', encoding='utf-8').read())
 
 words = []
 classes = []
