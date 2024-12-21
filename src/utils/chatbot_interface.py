@@ -8,7 +8,7 @@ from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
 
 lemmatizer = WordNetLemmatizer()
-intents = json.loads(open('../data/intents.json').read())
+intents = json.loads(open('../data/intents.json', encoding='utf-8').read())
 
 words = pickle.load(open('../models/words.pkl', 'rb'))
 classes = pickle.load(open('../models/classes.pkl', 'rb'))
@@ -64,7 +64,7 @@ while True:
     ints = predict_class(message)
     res = get_response(ints, intents) #ints contiene anche il tag della conversazione
     print(res)
-   # parseDict2String(ints)
+    #parseDict2String(ints)
 
 
 
