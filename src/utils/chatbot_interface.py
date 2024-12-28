@@ -87,6 +87,15 @@ def get_tag(match):
     else:
         print("tag not found")
 
+def send_to_diversify(tag, message):
+    print("Sending to Diversify")
+    tag = str(tag)
+    risposta = {
+        "message": message,
+        "tag": tag
+    }
+    json_string = json.dumps(risposta)
+
 # Funzione per l'interazione con la chatbot
 print("Hi there! I'm Brigid, and I'm here to help you!")
 while True:
@@ -113,8 +122,8 @@ while True:
     # Se troviamo un intent corrispondente, recuperiamo la risposta
     if matched_intent:
         res = get_response([{'intent': matched_intent['tag'], 'probability': 1.0}], intents)
-        get_tag(matched_intent)
+        send_to_diversify(get_tag(matched_intent), res)
     else:
         res = "Sorry, I didn't understand that. Could you please try again?"
-        get_tag(None)
+        send_to_diversify(get_tag(None), res)
     print(res)
