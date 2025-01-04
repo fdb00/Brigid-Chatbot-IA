@@ -10,7 +10,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from tensorflow.keras.models import load_model
 
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2' #questo prova a rimuovere gli errori di keras (spoiler: non funziona)
 
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('../data/intents.json', encoding='utf-8').read())
@@ -80,6 +80,8 @@ def get_best_match(user_input, patterns):
     best_match_index = cosine_similarities.argmax()  # Prendi il pattern con la similarità più alta
     return best_match_index
 
+
+# Converte il match del tag da JSON a stringa
 def get_tag(match):
     if match:
         x = str(match['tag'])
@@ -87,6 +89,8 @@ def get_tag(match):
     else:
         print("tag not found")
 
+
+# Funzione che servirà per inviare il messaggio di risposta a Diversify
 def send_to_diversify(tag, message):
     print("Sending to Diversify")
     tag = str(tag)

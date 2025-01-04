@@ -162,7 +162,13 @@
         "I’m Brigid. Think of me as your therapeutic assistant here to help whenever you need support.",
         "Hello! I’m Brigid. I am here to listen and provide guidance. What’s on your mind?",
         "I’m Brigid, and I’m designed to support you emotionally and mentally. What would you like to talk about today?",
-        "My name is Brigid, and I’m here as your personal assistant to help with anything you need. How can I help?"
+        "My name is Brigid, and I’m here as your personal assistant to help with anything you need. How can I help?",
+        "I'm Brigid, your Personal Therapeutic AI Assistant. How are you feeling today?",
+        "I'm Brigid, a Therapeutic AI Assistant designed to assist you. Tell me about yourself.",
+        "I'm Brigid. I am a conversational agent designed to mimic a therapist. So how are you feeling today?",
+        "You can call me Brigid.",
+        "I'm Brigid!",
+        "Call me Brigid."
       ]
     },
     {
@@ -1038,6 +1044,22 @@
       ]
     },
     {
+      "tag": "microaggressions_2",
+      "patterns": [
+        "People make small comments that hurt.",
+        "I experience subtle racism every day.",
+        "How do I deal with microaggressions?",
+        "Why do people say things that make me feel small?",
+        "I feel hurt by casual comments about my identity."
+      ],
+      "responses": [
+        "Microaggressions can be deeply painful. I'm here to support you.",
+        "Your feelings are valid. Tell me more about your experiences.",
+        "Let's talk about how to handle these situations and take care of yourself.",
+        "It's okay to feel hurt. You deserve understanding and respect."
+      ]
+    },
+    {
       "tag": "mental_illness_recovery",
       "patterns": [
         "Can mental illness be treated?",
@@ -1602,6 +1624,22 @@
       ]
     },
     {
+      "tag": "perfectionism",
+      "patterns": [
+        "I feel like I have to be perfect.",
+        "Why can't I accept my mistakes?",
+        "I'm scared of failing.",
+        "How do I stop being so hard on myself?",
+        "I can't handle imperfection."
+      ],
+      "responses": [
+        "Perfectionism can be exhausting. Let's talk about why you feel this way.",
+        "It's okay to make mistakes. You don't have to be perfect.",
+        "You deserve self-compassion. Tell me more about your struggles.",
+        "Let's work on embracing your imperfections and being kinder to yourself."
+      ]
+    },
+    {
       "tag": "chronic_pain_depression",
       "patterns": [
         "I have a severe problem. I've had operations, but I'm still in constant pain. How can I deal with the depression from this chronic pain?",
@@ -1618,6 +1656,22 @@
         "Consider holistic approaches like acupuncture or physical therapy for managing both the pain and emotional stress.",
         "Nurturing a supportive social network, even if it’s just listening, can ease the strain that pain can have on your mental health.",
         "Often, changing how we approach pain or depression brings emotional relief. Small mental shifts can help reset your mood."
+      ]
+    },
+     {
+      "tag": "support_for_minors",
+      "patterns": [
+        "I'm a teenager and I need help.",
+        "My parents don't understand me.",
+        "School makes me so anxious.",
+        "How do I deal with pressure as a kid?",
+        "I feel like no one listens to me."
+      ],
+      "responses": [
+        "Being a young person can be tough. I'm here to listen.",
+        "Tell me more about what's bothering you. You're not alone.",
+        "School and family pressures can be overwhelming. Let's talk about it.",
+        "You deserve support and understanding. Let's work through this together."
       ]
     },
     {
@@ -1689,7 +1743,11 @@
         "I can't control my urge to self-harm when I feel overwhelmed.",
         "I feel so much pain inside and end up hurting myself to feel something else.",
         "Whenever I feel hopeless, I think about self-harming. Is there another way?",
-        "I’ve tried stopping self-harm before, but I just keep going back to it. What should I do?"
+        "I’ve tried stopping self-harm before, but I just keep going back to it. What should I do?",
+         "I hurt myself sometimes.",
+        "Why do I feel the need to self-harm?",
+        "I don't know how to stop hurting myself.",
+        "How do I cope without self-harming?"
       ],
       "responses": [
         "It’s important to remember that the urge to self-harm is a coping mechanism, but there are healthier ways to manage these overwhelming feelings. Try to identify triggers and replace self-harm with other self-soothing activities, like squeezing a stress ball or journaling.",
@@ -1931,7 +1989,12 @@
         "Being a mom and a wife is all I am lately, and I miss the parts of me that existed before. Is it possible to balance the roles and find myself again?",
         "It feels like the person I once was has faded away, and I just don’t know where she went. How can I reconnect with that part of me while still being a mom and wife?",
         "I feel like I've sacrificed so much of myself to be a good mom and wife, but now I'm struggling to even recognize who I am anymore.",
-        "I know I'm supposed to feel fulfilled, but I can't stop thinking about the person I used to be. How do I get my own sense of identity back?"
+        "I know I'm supposed to feel fulfilled, but I can't stop thinking about the person I used to be. How do I get my own sense of identity back?",
+        "I don't know who I am.",
+        "How do I figure out my identity?",
+        "I feel lost and don't know myself.",
+        "Why can't I understand who I am?",
+        "I'm questioning my identity."
       ],
       "responses": [
         "It's great you're recognizing this need for change. Take time to explore new interests. It’s okay to grow beyond your roles as a wife and mother.",
@@ -2110,12 +2173,21 @@
       ]
     },
     {
-      "tag": "recovering_from_loss_and_finding_happiness",
+      "tag": "coping_with_loss",
       "patterns": [
+        "I lost someone I loved.",
+        "How do I cope with grief?",
+        "The pain of losing someone feels unbearable.",
+        "Why can't I move on after losing them?",
+        "I feel lost after their death.",
         "How do I make myself happy without the people who made me happy?",
         "Now that they’re gone, I feel sad. It’s been two months now but I seem to be unable to stay okay and independent."
       ],
       "responses": [
+        "Grief is a natural process, and your feelings are valid.",
+        "Losing someone you love is hard. Let's talk about your emotions.",
+        "Healing takes time, and it's okay to feel the way you do.",
+        "I'm here to listen and help you process your grief.",
         "Losing someone who brought happiness into your life can feel devastating. However, happiness ultimately comes from within. While grieving is natural, use this time to reflect on what you can do to create your own joy. Explore new hobbies, set goals, or rediscover what you love about yourself and your life.",
         "It sounds like you're in the grieving process, which is a difficult but natural part of losing someone close. Intimacy and connection are important, but learning to enjoy your own company can strengthen your resilience. Working with a therapist might help you explore this journey and build a more fulfilling sense of independence.",
         "Happiness often starts from within. Mourning your loss is essential, but so is rediscovering ways to create your joy. Reflect on the activities, goals, or passions that once brought you happiness or could in the future. Seeking professional guidance can also provide support as you navigate this challenging time."
@@ -2144,6 +2216,22 @@
         "I'm sorry you're feeling unheard and unsupported. While it’s tough to trust when past experiences have let you down, finding someone outside your immediate circle, like a teacher, counselor, or coach, might help. Trusting relationships take time, and it's okay to start small.",
         "Feeling like your parents don’t take you seriously can be very isolating. Consider seeking a trusted adult or professional counselor who can listen and validate your feelings. Building new, supportive relationships can help you find the connection and understanding you need.",
         "The lack of trust in your closest relationships can be painful. Exploring these feelings with a therapist might help you process them and rebuild trust in others. Over time, you can find people who support and believe in you, even outside your family."
+      ]
+    },
+     {
+      "tag": "trust_issues",
+      "patterns": [
+        "I have trouble trusting people.",
+        "Why can't I trust anyone?",
+        "How do I learn to trust again?",
+        "I've been hurt before and can't trust now.",
+        "Building trust is hard for me."
+      ],
+      "responses": [
+        "Trust takes time, and it's okay to move at your own pace.",
+        "It's understandable to feel this way after being hurt. Let's talk.",
+        "Rebuilding trust is possible, and I'm here to support you.",
+        "You deserve to feel safe and secure. Let's explore this together."
       ]
     },
     {
@@ -2326,6 +2414,22 @@
       ]
     },
     {
+      "tag": "overthinking_2",
+      "patterns": [
+        "I can't stop overthinking.",
+        "Why do I analyze everything?",
+        "Overthinking is ruining my peace.",
+        "How do I stop overanalyzing?",
+        "My thoughts keep spiraling."
+      ],
+      "responses": [
+        "Overthinking can be exhausting. Let's talk about your thoughts.",
+        "It's okay to feel this way. I'm here to help you find calm.",
+        "Let's work on strategies to quiet your mind and focus on the present.",
+        "You are not alone in this. Tell me more about what's on your mind."
+      ]
+    },
+    {
       "tag": "workplace_stress",
       "patterns": [
         "I'm feeling overwhelmed with work. How can I manage this stress?",
@@ -2340,6 +2444,22 @@
         "To manage work stress, focus on strategies that promote balance, like setting realistic goals, maintaining boundaries, and learning to delegate tasks. If work is overwhelming, consider speaking to your manager about how to prioritize tasks or getting additional support.",
         "It's crucial to find ways to disconnect after work. Creating a routine that involves physical exercise, relaxation, or hobbies can help to alleviate stress. You might also want to consider therapy to address any work-related anxiety and explore ways to manage stress more effectively.",
         "If workplace stress is impacting your mental health, it’s essential to seek support. Whether through professional counseling, talking with your supervisor, or practicing self-care, taking steps to manage your stress will lead to improved well-being."
+      ]
+    },
+    {
+      "tag": "burnout",
+      "patterns": [
+        "I'm so tired all the time.",
+        "How do I recover from burnout?",
+        "I feel like I can't handle my workload anymore.",
+        "Why do I feel so drained?",
+        "Work is taking everything out of me."
+      ],
+      "responses": [
+        "Burnout is tough, but recognizing it is the first step. Let's talk.",
+        "You deserve rest and recovery. Tell me about what's going on.",
+        "It's okay to feel this way. Let's explore ways to ease your burden.",
+        "I'm here to help you find balance and take care of yourself."
       ]
     },
     {
@@ -2414,6 +2534,22 @@
         "Feeling different because of a disability can affect your self-esteem, but it’s important to embrace your unique qualities. Therapy focused on building self-esteem, connecting with others who share similar experiences, and practicing self-compassion can help you feel more confident and positive about yourself.",
         "It’s common to experience mental health challenges when dealing with a disability. Seeking professional help is crucial, and a therapist familiar with disability-related mental health concerns can help you create a plan for coping with the emotional impact. Support groups can also be an excellent resource.",
         "Living with a disability can lead to stress, but managing your mental health is essential. Therapy, mindfulness practices, and connecting with support groups for people with disabilities can help you develop healthier ways to cope with the stress and challenges you face."
+      ]
+    },
+    {
+      "tag": "managing_emotions",
+      "patterns": [
+        "I can't control my emotions.",
+        "How do I stop feeling so overwhelmed?",
+        "I feel like my emotions are out of control.",
+        "Why do I feel so much all the time?",
+        "I struggle with managing my feelings."
+      ],
+      "responses": [
+        "Managing emotions can be difficult, but you are not alone.",
+        "It's okay to feel overwhelmed. Let's talk about it.",
+        "Together, we can explore ways to navigate your emotions.",
+        "You have the strength to handle this. I'm here to help."
       ]
     },
     {
@@ -2533,6 +2669,52 @@
         "Supporting someone in recovery requires setting boundaries to avoid enabling unhealthy behavior. Encourage your loved one to stick to their recovery plan, and remind them of the importance of attending therapy or support groups. You can be supportive without sacrificing your own well-being.",
         "If your partner has relapsed, it can be painful, but it’s important to remain patient and encourage them to seek help. Avoid enabling their behavior by making excuses or covering up for them. Instead, offer emotional support and help them re-engage with treatment. Consider attending counseling or a support group to help you both through this difficult time.",
         "Living with someone who is addicted can feel like walking on eggshells. It’s essential to take care of your own mental health first. Therapy for families or individuals and support groups can help you set healthy boundaries, reduce stress, and find strategies to cope with the challenges you’re facing."
+      ]
+    },
+     {
+      "tag": "family_conflicts",
+      "patterns": [
+        "My family doesn't understand me.",
+        "I keep arguing with my parents.",
+        "How do I deal with family problems?",
+        "Why does my family always fight?",
+        "I feel disconnected from my family."
+      ],
+      "responses": [
+        "Family conflicts can be really challenging. Let's talk about your situation.",
+        "You deserve to feel understood and valued by your family.",
+        "It's okay to seek help for family issues. I'm here to listen.",
+        "Let's explore ways to improve communication and understanding in your family."
+      ]
+    },
+    {
+      "tag": "feeling_unheard",
+      "patterns": [
+        "No one listens to me.",
+        "Why do I feel invisible?",
+        "I feel like my voice doesn't matter.",
+        "How do I get people to hear me?", "I feel so ignored."
+      ],
+      "responses": [
+        "Your voice matters, and I'm here to listen.",
+        "Feeling unheard can be really painful. Tell me more.",
+        "You deserve to be acknowledged and valued. Let's talk.",
+        "I'm here to support you and help you feel seen."
+      ]
+    },
+    {
+      "tag": "finding_purpose",
+      "patterns": [
+        "I don't know what my purpose is.",
+        "How do I find meaning in my life?",
+        "I feel like I'm just drifting.",
+        "Why do I feel so lost?", "How do I discover what I'm meant to do?"
+      ],
+      "responses": [
+        "Finding purpose can be a journey. Let's explore what matters to you.",
+        "It's okay to feel uncertain. You're taking an important step by seeking clarity.",
+        "Tell me about your passions and dreams. Let's work on this together.",
+        "You are not alone in feeling this way. Let's find what brings you fulfillment."
       ]
     },
     {
@@ -2968,6 +3150,23 @@
       ]
     },
     {
+      "tag": "imposter_syndrome_1",
+      "patterns": [
+        "I feel like a fraud.",
+        "I don't deserve my success.",
+        "Why do I feel so inadequate?",
+        "Everyone else is better than me.",
+        "I can't believe in myself."
+      ],
+      "responses": [
+        "Imposter syndrome is common, but your achievements are real. Tell me more.",
+        "You're more capable than you think. Let's talk about your strengths.",
+        "It's okay to doubt yourself sometimes, but you belong where you are.",
+        "Let's explore why you feel this way and how to overcome it."
+      ]
+    },
+
+    {
       "tag": "bullying",
       "patterns": [
         "How do I stop being bullied?",
@@ -3017,6 +3216,22 @@
         "Healing after being bullied can be a difficult process, but it’s important to remember that it is possible. Talking to a therapist or counselor, reconnecting with supportive friends and family, and engaging in activities that bring you joy can all help in the healing process. Be kind to yourself and take things one day at a time.",
         "Bullying can have serious effects on mental well-being, leading to conditions like depression, anxiety, and trust issues. The emotional scars of bullying can last long after the event itself. Seeking professional help, talking to someone you trust, and learning coping strategies are all important steps in recovering from the impact of bullying."
       ]
+    },
+     {
+      "tag": "overcoming_fear_2",
+      "patterns": [
+        "I'm scared all the time.",
+        "How do I face my fears?",
+        "Fear is controlling my life.",
+        "What can I do to stop being so afraid?",
+        "I feel paralyzed by my fears."
+      ],
+  "responses": [
+    "Fear can feel overwhelming, but you have the strength to face it.",
+    "Let's talk about what you're feeling and why it scares you.",
+    "You are not alone in this. Together, we can work on overcoming it.",
+    "It's okay to feel scared. I'm here to help you through it."
+  ]
     },
     {
       "tag": "lgbtq_community",

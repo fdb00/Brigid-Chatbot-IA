@@ -1360,7 +1360,7 @@
       ]
     },
     {
-      "tag": "trauma_recovery_1",
+      "tag": "trauma_recovery",
       "patterns": [
         "How do I recover from a traumatic event?",
         "I can't move past my trauma.",
@@ -1405,7 +1405,7 @@
       ]
     },
     {
-      "tag": "perfectionism_1",
+      "tag": "perfectionism",
       "patterns": [
         "I feel like I have to be perfect.",
         "Why can't I accept my mistakes?",
