@@ -1,5 +1,5 @@
-numpy~=2.0.2
-tensorflow~=2.18.0
+numpy
+tensorflow
 spacy~=3.8.2
 pip~=23.2.1
 wheel~=0.41.2
@@ -8,7 +8,9 @@ Jinja2~=3.1.4
 setuptools~=68.2.0
 packaging~=24.2
 typing_extensions~=4.12.2
-nltk~=3.9.1
-textblob~=0.18.0.post0
-scikit-learn~=1.6.0
+nltk
+textblob
+scikit-learn
 keras
+Flask
+Flask-Cors
