@@ -3,7 +3,7 @@ tensorflow
 spacy~=3.8.2
 pip~=23.2.1
 wheel~=0.41.2
-protobuf~=5.29.0
+protobuf
 Jinja2~=3.1.4
 setuptools~=68.2.0
 packaging~=24.2
@@ -14,3 +14,7 @@ scikit-learn
 keras
 Flask
 Flask-Cors
+torch
+transformers
+googletrans
+tqdm
