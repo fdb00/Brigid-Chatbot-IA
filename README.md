@@ -17,7 +17,7 @@ Chatbot NLP di Diversify, scritta in ![Python](https://img.shields.io/badge/pyth
 
 - Il pretrain è già stato effetuato, non è necessario runnare pretrain.py
   
-- Runnare chatbot_interface.py 
+- Runnare chatbot_teminal.py 
 
 ## Come far funzionare Gemini
 - Generate la vostra API Key da https://aistudio.google.com/
