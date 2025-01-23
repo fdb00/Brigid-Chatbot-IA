@@ -12,10 +12,22 @@ from nltk.corpus import stopwords
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.optimizers import SGD
-nltk.download('averaged_perceptron_tagger_eng')
-nltk.download('stopwords')
-nltk.download('punkt_tab')
-nltk.download('wordnet')
+
+def download_nltk_resources():
+    resources = {
+        "averaged_perceptron_tagger": "averaged_perceptron_tagger",
+        "stopwords": "stopwords",
+        "punkt": "punkt",
+        "wordnet": "wordnet"
+    }
+
+    for resource_name, resource_id in resources.items():
+        try:
+            nltk.data.find(f'tokenizers/{resource_id}' if resource_name == 'punkt' else f'corpora/{resource_id}')
+        except LookupError:
+            print(f"Scaricamento del pacchetto '{resource_name}' in corso...")
+            nltk.download(resource_id)
+            print(f"Pacchetto '{resource_name}' scaricato correttamente.")
 
 def get_wordnet_pos(tag):
     if tag.startswith('J'):
@@ -28,6 +40,9 @@ def get_wordnet_pos(tag):
         return wordnet.ADV
     else:
         return wordnet.NOUN  # Default to noun
+
+
+download_nltk_resources()
 
 stop_words = set(stopwords.words('english'))
 

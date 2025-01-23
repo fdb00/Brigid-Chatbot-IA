@@ -9,6 +9,7 @@ from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from tensorflow.keras.models import load_model
+import google.generativeai as genai
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2' #questo prova a rimuovere gli errori di keras (spoiler: non funziona)
 
@@ -89,16 +90,13 @@ def get_tag(match):
     else:
         print("tag not found")
 
-
-# Funzione che servirà per inviare il messaggio di risposta a Diversify
-def send_to_diversify(tag, message):
-    print("Sending to Diversify")
-    tag = str(tag)
-    risposta = {
-        "message": message,
-        "tag": tag
-    }
-    json_string = json.dumps(risposta)
+def geminillm(input):
+    chiave_api = os.getenv('SECRET_API_KEY')
+    genai.configure(api_key=chiave_api)
+    model = genai.GenerativeModel("gemini-1.5-flash")
+    convo = model.start_chat(history=[])
+    convo.send_message(input)
+    return convo.last.text
 
 # Funzione per l'interazione con la chatbot
 print("Hi there! I'm Brigid, and I'm here to help you!")
@@ -114,7 +112,6 @@ while True:
     best_match_index = get_best_match(corrected_message, patterns)
 
     # Trova l'intent corrispondente
-    matched_intent = None
     start = 0
     for intent in intents['intents']:
         num_patterns = len(intent['patterns'])
@@ -126,8 +123,7 @@ while True:
     # Se troviamo un intent corrispondente, recuperiamo la risposta
     if matched_intent:
         res = get_response([{'intent': matched_intent['tag'], 'probability': 1.0}], intents)
-        send_to_diversify(get_tag(matched_intent), res)
+        print(res)
     else:
-        res = "Sorry, I didn't understand that. Could you please try again?"
-        send_to_diversify(get_tag(None), res)
-    print(res)
+        res = geminillm(corrected_message)
+        print(res)
