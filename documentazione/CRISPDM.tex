@@ -1,46 +1,89 @@
+%%%%%%% INIZIO PREAMBOLO %%%%%%%
+
 \documentclass[12pt, letterpaper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{titling}
 \usepackage{geometry}
+\usepackage{imakeidx}
+\usepackage[italian]{babel}
+\makeindex
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{caption}
+\DeclareCaptionFormat{myformat}{\textbf{#1#2}#3} % Formato personalizzato
+\captionsetup[lstlisting]{format=myformat, labelsep=space}
+\renewcommand{\lstlistingname}{Codice} 
+
+\lstset{
+	basicstyle=\ttfamily\normalsize,    % Font monospace con dimensione normale
+	keywordstyle=\color{teal}\bfseries, % Parole chiave in teal e grassetto
+	commentstyle=\color{gray}\itshape,  % Commenti in grigio e corsivo
+	stringstyle=\color{orange},         % Stringhe in arancione
+	numbers=left,                       % Numerazione delle righe a sinistra
+	numberstyle=\small\color{gray},     % Numeri di riga piccoli e grigi
+	stepnumber=1,                       % Numerazione per ogni riga
+	breaklines=true,                    % A capo automatico per righe lunghe
+	frame=rounded,                      % Cornice arrotondata intorno al codice
+	rulecolor=\color{lightgray},        % Colore del bordo
+	backgroundcolor=\color{gray!10},    % Sfondo chiaro
+	captionpos=b,                       % Posizione della didascalia (sotto il codice)
+	showstringspaces=false,             % Non mostra spazi nelle stringhe
+	tabsize=4,                          % Dimensione dei tabulatori
+	xleftmargin=20pt,                   % Margine interno a sinistra
+	xrightmargin=20pt,                  % Margine interno a destra
+}
 
 % Imposta i margini della pagina
 \geometry{top=2cm, bottom=2cm, left=2.5cm, right=2.5cm}
 
 % Dati per il titolo
-\title{\Huge \textbf{Documentazione CRISP-DM}\\[0.5cm]
-	\Large \textbf{Progetto Brigid AI Chatbot}}
-\author{\large Anatriello Pasquale, Fede Gabriella, Martone Catello, Viola Davide}
-\date{\large Gennaio 2025}
+\title{\Huge \textbf{Documentazione}\\[0.5cm]
+\Large \textbf{Progetto Brigid AI Chatbot}}
+\author{\large Catello Martone, Davide Viola, Gabriella Fede, Pasquale Anatriello}
+
+%%%%%%% FINE PREAMBOLO %%%%%%%
+
 
 \begin{document}
 	
-	% Aggiungi il logo (opzionale)
-	\begin{figure}[t]
-		\centering
-		\includegraphics[width=0.3\textwidth]{brigid.png} % Sostituisci "logo.png" con il tuo file di logo
-	\end{figure}
+% Aggiungi il logo (opzionale)
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.3\textwidth]{brigid.png}
+\end{figure}
 	
-	% Genera il titolo
-	\maketitle
-	\vfill
+% Genera il titolo
+\maketitle
+\vfill
+% Informazioni aggiuntive
+\begin{center}
+Prof. Fabio Palomba, Corso di Fondamenti di Intelligenza Artificiale\\
+Università degli Studi di Salerno, A.A. 2024/2025
+\end{center}
 	
-	% Descrizione del progetto (opzionale)
-	\begin{center}
-		\large
-		\textit{Una soluzione per il supporto psicologico basata su intelligenza artificiale, \\
-			progettata per aiutare le minoranze e creare uno spazio sicuro.}
-	\end{center}
+\newpage
+\tableofcontents
+\newpage
 	
-	\vfill
+\section{Esempio da cancellare}
+Questo è un esempio di documento con un indice analitico.
 	
-	% Informazioni aggiuntive
-	\begin{center}
-		\textbf{Corso di Fondamenti di Intelligenza Artificiale} \\[0.1cm]
-		\textbf{Prof. Palomba Fabio} \\[0.1cm]
-		\textbf{Università degli Studi di Salerno} \\[0.1cm]
-		\textbf{Anno Accademico 2024/2025}
-	\end{center}
+\begin{lstlisting}[language=Python, caption={Hello World!}]
+def hello_world():
+print("Hello, World!")
+\end{lstlisting}
+	
+\section{Introduzione: Analisi del problema}
+La metodologia utilizzata è descritta qui.
+\subsection{Forza Napoli}
+Questa è una sottosezione.
+	
+\subsubsection{Dovrebbe essere una sottosottosezione}
+provaaaaaa
+	
+\section{Prova}
+La metodologia utilizzata è descritta qui.
 	
 \end{document}
