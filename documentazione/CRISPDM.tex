@@ -12,6 +12,7 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{caption}
+\usepackage{hyperref}
 \DeclareCaptionFormat{myformat}{\textbf{#1#2}#3} % Formato personalizzato
 \captionsetup[lstlisting]{format=myformat, labelsep=space}
 \renewcommand{\lstlistingname}{Codice} 
@@ -67,23 +68,72 @@ Università degli Studi di Salerno, A.A. 2024/2025
 \tableofcontents
 \newpage
 	
-\section{Esempio da cancellare}
-Questo è un esempio di documento con un indice analitico.
+
+\title{Progetto Diversify - Chatbot Brigid}
+\author{}
+\date{}
 	
-\begin{lstlisting}[language=Python, caption={Hello World!}]
-def hello_world():
-print("Hello, World!")
-\end{lstlisting}
+\maketitle
+
+\section{Introduzione}
 	
-\section{Introduzione: Analisi del problema}
-La metodologia utilizzata è descritta qui.
-\subsection{Forza Napoli}
-Questa è una sottosezione.
+\subsection{L'obiettivo della chatbot Brigid}
+L'obiettivo della chatbot \textbf{Brigid} è quello di fornire un supporto psicologico, incluso all'interno del progetto \textit{Diversify}. La chatbot offre un sostegno concreto e monitora l'andamento delle conversazioni, raccogliendo dati attraverso l'interazione con l'utente.\\ 
+Questi dati saranno utilizzati per ottimizzare il funzionamento della chatbot, adattando le conversazioni alle esigenze e alle preferenze specifiche di ciascun utente. In questo modo, l'utente potrà vivere un'esperienza interattiva più personalizzata e coinvolgente, con risposte e contenuti che riflettono in maniera più precisa le sue aspettative e necessità.
 	
-\subsubsection{Dovrebbe essere una sottosottosezione}
-provaaaaaa
+\section{Descrizione dell'agente}
 	
-\section{Prova}
-La metodologia utilizzata è descritta qui.
-	
+\subsection{Obiettivi}
+Un agente chatbot è un sistema basato sull'intelligenza artificiale, progettato per interagire con gli utenti attraverso conversazioni simulate in linguaggio naturale. È in grado di rispondere a domande relative al supporto psicologico. Questo agente è programmato per comprendere input testuali, elaborare le richieste e fornire risposte pertinenti, coerenti e contestualizzate.
+La chatbot opera attraverso due modelli distinti: il primo, personalizzato, si focalizza sul fornire supporto emotivo; il secondo, \textit{Gemini}, genera risposte fuori contesto, ampliando così la gamma delle interazioni possibili.
+
+\subsection{Specifica PEAS}
+\subsection{Analisi del problema}
+La creazione di una chatbot per il supporto psicologico presenta diverse complessità. Comprendere il linguaggio umano, spesso ambiguo o emotivamente carico, richiede modelli avanzati di elaborazione del linguaggio naturale. Inoltre, generare risposte empatiche e contestuali è una sfida, poiché la chatbot deve bilanciare personalizzazione e coerenza, evitando risposte inappropriate o influenzate da bias. Dal punto di vista tecnico, il sistema deve essere scalabile per gestire molteplici conversazioni senza ritardi. \\
+Abbiamo affrontato queste sfide adottando modelli NLP avanzati, come GPT, personalizzati per riconoscere emozioni e intenzioni. Per garantire risposte empatiche e sicure, abbiamo combinato risposte generative con risposte predefinite per situazioni delicate. L’architettura serverless assicura scalabilità e rapidità.\\ Queste soluzioni consentono alla chatbot di offrire un supporto psicologico efficace e adattato alle esigenze individuali.
+
+\section{Raccolta, analisi e preprocessing dei dati}
+
+\subsection{Scelta del dataset}
+Abbiamo iniziato utilizzando un dataset in formato JSON trovato online sul sito Kaggle, che poi abbiamo ampliato e perfezionato attraverso un lavoro mirato, avvalendoci anche del supporto di ChatGPT per integrare ulteriori dati. Questo processo ci ha permesso di sviluppare un dataset altamente specifico e perfettamente adattato alle esigenze della chatbot. Grazie a questa personalizzazione, siamo riusciti a garantire un’esperienza più efficace e rilevante per gli utenti che interagiscono con il sistema.\\
+I dati presenti nel dataset di Kaggle seguono una struttura composta da tag, pattern e response. Questo ci ha permesso di mantenere una coerenza strutturale, applicando la stessa organizzazione anche ai dati aggiunti successivamente durante il nostro lavoro.\\
+Il dataset in questione è reperibile a questo \href{https://www.kaggle.com/code/jocelyndumlao/chatbot-for-mental-health-conversations}{\textcolor{blue}{\underline{link}}}.
+
+\subsection{Tecnologie utilizzate}
+Abbiamo utilizzato come ambiente di sviluppo PyCharm, che ci ha permesso di utilizzare come linguaggio di programmazione Python. 
+
+\subsubsection{Librerie utilizzate}
+Le librerie che abbiamo utilizzato sono:
+\begin{itemize}
+\item \textbf{Numpy}: Per manipolazione di array numerici.
+\item \textbf{JSON}: Per leggere il file intents.json (contiene i pattern e i tag associati).
+\item \textbf{Pickle}: Per salvare oggetti Python (come le classi) su disco.
+\item \textbf{Transformers} (da Hugging Face): Per caricare BERT e il suo tokenizer.
+\item \textbf{PyTorch}: Utilizzato per il modello BERT.
+\item \textbf{TensorFlow/Keras}: Per costruire e addestrare il modello di classificazione.
+\end{itemize}.
+
+\section{Parti della chatbot}
+\subsection{Pretrain}
+\subsection{AGGIUNGERE Immagine Codice}
+Il codice rappresenta un processo per creare una chatbot basato su machine learning. Si avvale di BERT per generare rappresentazioni numeriche (embedding) delle frasi e poi costruisce un modello di classificazione per determinare i tag delle frasi in input. 
+Il modello creato presenta tre strati: 
+\begin{itemize}
+\item \textbf{Input}:  La dimensione degli embedding di BERT.
+\item \textbf{Strati nascosti}: Due strati densi con ReLU e Dropout per evitare overfitting.
+\item \textbf{Output}: Softmax per classificazione multi-classe.
+\end{itemize}.
+
+\subsection{AGGIUNGERE Immagine Codice}
+
+\subsection{Analyze intents}
+Il codice carica un file JSON che contiene gli intenti di un chatbot, li analizza e restituisce informazioni utili. Inizia leggendo il file e verificando che contenga la chiave "intents". Dopodiché, conta il numero totale di tag presenti, li elenca e analizza ciascun tag. Per ogni intento, stampa il nome del tag, il numero di frasi esempio associate (patterns) e il numero di risposte definite (responses). Se il file non viene trovato o non è un JSON valido, restituisce un messaggio d'errore.
+\subsection{Chatbot interface}
+Questo codice descrive un chatbot avanzato che combina l'uso di un modello di classificazione pre-addestrato con l'intelligenza artificiale generativa di Gemini. Il funzionamento si basa su diverse fasi. Per prima cosa, il sistema configura Gemini, un modello AI generativo che può creare risposte dinamiche e contestuali. Viene poi caricato il file intents.json, che contiene una struttura di intenti predefiniti, con frasi esempio e risposte associate, insieme al modello di classificazione e alla lista dei tag.\\
+Quando un utente invia un messaggio, la frase viene elaborata utilizzando il modello BERT, che trasforma il testo in un vettore numerico (embedding) per analizzarne il significato. Questo embedding viene passato al modello di classificazione, che prevede a quale intento (tag) il messaggio corrisponde. Se il modello è sicuro della sua previsione, restituisce una risposta predefinita collegata al tag identificato. Se invece la confidenza è bassa, il chatbot utilizza Gemini per generare una risposta più flessibile e creativa, basandosi anche sul contesto della conversazione grazie alla cronologia memorizzata.\\
+Tutta questa logica è integrata in una pipeline che decide dinamicamente se utilizzare risposte predefinite o dinamiche. Nel frattempo, la cronologia della chat viene costantemente aggiornata per garantire che ogni messaggio tenga conto delle interazioni precedenti. Infine, il chatbot funziona come un sistema interattivo: attende l'input dell'utente, genera una risposta adeguata e la presenta, aggiornando il contesto per i messaggi futuri. Questo approccio ibrido rende il chatbot capace di rispondere in modo sia preciso sia naturale, adattandosi alle diverse situazioni conversazionali.
+
+\section{Glossario}
+
+
 \end{document}
