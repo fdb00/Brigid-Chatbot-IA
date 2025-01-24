@@ -1,5 +1,6 @@
 # no alle librerie da 20GB
 venv/
+.venv
 
 # generale
 HELP.md
