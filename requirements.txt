@@ -1,13 +1,14 @@
 numpy
 torch
+matplotlib
 transformers
 tensorflow
+scikit-learn
 contractions
 google
 protobuf
 textblob
+NRCLex
 nltk
 Flask
 Flask-Cors
-scikit-learn
-NRCLex
