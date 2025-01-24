@@ -4,11 +4,20 @@ import json
 import pickle
 import numpy as np
 import torch
+import contractions
 from tensorflow.keras.models import load_model
 import google.generativeai as genai
+from textblob import TextBlob
+from transformers import BertTokenizer, BertModel
+import re
+from nrclex import NRCLex
 
 # Variabile globale per memorizzare la cronologia
 chat_history = {"contents": []}
+
+# Carica il tokenizer e il modello di BERT
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+bert_model = BertModel.from_pretrained('bert-base-uncased')
 
 # Configura Gemini
 def configure_gemini():
@@ -23,15 +32,28 @@ classes = pickle.load(open('../models/classes.pkl', 'rb'))
 model = load_model('../models/chatbot_model.keras')
 
 # Funzione per preprocessare la frase
+
 def preprocess_sentence(sentence):
-    from transformers import BertTokenizer, BertModel
 
-    # Carica il tokenizer e il modello di BERT
-    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-    bert_model = BertModel.from_pretrained('bert-base-uncased')
+    # Step 1: Rimuovere ripetizioni di caratteri
+    sentence = re.sub(r"(.)\1{2,}", r"\1", sentence)  # Esempio: "heeeelp" -> "help"
 
-    # Tokenizza la frase
-    inputs = tokenizer(sentence, return_tensors="pt", padding=True, truncation=True, max_length=50)
+    # Step 2: Correggi prima la frase
+    corrected_sentence = str(TextBlob(sentence).correct())
+
+    # Step 3: Espandi le contrazioni
+    expanded_sentence = contractions.fix(corrected_sentence)
+
+    # Step 4: Rilevamento delle emozioni
+    def detect_emotions(text):
+        nrc_analysis = NRCLex(text)
+        print(f"Affect frequencies: {nrc_analysis.affect_frequencies}")
+        return nrc_analysis.affect_frequencies
+
+    emotions = detect_emotions(expanded_sentence)
+
+    # Tokenizza la frase espansa
+    inputs = tokenizer(expanded_sentence, return_tensors="pt", padding=True, truncation=True, max_length=50)
 
     # Calcola gli embedding di BERT
     with torch.no_grad():
@@ -55,10 +77,6 @@ def predict_intent(sentence):
 def get_gemini_response(input_text):
     global chat_history
 
-    print("__________________")
-    print("chat history:")
-    print(chat_history)
-    print("__________________")
     # Configura il modello Gemini
     model = genai.GenerativeModel("gemini-1.5-flash")
     convo = model.start_chat(history=chat_history["contents"])
@@ -79,9 +97,9 @@ def get_response_from_pipeline(input_text):
     global chat_history
     predicted_class, confidence = predict_intent(input_text)
     print(f"Confidence: {confidence}")
-    if confidence > 0.1:  # Threshold per il modello
+    if confidence > 0.25:  # Threshold per il modello
         intent_tag = classes[predicted_class]
-        print("Generato dal modello tag:"+intent_tag)
+        print("Generato dal modello. Tag individuato: "+intent_tag)
         for intent in intents['intents']:
             if intent['tag'] == intent_tag:
                 response = random.choice(intent['responses'])
