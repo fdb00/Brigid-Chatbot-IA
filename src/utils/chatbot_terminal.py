@@ -37,7 +37,6 @@ def preprocess_sentence(sentence):
 
     # Step 1: Rimuovere ripetizioni di caratteri
     sentence = re.sub(r"(.)\1{2,}", r"\1", sentence)  # Esempio: "heeeelp" -> "help"
-    print(f"After reducing repeated characters: {sentence}")
 
     # Step 2: Correggi prima la frase
     corrected_sentence = str(TextBlob(sentence).correct())
@@ -47,11 +46,11 @@ def preprocess_sentence(sentence):
 
     # Step 4: Rilevamento delle emozioni
     def detect_emotions(text):
-        emotions = NRCLex(text).affect_frequencies
-        print(f"Detected emotions: {emotions}")
-        return emotions
+        nrc_analysis = NRCLex(text)
+        print(f"Affect frequencies: {nrc_analysis.affect_frequencies}")
+        return nrc_analysis.affect_frequencies
 
-    emotions = detect_emotions(sentence)
+    emotions = detect_emotions(expanded_sentence)
 
     # Tokenizza la frase espansa
     inputs = tokenizer(expanded_sentence, return_tensors="pt", padding=True, truncation=True, max_length=50)
@@ -98,7 +97,7 @@ def get_response_from_pipeline(input_text):
     global chat_history
     predicted_class, confidence = predict_intent(input_text)
     print(f"Confidence: {confidence}")
-    if confidence > 0.3:  # Threshold per il modello
+    if confidence > 0.25:  # Threshold per il modello
         intent_tag = classes[predicted_class]
         print("Generato dal modello. Tag individuato: "+intent_tag)
         for intent in intents['intents']:
