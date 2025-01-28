@@ -14,6 +14,7 @@
 \usepackage{caption}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
+\usepackage{longtable}
 \DeclareCaptionFormat{myformat}{\textbf{#1#2}#3} % Formato personalizzato
 \captionsetup[lstlisting]{format=myformat, labelsep=space}
 \renewcommand{\lstlistingname}{Codice} 
@@ -144,6 +145,68 @@ Questo codice descrive un chatbot avanzato che combina l'uso di un modello di cl
 Quando un utente invia un messaggio, la frase viene elaborata utilizzando il modello BERT, che trasforma il testo in un vettore numerico (embedding) per analizzarne il significato. Questo embedding viene passato al modello di classificazione, che prevede a quale intento (tag) il messaggio corrisponde. Se il modello è sicuro della sua previsione, restituisce una risposta predefinita collegata al tag identificato. Se invece la confidenza è bassa, il chatbot utilizza Gemini per generare una risposta più flessibile e creativa, basandosi anche sul contesto della conversazione grazie alla cronologia memorizzata.\\
 Tutta questa logica è integrata in una pipeline che decide dinamicamente se utilizzare risposte predefinite o dinamiche. Nel frattempo, la cronologia della chat viene costantemente aggiornata per garantire che ogni messaggio tenga conto delle interazioni precedenti. Infine, il chatbot funziona come un sistema interattivo: attende l'input dell'utente, genera una risposta adeguata e la presenta, aggiornando il contesto per i messaggi futuri. Questo approccio ibrido rende il chatbot capace di rispondere in modo sia preciso sia naturale, adattandosi alle diverse situazioni conversazionali.
 
+\newpage
 \section{Glossario}
+\begin{longtable}{|l|p{10cm}|}
+	\hline
+	\textbf{Termini} & \textbf{Descrizione} \\
+	\hline
+	\endfirsthead
+	% Prima pagina della tabella (intestazione)
+	\hline
+	\textbf{Termini} & \textbf{Descrizione} \\
+	\hline
+	\endhead
+	% Pagine successive della tabella (intestazione)
+	\hline
+	\endfoot
+	% Fine della tabella
+	\hline
+	\endlastfoot
+	
+	% Contenuto della tabella
+	Diversify & Progetto di Ingegneria del Software che prevede la realizzazione di un sito web per combattere le discriminazioni. \\
+	\hline
+	Gemini & Modello di linguaggio multimodale sviluppato da Google DeepMind. \\
+	\hline
+	PEAS & Performance Measure, Environment, Actuators, Sensors. \\
+	\hline
+	Bias & Errore sistematico causato da dati di addestramento sbilanciati o parziali, che porta il modello a produrre risultati distorti o discriminatori. Può influenzare l'equità, l'accuratezza e l'affidabilità delle previsioni. \\
+	\hline
+	NLP & Natural Language Processing. \\
+	\hline
+	Kaggle & Piattaforma online per data science e machine learning che offre competizioni, dataset pubblici, e strumenti collaborativi per sviluppare modelli e analizzare dati. \\
+	\hline
+	ChatGPT & Modello di linguaggio basato sull'architettura GPT (Generative Pre-trained Transformer), progettato per comprendere e generare testo in linguaggio naturale. \\
+	\hline
+	Tag & Etichetta che identifica un argomento specifico. \\
+	\hline
+	Pattern & Modelli o frasi che il bot cerca di riconoscere, spesso usando espressioni regolari o parole chiave. \\
+	\hline
+	Responses & Risposte predefinite che il bot restituisce quando un pattern corrisponde a un tag. \\
+	\hline
+	Intent & Gruppo formato da un tag, patterns e responses. \\
+	\hline
+	Dataset & Raccolta di dati organizzati in una struttura definita. \\
+	\hline
+	Numpy & Libreria Python fondamentale per il calcolo scientifico. \\
+	\hline
+	JSON & Formato di scambio dati leggero e leggibile. Allo stesso momento, è una libreria Python che permette la manipolazione di questi ultimi. \\
+	\hline
+	Pickle & Libreria Python che permette di serializzare (salvare) e deserializzare (caricare) oggetti Python in un formato binario. \\
+	\hline
+	Transformers & Libreria sviluppata da Hugging Face che semplifica l'uso di modelli avanzati di deep learning. \\
+	\hline
+	PyTorch & Libreria di machine learning, sviluppata da Facebook, usata per l'addrestramento di reti neurali. \\
+	\hline
+	TensorFlow/Keras & Libreria di machine learning open-source sviluppata da Google, utilizzata per costruire e addestrare modelli di deep learning. \\
+	\hline
+	Pretrain & Processo di addestramento iniziale di un modello di machine learning su un ampio dataset generico. \\
+	\hline
+	BERT & Bidirectional Encoder Representations from Transformers. Modello di deep learning per il trattamento del linguaggio naturale sviluppato da Google. \\
+	\hline
+	Embedding & Tecnica di rappresentazione numerica di parole, frasi o altre unità di dati in uno spazio continuo. \\
+	\hline
+\end{longtable}
 
 \end{document}
