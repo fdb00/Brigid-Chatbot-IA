@@ -21,6 +21,8 @@ Chatbot NLP di Diversify, scritta in ![Python](https://img.shields.io/badge/pyth
 
 ## Come far funzionare Gemini
 - Generate la vostra API Key da https://aistudio.google.com/
-- Copiate la chiave e scrivete sul prompt dei comandi
-` setx SECRET_API_KEY "INSERIRE QUI LA API KEY" `
+- Copiate la chiave e scrivete sul terminale  
+` setx SECRET_API_KEY "INSERIRE QUI LA API KEY" ` (Windows)  
+` export SECRET_API_KEY="INSERIRE QUI LA API KEY" ` (Unix/Unix-like)  
+
 - Riavvia PyCharm e ora dovrebbe funzionare!
