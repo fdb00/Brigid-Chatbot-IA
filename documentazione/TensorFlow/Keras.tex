@@ -1,0 +1,34 @@
+\begin{lstlisting}[language=Python, caption=Utilizzo di TensorFlow e Keras nel codice]
+#Costruzione del modello di rete neurale
+	from tensorflow.keras.models import Sequential
+	from tensorflow.keras.layers import Dense, Dropout
+	from tensorflow.keras.optimizers import Adam
+	from tensorflow.keras.metrics import Precision, Recall
+	
+# Costruzione del modello di classificazione
+	model = Sequential()
+	model.add(Dense(128, input_shape=(train_x.shape[1],), activation='relu'))
+	model.add(Dropout(0.5))
+	model.add(Dense(64, activation='relu'))
+	model.add(Dropout(0.5))
+	model.add(Dense(len(train_y[0]), activation='softmax'))
+	
+# Compilazione del modello
+	model.compile(
+	optimizer=Adam(learning_rate=0.001),
+	loss='categorical_crossentropy',
+	metrics=['accuracy', Precision(), Recall()]
+	)
+	
+#Addestramento del modello 
+	hist = model.fit(train_x, train_y, epochs=100, batch_size=8, verbose=1)
+	
+#Salvataggio del modello
+	# Salva il modello addestrato
+	model.save('../models/chatbot_model.keras')
+	
+#Previsioni con il modello addestrato
+	y_pred = model.predict(train_x)
+	y_pred_classes = np.argmax(y_pred, axis=1)
+	y_true_classes = np.argmax(train_y, axis=1)
+\end{lstlisting}

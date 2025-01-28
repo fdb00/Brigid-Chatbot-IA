@@ -13,9 +13,19 @@
 \usepackage{xcolor}
 \usepackage{caption}
 \usepackage{hyperref}
+\usepackage{fancyhdr}
 \DeclareCaptionFormat{myformat}{\textbf{#1#2}#3} % Formato personalizzato
 \captionsetup[lstlisting]{format=myformat, labelsep=space}
 \renewcommand{\lstlistingname}{Codice} 
+
+%Intestazione e pie' di pagina
+\pagestyle{fancy}
+\lhead{}
+\chead{Fondamenti d'intelligenza artificiale}
+\rhead{13/02/2025}
+\lfoot{Brigid}
+\cfoot{\thepage}
+\rfoot{Esame 2025}
 
 \lstset{
 	basicstyle=\ttfamily\normalsize,    % Font monospace con dimensione normale
@@ -68,13 +78,6 @@ Università degli Studi di Salerno, A.A. 2024/2025
 \tableofcontents
 \newpage
 	
-
-\title{Progetto Diversify - Chatbot Brigid}
-\author{}
-\date{}
-	
-\maketitle
-
 \section{Introduzione}
 	
 \subsection{L'obiettivo della chatbot Brigid}
@@ -105,26 +108,34 @@ Abbiamo utilizzato come ambiente di sviluppo PyCharm, che ci ha permesso di util
 \subsubsection{Librerie utilizzate}
 Le librerie che abbiamo utilizzato sono:
 \begin{itemize}
-\item \textbf{Numpy}: Per manipolazione di array numerici.
-\item \textbf{JSON}: Per leggere il file intents.json (contiene i pattern e i tag associati).
-\item \textbf{Pickle}: Per salvare oggetti Python (come le classi) su disco.
-\item \textbf{Transformers} (da Hugging Face): Per caricare BERT e il suo tokenizer.
-\item \textbf{PyTorch}: Utilizzato per il modello BERT.
-\item \textbf{TensorFlow/Keras}: Per costruire e addestrare il modello di classificazione.
+	\item \textbf{Numpy}: Per manipolazione di array numerici, utilizzati da Bert.
+	\input{codiceNumpy}
+	\item \textbf{JSON}: Per leggere il file intents.json (contiene i pattern e i tag associati).
+	\input{codiceJSON}
+	\item \textbf{Pickle}: Per salvare oggetti Python (come le classi) su disco.
+	\input{codicePickle}
+	\item \textbf{Transformers} (da Hugging Face): Per caricare BERT e il suo tokenizer.
+	\input{codiceTransformers}
+	\item \textbf{PyTorch}: Utilizzato per il modello BERT.
+	\input{codicePyTorch}
+	\item \textbf{TensorFlow/Keras}: Per costruire e addestrare il modello di classificazione.
+	\input{TensorFlow/Keras}
 \end{itemize}.
 
 \section{Parti della chatbot}
 \subsection{Pretrain}
-\subsection{AGGIUNGERE Immagine Codice}
+[AGGIUNGERE Immagine Codice]
+
+
 Il codice rappresenta un processo per creare una chatbot basato su machine learning. Si avvale di BERT per generare rappresentazioni numeriche (embedding) delle frasi e poi costruisce un modello di classificazione per determinare i tag delle frasi in input. 
 Il modello creato presenta tre strati: 
 \begin{itemize}
-\item \textbf{Input}:  La dimensione degli embedding di BERT.
-\item \textbf{Strati nascosti}: Due strati densi con ReLU e Dropout per evitare overfitting.
-\item \textbf{Output}: Softmax per classificazione multi-classe.
+	\item \textbf{Input}:  La dimensione degli embedding di BERT.
+	\item \textbf{Strati nascosti}: Due strati densi con ReLU e Dropout per evitare overfitting.
+	\item \textbf{Output}: Softmax per classificazione multi-classe.
 \end{itemize}.
 
-\subsection{AGGIUNGERE Immagine Codice}
+[AGGIUNGERE Immagine Codice]
 
 \subsection{Analyze intents}
 Il codice carica un file JSON che contiene gli intenti di un chatbot, li analizza e restituisce informazioni utili. Inizia leggendo il file e verificando che contenga la chiave "intents". Dopodiché, conta il numero totale di tag presenti, li elenca e analizza ciascun tag. Per ogni intento, stampa il nome del tag, il numero di frasi esempio associate (patterns) e il numero di risposte definite (responses). Se il file non viene trovato o non è un JSON valido, restituisce un messaggio d'errore.
@@ -134,6 +145,5 @@ Quando un utente invia un messaggio, la frase viene elaborata utilizzando il mod
 Tutta questa logica è integrata in una pipeline che decide dinamicamente se utilizzare risposte predefinite o dinamiche. Nel frattempo, la cronologia della chat viene costantemente aggiornata per garantire che ogni messaggio tenga conto delle interazioni precedenti. Infine, il chatbot funziona come un sistema interattivo: attende l'input dell'utente, genera una risposta adeguata e la presenta, aggiornando il contesto per i messaggi futuri. Questo approccio ibrido rende il chatbot capace di rispondere in modo sia preciso sia naturale, adattandosi alle diverse situazioni conversazionali.
 
 \section{Glossario}
-
 
 \end{document}
