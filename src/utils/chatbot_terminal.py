@@ -82,7 +82,8 @@ def get_gemini_response(input_text):
     convo = model.start_chat(history=chat_history["contents"])
 
     # Genera una risposta usando Gemini
-    response = convo.send_message(input_text)
+    response = convo.send_message(
+        "You are Brigid a chatbot for psychological support. Generate a response of max 200 character for:" + input_text)
 
     # Aggiungi la risposta di Gemini alla cronologia
     chat_history["contents"].append({

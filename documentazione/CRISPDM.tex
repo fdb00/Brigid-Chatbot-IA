@@ -88,19 +88,18 @@ Questi dati saranno utilizzati per ottimizzare il funzionamento della chatbot, a
 \section{Descrizione dell'agente}
 	
 \subsection{Obiettivi}
-Un agente chatbot è un sistema basato sull'intelligenza artificiale, progettato per interagire con gli utenti attraverso conversazioni simulate in linguaggio naturale. È in grado di rispondere a domande relative al supporto psicologico. Questo agente è programmato per comprendere input testuali, elaborare le richieste e fornire risposte pertinenti, coerenti e contestualizzate.
-La chatbot opera attraverso due modelli distinti: il primo, personalizzato, si focalizza sul fornire supporto emotivo; il secondo, \textit{Gemini}, genera risposte fuori contesto, ampliando così la gamma delle interazioni possibili.
+L'agente chatbot è un sistema basato sull'intelligenza artificiale, progettato per interagire con gli utenti attraverso conversazioni simulate in linguaggio naturale ed è in grado di rispondere a domande relative al supporto psicologico. Questo agente è programmato per comprendere input testuali, elaborare le richieste e fornire risposte pertinenti, coerenti e contestualizzate.
+La chatbot opera attraverso due modelli distinti: il primo, personalizzato, si focalizza sul fornire supporto emotivo; il secondo, \textit{Gemini}, genera risposte fuori dal contesto precedente, ampliando così la gamma delle interazioni possibili.
 
 \subsection{Specifica PEAS}
 \subsection{Analisi del problema}
-La creazione di una chatbot per il supporto psicologico presenta diverse complessità. Comprendere il linguaggio umano, spesso ambiguo o emotivamente carico, richiede modelli avanzati di elaborazione del linguaggio naturale. Inoltre, generare risposte empatiche e contestuali è una sfida, poiché la chatbot deve bilanciare personalizzazione e coerenza, evitando risposte inappropriate o influenzate da bias. Dal punto di vista tecnico, il sistema deve essere scalabile per gestire molteplici conversazioni senza ritardi. \\
-Abbiamo affrontato queste sfide adottando modelli NLP avanzati, come GPT, personalizzati per riconoscere emozioni e intenzioni. Per garantire risposte empatiche e sicure, abbiamo combinato risposte generative con risposte predefinite per situazioni delicate. L’architettura serverless assicura scalabilità e rapidità.\\ Queste soluzioni consentono alla chatbot di offrire un supporto psicologico efficace e adattato alle esigenze individuali.
+La creazione di una chatbot per il supporto psicologico presenta diverse complessità. Comprendere il linguaggio umano, spesso ambiguo o emotivamente carico, richiede modelli avanzati di elaborazione del linguaggio naturale. Inoltre, generare risposte empatiche e contestuali è una sfida, poiché la chatbot deve bilanciare personalizzazione e coerenza, evitando risposte inappropriate o influenzate da bias. Abbiamo affrontato queste sfide adottando modelli NLP, come BERT, personalizzati per riconoscere emozioni e intenzioni. Per garantire risposte empatiche e sicure, abbiamo combinato risposte generative con risposte predefinite per situazioni delicate.\ Queste soluzioni consentono alla chatbot di offrire un supporto psicologico efficace e adattato alle esigenze individuali.
 
 \section{Raccolta, analisi e preprocessing dei dati}
 
 \subsection{Scelta del dataset}
-Abbiamo iniziato utilizzando un dataset in formato JSON trovato online sul sito Kaggle, che poi abbiamo ampliato e perfezionato attraverso un lavoro mirato, avvalendoci anche del supporto di ChatGPT per integrare ulteriori dati. Questo processo ci ha permesso di sviluppare un dataset altamente specifico e perfettamente adattato alle esigenze della chatbot. Grazie a questa personalizzazione, siamo riusciti a garantire un’esperienza più efficace e rilevante per gli utenti che interagiscono con il sistema.\\
-I dati presenti nel dataset di Kaggle seguono una struttura composta da tag, pattern e response. Questo ci ha permesso di mantenere una coerenza strutturale, applicando la stessa organizzazione anche ai dati aggiunti successivamente durante il nostro lavoro.\\
+Abbiamo iniziato utilizzando un dataset in formato JSON trovato online sul sito Kaggle, che poi abbiamo ampliato e perfezionato attraverso un lavoro mirato, avvalendoci anche del supporto di ChatGPT per integrare ulteriori dati. Questo processo ci ha permesso di sviluppare un dataset perfettamente adattato alle esigenze della chatbot. Grazie a questa personalizzazione, siamo riusciti a garantire un’esperienza più efficace e rilevante per gli utenti che interagiscono con il sistema.\\
+I dati presenti nel dataset di Kaggle seguono una struttura composta da tag, pattern e responses. Questo ci ha permesso di mantenere una coerenza strutturale, applicando la stessa organizzazione anche ai dati aggiunti successivamente durante il nostro lavoro.\\
 Il dataset in questione è reperibile a questo \href{https://www.kaggle.com/code/jocelyndumlao/chatbot-for-mental-health-conversations}{\textcolor{blue}{\underline{link}}}.
 
 \subsection{Tecnologie utilizzate}
@@ -109,7 +108,7 @@ Abbiamo utilizzato come ambiente di sviluppo PyCharm, che ci ha permesso di util
 \subsubsection{Librerie utilizzate}
 Le librerie che abbiamo utilizzato sono:
 \begin{itemize}
-	\item \textbf{Numpy}: Per manipolazione di array numerici, utilizzati da Bert.
+	\item \textbf{Numpy}: Per manipolazione di array numerici, utilizzati da BERT.
 	\input{codice/codiceNumpy}
 	\item \textbf{JSON}: Per leggere il file intents.json (contiene i pattern e i tag associati).
 	\input{codice/codiceJSON}
