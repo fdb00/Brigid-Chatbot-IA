@@ -276,71 +276,318 @@ L’applicazione della \textit{data augmentation} ha portato diversi vantaggi:
 Grazie a queste ottimizzazioni, la chatbot Brigid è ora in grado di comprendere e rispondere con maggiore accuratezza e naturalezza agli input degli utenti.
 
 
-\section{Preparazione dei dati}
+\section{Preparazione dei Dati}
+
+La fase di preparazione dei dati è fondamentale affinché il chatbot Brigid possa elaborare correttamente gli input testuali e fornire risposte adeguate. Nel nostro progetto, la preparazione dei dati è suddivisa in due fasi principali:
+
+\begin{enumerate}
+	\item Preparazione dei dati di input per il pretrain del modello → Elaborazione del dataset (\texttt{intents.json}) per addestrare il modello di classificazione.
+	\item Preparazione dei dati in input da sottomettere al modello nel terminale → Elaborazione in tempo reale delle frasi fornite dagli utenti per generare risposte pertinenti.
+\end{enumerate}
+
+\subsection{Preparazione dei Dati per il Pretrain del Modello}
+
+Nel file \texttt{pretrain.py}, i dati vengono elaborati e trasformati in un formato compatibile con il modello di classificazione. Questo processo è fondamentale affinché la rete neurale possa apprendere in modo efficace e riconoscere gli intenti dell’utente.
+
+\subsubsection{Estrazione e Pulizia dei Dati}
+
+Il dataset viene caricato da \texttt{intents.json} e suddiviso in patterns (frasi di esempio) e tag (categorie di intenti). Ecco il processo seguito:
+
+\begin{lstlisting}[language=Python]
+	# Lettura del dataset
+	with open('../data/intents.json', encoding='utf-8') as file:
+	intents = json.load(file)
+\end{lstlisting}
+
+Creazione delle liste per i dati di addestramento:
+
+\begin{lstlisting}[language=Python]
+	classes = []
+	documents = []
+	
+	for intent in intents['intents']:
+	for pattern in intent['patterns']:
+	documents.append((pattern, intent['tag']))
+	if intent['tag'] not in classes:
+	classes.append(intent['tag'])
+	
+	classes = sorted(set(classes))
+\end{lstlisting}
+
+Viene creata una lista \texttt{documents} che associa ogni frase (pattern) al suo intento (tag). La lista \texttt{classes} raccoglie tutti gli intenti unici presenti nel dataset.
+
+\subsubsection{Tokenizzazione e Generazione degli Embedding}
+
+Per permettere al modello di comprendere il significato semantico delle frasi, le frasi di input vengono convertite in vettori numerici (embedding) utilizzando BERT.
+
+Caricamento del tokenizer e del modello BERT:
+
+\begin{lstlisting}[language=Python]
+	tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+	bert_model = BertModel.from_pretrained('bert-base-uncased')
+\end{lstlisting}
+
+Conversione delle frasi in embedding numerici:
+
+\begin{lstlisting}[language=Python]
+	def get_bert_embedding(sentence):
+	inputs = tokenizer(sentence, return_tensors="pt", padding=True, truncation=True, max_length=50)
+	with torch.no_grad():
+	outputs = bert_model(**inputs)
+	return outputs.last_hidden_state.mean(dim=1).squeeze().numpy()
+\end{lstlisting}
+
+La funzione \texttt{get\_bert\_embedding()} prende una frase, la tokenizza con BERT e ne estrae l’embedding numerico. L’output è un vettore di 768 dimensioni che rappresenta semanticamente la frase.
+
+Creazione del dataset di addestramento:
+
+\begin{lstlisting}[language=Python]
+	train_x = []
+	train_y = []
+	
+	for pattern, tag in documents:
+	embedding = get_bert_embedding(pattern)
+	train_x.append(embedding)
+	
+	output_row = [0] * len(classes)
+	output_row[classes.index(tag)] = 1
+	train_y.append(output_row)
+	
+	train_x = np.array(train_x)
+	train_y = np.array(train_y)
+\end{lstlisting}
+
+\texttt{train\_x} contiene gli embedding BERT delle frasi di esempio. \texttt{train\_y} contiene le etichette in formato one-hot encoding, necessarie per addestrare il modello di classificazione.
+
+\subsubsection{Addestramento del Modello}
+
+Una volta elaborati i dati, viene costruito un modello di rete neurale per la classificazione degli intenti.
+
+Definizione del modello:
+
+\begin{lstlisting}[language=Python]
+	model = Sequential()
+	model.add(Dense(128, input_shape=(train_x.shape[1],), activation='relu'))
+	model.add(Dropout(0.5))
+	model.add(Dense(64, activation='relu'))
+	model.add(Dropout(0.5))
+	model.add(Dense(len(train_y[0]), activation='softmax'))
+\end{lstlisting}
+
+Rete neurale fully connected con due livelli nascosti e funzioni di attivazione ReLU. Dropout per evitare overfitting. Softmax nell’output per la classificazione degli intenti.
+
+Compilazione e addestramento del modello:
+
+\begin{lstlisting}[language=Python]
+	model.compile(
+	optimizer=Adam(learning_rate=0.001),
+	loss='categorical_crossentropy',
+	metrics=['accuracy']
+	)
+	hist = model.fit(train_x, train_y, epochs=100, batch_size=8, verbose=1)
+\end{lstlisting}
+
+Ottimizzazione con Adam e funzione di perdita \texttt{categorical\_crossentropy}. Addestramento per 100 epoche con batch di 8 esempi per volta.
+
+Salvataggio del modello e delle classi:
+
+\begin{lstlisting}[language=Python]
+	model.save('../models/chatbot_model.keras')
+	pickle.dump(classes, open('../models/classes.pkl', 'wb'))
+\end{lstlisting}
+
+Il modello addestrato viene salvato per essere usato dal chatbot in fase di inferenza. Le classi degli intenti vengono salvate per recuperarle durante la predizione.
+
+\subsection{Preparazione dei Dati in Input nel Terminale}
+
+Nel file \texttt{chatbot\_terminal.py}, viene gestita la preparazione degli input ricevuti in tempo reale dagli utenti. L'obiettivo è trasformare ogni messaggio in una forma compatibile con il modello di classificazione.
+
+\subsubsection{Pulizia del Testo Utente}
+
+Prima di essere analizzato, l'input utente viene preprocessato per migliorare la comprensione da parte del modello.
+
+Passaggi eseguiti nel preprocessing:
+
+\begin{lstlisting}[language=Python]
+	def preprocess_sentence(sentence):
+	sentence = re.sub(r"(.)\1{2,}", r"\1", sentence)  # Riduzione ripetizioni di caratteri
+	corrected_sentence = str(TextBlob(sentence).correct())  # Correzione ortografica
+	expanded_sentence = contractions.fix(corrected_sentence)  # Espansione delle contrazioni
+\end{lstlisting}
+
+Riduzione di caratteri ripetuti (es. "hellooo" → "hello"). Correzione ortografica con \texttt{TextBlob}. Espansione delle contrazioni (es. "I'm" → "I am") per evitare ambiguità.
+
+\subsubsection{Tokenizzazione e Generazione degli Embedding in Tempo Reale}
+
+L'input preprocessato viene poi trasformato in embedding numerici usando BERT, esattamente come fatto in fase di addestramento.
+
+Tokenizzazione e generazione dell'embedding:
+
+\begin{lstlisting}[language=Python]
+	inputs = tokenizer(expanded_sentence, return_tensors="pt", padding=True, truncation=True, max_length=50)
+	with torch.no_grad():
+	outputs = bert_model(**inputs)
+	embedding = outputs.last_hidden_state.mean(dim=1).squeeze().numpy()
+	return np.expand_dims(embedding, axis=0)
+\end{lstlisting}
+
+Il testo viene tokenizzato e convertito in embedding BERT. L’embedding (768 dimensioni) viene passato al modello di classificazione per la predizione dell’intento.
+
+Predizione dell’intento:
+
+\begin{lstlisting}[language=Python]
+	def predict_intent(sentence):
+	bag = preprocess_sentence(sentence)
+	res = model.predict(bag)[0]
+	max_prob = np.max(res)
+	predicted_class = np.argmax(res)
+	return predicted_class, max_prob
+\end{lstlisting}
+
+Il modello predice l’intento più probabile con il relativo confidence score.
+
+La fase di preparazione dei dati garantisce che il chatbot Brigid possa interpretare correttamente sia i dati di addestramento che gli input in tempo reale.
+
+Nel pretrain, il dataset viene elaborato e trasformato in embedding per addestrare la rete neurale. Nel terminale, l’input dell’utente viene normalizzato, tokenizzato e convertito in embedding per ottenere una predizione accurata dell’intento. Questa preparazione ottimizzata permette a Brigid di offrire risposte pertinenti e di adattarsi a diversi tipi di input utente.
+
 
 \section{Modellazione}
+La fase di modellazione nel processo CRISP-DM riguarda la selezione, l'implementazione e l'addestramento del modello di machine learning che permette al chatbot Brigid di riconoscere gli intenti dell'utente e fornire risposte appropriate.
 
-\section{Valutazione}
+Nel progetto, il chatbot utilizza una combinazione di tecniche di Natural Language Processing (NLP) e Deep Learning per l'elaborazione del linguaggio naturale. Il modello di classificazione sfrutta gli embedding BERT per rappresentare le frasi e una rete neurale fully connected per associare ogni input utente a un intento specifico. Inoltre, viene utilizzato un modello generativo (Gemini) per gestire input non previsti.
 
-\section{Deployment}
+\subsection{Embedding e Rappresentazione del Testo}
+Un embedding è una rappresentazione numerica di un testo che cattura le relazioni semantiche tra le parole. Gli embedding permettono al modello di comprendere il significato delle frasi anziché analizzarle come semplici sequenze di caratteri.
 
-\section{Descrizione dell'agente}
-\subsection{Obiettivi}
-L'agente chatbot è un sistema basato sull'intelligenza artificiale, progettato per interagire con gli utenti attraverso conversazioni simulate in linguaggio naturale ed è in grado di rispondere a domande relative al supporto psicologico. Questo agente è programmato per comprendere input testuali, elaborare le richieste e fornire risposte pertinenti, coerenti e contestualizzate.
-La chatbot opera attraverso due modelli distinti: il primo, personalizzato, si focalizza sul fornire supporto emotivo; il secondo, \textit{Gemini}, genera risposte fuori dal contesto precedente, ampliando così la gamma delle interazioni possibili.
+Nel chatbot Brigid, gli embedding sono generati utilizzando BERT, un modello avanzato di NLP che produce vettori numerici a 768 dimensioni, rappresentando ogni frase in uno spazio multidimensionale. Questo approccio consente al chatbot di riconoscere somiglianze tra frasi con significati simili, anche se scritte in modi diversi.
 
-\subsection{Specifica PEAS}
-\subsection{Analisi del problema}
-La creazione di una chatbot per il supporto psicologico presenta diverse complessità. Comprendere il linguaggio umano, spesso ambiguo o emotivamente carico, richiede modelli avanzati di elaborazione del linguaggio naturale. Inoltre, generare risposte empatiche e contestuali è una sfida, poiché la chatbot deve bilanciare personalizzazione e coerenza, evitando risposte inappropriate o influenzate da bias. Abbiamo affrontato queste sfide adottando modelli NLP, come BERT, personalizzati per riconoscere emozioni e intenzioni. Per garantire risposte empatiche e sicure, abbiamo combinato risposte generative con risposte predefinite per situazioni delicate.\ Queste soluzioni consentono alla chatbot di offrire un supporto psicologico efficace e adattato alle esigenze individuali.
+Esempio di embedding numerico per una frase:
 
-\section{Raccolta, analisi e preprocessing dei dati}
+\begin{lstlisting}[language=Python]
+	Input: "Hello, how are you?"
+	Embedding generato: [0.12, -0.34, 0.56, ..., 0.98]
+\end{lstlisting}
 
-\subsection{Scelta del dataset}
-Abbiamo iniziato utilizzando un dataset in formato JSON trovato online sul sito Kaggle, che poi abbiamo ampliato e perfezionato attraverso un lavoro mirato, avvalendoci anche del supporto di ChatGPT per integrare ulteriori dati. Questo processo ci ha permesso di sviluppare un dataset perfettamente adattato alle esigenze della chatbot. Grazie a questa personalizzazione, siamo riusciti a garantire un’esperienza più efficace e rilevante per gli utenti che interagiscono con il sistema.\\
-I dati presenti nel dataset di Kaggle seguono una struttura composta da tag, pattern e responses. Questo ci ha permesso di mantenere una coerenza strutturale, applicando la stessa organizzazione anche ai dati aggiunti successivamente durante il nostro lavoro.\\
-Il dataset in questione è reperibile a questo \href{https://www.kaggle.com/code/jocelyndumlao/chatbot-for-mental-health-conversations}{\textcolor{blue}{\underline{link}}}.
+Questa rappresentazione vettoriale viene utilizzata come input per la rete neurale del chatbot.
 
-\subsection{Tecnologie utilizzate}
-Abbiamo utilizzato come ambiente di sviluppo PyCharm, che ci ha permesso di utilizzare come linguaggio di programmazione Python. 
+\subsection{Architettura del Modello di Classificazione}
+Il modello di classificazione degli intenti è una rete neurale fully connected realizzata con Keras. Il suo compito è analizzare gli embedding generati da BERT e assegnare un intento all'input dell'utente.
 
-\subsubsection{Librerie utilizzate}
-Le librerie che abbiamo utilizzato sono:
+\subsubsection{Struttura del modello}
+Il modello è costituito da tre livelli principali:
+
 \begin{itemize}
-	\item \textbf{Numpy}: Per manipolazione di array numerici, utilizzati da BERT.
-	\input{codice/codiceNumpy}
-	\item \textbf{JSON}: Per leggere il file intents.json (contiene i pattern e i tag associati).
-	\input{codice/codiceJSON}
-	\item \textbf{Pickle}: Per salvare oggetti Python (come le classi) su disco.
-	\input{codice/codicePickle}
-	\item \textbf{Transformers} (da Hugging Face): Per caricare BERT e il suo tokenizer.
-	\input{codice/codiceTransformers}
-	\item \textbf{PyTorch}: Utilizzato per il modello BERT.
-	\input{codice/codicePyTorch}
-	\item \textbf{codice/TensorFlow/Keras}: Per costruire e addestrare il modello di classificazione.
-	\input{codice/codiceTensorFlow_e_Keras}
-\end{itemize}.
+	\item \textbf{Input Layer}: accetta gli embedding di BERT (dimensione 768)
+	\item \textbf{Hidden Layers}: due livelli densi con attivazione ReLU per apprendere caratteristiche rilevanti
+	\item \textbf{Dropout Layers}: riducono il rischio di overfitting
+	\item \textbf{Output Layer}: utilizza la funzione di attivazione Softmax per restituire la probabilità di appartenenza a ciascun intento
+\end{itemize}
 
-\section{Parti della chatbot}
-\subsection{Pretrain}
-[AGGIUNGERE Immagine Codice]
+Il codice che definisce il modello è il seguente:
 
+\begin{lstlisting}[language=Python]
+	from keras.models import Sequential
+	from keras.layers import Dense, Dropout
+	
+	model = Sequential([
+	Dense(128, input_shape=(768,), activation='relu'),
+	Dropout(0.5),
+	Dense(64, activation='relu'),
+	Dropout(0.5),
+	Dense(len(classes), activation='softmax')
+	])
+\end{lstlisting}
 
-Il codice rappresenta un processo per creare una chatbot basato su machine learning. Si avvale di BERT per generare rappresentazioni numeriche (embedding) delle frasi e poi costruisce un modello di classificazione per determinare i tag delle frasi in input. 
-Il modello creato presenta tre strati: 
+Dopo la definizione dell'architettura, il modello viene compilato e addestrato con i dati ottenuti dalla fase di preparazione:
+
+\begin{lstlisting}[language=Python]
+	from keras.optimizers import Adam
+	
+	model.compile(
+	optimizer=Adam(learning_rate=0.001),
+	loss='categorical_crossentropy',
+	metrics=['accuracy']
+	)
+	
+	model.fit(train_x, train_y, epochs=100, batch_size=8, verbose=1)
+\end{lstlisting}
+
+Viene utilizzato l'ottimizzatore Adam, che accelera la convergenza del modello. La funzione di perdita è categorical crossentropy, adatta alla classificazione multi-classe. La metrica di valutazione è l'accuratezza. Il modello viene addestrato per 100 epoche con un batch di 8 esempi alla volta. Al termine dell'addestramento, il modello viene salvato per essere utilizzato in fase di inferenza:
+
+\begin{lstlisting}[language=Python]
+	model.save('../models/chatbot_model.keras')
+	import pickle
+	pickle.dump(classes, open('../models/classes.pkl', 'wb'))
+\end{lstlisting}
+
+\subsection{Predizione degli Intenti e Generazione delle Risposte}
+Una volta addestrato, il modello viene utilizzato nel file \texttt{chatbot\_terminal.py} per analizzare gli input dell'utente e generare una risposta appropriata.
+
+\subsubsection{Preprocessing dell'Input Utente}
+Prima di essere elaborato, l'input dell'utente viene sottoposto a un processo di pulizia e trasformato in embedding BERT.
+\begin{lstlisting}[language=Python]
+	def preprocess_sentence(sentence):
+	inputs = tokenizer(sentence, return_tensors="pt", padding=True, truncation=True, max_length=50)
+	with torch.no_grad():
+	outputs = bert_model(**inputs)
+	embedding = outputs.last_hidden_state.mean(dim=1).squeeze().numpy()
+	return np.expand_dims(embedding, axis=0)
+\end{lstlisting}
+Il testo viene tokenizzato con il BERT tokenizer. L'output è un vettore di 768 dimensioni, compatibile con il modello di classificazione.
+
+\subsubsection{Predizione dell'Intento}
+L'embedding generato viene fornito al modello per ottenere una classificazione dell'input utente.
+
+\begin{lstlisting}[language=Python]
+	def predict_intent(sentence):
+	bag = preprocess_sentence(sentence)
+	res = model.predict(bag)[0]
+	max_prob = np.max(res)
+	predicted_class = np.argmax(res)
+	return predicted_class, max_prob
+\end{lstlisting}
+Il modello calcola la probabilità di ogni classe di intenti e seleziona quella con valore massimo. Se la probabilità massima supera una soglia di confidence, viene restituita una risposta predefinita.
+\begin{lstlisting}[language=Python]
+	if confidence > 0.75:
+	intent_tag = classes[predicted_class]
+	for intent in intents['intents']:
+	if intent['tag'] == intent_tag:
+	response = random.choice(intent['responses'])
+\end{lstlisting}
+Se invece il modello non è sicuro della predizione, il chatbot passa a Gemini per generare una risposta.
+
+\subsection{Utilizzo del Modello Generativo Gemini}
+Quando il modello di classificazione non è in grado di identificare con certezza l'intento, viene utilizzato Gemini, un modello generativo di intelligenza artificiale.
+
+\subsubsection{Generazione di una risposta con Gemini}
+\begin{lstlisting}[language=Python]
+	def get_gemini_response(input_text):
+	model = genai.GenerativeModel("gemini-1.5-flash")
+	convo = model.start_chat(history=chat_history["contents"])
+	response = convo.send_message(input_text, max_output_tokens=50)
+	return response.text
+\end{lstlisting}
+Gemini analizza l'input e genera una risposta basata sul contesto della conversazione. Il numero massimo di token generati è limitato a 50, per garantire risposte concise.
+
+\subsubsection{Selezione del Modello di Risposta}
+\begin{lstlisting}[language=Python]
+	def get_response_from_pipeline(input_text):
+	predicted_class, confidence = predict_intent(input_text)
+	
+	if confidence > 0.75:
+	return get_predefined_response(predicted_class)
+	else:
+	return get_gemini_response(input_text)
+\end{lstlisting}
+Se il classificatore ha confidence alta, viene selezionata una risposta predefinita. Se la confidence è bassa, viene utilizzato Gemini per generare una risposta dinamica.\\
+\newpage
+La fase di modellazione ha portato alla creazione di un chatbot basato su:
 \begin{itemize}
-\item \textbf{Input}:  La dimensione degli embedding di BERT.
-\item \textbf{Strati nascosti}: Due strati densi con ReLU e Dropout per evitare overfitting.
-\item \textbf{Output}: Softmax per classificazione multi-classe.
-\end{itemize}.
-
-[AGGIUNGERE Immagine Codice]
-
-\subsection{Analyze intents}
-Il codice carica un file JSON che contiene gli intenti di un chatbot, li analizza e restituisce informazioni utili. Inizia leggendo il file e verificando che contenga la chiave "intents". Dopodiché, conta il numero totale di tag presenti, li elenca e analizza ciascun tag. Per ogni intento, stampa il nome del tag, il numero di frasi esempio associate (patterns) e il numero di risposte definite (responses). Se il file non viene trovato o non è un JSON valido, restituisce un messaggio d'errore.
-\subsection{Chatbot interface}
-Questo codice descrive un chatbot avanzato che combina l'uso di un modello di classificazione pre-addestrato con l'intelligenza artificiale generativa di Gemini. Il funzionamento si basa su diverse fasi. Per prima cosa, il sistema configura Gemini, un modello AI generativo che può creare risposte dinamiche e contestuali. Viene poi caricato il file intents.json, che contiene una struttura di intenti predefiniti, con frasi esempio e risposte associate, insieme al modello di classificazione e alla lista dei tag.\\
-Quando un utente invia un messaggio, la frase viene elaborata utilizzando il modello BERT, che trasforma il testo in un vettore numerico (embedding) per analizzarne il significato. Questo embedding viene passato al modello di classificazione, che prevede a quale intento (tag) il messaggio corrisponde. Se il modello è sicuro della sua previsione, restituisce una risposta predefinita collegata al tag identificato. Se invece la confidenza è bassa, la chatbot utilizza Gemini per generare una risposta più flessibile e creativa, basandosi anche sul contesto della conversazione grazie alla cronologia memorizzata.\\
-Tutta questa logica è integrata in una pipeline che decide dinamicamente se utilizzare risposte predefinite o dinamiche. Nel frattempo, la cronologia della chat viene costantemente aggiornata per garantire che ogni messaggio tenga conto delle interazioni precedenti. Infine, la chatbot funziona come un sistema interattivo: attende l'input dell'utente, genera una risposta adeguata e la presenta, aggiornando il contesto per i messaggi futuri. Questo approccio ibrido rende la chatbot capace di rispondere in modo sia preciso sia naturale, adattandosi alle diverse situazioni conversazionali.
+	\item BERT per la generazione degli embedding
+	\item Una rete neurale con Keras per la classificazione degli intenti
+	\item Un fallback generativo con Gemini per input fuori dominio
+\end{itemize}
+Questa combinazione di tecnologie permette a Brigid di comprendere e rispondere in modo efficace, garantendo un'interazione naturale con gli utenti.
 
 \newpage
 \section{Glossario}

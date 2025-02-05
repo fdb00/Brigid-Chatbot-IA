@@ -33,30 +33,26 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.2}Ottimizzazione dei Pattern}{9}{subsubsection.3.6.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.3}Generazione di Nuovi Pattern con ChatGPT}{9}{subsubsection.3.6.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.4}Benefici della Data Augmentation}{9}{subsubsection.3.6.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Preparazione dei dati}{10}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Modellazione}{10}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Valutazione}{10}{section.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}Deployment}{10}{section.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {8}Descrizione dell'agente}{10}{section.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Obiettivi}{10}{subsection.8.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Specifica PEAS}{10}{subsection.8.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Analisi del problema}{10}{subsection.8.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {9}Raccolta, analisi e preprocessing dei dati}{11}{section.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Scelta del dataset}{11}{subsection.9.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Tecnologie utilizzate}{11}{subsection.9.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.2.1}Librerie utilizzate}{11}{subsubsection.9.2.1}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}{\ignorespaces Utilizzo di Numpy nel codice}}{11}{lstlisting.1}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}{\ignorespaces esempio breve di file JSON}}{11}{lstlisting.2}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {3}{\ignorespaces Utilizzo di Pickle nel codice}}{12}{lstlisting.3}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4}{\ignorespaces Utilizzo di Transformers nel codice}}{12}{lstlisting.4}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {5}{\ignorespaces Utilizzo di PyTorch nel codice}}{13}{lstlisting.5}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6}{\ignorespaces Utilizzo di TensorFlow e Keras nel codice}}{13}{lstlisting.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {10}Parti della chatbot}{14}{section.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}Pretrain}{14}{subsection.10.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Analyze intents}{15}{subsection.10.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.3}Chatbot interface}{15}{subsection.10.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Preparazione dei Dati}{10}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Preparazione dei Dati per il Pretrain del Modello}{10}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Estrazione e Pulizia dei Dati}{10}{subsubsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Tokenizzazione e Generazione degli Embedding}{11}{subsubsection.4.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}Addestramento del Modello}{11}{subsubsection.4.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Preparazione dei Dati in Input nel Terminale}{12}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Pulizia del Testo Utente}{12}{subsubsection.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Tokenizzazione e Generazione degli Embedding in Tempo Reale}{13}{subsubsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Modellazione}{13}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Embedding e Rappresentazione del Testo}{13}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Architettura del Modello di Classificazione}{14}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}Struttura del modello}{14}{subsubsection.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Predizione degli Intenti e Generazione delle Risposte}{15}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1}Preprocessing dell'Input Utente}{15}{subsubsection.5.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2}Predizione dell'Intento}{15}{subsubsection.5.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Utilizzo del Modello Generativo Gemini}{16}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.1}Generazione di una risposta con Gemini}{16}{subsubsection.5.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.2}Selezione del Modello di Risposta}{16}{subsubsection.5.4.2}\protected@file@percent }
 \gdef \LT@i {\LT@entry 
     {5}{106.59076pt}\LT@entry 
     {1}{296.52756pt}}
-\@writefile{toc}{\contentsline {section}{\numberline {11}Glossario}{16}{section.11}\protected@file@percent }
-\gdef \@abspage@last{17}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Glossario}{18}{section.6}\protected@file@percent }
+\gdef \@abspage@last{19}
