@@ -1,17 +1,42 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
-\contentsline {section}{\numberline {1}Introduzione}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}L'obiettivo della chatbot Brigid}{3}{subsection.1.1}%
-\contentsline {section}{\numberline {2}Descrizione dell'agente}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Obiettivi}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Specifica PEAS}{3}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Analisi del problema}{3}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Raccolta, analisi e preprocessing dei dati}{3}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Scelta del dataset}{3}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Tecnologie utilizzate}{4}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Librerie utilizzate}{4}{subsubsection.3.2.1}%
-\contentsline {section}{\numberline {4}Parti della chatbot}{7}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Pretrain}{7}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Analyze intents}{7}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Chatbot interface}{8}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Glossario}{9}{section.5}%
+\contentsline {section}{\numberline {1}Introduzione}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}L'obiettivo della chatbot Brigid}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Scelta nome \textit {Brigid}}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Metodologia CRISP-DM e Applicazione nel Progetto}{4}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Comprensione del Business}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Contesto e Motivazioni}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Obiettivi della Chatbot}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Requisiti del Progetto}{5}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Requisiti Funzionali}{6}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Requisiti Tecnici}{6}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}Benefici Attesi}{6}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Comprensione dei dati}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Struttura del Dataset}{7}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Esempio di Struttura di un Intento}{7}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Tipologie di Intenti}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Analisi della Distribuzione dei Dati}{8}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Tipologia di Dati Utilizzati}{8}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Problematiche del Dataset Iniziale}{8}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Applicazione della Data Augmentation e Benefici}{9}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Espansione del Dataset}{9}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Ottimizzazione dei Pattern}{9}{subsubsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.3}Generazione di Nuovi Pattern con ChatGPT}{9}{subsubsection.3.6.3}%
+\contentsline {subsubsection}{\numberline {3.6.4}Benefici della Data Augmentation}{9}{subsubsection.3.6.4}%
+\contentsline {section}{\numberline {4}Preparazione dei dati}{10}{section.4}%
+\contentsline {section}{\numberline {5}Modellazione}{10}{section.5}%
+\contentsline {section}{\numberline {6}Valutazione}{10}{section.6}%
+\contentsline {section}{\numberline {7}Deployment}{10}{section.7}%
+\contentsline {section}{\numberline {8}Descrizione dell'agente}{10}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Obiettivi}{10}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Specifica PEAS}{10}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Analisi del problema}{10}{subsection.8.3}%
+\contentsline {section}{\numberline {9}Raccolta, analisi e preprocessing dei dati}{11}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Scelta del dataset}{11}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Tecnologie utilizzate}{11}{subsection.9.2}%
+\contentsline {subsubsection}{\numberline {9.2.1}Librerie utilizzate}{11}{subsubsection.9.2.1}%
+\contentsline {section}{\numberline {10}Parti della chatbot}{14}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Pretrain}{14}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Analyze intents}{15}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Chatbot interface}{15}{subsection.10.3}%
+\contentsline {section}{\numberline {11}Glossario}{16}{section.11}%
