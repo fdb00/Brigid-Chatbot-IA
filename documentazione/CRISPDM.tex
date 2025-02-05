@@ -145,6 +145,10 @@ Questo codice descrive un chatbot avanzato che combina l'uso di un modello di cl
 Quando un utente invia un messaggio, la frase viene elaborata utilizzando il modello BERT, che trasforma il testo in un vettore numerico (embedding) per analizzarne il significato. Questo embedding viene passato al modello di classificazione, che prevede a quale intento (tag) il messaggio corrisponde. Se il modello è sicuro della sua previsione, restituisce una risposta predefinita collegata al tag identificato. Se invece la confidenza è bassa, il chatbot utilizza Gemini per generare una risposta più flessibile e creativa, basandosi anche sul contesto della conversazione grazie alla cronologia memorizzata.\\
 Tutta questa logica è integrata in una pipeline che decide dinamicamente se utilizzare risposte predefinite o dinamiche. Nel frattempo, la cronologia della chat viene costantemente aggiornata per garantire che ogni messaggio tenga conto delle interazioni precedenti. Infine, il chatbot funziona come un sistema interattivo: attende l'input dell'utente, genera una risposta adeguata e la presenta, aggiornando il contesto per i messaggi futuri. Questo approccio ibrido rende il chatbot capace di rispondere in modo sia preciso sia naturale, adattandosi alle diverse situazioni conversazionali.
 
+\section{FAQ}
+\subsection{Come posso configurare la chatbot nel mio ambiente locale?}
+
+
 \newpage
 \section{Glossario}
 \begin{longtable}{|l|p{10cm}|}
