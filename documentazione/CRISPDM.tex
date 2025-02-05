@@ -22,11 +22,11 @@
 %Intestazione e pie' di pagina
 \pagestyle{fancy}
 \lhead{}
-\chead{Fondamenti d'intelligenza artificiale}
+\chead{Fondamenti d'Intelligenza Artificiale}
 \rhead{13/02/2025}
 \lfoot{Brigid}
 \cfoot{\thepage}
-\rfoot{Esame 2025}
+\rfoot{Pino Daniele}
 
 \lstset{
 	basicstyle=\ttfamily\normalsize,    % Font monospace con dimensione normale
@@ -45,6 +45,20 @@
 	tabsize=4,                          % Dimensione dei tabulatori
 	xleftmargin=20pt,                   % Margine interno a sinistra
 	xrightmargin=20pt,                  % Margine interno a destra
+}
+
+% Definizione dello stile per il codice JSON
+\lstdefinelanguage{json}{
+	basicstyle=\ttfamily\small,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	stepnumber=1,
+	showstringspaces=false,
+	breaklines=true,
+	frame=single,
+	backgroundcolor=\color{gray!10},
+	keywordstyle=\color{blue},
+	stringstyle=\color{red}
 }
 
 % Imposta i margini della pagina
@@ -79,14 +93,198 @@ Università degli Studi di Salerno, A.A. 2024/2025
 \tableofcontents
 \newpage
 	
-\section{Introduzione}
-	
+\section{Introduzione}	
 \subsection{L'obiettivo della chatbot Brigid}
-L'obiettivo della chatbot \textbf{Brigid} è quello di fornire un supporto psicologico, incluso all'interno del progetto \textit{Diversify}. La chatbot offre un sostegno concreto e monitora l'andamento delle conversazioni, raccogliendo dati attraverso l'interazione con l'utente.\\ 
-Questi dati saranno utilizzati per ottimizzare il funzionamento della chatbot, adattando le conversazioni alle esigenze e alle preferenze specifiche di ciascun utente. In questo modo, l'utente potrà vivere un'esperienza interattiva più personalizzata e coinvolgente, con risposte e contenuti che riflettono in maniera più precisa le sue aspettative e necessità.
-	
+La chatbot sviluppata ha l’obiettivo di fornire un supporto interattivo e intelligente agli utenti, con particolare attenzione all'assistenza psicologica e al dialogo empatico. Grazie all’integrazione di modelli NLP avanzati, come BERT per la comprensione del linguaggio naturale e un classificatore basato su reti neurali, il sistema è in grado di riconoscere gli intenti degli utenti e fornire risposte pertinenti. Inoltre, l’uso di un modello generativo come Gemini consente di gestire input complessi o non previsti, garantendo maggiore flessibilità nella conversazione. La chatbot è progettata per offrire interazioni fluide e contestualizzate, migliorando l’esperienza utente attraverso l’adattamento dinamico delle risposte. L’obiettivo finale è creare un assistente virtuale affidabile, in grado di comprendere e rispondere in modo accurato, favorendo un’interazione naturale ed efficace.
+
+\subsection{Scelta nome \textit{Brigid}}
+Il nome Brigid è stato scelto per la chatbot in riferimento alla figura mitologica e simbolica di Brigid, una divinità celtica associata alla saggezza, alla guarigione e alla poesia. Questa scelta riflette l’intento della chatbot di offrire non solo assistenza e supporto agli utenti, ma anche un dialogo empatico e costruttivo. Brigid è storicamente venerata come un simbolo di protezione e conoscenza, caratteristiche che si allineano con il ruolo della chatbot nel fornire risposte intelligenti e un’interazione rassicurante. Il nome vuole evocare un senso di fiducia e affidabilità, sottolineando la capacità del sistema di comprendere e rispondere alle esigenze dell’utente in modo sensibile ed efficace.
+
+
+\subsection{Metodologia CRISP-DM e Applicazione nel Progetto}
+Il CRISP-DM (Cross Industry Standard Process for Data Mining) è un modello di sviluppo standardizzato utilizzato nell’ambito dell’analisi dei dati e dell’intelligenza artificiale. Si compone di sei fasi iterative: comprensione del business, comprensione dei dati, preparazione dei dati, modellazione, valutazione e deployment. Nel contesto del nostro progetto, questa metodologia è stata applicata per garantire uno sviluppo strutturato ed efficace della chatbot Brigid.
+\begin{itemize}
+\item \textbf{Comprensione del business}: Abbiamo definito gli obiettivi principali della chatbot, ossia fornire assistenza e supporto agli utenti attraverso un’interazione intelligente e contestualizzata.
+\item \textbf{Comprensione dei dati}: È stata analizzata la tipologia di input attesi dagli utenti e strutturato un dataset di intenti (\texttt{intents.json}), utile per il riconoscimento delle richieste.
+\item \textbf{Preparazione dei dati}: Sono stati implementati processi di preprocessing NLP per migliorare la qualità dell’input, tra cui tokenizzazione con BERT e pulizia del testo.
+\item \textbf{Modellazione}: È stato sviluppato un modello di classificazione basato su reti neurali con Keras, addestrato sugli intenti, e affiancato da un modello generativo (Gemini) per la gestione di input non previsti.
+\item \textbf{Valutazione}: Il sistema è stato testato su frasi reali e sintetiche, con un’analisi della confidence e metriche di accuratezza per garantire prestazioni affidabili.
+\item \textbf{Deployment}: La chatbot è stato implementato in una modalità di interazione basata esclusivamente su terminale, permettendo agli utenti di avviare una conversazione direttamente tramite riga di comando. Questa scelta semplifica l’accessibilità e facilita i test, consentendo miglioramenti futuri per un’eventuale integrazione in interfacce più avanzate.
+\end{itemize}
+L’approccio CRISP-DM ha permesso di sviluppare Brigid in modo metodico, migliorando progressivamente il modello sulla base delle esigenze reali degli utenti e mantenendo una struttura flessibile per future estensioni.
+
+\section{Comprensione del Business}
+La fase di comprensione del business all'interno della metodologia CRISP-DM è fondamentale per definire gli obiettivi del progetto e garantire che il sistema sviluppato soddisfi le esigenze degli utenti finali. In questa sezione vengono analizzati il contesto, gli obiettivi e i requisiti della chatbot Brigid, con un focus sull'impatto che avrà nell'ambito di utilizzo previsto.
+
+\subsection{Contesto e Motivazioni}
+L’idea alla base dello sviluppo di Brigid nasce dalla necessità di creare un assistente virtuale capace di supportare gli utenti attraverso un’interazione naturale e intelligente. La chatbot è stato progettato per offrire risposte pertinenti, basandosi su un modello di classificazione degli intenti e sull’uso di tecnologie avanzate di elaborazione del linguaggio naturale (NLP).
+
+\subsection{Obiettivi della Chatbot}
+Gli obiettivi principali della chatbot Brigid sono:
+\begin{itemize}
+\item Fornire assistenza e supporto agli utenti tramite una conversazione fluida e intuitiva.
+\item Comprendere il linguaggio naturale utilizzando modelli avanzati come BERT per l’analisi semantica dei messaggi.
+\item Predire gli intenti dell’utente con un modello di classificazione basato su una rete neurale, addestrato su un dataset di intenti (\texttt{intents.json}).
+\item Gestire input imprevisti grazie all’integrazione con un modello generativo (Gemini), migliorando la capacità di risposta in situazioni non coperte dal dataset.
+\item Mantenere una struttura modulare e flessibile, con possibilità di espansione futura in interfacce più avanzate.
+\end{itemize}
+
+\subsection{Requisiti del Progetto}
+Per garantire il raggiungimento degli obiettivi sopra elencati, sono stati definiti i seguenti requisiti tecnici e funzionali:
+
+\subsubsection{Requisiti Funzionali}
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+\begin{tabular}{|c|p{12cm}|}
+\hline
+\textbf{Codice} & \textbf{Descrizione} \\
+\hline
+RF\_1 & La chatbot deve essere in grado di riconoscere e classificare correttamente gli intenti dell’utente. \\
+\hline
+RF\_2 & Deve fornire risposte pertinenti in base al contesto della conversazione. \\
+\hline
+RF\_3 & Deve gestire input non previsti e rispondere in modo adeguato utilizzando un fallback intelligente (Gemini). \\
+\hline
+RF\_4 & L'interazione deve avvenire tramite un’interfaccia a riga di comando (CLI). \\
+\hline
+\end{tabular}
+\label{tab:requisiti_funzionali}
+\end{table}
+
+\subsubsection{Requisiti Tecnici}
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+\begin{tabular}{|c|p{12cm}|}
+\hline
+\textbf{Codice} & \textbf{Descrizione} \\
+\hline
+RT\_1 & Utilizzo di BERT per la generazione di embedding delle frasi dell’utente. \\
+\hline
+RT\_2 & Implementazione di una rete neurale feedforward con Keras per la classificazione degli intenti. \\
+\hline
+RT\_3 & Integrazione con Google Gemini per risposte generative in caso di input fuori dal dominio del dataset. \\
+\hline
+RT\_4 & Struttura del codice organizzata in moduli (\texttt{pretrain.py}, \texttt{chatbot\_terminal.py}). \\
+\hline
+\end{tabular}
+\label{tab:requisiti_tecnici}
+\end{table}
+
+
+\subsection{Benefici Attesi}
+L’implementazione di Brigid porta diversi vantaggi:
+\begin{itemize}	\item \textbf{Maggiore accessibilità}: grazie alla possibilità di avviare la chatbot direttamente dal terminale senza necessità di un’interfaccia grafica.
+\item \textbf{Migliore comprensione delle richieste dell’utente}: grazie all’integrazione con modelli NLP avanzati.
+\item \textbf{Espandibilità e flessibilità}: con la possibilità di migliorare il dataset, affinare il modello e integrare nuove funzionalità in futuro.
+\end{itemize}
+Questa fase di comprensione del business ha guidato tutte le decisioni successive, permettendo di sviluppare la chatbot in modo mirato e orientato agli obiettivi definiti.
+
+\section{Comprensione dei dati}
+La fase di comprensione dei dati all’interno della metodologia CRISP-DM è essenziale per analizzare e strutturare le informazioni su cui il modello si basa. In questa sezione viene descritto il dataset utilizzato per addestrare la chatbot Brigid, il formato dei dati, le categorie di intenti e le loro caratteristiche.
+
+\subsection{Struttura del Dataset}
+Il dataset utilizzato per l’addestramento della chatbot è contenuto nel file \texttt{intents.json} e segue un formato standard per chatbot basati su intenti. Ogni intento è definito da:
+\begin{itemize}
+	\item Un \textbf{tag univoco} che identifica la categoria dell’intento.
+	\item Un insieme di \textbf{pattern} (frasi di esempio) che rappresentano possibili input dell’utente per quell’intento.
+	\item Una lista di \textbf{risposte predefinite} che la chatbot può fornire se viene rilevato un determinato intento.
+\end{itemize}
+
+\subsubsection{Esempio di Struttura di un Intento}
+\begin{lstlisting}[language=json, label={lst:intent_example}]
+	{
+		"intents": [
+		{
+			"tag": "greeting",
+			"patterns": ["Hello", "Hi there!", "Hey", "Good morning"],
+			"responses": ["Hello! How can I help you?", "Hi! What can I do for you?"]
+		},
+		{
+			"tag": "goodbye",
+			"patterns": ["Bye", "See you later", "Goodbye"],
+			"responses": ["Goodbye! Have a great day.", "See you soon!"]
+		}
+		]
+	}
+\end{lstlisting}
+
+\subsection{Tipologie di Intenti}
+Il dataset contiene una serie di intenti suddivisi in diverse categorie, tra cui:
+\begin{itemize}
+	\item \textbf{Saluti e chiusura} (es. \texttt{greeting}, \texttt{goodbye})
+	\item \textbf{Richieste informative} (es. \texttt{time}, \texttt{weather}, \texttt{help})
+	\item \textbf{Supporto psicologico} (es. \texttt{sadness}, \texttt{anxiety}, \texttt{stress\_relief})
+	\item \textbf{Conversazioni generiche} (es. \texttt{smalltalk}, \texttt{chitchat})
+\end{itemize}
+L’obiettivo è garantire che la chatbot sia in grado di riconoscere correttamente le intenzioni dell’utente e rispondere in modo pertinente.
+
+\subsection{Analisi della Distribuzione dei Dati}
+Per assicurare un buon addestramento del modello, è stata effettuata un’analisi della distribuzione degli intenti all’interno del dataset:
+\begin{itemize}
+\item \textbf{Bilanciamento}: Un dataset equilibrato evita che il modello sia troppo incline a predire alcuni intenti rispetto ad altri.
+\item \textbf{Varietà dei pattern}: Ogni intento deve avere un numero sufficiente di frasi di esempio per garantire una generalizzazione efficace.
+\item \textbf{Gestione di sinonimi e variazioni linguistiche}: Frasi diverse con lo stesso significato devono essere incluse per migliorare la capacità del modello di riconoscere input variati.
+\end{itemize}
+Se il dataset risultasse sbilanciato, potrebbero essere necessarie tecniche di \textit{data augmentation}, come la generazione di frasi alternative tramite modelli generativi (es. \texttt{GPT}) o l’uso di sinonimi.
+
+\subsection{Tipologia di Dati Utilizzati}
+I dati presenti nel dataset sono \textbf{dati testuali non strutturati}, che vengono elaborati e trasformati in vettori numerici tramite \texttt{BERT}. Le fasi di elaborazione comprendono:
+\begin{itemize}
+\item \textbf{Tokenizzazione e conversione in embedding}: Il testo viene trasformato in rappresentazioni numeriche (vettori).
+\item \textbf{Assegnazione delle etichette}: Ogni frase viene associata al suo intento corrispondente.
+\item \textbf{Training del modello}: Il modello viene addestrato sui dati preprocessati per imparare a classificare gli intenti.
+\end{itemize}
+
+\subsection{Problematiche del Dataset Iniziale}
+Il dataset iniziale, recuperato da Kaggle, conteneva 75 intenti, un numero limitato per coprire una vasta gamma di interazioni utente. Questo ha presentato diverse problematiche che avrebbero potuto compromettere le prestazioni della chatbot Brigid:
+
+\begin{itemize}
+	\item \textbf{Copertura insufficiente degli intenti}: Il numero ridotto di intenti limitava la capacità della chatbot di rispondere efficacemente a un’ampia varietà di domande.
+	\item \textbf{Scarso numero di pattern per intento}: Ogni intento aveva pochi esempi di frasi (\textit{pattern}), il che poteva portare il modello a non riconoscere correttamente input leggermente diversi da quelli presenti nel dataset.
+	\item \textbf{Rischio di overfitting}: Un dataset con pochi esempi per ogni classe può portare il modello ad adattarsi troppo ai dati di training, risultando poco flessibile su input reali.
+	\item \textbf{Mancanza di diversità nelle risposte}: Il numero limitato di risposte per ogni intento poteva rendere le interazioni con la chatbot ripetitive e meno naturali.
+\end{itemize}
+
+Per risolvere queste problematiche, è stato necessario espandere e migliorare il dataset attraverso l’applicazione di tecniche di \textit{data augmentation}.
+
+\subsection{Applicazione della Data Augmentation e Benefici}
+Per migliorare la qualità del dataset e garantire un addestramento più efficace della chatbot, è stato applicato un processo di \textbf{data augmentation}, ossia la generazione artificiale di nuovi dati per arricchire il dataset esistente.
+
+\subsubsection{Espansione del Dataset}
+\begin{itemize}
+	\item Il numero di intenti è stato ampliato da \textbf{75 a 223}, aumentando la varietà delle interazioni possibili.
+	\item Ogni intento è stato arricchito con una media di \textbf{50 pattern di input}, aumentando la capacità del modello di riconoscere input con diverse formulazioni.
+	\item Ogni intento è stato dotato di \textbf{10 risposte fisse}, garantendo maggiore diversità nelle risposte generate.
+\end{itemize}
+
+\subsubsection{Ottimizzazione dei Pattern}
+Per migliorare la classificazione degli intenti, i \textbf{pattern di input} sono stati \textbf{ridotti in lunghezza}, evitando eccessiva variabilità e garantendo maggiore uniformità. Questa ottimizzazione ha reso il modello più preciso nel riconoscere le richieste degli utenti, riducendo \textbf{ambiguità} tra intenti simili. Inoltre, la rimozione di formulazioni ridondanti ha reso l’\textbf{addestramento più efficiente}, limitando il rischio di \textbf{sovrapposizione tra classi} e migliorando la capacità di generalizzazione della chatbot.
+
+\subsubsection{Generazione di Nuovi Pattern con ChatGPT}
+Per \textbf{arricchire il dataset} e migliorare la capacità della chatbot di gestire input variabili, è stato impiegato \textbf{ChatGPT} per la generazione di nuovi \textbf{pattern naturali e realistici}. Questo approccio ha ampliato la \textbf{diversità delle espressioni linguistiche}, rendendo le interazioni più fluide e l’esperienza utente più naturale. L’automazione ha inoltre consentito un’espansione \textbf{rapida ed efficace} del dataset, migliorando la copertura delle possibili varianti linguistiche utilizzate dagli utenti.
+
+\subsubsection{Benefici della Data Augmentation}
+L’applicazione della \textit{data augmentation} ha portato diversi vantaggi:
+\begin{itemize}
+	\item \textbf{Migliore generalizzazione} del modello, riducendo il rischio di overfitting.
+	\item \textbf{Aumento della robustezza} nella comprensione di input variati.
+	\item \textbf{Miglior bilanciamento del dataset}, evitando intenti con pochi esempi.
+	\item \textbf{Maggiore adattabilità} a input reali, grazie alla varietà dei pattern generati.
+\end{itemize}
+Grazie a queste ottimizzazioni, la chatbot Brigid è ora in grado di comprendere e rispondere con maggiore accuratezza e naturalezza agli input degli utenti.
+
+
+\section{Preparazione dei dati}
+
+\section{Modellazione}
+
+\section{Valutazione}
+
+\section{Deployment}
+
 \section{Descrizione dell'agente}
-	
 \subsection{Obiettivi}
 L'agente chatbot è un sistema basato sull'intelligenza artificiale, progettato per interagire con gli utenti attraverso conversazioni simulate in linguaggio naturale ed è in grado di rispondere a domande relative al supporto psicologico. Questo agente è programmato per comprendere input testuali, elaborare le richieste e fornire risposte pertinenti, coerenti e contestualizzate.
 La chatbot opera attraverso due modelli distinti: il primo, personalizzato, si focalizza sul fornire supporto emotivo; il secondo, \textit{Gemini}, genera risposte fuori dal contesto precedente, ampliando così la gamma delle interazioni possibili.
@@ -130,9 +328,9 @@ Le librerie che abbiamo utilizzato sono:
 Il codice rappresenta un processo per creare una chatbot basato su machine learning. Si avvale di BERT per generare rappresentazioni numeriche (embedding) delle frasi e poi costruisce un modello di classificazione per determinare i tag delle frasi in input. 
 Il modello creato presenta tre strati: 
 \begin{itemize}
-	\item \textbf{Input}:  La dimensione degli embedding di BERT.
-	\item \textbf{Strati nascosti}: Due strati densi con ReLU e Dropout per evitare overfitting.
-	\item \textbf{Output}: Softmax per classificazione multi-classe.
+\item \textbf{Input}:  La dimensione degli embedding di BERT.
+\item \textbf{Strati nascosti}: Due strati densi con ReLU e Dropout per evitare overfitting.
+\item \textbf{Output}: Softmax per classificazione multi-classe.
 \end{itemize}.
 
 [AGGIUNGERE Immagine Codice]
@@ -141,8 +339,8 @@ Il modello creato presenta tre strati:
 Il codice carica un file JSON che contiene gli intenti di un chatbot, li analizza e restituisce informazioni utili. Inizia leggendo il file e verificando che contenga la chiave "intents". Dopodiché, conta il numero totale di tag presenti, li elenca e analizza ciascun tag. Per ogni intento, stampa il nome del tag, il numero di frasi esempio associate (patterns) e il numero di risposte definite (responses). Se il file non viene trovato o non è un JSON valido, restituisce un messaggio d'errore.
 \subsection{Chatbot interface}
 Questo codice descrive un chatbot avanzato che combina l'uso di un modello di classificazione pre-addestrato con l'intelligenza artificiale generativa di Gemini. Il funzionamento si basa su diverse fasi. Per prima cosa, il sistema configura Gemini, un modello AI generativo che può creare risposte dinamiche e contestuali. Viene poi caricato il file intents.json, che contiene una struttura di intenti predefiniti, con frasi esempio e risposte associate, insieme al modello di classificazione e alla lista dei tag.\\
-Quando un utente invia un messaggio, la frase viene elaborata utilizzando il modello BERT, che trasforma il testo in un vettore numerico (embedding) per analizzarne il significato. Questo embedding viene passato al modello di classificazione, che prevede a quale intento (tag) il messaggio corrisponde. Se il modello è sicuro della sua previsione, restituisce una risposta predefinita collegata al tag identificato. Se invece la confidenza è bassa, il chatbot utilizza Gemini per generare una risposta più flessibile e creativa, basandosi anche sul contesto della conversazione grazie alla cronologia memorizzata.\\
-Tutta questa logica è integrata in una pipeline che decide dinamicamente se utilizzare risposte predefinite o dinamiche. Nel frattempo, la cronologia della chat viene costantemente aggiornata per garantire che ogni messaggio tenga conto delle interazioni precedenti. Infine, il chatbot funziona come un sistema interattivo: attende l'input dell'utente, genera una risposta adeguata e la presenta, aggiornando il contesto per i messaggi futuri. Questo approccio ibrido rende il chatbot capace di rispondere in modo sia preciso sia naturale, adattandosi alle diverse situazioni conversazionali.
+Quando un utente invia un messaggio, la frase viene elaborata utilizzando il modello BERT, che trasforma il testo in un vettore numerico (embedding) per analizzarne il significato. Questo embedding viene passato al modello di classificazione, che prevede a quale intento (tag) il messaggio corrisponde. Se il modello è sicuro della sua previsione, restituisce una risposta predefinita collegata al tag identificato. Se invece la confidenza è bassa, la chatbot utilizza Gemini per generare una risposta più flessibile e creativa, basandosi anche sul contesto della conversazione grazie alla cronologia memorizzata.\\
+Tutta questa logica è integrata in una pipeline che decide dinamicamente se utilizzare risposte predefinite o dinamiche. Nel frattempo, la cronologia della chat viene costantemente aggiornata per garantire che ogni messaggio tenga conto delle interazioni precedenti. Infine, la chatbot funziona come un sistema interattivo: attende l'input dell'utente, genera una risposta adeguata e la presenta, aggiornando il contesto per i messaggi futuri. Questo approccio ibrido rende la chatbot capace di rispondere in modo sia preciso sia naturale, adattandosi alle diverse situazioni conversazionali.
 
 \newpage
 \section{Glossario}
