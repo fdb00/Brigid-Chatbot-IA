@@ -37,7 +37,15 @@ Su macOS/Linux:
 
 Dopo aver attivato l'ambiente virtuale, installare i pacchetti richiesti:
 
-" pip install -r requirements.txt "
+- " pip install -r requirements.txt "
+
+#### Importante : Generate la vostra API Key per Gemini da https://aistudio.google.com/
+
+Copiate la chiave e scrivete sul terminale
+- " setx SECRET_API_KEY "INSERIRE QUI LA API KEY" (Windows) "
+- " export SECRET_API_KEY="INSERIRE QUI LA API KEY" (Unix/Unix-like) "
+
+Riavvia PyCharm e ora dovrebbe funzionare!
 
 ### 4️⃣ Addestrare il Modello (non necessario)
 
