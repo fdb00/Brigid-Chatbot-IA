@@ -589,6 +589,103 @@ La fase di modellazione ha portato alla creazione di un chatbot basato su:
 \end{itemize}
 Questa combinazione di tecnologie permette a Brigid di comprendere e rispondere in modo efficace, garantendo un'interazione naturale con gli utenti.
 
+\section{Deployment del Progetto}
+
+\subsection{Introduzione}
+Il deployment del progetto riguarda la configurazione e l'esecuzione del chatbot \textbf{Brigid} in un ambiente locale utilizzando \textbf{PyCharm}. Questa fase è essenziale per garantire che il chatbot sia pronto per l'uso e possa essere eseguito correttamente su un sistema esterno.
+
+In questa sezione verranno fornite le istruzioni dettagliate per impostare l'ambiente di sviluppo e avviare il chatbot in \textbf{PyCharm}.
+
+\subsection{Configurazione dell'Ambiente in PyCharm}
+
+Per eseguire il chatbot su \textbf{PyCharm}, è necessario configurare correttamente un ambiente virtuale e installare tutte le dipendenze richieste.
+
+\subsubsection{Passaggi per la Configurazione}
+
+\begin{enumerate}
+	\item \textbf{Aprire il Progetto in PyCharm}
+	\begin{itemize}
+		\item Avviare \textbf{PyCharm} e selezionare "Open".
+		\item Scegliere la cartella del progetto e confermare l'apertura.
+	\end{itemize}
+	
+	\item \textbf{Creare un Ambiente Virtuale (Virtual Environment)}
+	\begin{itemize}
+		\item Andare su \textbf{File} $\rightarrow$ \textbf{Settings} $\rightarrow$ \textbf{Project: [Nome Progetto]} $\rightarrow$ \textbf{Python Interpreter}.
+		\item Cliccare sull'icona dell'"ingranaggio" e selezionare \textbf{Add Interpreter} $\rightarrow$ \textbf{Virtualenv Environment}.
+		\item Scegliere la directory \texttt{.venv} all'interno della cartella del progetto oppure crearne una nuova.
+		\item Selezionare la versione di \textbf{Python} compatibile (es. Python 3.10 o 3.11).
+		\item Confermare e attendere la creazione dell'ambiente.
+	\end{itemize}
+	
+	\item \textbf{Installare le Dipendenze del Progetto}
+	\begin{itemize}
+		\item Aprire il \textbf{Terminale} di PyCharm e attivare l'ambiente virtuale:
+		
+		\textbf{Su Windows}:
+		\begin{lstlisting}
+			.venv\Scripts\activate
+		\end{lstlisting}
+		
+		\textbf{Su macOS/Linux}:
+		\begin{lstlisting}
+			source .venv/bin/activate
+		\end{lstlisting}
+		
+		\item Installare le dipendenze necessarie:
+		\begin{lstlisting}
+			pip install -r requirements.txt
+		\end{lstlisting}
+		
+		\item Se il file \texttt{requirements.txt} non è presente, può essere creato eseguendo:
+		\begin{lstlisting}
+			pip freeze > requirements.txt
+		\end{lstlisting}
+	\end{itemize}
+\end{enumerate}
+
+\subsection{Avvio del Chatbot}
+
+Dopo aver configurato l'ambiente virtuale e installato le dipendenze, è possibile eseguire il chatbot da PyCharm.
+
+\subsubsection{Avvio del Modello}
+
+\begin{enumerate}
+	\item Aprire il file \texttt{chatbot\_terminal.py} in PyCharm.
+	\item Assicurarsi che l'interprete Python selezionato sia quello dell'ambiente virtuale.
+	\item Cliccare sul pulsante \textbf{Run} oppure eseguire il file dal terminale con:
+	\begin{lstlisting}
+		python chatbot_terminal.py
+	\end{lstlisting}
+\end{enumerate}
+
+Se tutto è stato configurato correttamente, il chatbot si avvierà e sarà pronto per ricevere input nel terminale.
+
+\subsection{Possibili Problemi e Soluzioni}
+
+Durante il deployment, potrebbero verificarsi alcuni problemi. Ecco alcune soluzioni comuni:
+
+\subsubsection{Errore: Modulo non trovato (\texttt{ModuleNotFoundError})}
+\begin{itemize}
+	\item Assicurarsi che tutte le dipendenze siano installate con \texttt{pip install -r requirements.txt}.
+	\item Controllare che l'interprete Python selezionato sia quello dell'ambiente virtuale.
+\end{itemize}
+
+\subsubsection{Errore: File \texttt{.keras} non trovato}
+\begin{itemize}
+	\item Verificare che il modello addestrato sia stato salvato correttamente nella cartella \texttt{models/}.
+	\item Se il file manca, rieseguire \texttt{pretrain.py} per generare nuovamente il modello.
+\end{itemize}
+
+\subsubsection{Errore: API Key mancante per Gemini}
+\begin{itemize}
+	\item Se il chatbot utilizza Gemini per generare risposte, assicurarsi di avere una chiave API valida e configurata correttamente.
+\end{itemize}
+
+\subsection{Considerazioni Finali}
+
+Il deployment su PyCharm permette di testare e sviluppare il chatbot in un ambiente locale controllato. Una volta verificato il corretto funzionamento, il progetto potrà essere successivamente distribuito su altri ambienti, come server cloud o piattaforme web, per una maggiore accessibilità e scalabilità.
+
 \newpage
 \section{Glossario}
 \begin{longtable}{|l|p{10cm}|}

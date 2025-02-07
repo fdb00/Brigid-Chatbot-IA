@@ -41,4 +41,15 @@
 \contentsline {subsection}{\numberline {5.4}Utilizzo del Modello Generativo Gemini}{16}{subsection.5.4}%
 \contentsline {subsubsection}{\numberline {5.4.1}Generazione di una risposta con Gemini}{16}{subsubsection.5.4.1}%
 \contentsline {subsubsection}{\numberline {5.4.2}Selezione del Modello di Risposta}{16}{subsubsection.5.4.2}%
-\contentsline {section}{\numberline {6}Glossario}{18}{section.6}%
+\contentsline {section}{\numberline {6}Deployment del Progetto}{17}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Introduzione}{17}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Configurazione dell'Ambiente in PyCharm}{17}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Passaggi per la Configurazione}{17}{subsubsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.3}Avvio del Chatbot}{18}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}Avvio del Modello}{18}{subsubsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.4}Possibili Problemi e Soluzioni}{18}{subsection.6.4}%
+\contentsline {subsubsection}{\numberline {6.4.1}Errore: Modulo non trovato (\texttt {ModuleNotFoundError})}{18}{subsubsection.6.4.1}%
+\contentsline {subsubsection}{\numberline {6.4.2}Errore: File \texttt {.keras} non trovato}{18}{subsubsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.3}Errore: API Key mancante per Gemini}{18}{subsubsection.6.4.3}%
+\contentsline {subsection}{\numberline {6.5}Considerazioni Finali}{19}{subsection.6.5}%
+\contentsline {section}{\numberline {7}Glossario}{20}{section.7}%
