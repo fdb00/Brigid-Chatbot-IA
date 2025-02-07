@@ -589,6 +589,74 @@ La fase di modellazione ha portato alla creazione di un chatbot basato su:
 \end{itemize}
 Questa combinazione di tecnologie permette a Brigid di comprendere e rispondere in modo efficace, garantendo un'interazione naturale con gli utenti.
 
+\section{Testing del Modello}
+
+\subsection{Introduzione}
+La fase di testing è fondamentale per verificare l'efficacia del chatbot Brigid e la sua capacità di classificare correttamente gli intenti degli utenti. Il nostro obiettivo è valutare le prestazioni del modello di classificazione basato su BERT e analizzare il comportamento del sistema in diversi scenari di utilizzo.
+
+Per eseguire il testing, sono stati implementati tre test principali:
+\begin{itemize}
+	\item \textbf{Baseline Test}: verifica l'accuratezza del modello utilizzando frasi presenti nel dataset di addestramento.
+	\item \textbf{Generalization Test}: analizza la capacità del modello di classificare correttamente frasi nuove non presenti nel dataset.
+	\item \textbf{Threshold Test}: valuta il livello di confidenza delle predizioni per verificare se il modello gestisce correttamente l'incertezza.
+\end{itemize}
+I risultati dei test sono stati salvati in un file \texttt{testing\_results.txt} per una facile analisi e monitoraggio delle prestazioni.
+
+\subsection{Baseline Test}
+
+Il \textbf{Baseline Test} ha l'obiettivo di verificare se il modello ha appreso correttamente gli intenti presenti nel dataset di addestramento. Per evitare un testing eccessivamente lungo, vengono selezionati \textbf{tre pattern casuali per ogni intento}.
+
+\subsubsection{Metodo di esecuzione}
+\begin{itemize}
+	\item Si estrae una selezione casuale di tre frasi per ogni intento dal file \texttt{intents.json}.
+	\item Si passa ogni frase al modello per ottenere la previsione dell'intento.
+	\item Si confronta l'intento predetto con quello atteso e si registra l'esito.
+\end{itemize}
+Questo test ci permette di valutare la capacità del modello di riconoscere frasi viste durante l'addestramento, fornendo una misura dell'accuratezza di base.
+
+\subsection{Generalization Test}
+
+Il \textbf{Generalization Test} serve a valutare la capacità del modello di classificare frasi simili a quelle nel dataset, ma formulate in modi diversi.
+
+\subsubsection{Metodo di esecuzione}
+\begin{itemize}
+	\item Sono state create manualmente alcune frasi di test che non compaiono direttamente nel dataset.
+	\item Ogni frase viene passata al modello per ottenere la previsione dell'intento.
+	\item Il risultato viene confrontato con l'intento atteso.
+\end{itemize}
+Questo test è importante perché un chatbot deve essere in grado di generalizzare e non limitarsi a riconoscere solo le frasi apprese durante l’addestramento.
+
+\subsection{Threshold Test}
+
+Il \textbf{Threshold Test} verifica se il valore di confidenza delle predizioni del modello è coerente con il livello di sicurezza richiesto.
+
+\subsubsection{Metodo di esecuzione}
+\begin{itemize}
+	\item Si utilizzano le frasi definite nel Generalization Test.
+	\item Per ogni frase, viene calcolata la confidenza della predizione.
+	\item Se la confidenza è inferiore alla soglia impostata (0.75), la predizione viene considerata incerta.
+\end{itemize}
+Questo test aiuta a identificare situazioni in cui il modello potrebbe fare errori e assicura che, in caso di bassa confidenza, il chatbot possa eventualmente ricorrere a un fallback come Gemini.
+
+\subsection{Risultati e Considerazioni}
+
+L’analisi dei risultati dei test ha permesso di ottenere una visione chiara delle prestazioni del chatbot.
+\begin{itemize}
+	\item \textbf{Il Baseline Test} ha mostrato un'alta accuratezza, confermando che il modello è in grado di riconoscere correttamente gli intenti appresi durante l’addestramento.
+	\item \textbf{Il Generalization Test} ha evidenziato alcune difficoltà nel riconoscere frasi formulate in modi molto diversi da quelli nel dataset, suggerendo possibili miglioramenti nel dataset di training.
+	\item \textbf{Il Threshold Test} ha mostrato che in alcuni casi il valore di confidenza era troppo basso per decisioni sicure, suggerendo la necessità di una gestione più attenta della soglia di sicurezza.
+\end{itemize}
+
+\subsection{Possibili Miglioramenti}
+
+Dai test effettuati, emergono alcune possibili aree di miglioramento:
+\begin{enumerate}
+	\item \textbf{Espansione del dataset}: l’inclusione di un maggior numero di varianti per ogni intento potrebbe migliorare la capacità di generalizzazione del modello.
+	\item \textbf{Fine-tuning di BERT}: un ulteriore addestramento del modello su un dataset più ricco potrebbe migliorare l’accuratezza sulle frasi nuove.
+	\item \textbf{Gestione adattiva della soglia di confidenza}: potrebbe essere utile adattare dinamicamente la soglia di confidenza in base al tipo di intento.
+\end{enumerate}
+Questi miglioramenti possono essere implementati in future versioni del chatbot per aumentarne l’efficacia e la robustezza.
+
 \section{Deployment del Progetto}
 
 \subsection{Introduzione}
