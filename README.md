@@ -44,9 +44,9 @@ Riavvia PyCharm e ora dovrebbe funzionare!
 
 ### 4️⃣ Addestrare il Modello (non necessario)
 
-Per addestrare il modello NLP, eseguire:
+Per addestrare il modello NLP, eseguire il file:
 ```
-python src/train/pretrain.py
+src/train/pretrain.py
 ```
 
 Il modello addestrato verrà salvato nella cartella models/.
