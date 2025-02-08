@@ -1,6 +1,6 @@
 # Brigid - Chatbot AI
 
-Brigid è un chatbot basato su intelligenza artificiale progettato per interagire con gli utenti e rispondere a domande basandosi su intenti predefiniti. Il chatbot utilizza BERT per l'elaborazione del linguaggio naturale e segue il processo CRISP-DM per la gestione del ciclo di sviluppo.
+Brigid è una chatbot basata sull'IA progettata per interagire con gli utenti e rispondere a domande basandosi su intenti predefiniti. La chatbot utilizza BERT per l'elaborazione del linguaggio naturale e segue il processo CRISP-DM per la gestione del ciclo di sviluppo. Inoltre, è capace di rispondere alla maggior parte degli input grazie all'integrazione del LLM Gemini, che risponderà nel caso in cui nel modello non ci siano intenti adatti.
 
 ## 📌 Funzionalità Principali
 
@@ -18,32 +18,27 @@ Brigid è un chatbot basato su intelligenza artificiale progettato per interagir
 
 Aprire il terminale e clonare il progetto GitHub:
 
-" git clone https://github.com/tuo-utente/brigid-chatbot.git 
-cd brigid-chatbot "
+```
+git clone https://github.com/fdb00/Brigid-Chatbot-IA.git
+```
 
-### 2️⃣ Creare un Ambiente Virtuale
-
-Su Windows:
-
-- " python -m venv .venv "
-- " .venv\Scripts\activate "
-
-Su macOS/Linux:
-
-- " python3 -m venv .venv "
-- " source .venv/bin/activate "
+### 2️⃣ Aprire la cartella di Brigid clonata in PyCharm
 
 ### 3️⃣ Installare le Dipendenze
 
 Dopo aver attivato l'ambiente virtuale, installare i pacchetti richiesti:
 
-- " pip install -r requirements.txt "
+```
+pip install -r requirements.txt
+```
 
 #### Importante : Generate la vostra API Key per Gemini da https://aistudio.google.com/
 
 Copiate la chiave e scrivete sul terminale
-- " setx SECRET_API_KEY "INSERIRE QUI LA API KEY" (Windows) "
-- " export SECRET_API_KEY="INSERIRE QUI LA API KEY" (Unix/Unix-like) "
+```
+setx SECRET_API_KEY "INSERIRE QUI LA API KEY" \\ Windows
+export SECRET_API_KEY="INSERIRE QUI LA API KEY" \\ Unix/Unix-like
+```
 
 Riavvia PyCharm e ora dovrebbe funzionare!
 
@@ -59,11 +54,9 @@ Il modello addestrato verrà salvato nella cartella models/.
 
 ### 5️⃣ Avviare il Chatbot
 
-Dopo l'addestramento, è possibile eseguire il chatbot nel terminale:
+Dopo l'addestramento, è possibile eseguire il chatbot nel terminale cliccando il tasto " Run " in altro a destra in PyCharm.
 
-" python src/utils/chatbot_terminal.py "
-
-Il chatbot sarà pronto per rispondere ai messaggi dell'utente!
+La chatbot sarà pronta per rispondere ai messaggi dell'utente!
 
 ### 📊 Testing del Modello
 
