@@ -32,7 +32,7 @@ Dopo aver attivato l'ambiente virtuale, installare i pacchetti richiesti:
 pip install -r requirements.txt
 ```
 
-#### Importante : Generate la vostra API Key per Gemini da https://aistudio.google.com/
+#### Importante: Generate la vostra API Key per Gemini da https://aistudio.google.com/
 
 Copiate la chiave e scrivete sul terminale
 ```
@@ -45,8 +45,9 @@ Riavvia PyCharm e ora dovrebbe funzionare!
 ### 4️⃣ Addestrare il Modello (non necessario)
 
 Per addestrare il modello NLP, eseguire:
-
-- " python src/train/pretrain.py "
+```
+python src/train/pretrain.py
+```
 
 Il modello addestrato verrà salvato nella cartella models/.
 
@@ -54,7 +55,7 @@ Il modello addestrato verrà salvato nella cartella models/.
 
 ### 5️⃣ Avviare il Chatbot
 
-Dopo l'addestramento, è possibile eseguire il chatbot nel terminale cliccando il tasto " Run " in altro a destra in PyCharm.
+Dopo l'addestramento, è possibile eseguire il chatbot nel terminale cliccando il tasto "Run" in altro a destra in PyCharm.
 
 La chatbot sarà pronta per rispondere ai messaggi dell'utente!
 
@@ -68,9 +69,11 @@ Il chatbot viene testato con tre strategie:
 
 - Threshold Test: analizza la confidenza della predizione.
 
-Per eseguire il testing:
+Per eseguire il testing, runnare il file:
 
-- " python test/testing_chatbot.py "
+```
+test/testing_chatbot.py
+```
 
 I risultati saranno salvati in test/testing_results.txt.
 
