@@ -1,0 +1,769 @@
+=== BASELINE TEST RESULTS ===
+Input: Hello there | Expected: greeting | Predicted: greeting | Confidence: 0.9841 | Correct: True
+Input: Hello | Expected: greeting | Predicted: greeting | Confidence: 0.9696 | Correct: True
+Input: Hey, how are you? | Expected: greeting | Predicted: greeting | Confidence: 0.4728 | Correct: True
+Input: Good morning, how can I help you? | Expected: morning | Predicted: morning | Confidence: 0.2708 | Correct: True
+Input: Hi, good morning | Expected: morning | Predicted: presentation | Confidence: 0.9862 | Correct: False
+Input: Good morning | Expected: morning | Predicted: morning | Confidence: 0.2431 | Correct: True
+Input: Good afternoon, how are you? | Expected: afternoon | Predicted: presentation | Confidence: 0.4522 | Correct: False
+Input: Good afternoon, any plans for the evening? | Expected: afternoon | Predicted: evening | Confidence: 0.2290 | Correct: False
+Input: Hi, good afternoon | Expected: afternoon | Predicted: presentation | Confidence: 0.9840 | Correct: False
+Input: Hello, good evening | Expected: evening | Predicted: presentation | Confidence: 0.5719 | Correct: False
+Input: How’s your evening going? | Expected: evening | Predicted: night | Confidence: 0.1636 | Correct: False
+Input: Good evening, any plans for tomorrow? | Expected: evening | Predicted: evening | Confidence: 0.2058 | Correct: True
+Input: Hello, good night | Expected: night | Predicted: evening | Confidence: 0.2250 | Correct: False
+Input: Good night, sweet dreams | Expected: night | Predicted: evening | Confidence: 0.2814 | Correct: False
+Input: Hi, good night | Expected: night | Predicted: evening | Confidence: 0.2137 | Correct: False
+Input: I’ll catch up with you later | Expected: goodbye | Predicted: goodbye | Confidence: 0.7479 | Correct: True
+Input: Take it easy | Expected: goodbye | Predicted: goodbye | Confidence: 0.6353 | Correct: True
+Input: Until next time | Expected: goodbye | Predicted: goodbye | Confidence: 0.3928 | Correct: True
+Input: Thanks a million | Expected: thanks | Predicted: gratitude_expressions | Confidence: 0.6212 | Correct: False
+Input: I can’t thank you enough | Expected: thanks | Predicted: gratitude_expressions | Confidence: 0.5050 | Correct: False
+Input: Thanks for your support | Expected: thanks | Predicted: gratitude_expressions | Confidence: 0.7342 | Correct: False
+Input: I don’t know what to say | Expected: no-response | Predicted: done | Confidence: 0.4329 | Correct: False
+Input: Don’t want to respond | Expected: no-response | Predicted: no-response | Confidence: 0.4360 | Correct: True
+Input: No response | Expected: no-response | Predicted: no-response | Confidence: 0.6512 | Correct: True
+Input: Alright then | Expected: neutral-response | Predicted: neutral-response | Confidence: 0.5930 | Correct: True
+Input: Fair enough | Expected: neutral-response | Predicted: neutral-response | Confidence: 0.9796 | Correct: True
+Input: Understood | Expected: neutral-response | Predicted: neutral-response | Confidence: 0.8605 | Correct: True
+Input: What’s your goal? | Expected: about | Predicted: about | Confidence: 0.3363 | Correct: True
+Input: What can you help me with? | Expected: about | Predicted: about | Confidence: 0.3647 | Correct: True
+Input: What’s your job? | Expected: about | Predicted: about | Confidence: 0.3916 | Correct: True
+Input: Do you have any abilities? | Expected: skill | Predicted: about | Confidence: 0.2112 | Correct: False
+Input: What are your skills? | Expected: skill | Predicted: casual | Confidence: 0.1908 | Correct: False
+Input: Can you give me advice? | Expected: skill | Predicted: user-advice | Confidence: 0.4604 | Correct: False
+Input: Who invented you? | Expected: creation | Predicted: creation | Confidence: 0.4889 | Correct: True
+Input: How were you programmed? | Expected: creation | Predicted: creation | Confidence: 0.8363 | Correct: True
+Input: How were you built? | Expected: creation | Predicted: creation | Confidence: 0.8271 | Correct: True
+Input: Hi, I’m John | Expected: presentation | Predicted: presentation | Confidence: 1.0000 | Correct: True
+Input: I go by Oliver | Expected: presentation | Predicted: presentation | Confidence: 1.0000 | Correct: True
+Input: Hello, I’m Robert | Expected: presentation | Predicted: presentation | Confidence: 1.0000 | Correct: True
+Input: I’m looking for help | Expected: help | Predicted: help | Confidence: 0.1888 | Correct: True
+Input: I have a question | Expected: help | Predicted: ask | Confidence: 0.2314 | Correct: False
+Input: Can you assist me? | Expected: help | Predicted: help | Confidence: 0.3218 | Correct: True
+Input: I’m disappointed and it’s making me sad | Expected: sad | Predicted: sad | Confidence: 0.2546 | Correct: True
+Input: I feel so empty | Expected: sad | Predicted: sad | Confidence: 0.2472 | Correct: True
+Input: I feel down today | Expected: sad | Predicted: unwell | Confidence: 0.1161 | Correct: False
+Input: I’m so tense all the time | Expected: stressed | Predicted: unwell | Confidence: 0.1582 | Correct: False
+Input: I’m feeling so anxious | Expected: stressed | Predicted: stressed | Confidence: 0.1488 | Correct: True
+Input: I feel like I’m going to explode | Expected: stressed | Predicted: sad | Confidence: 0.1345 | Correct: False
+Input: I feel like I’ll never achieve anything | Expected: worthless | Predicted: depression_and_self_worth | Confidence: 0.2044 | Correct: False
+Input: I don’t belong anywhere | Expected: worthless | Predicted: depression_and_self_worth | Confidence: 0.1045 | Correct: False
+Input: I feel like I’m a burden | Expected: worthless | Predicted: depression_and_self_worth | Confidence: 0.2487 | Correct: False
+Input: I can’t stop feeling this way | Expected: depressed | Predicted: unwell | Confidence: 0.1419 | Correct: False
+Input: I’m stuck in this sadness | Expected: depressed | Predicted: frustrated | Confidence: 0.0639 | Correct: False
+Input: I’m struggling to keep going | Expected: depressed | Predicted: sad | Confidence: 0.1059 | Correct: False
+Input: I’m in such a good mood today | Expected: happy | Predicted: happy | Confidence: 0.5483 | Correct: True
+Input: Life feels so good right now | Expected: happy | Predicted: happy | Confidence: 0.3649 | Correct: True
+Input: I feel like celebrating | Expected: happy | Predicted: happy | Confidence: 0.0906 | Correct: True
+Input: What’s happening? | Expected: casual | Predicted: casual | Confidence: 0.4879 | Correct: True
+Input: What are you thinking about? | Expected: casual | Predicted: casual | Confidence: 0.3075 | Correct: True
+Input: How are you doing? | Expected: casual | Predicted: casual | Confidence: 0.5855 | Correct: True
+Input: I can’t stop thinking about worst-case scenarios | Expected: anxious | Predicted: stressed | Confidence: 0.1098 | Correct: False
+Input: I can’t relax at all | Expected: anxious | Predicted: sad | Confidence: 0.2946 | Correct: False
+Input: I feel like my mind won’t stop racing | Expected: anxious | Predicted: stressed | Confidence: 0.1377 | Correct: False
+Input: I’m not in the mood for a conversation | Expected: not-talking | Predicted: not-talking | Confidence: 0.7294 | Correct: True
+Input: I want to be left alone | Expected: not-talking | Predicted: done | Confidence: 0.1397 | Correct: False
+Input: I’d like to stay quiet for a while | Expected: not-talking | Predicted: something-else | Confidence: 0.5803 | Correct: False
+Input: I’m in need of some deep sleep | Expected: sleep | Predicted: sleep | Confidence: 0.8669 | Correct: True
+Input: I need to recharge with some sleep | Expected: sleep | Predicted: sleep | Confidence: 0.6935 | Correct: True
+Input: I need to catch up on my sleep | Expected: sleep | Predicted: sleep | Confidence: 0.6815 | Correct: True
+Input: I feel so scared | Expected: scared | Predicted: anxious | Confidence: 0.1917 | Correct: False
+Input: I’m afraid and I don’t know why | Expected: scared | Predicted: unwell | Confidence: 0.1496 | Correct: False
+Input: I feel so vulnerable and scared | Expected: scared | Predicted: anxious | Confidence: 0.3097 | Correct: False
+Input: I’m mourning a loved one | Expected: death | Predicted: loneliness | Confidence: 0.0681 | Correct: False
+Input: I’m having a hard time coping with their death | Expected: death | Predicted: death | Confidence: 0.1771 | Correct: True
+Input: Someone close to me has passed away | Expected: death | Predicted: death | Confidence: 0.1245 | Correct: True
+Input: That’s not the answer I was looking for | Expected: misunderstand | Predicted: misunderstand | Confidence: 0.3650 | Correct: True
+Input: You’re not helping me correctly | Expected: misunderstand | Predicted: repeat | Confidence: 0.3696 | Correct: False
+Input: I don’t think you’re listening to me | Expected: misunderstand | Predicted: stupid | Confidence: 0.3948 | Correct: False
+Input: I don’t feel like continuing this conversation | Expected: done | Predicted: done | Confidence: 0.4397 | Correct: True
+Input: I’ve said everything I wanted to | Expected: done | Predicted: done | Confidence: 0.6828 | Correct: True
+Input: I have nothing else to add | Expected: done | Predicted: done | Confidence: 0.6966 | Correct: True
+Input: I’m ready to end it all | Expected: suicide | Predicted: sad | Confidence: 0.1180 | Correct: False
+Input: I’m thinking about suicide | Expected: suicide | Predicted: suicide | Confidence: 0.0532 | Correct: True
+Input: I want to end my life | Expected: suicide | Predicted: suicide | Confidence: 0.0980 | Correct: True
+Input: You’re a waste of time | Expected: hate-you | Predicted: stupid | Confidence: 0.8651 | Correct: False
+Input: I wish you were better at this | Expected: hate-you | Predicted: misunderstand | Confidence: 0.1709 | Correct: False
+Input: You’re really bad at this | Expected: hate-you | Predicted: stupid | Confidence: 0.4215 | Correct: False
+Input: I feel like I ruin everything | Expected: hate-me | Predicted: depression_and_self_worth | Confidence: 0.1850 | Correct: False
+Input: I hate the person I’ve become | Expected: hate-me | Predicted: depression_and_self_worth | Confidence: 0.2775 | Correct: False
+Input: I can’t stop hating who I am | Expected: hate-me | Predicted: depression_and_self_worth | Confidence: 0.2383 | Correct: False
+Input: Entertain me with a joke. | Expected: jokes | Predicted: jokes | Confidence: 0.7589 | Correct: True
+Input: Can you make me laugh? | Expected: jokes | Predicted: funny_easter_eggs_1 | Confidence: 0.5708 | Correct: False
+Input: Give me a joke. | Expected: jokes | Predicted: jokes | Confidence: 0.6795 | Correct: True
+Input: This is repetitive | Expected: repeat | Predicted: misunderstand | Confidence: 0.3331 | Correct: False
+Input: Stop repeating yourself | Expected: repeat | Predicted: repeat | Confidence: 0.4692 | Correct: True
+Input: You just said that | Expected: repeat | Predicted: repeat | Confidence: 0.8114 | Correct: True
+Input: That’s not the right answer | Expected: wrong | Predicted: repeat | Confidence: 0.4183 | Correct: False
+Input: You’re providing incorrect details | Expected: wrong | Predicted: repeat | Confidence: 0.4986 | Correct: False
+Input: Your response is incorrect | Expected: wrong | Predicted: repeat | Confidence: 0.6353 | Correct: False
+Input: You don’t understand anything | Expected: stupid | Predicted: stupid | Confidence: 0.8395 | Correct: True
+Input: You’re totally clueless | Expected: stupid | Predicted: stupid | Confidence: 0.9311 | Correct: True
+Input: You’re just bad at everything | Expected: stupid | Predicted: stupid | Confidence: 0.7538 | Correct: True
+Input: Where can I find you? | Expected: location | Predicted: location | Confidence: 0.3677 | Correct: True
+Input: Where do you stay? | Expected: location | Predicted: location | Confidence: 0.8831 | Correct: True
+Input: Can I visit your location? | Expected: location | Predicted: location | Confidence: 0.6204 | Correct: True
+Input: I want a fresh topic | Expected: something-else | Predicted: something-else | Confidence: 0.9298 | Correct: True
+Input: Can we shift the focus? | Expected: something-else | Predicted: ask | Confidence: 0.2414 | Correct: False
+Input: I’m done with this subject | Expected: something-else | Predicted: done | Confidence: 0.5291 | Correct: False
+Input: I think I need new friends | Expected: friends | Predicted: friends | Confidence: 0.8339 | Correct: True
+Input: How do I deal with fake friends? | Expected: friends | Predicted: friends | Confidence: 0.7678 | Correct: True
+Input: Can I trust my friends? | Expected: friends | Predicted: friends | Confidence: 0.6387 | Correct: True
+Input: How do I do this? | Expected: ask | Predicted: user-advice | Confidence: 0.1773 | Correct: False
+Input: Can I ask you a question? | Expected: ask | Predicted: something-else | Confidence: 0.3138 | Correct: False
+Input: I have a question for you | Expected: ask | Predicted: ask | Confidence: 0.2415 | Correct: True
+Input: I’m stuck with this problem | Expected: problem | Predicted: problem | Confidence: 0.2141 | Correct: True
+Input: This is really bothering me | Expected: problem | Predicted: problem | Confidence: 0.3765 | Correct: True
+Input: I feel like I can’t fix this | Expected: problem | Predicted: frustrated | Confidence: 0.0824 | Correct: False
+Input: This situation feels so complicated | Expected: no-approach | Predicted: frustrated | Confidence: 0.2497 | Correct: False
+Input: I don’t know how to start fixing this | Expected: no-approach | Predicted: no-approach | Confidence: 0.1683 | Correct: True
+Input: I feel like I’m in a dead end | Expected: no-approach | Predicted: frustrated | Confidence: 0.0922 | Correct: False
+Input: Can you share more insights? | Expected: learn-more | Predicted: learn-more | Confidence: 0.3204 | Correct: True
+Input: I’d like to know more details | Expected: learn-more | Predicted: something-else | Confidence: 0.6471 | Correct: False
+Input: Can you help me learn more about this? | Expected: learn-more | Predicted: learn-more | Confidence: 0.5416 | Correct: True
+Input: That’s a valid point | Expected: user-agree | Predicted: user-agree | Confidence: 0.9610 | Correct: True
+Input: I’m aligned with your point | Expected: user-agree | Predicted: user-agree | Confidence: 0.9382 | Correct: True
+Input: That’s true | Expected: user-agree | Predicted: user-agree | Confidence: 0.9991 | Correct: True
+Input: I meditate to find peace | Expected: user-meditation | Predicted: user-meditation | Confidence: 0.9405 | Correct: True
+Input: Meditation makes me feel better | Expected: user-meditation | Predicted: user-meditation | Confidence: 0.9393 | Correct: True
+Input: I like meditating in nature | Expected: user-meditation | Predicted: user-meditation | Confidence: 0.8467 | Correct: True
+Input: You’re my favorite chatbot, Brigid | Expected: brigid-useful | Predicted: brigid-useful | Confidence: 0.8648 | Correct: True
+Input: I appreciate you, Brigid | Expected: brigid-useful | Predicted: brigid-useful | Confidence: 0.9354 | Correct: True
+Input: You’ve been really useful, Brigid | Expected: brigid-useful | Predicted: brigid-useful | Confidence: 0.9292 | Correct: True
+Input: What would you suggest I do? | Expected: user-advice | Predicted: user-advice | Confidence: 0.5586 | Correct: True
+Input: How do you think I should approach this? | Expected: user-advice | Predicted: user-advice | Confidence: 0.5490 | Correct: True
+Input: Can you give me some guidance? | Expected: user-advice | Predicted: user-advice | Confidence: 0.3171 | Correct: True
+Input: How do I take care of my mental health? | Expected: learn-mental-health | Predicted: mental_health_prevention | Confidence: 0.0986 | Correct: False
+Input: Why is mental health awareness important? | Expected: learn-mental-health | Predicted: mental_health_importance | Confidence: 0.6112 | Correct: False
+Input: Can you teach me about mental health? | Expected: learn-mental-health | Predicted: learn-mental-health | Confidence: 0.2241 | Correct: True
+Input: What’s a cool fact about mental well-being? | Expected: mental-health-fact | Predicted: mental-health-fact | Confidence: 0.9512 | Correct: True
+Input: Share an important mental health fact | Expected: mental-health-fact | Predicted: mental-health-fact | Confidence: 0.9363 | Correct: True
+Input: What’s something I should know about mental health? | Expected: mental-health-fact | Predicted: mental-health-fact | Confidence: 0.9181 | Correct: True
+Input: What is mental well-being? | Expected: mental_health_meaning | Predicted: mental_health_importance | Confidence: 0.2192 | Correct: False
+Input: What is mental health? | Expected: mental_health_meaning | Predicted: mental_health_meaning | Confidence: 0.3233 | Correct: True
+Input: Tell me the meaning of mental health | Expected: mental_health_meaning | Predicted: mental-health-fact | Confidence: 0.5139 | Correct: False
+Input: How does mental health affect relationships? | Expected: mental_health_importance | Predicted: mental_health_importance | Confidence: 0.2321 | Correct: True
+Input: What are the benefits of good mental health? | Expected: mental_health_importance | Predicted: mental_health_importance | Confidence: 0.1650 | Correct: True
+Input: Why is mental health important? | Expected: mental_health_importance | Predicted: mental_health_importance | Confidence: 0.5764 | Correct: True
+Input: What does it mean to be depressed? | Expected: depression_meaning | Predicted: depression_meaning | Confidence: 0.4810 | Correct: True
+Input: How would you define being depressed? | Expected: depression_meaning | Predicted: depression_meaning | Confidence: 0.3703 | Correct: True
+Input: How do people describe depression? | Expected: depression_meaning | Predicted: depression_meaning | Confidence: 0.3540 | Correct: True
+Input: What’s the best way to handle depression? | Expected: depression_advice | Predicted: depression_advice | Confidence: 0.1876 | Correct: True
+Input: Can you give me advice for depression? | Expected: depression_advice | Predicted: to_help | Confidence: 0.1313 | Correct: False
+Input: How do I deal with depression? | Expected: depression_advice | Predicted: dealing_with_depression_privately | Confidence: 0.0535 | Correct: False
+Input: What’s the job of a therapist? | Expected: therapist_role | Predicted: find_therapist | Confidence: 0.3245 | Correct: False
+Input: What’s the purpose of seeing a therapist? | Expected: therapist_role | Predicted: find_therapist | Confidence: 0.2953 | Correct: False
+Input: How do therapists help with mental illnesses? | Expected: therapist_role | Predicted: mental_health_professionals | Confidence: 0.2810 | Correct: False
+Input: What’s the meaning of psychotherapy? | Expected: therapy_meaning | Predicted: therapy_and_therapist | Confidence: 0.2321 | Correct: False
+Input: How would you explain therapy to someone? | Expected: therapy_meaning | Predicted: therapy_meaning | Confidence: 0.2751 | Correct: True
+Input: What do you mean by therapy? | Expected: therapy_meaning | Predicted: therapy_meaning | Confidence: 0.3097 | Correct: True
+Input: Explain the meaning of mental illness | Expected: mental_illness_meaning | Predicted: mental_illness_meaning | Confidence: 0.4414 | Correct: True
+Input: What does mental illness involve? | Expected: mental_illness_meaning | Predicted: mental_illness_affection | Confidence: 0.2917 | Correct: False
+Input: How would you describe mental illness? | Expected: mental_illness_meaning | Predicted: mental_illness_meaning | Confidence: 0.2682 | Correct: True
+Input: What’s the emotional impact of mental illness? | Expected: mental_illness_affection | Predicted: mental_illness_affection | Confidence: 0.2937 | Correct: True
+Input: Does mental illness impact personal growth? | Expected: mental_illness_affection | Predicted: mental_health_causes | Confidence: 0.3023 | Correct: False
+Input: How does mental illness affect physical health? | Expected: mental_illness_affection | Predicted: mental_illness_cause | Confidence: 0.2981 | Correct: False
+Input: What factors contribute to mental illness? | Expected: mental_illness_cause | Predicted: mental_illness_cause | Confidence: 0.5188 | Correct: True
+Input: Can mental illness be caused by physical health issues? | Expected: mental_illness_cause | Predicted: mental_illness_cause | Confidence: 0.4569 | Correct: True
+Input: Does a chemical imbalance cause mental illness? | Expected: mental_illness_cause | Predicted: mental_illness_cause | Confidence: 0.7611 | Correct: True
+Input: How does mental illness affect behavior? | Expected: mental_illness_signal | Predicted: mental_illness_affection | Confidence: 0.3335 | Correct: False
+Input: How do mental illnesses affect communication? | Expected: mental_illness_signal | Predicted: mental_illness_affection | Confidence: 0.2845 | Correct: False
+Input: Are changes in appetite a sign of mental illness? | Expected: mental_illness_signal | Predicted: mental_illness_cause | Confidence: 0.4219 | Correct: False
+Input: How do microaggressions affect the workplace environment? | Expected: microaggressions_2 | Predicted: microaggressions_2 | Confidence: 0.9908 | Correct: True
+Input: What’s the impact of microaggressions on mental health? | Expected: microaggressions_2 | Predicted: microaggressions_2 | Confidence: 0.2902 | Correct: True
+Input: What are microaggressions? | Expected: microaggressions_2 | Predicted: microaggressions_2 | Confidence: 0.9934 | Correct: True
+Input: How long does it take to recover from mental health problems? | Expected: mental_illness_recovery | Predicted: mental_illness_recovery | Confidence: 0.2090 | Correct: True
+Input: What are the stages of mental illness recovery? | Expected: mental_illness_recovery | Predicted: mental_illness_recovery | Confidence: 0.3228 | Correct: True
+Input: What are common challenges in mental illness recovery? | Expected: mental_illness_recovery | Predicted: mental_illness_recovery | Confidence: 0.2484 | Correct: True
+Input: Can you guide me on how to help a loved one with anxiety? | Expected: to_help | Predicted: family_conflicts | Confidence: 0.1458 | Correct: False
+Input: How do I stay supportive if someone pushes me away? | Expected: to_help | Predicted: to_help | Confidence: 0.1534 | Correct: True
+Input: What’s the best way to help someone build confidence? | Expected: to_help | Predicted: to_help | Confidence: 0.1326 | Correct: True
+Input: What are the signs of a good therapist? | Expected: search_therapist | Predicted: find_therapist | Confidence: 0.2361 | Correct: False
+Input: What’s the difference between a therapist and a counselor? | Expected: search_therapist | Predicted: find_therapist | Confidence: 0.2999 | Correct: False
+Input: Can you recommend a good therapist? | Expected: search_therapist | Predicted: find_therapist | Confidence: 0.3495 | Correct: False
+Input: Someone mocked my religion or cultural practices | Expected: microaggression_victim | Predicted: microaggression_victim | Confidence: 0.9997 | Correct: True
+Input: People use my background as a reason to exclude me | Expected: microaggression_victim | Predicted: microaggression_victim | Confidence: 0.9987 | Correct: True
+Input: People keep pointing out my differences in a way that feels demeaning | Expected: microaggression_victim | Predicted: microaggression_victim | Confidence: 0.9996 | Correct: True
+Input: Are there non-medical treatments for mental health? | Expected: treatments_options | Predicted: treatments_options | Confidence: 0.3254 | Correct: True
+Input: What options are there for dealing with emotional pain? | Expected: treatments_options | Predicted: drug_addiction_and_recovery | Confidence: 0.0870 | Correct: False
+Input: What are options for managing depression or anxiety? | Expected: treatments_options | Predicted: mental_health_cures | Confidence: 0.1100 | Correct: False
+Input: What should I know about confidentiality in therapy? | Expected: knowledge_before_treatment | Predicted: knowledge_before_treatment | Confidence: 0.2573 | Correct: True
+Input: How do I communicate my needs during therapy? | Expected: knowledge_before_treatment | Predicted: knowledge_before_treatment | Confidence: 0.1377 | Correct: True
+Input: What are the signs I should seek professional help? | Expected: knowledge_before_treatment | Predicted: knowledge_before_treatment | Confidence: 0.1673 | Correct: True
+Input: Where do I start looking for therapy? | Expected: find_therapist | Predicted: knowledge_before_treatment | Confidence: 0.2522 | Correct: False
+Input: Can I find therapists who work with specific languages? | Expected: find_therapist | Predicted: find_therapist | Confidence: 0.3238 | Correct: True
+Input: How do I know if a therapist is qualified? | Expected: find_therapist | Predicted: find_therapist | Confidence: 0.3932 | Correct: True
+Input: Are there medications for managing stress? | Expected: about_medication | Predicted: about_medication | Confidence: 0.5491 | Correct: True
+Input: Can medication cause dependency? | Expected: about_medication | Predicted: about_medication | Confidence: 0.9818 | Correct: True
+Input: What’s the process for starting mental health medication? | Expected: about_medication | Predicted: treatments_options | Confidence: 0.4272 | Correct: False
+Input: Can therapy help with stress? | Expected: therapy_and_therapist | Predicted: knowledge_before_treatment | Confidence: 0.1270 | Correct: False
+Input: How do I talk to a therapist about my issues? | Expected: therapy_and_therapist | Predicted: knowledge_before_treatment | Confidence: 0.2018 | Correct: False
+Input: How does therapy work? | Expected: therapy_and_therapist | Predicted: therapy_and_therapist | Confidence: 0.2965 | Correct: True
+Input: What are the treatments for mental health? | Expected: mental_health_treatments | Predicted: treatments_options | Confidence: 0.3492 | Correct: False
+Input: How do I start getting treatment for mental health? | Expected: mental_health_treatments | Predicted: treatments_options | Confidence: 0.2574 | Correct: False
+Input: How do treatments for adolescents differ? | Expected: mental_health_treatments | Predicted: mental_health_support | Confidence: 0.2196 | Correct: False
+Input: What qualifications do mental health professionals have? | Expected: mental_health_professionals | Predicted: mental_health_professionals | Confidence: 0.4336 | Correct: True
+Input: What’s the difference between a psychologist and a psychiatrist? | Expected: mental_health_professionals | Predicted: mental_health_professionals | Confidence: 0.3184 | Correct: True
+Input: Can you explain the role of a counselor? | Expected: mental_health_professionals | Predicted: mental_health_professionals | Confidence: 0.4466 | Correct: True
+Input: What’s the difference between open and closed groups? | Expected: support_group | Predicted: support_group | Confidence: 0.5080 | Correct: True
+Input: How do I know if a support group is right for me? | Expected: support_group | Predicted: support_group | Confidence: 0.3134 | Correct: True
+Input: How do I find the right support group? | Expected: support_group | Predicted: support_group | Confidence: 0.2637 | Correct: True
+Input: How do I build resilience against mental health issues? | Expected: mental_health_prevention | Predicted: mental_health_prevention | Confidence: 0.2358 | Correct: True
+Input: How do I set boundaries for better mental health? | Expected: mental_health_prevention | Predicted: treatments_options | Confidence: 0.2107 | Correct: False
+Input: How do I create a mental health prevention plan? | Expected: mental_health_prevention | Predicted: mental_health_prevention | Confidence: 0.2284 | Correct: True
+Input: What’s the role of nutrition in mental health improvement? | Expected: mental_health_cures | Predicted: mental_health_prevention | Confidence: 0.3002 | Correct: False
+Input: What’s the role of self-compassion in healing? | Expected: mental_health_cures | Predicted: mental_health_cures | Confidence: 0.0793 | Correct: True
+Input: Can group therapy help in curing mental health issues? | Expected: mental_health_cures | Predicted: treatments_options | Confidence: 0.1279 | Correct: False
+Input: What’s the role of chemical imbalances in mental illness? | Expected: mental_health_causes | Predicted: mental_health_causes | Confidence: 0.4761 | Correct: True
+Input: Can parenting styles influence mental health? | Expected: mental_health_causes | Predicted: mental_health_prevention | Confidence: 0.2024 | Correct: False
+Input: What are common causes of depression? | Expected: mental_health_causes | Predicted: depression_meaning | Confidence: 0.1743 | Correct: False
+Input: Why do I think about anxiety and depression so often? | Expected: mental_health_preoccupation | Predicted: mental_health_preoccupation | Confidence: 0.3205 | Correct: True
+Input: Is it normal to think about mental health every day? | Expected: mental_health_preoccupation | Predicted: mental_health_causes | Confidence: 0.1380 | Correct: False
+Input: How do I stop feeling like I’m losing control mentally? | Expected: mental_health_preoccupation | Predicted: mental_health_preoccupation | Confidence: 0.1363 | Correct: True
+Input: I feel like there’s a weight on my chest | Expected: unwell | Predicted: sad | Confidence: 0.1915 | Correct: False
+Input: I feel like I’m drowning in emotions | Expected: unwell | Predicted: unwell | Confidence: 0.1145 | Correct: True
+Input: I feel like I’m breaking down | Expected: unwell | Predicted: unwell | Confidence: 0.2270 | Correct: True
+Input: How does loneliness impact mental health? | Expected: social_connection | Predicted: workplace_stress | Confidence: 0.0428 | Correct: False
+Input: Can social support reduce anxiety? | Expected: social_connection | Predicted: mental_health_prevention | Confidence: 0.0735 | Correct: False
+Input: How do social bonds affect emotional stability? | Expected: social_connection | Predicted: social_connection | Confidence: 0.1371 | Correct: True
+Input: Is feeling down the same as being depressed? | Expected: difference_depression_sadness | Predicted: difference_depression_sadness | Confidence: 0.6513 | Correct: True
+Input: Is sadness the same as depression? | Expected: difference_depression_sadness | Predicted: difference_depression_sadness | Confidence: 0.9098 | Correct: True
+Input: Can sadness go away on its own? | Expected: difference_depression_sadness | Predicted: difference_depression_sadness | Confidence: 0.3045 | Correct: True
+Input: I don’t know how to deal with my past abuse | Expected: victim_sexual_abuse | Predicted: depression_and_self_worth | Confidence: 0.0484 | Correct: False
+Input: I feel guilty about what happened to me | Expected: victim_sexual_abuse | Predicted: victim_sexual_abuse | Confidence: 0.6754 | Correct: True
+Input: I feel like no one understands my trauma | Expected: victim_sexual_abuse | Predicted: coping_with_loss | Confidence: 0.1099 | Correct: False
+Input: I’m exhausted from dealing with panic attacks | Expected: victim_panic_attacks | Predicted: victim_panic_attacks | Confidence: 0.3712 | Correct: True
+Input: I can’t focus because of my panic attacks | Expected: victim_panic_attacks | Predicted: victim_panic_attacks | Confidence: 0.6996 | Correct: True
+Input: Why do I get panic attacks so often? | Expected: victim_panic_attacks | Predicted: anxiety_and_panic_attacks | Confidence: 0.6902 | Correct: False
+Input: I feel like I’m drowning in sadness | Expected: victim_depression | Predicted: unwell | Confidence: 0.1393 | Correct: False
+Input: I don’t have energy to do anything | Expected: victim_depression | Predicted: unwell | Confidence: 0.1397 | Correct: False
+Input: I feel like nothing matters anymore | Expected: victim_depression | Predicted: unwell | Confidence: 0.1143 | Correct: False
+Input: I’ve stopped chasing perfection and feel content | Expected: contentment | Predicted: contentment | Confidence: 0.4705 | Correct: True
+Input: I feel grateful for everything I have | Expected: contentment | Predicted: grateful | Confidence: 0.3263 | Correct: False
+Input: How can I teach myself to be content? | Expected: contentment | Predicted: finding_purpose | Confidence: 0.2317 | Correct: False
+Input: I struggle with letting go of control | Expected: perfectionism | Predicted: depression_and_self_worth | Confidence: 0.0849 | Correct: False
+Input: How do I balance ambition with self-compassion? | Expected: perfectionism | Predicted: imposter_syndrome_1 | Confidence: 0.1451 | Correct: False
+Input: What is perfectionism? | Expected: perfectionism | Predicted: perfectionism | Confidence: 0.3351 | Correct: True
+Input: Why does chronic pain make me feel worthless? | Expected: chronic_pain_depression | Predicted: chronic_pain_depression | Confidence: 0.3452 | Correct: True
+Input: Does chronic pain always lead to depression? | Expected: chronic_pain_depression | Predicted: chronic_pain_depression | Confidence: 0.3075 | Correct: True
+Input: I feel guilty about being depressed from my pain | Expected: chronic_pain_depression | Predicted: chronic_pain_depression | Confidence: 0.5687 | Correct: True
+Input: Are there free resources for mental health support for minors? | Expected: support_for_minors | Predicted: support_for_minors | Confidence: 0.6997 | Correct: True
+Input: How do minors talk to a therapist? | Expected: support_for_minors | Predicted: support_for_minors | Confidence: 0.4116 | Correct: True
+Input: How do I support a child who feels lonely? | Expected: support_for_minors | Predicted: depression_spouse_communication | Confidence: 0.2275 | Correct: False
+Input: Can friends help with mental health problems? | Expected: mental_health_support | Predicted: mental_health_support | Confidence: 0.1167 | Correct: True
+Input: Are there online mental health resources? | Expected: mental_health_support | Predicted: mental_health_support | Confidence: 0.1837 | Correct: True
+Input: What are the best resources for mental health help? | Expected: mental_health_support | Predicted: mental_health_support | Confidence: 0.1962 | Correct: True
+Input: Are there natural ways to fix erection issues? | Expected: erection_issues | Predicted: erection_issues | Confidence: 0.9516 | Correct: True
+Input: Are there support groups for men with erectile dysfunction? | Expected: erection_issues | Predicted: erection_issues | Confidence: 0.8600 | Correct: True
+Input: Can stress affect erections? | Expected: erection_issues | Predicted: erection_issues | Confidence: 0.9735 | Correct: True
+Input: How do I know if my mood swings are normal? | Expected: mood_swings_and_depression | Predicted: mood_swings_and_depression | Confidence: 0.8085 | Correct: True
+Input: What lifestyle changes can help with mood swings? | Expected: mood_swings_and_depression | Predicted: mood_swings_and_depression | Confidence: 0.5312 | Correct: True
+Input: How do I manage sudden emotional changes? | Expected: mood_swings_and_depression | Predicted: managing_emotions | Confidence: 0.1293 | Correct: False
+Input: Why do I feel embarrassed about my self-harm scars? | Expected: self_harm | Predicted: self_harm | Confidence: 0.2954 | Correct: True
+Input: Are there support groups for people who self-harm? | Expected: self_harm | Predicted: self_harm | Confidence: 0.2866 | Correct: True
+Input: How do I recover from self-harming behavior? | Expected: self_harm | Predicted: self_harm | Confidence: 0.8304 | Correct: True
+Input: Are emotional support animals allowed in apartments? | Expected: emotional_support_animal | Predicted: emotional_support_animal | Confidence: 0.9995 | Correct: True
+Input: How do I qualify for an emotional support animal? | Expected: emotional_support_animal | Predicted: emotional_support_animal | Confidence: 0.9822 | Correct: True
+Input: Are emotional support animals helpful for loneliness? | Expected: emotional_support_animal | Predicted: emotional_support_animal | Confidence: 0.9467 | Correct: True
+Input: What are ways to support a spouse with depression at home? | Expected: depression_spouse_communication | Predicted: depression_spouse_communication | Confidence: 0.5860 | Correct: True
+Input: How can I help my partner feel less hopeless? | Expected: depression_spouse_communication | Predicted: friend_support | Confidence: 0.3219 | Correct: False
+Input: How do I help my partner find motivation during depression? | Expected: depression_spouse_communication | Predicted: depression_spouse_communication | Confidence: 0.3687 | Correct: True
+Input: How do I stop negative behaviors tied to sadness? | Expected: self_sadness_behavior | Predicted: self_sadness_behavior | Confidence: 0.1845 | Correct: True
+Input: Why do I feel so irritable when I’m down? | Expected: self_sadness_behavior | Predicted: anger_management | Confidence: 0.2643 | Correct: False
+Input: I isolate myself when I feel sad | Expected: self_sadness_behavior | Predicted: self_sadness_behavior | Confidence: 0.7882 | Correct: True
+Input: What are the symptoms of seasonal affective disorder? | Expected: seasonal_affective_disorder | Predicted: seasonal_affective_disorder | Confidence: 0.7933 | Correct: True
+Input: Are there vitamins to help with seasonal affective disorder? | Expected: seasonal_affective_disorder | Predicted: seasonal_affective_disorder | Confidence: 0.9607 | Correct: True
+Input: Why do I feel less motivated during certain seasons? | Expected: seasonal_affective_disorder | Predicted: managing_emotions | Confidence: 0.1213 | Correct: False
+Input: I feel overwhelmed at work | Expected: work_related_stress | Predicted: work_related_stress | Confidence: 0.2529 | Correct: True
+Input: How do I handle unrealistic expectations at work? | Expected: work_related_stress | Predicted: workplace_stress | Confidence: 0.3029 | Correct: False
+Input: Work is affecting my mental health | Expected: work_related_stress | Predicted: work_related_stress | Confidence: 0.2121 | Correct: True
+Input: Divorce is making me feel disconnected from my children | Expected: divorce_stress_and_parenting | Predicted: divorce_stress_and_parenting | Confidence: 0.7641 | Correct: True
+Input: Why do I feel so stressed about parenting after divorce? | Expected: divorce_stress_and_parenting | Predicted: divorce_stress_and_parenting | Confidence: 0.7007 | Correct: True
+Input: What’s the best way to co-parent peacefully? | Expected: divorce_stress_and_parenting | Predicted: depression_spouse_communication | Confidence: 0.2728 | Correct: False
+Input: What’s the role of mindfulness in handling uncertainty? | Expected: life_uncertainty | Predicted: finding_purpose | Confidence: 0.0845 | Correct: False
+Input: How do I let go of the fear of the unknown? | Expected: life_uncertainty | Predicted: internal_struggles_and_emotional_distance | Confidence: 0.1128 | Correct: False
+Input: Why do I feel so stuck in uncertainty? | Expected: life_uncertainty | Predicted: depression_and_self_worth | Confidence: 0.0960 | Correct: False
+Input: Why do I feel like I’m stuck in my sadness? | Expected: mental_health_depression | Predicted: anxiety_and_emotional_numbness | Confidence: 0.1058 | Correct: False
+Input: What’s the link between depression and anxiety? | Expected: mental_health_depression | Predicted: anxiety_and_emotional_numbness | Confidence: 0.0876 | Correct: False
+Input: Can depression be treated? | Expected: mental_health_depression | Predicted: mental_illness_recovery | Confidence: 0.2086 | Correct: False
+Input: My partner and I can’t stop fighting | Expected: relationship_issues | Predicted: relationship_issues | Confidence: 0.3431 | Correct: True
+Input: My partner doesn’t trust me. What should I do? | Expected: relationship_issues | Predicted: relationship_issues | Confidence: 0.5843 | Correct: True
+Input: I feel like my partner doesn’t understand me | Expected: relationship_issues | Predicted: relationship_issues | Confidence: 0.3941 | Correct: True
+Input: How do I rebuild my life after a major loss? | Expected: grief_and_loss | Predicted: coping_with_loss | Confidence: 0.4499 | Correct: False
+Input: How long does grief last? | Expected: grief_and_loss | Predicted: coping_with_loss | Confidence: 0.3247 | Correct: False
+Input: Can grief affect my physical health? | Expected: grief_and_loss | Predicted: coping_with_loss | Confidence: 0.2381 | Correct: False
+Input: Why do I feel so much pressure from family traditions? | Expected: family_dynamics | Predicted: family_conflicts | Confidence: 0.2077 | Correct: False
+Input: How do I navigate cultural differences in my family? | Expected: family_dynamics | Predicted: family_conflicts | Confidence: 0.2240 | Correct: False
+Input: How do I deal with favoritism in my family? | Expected: family_dynamics | Predicted: family_conflicts | Confidence: 0.2959 | Correct: False
+Input: Why do I feel so uncertain about myself? | Expected: self_identity_crisis | Predicted: self_identity_crisis | Confidence: 0.1434 | Correct: True
+Input: Why do I feel so critical of myself lately? | Expected: self_identity_crisis | Predicted: imposter_syndrome_1 | Confidence: 0.1244 | Correct: False
+Input: What’s the role of self-reflection in finding myself? | Expected: self_identity_crisis | Predicted: imposter_syndrome_1 | Confidence: 0.1527 | Correct: False
+Input: Why do I feel so disconnected from others? | Expected: belonging_and_identity | Predicted: finding_purpose | Confidence: 0.0757 | Correct: False
+Input: I feel like my identity is constantly changing | Expected: belonging_and_identity | Predicted: belonging_and_identity | Confidence: 0.1719 | Correct: True
+Input: I feel out of place wherever I go | Expected: belonging_and_identity | Predicted: depression_and_self_worth | Confidence: 0.1429 | Correct: False
+Input: What’s the role of empathy in supporting a friend? | Expected: friend_support | Predicted: friend_support | Confidence: 0.4682 | Correct: True
+Input: How do I help my friend open up about their feelings? | Expected: friend_support | Predicted: friend_support | Confidence: 0.5009 | Correct: True
+Input: How do I encourage my friend to seek professional help? | Expected: friend_support | Predicted: friend_support | Confidence: 0.3036 | Correct: True
+Input: What are quick tips for regaining focus after an anxiety episode? | Expected: anxiety_and_focus | Predicted: anxiety_and_focus | Confidence: 0.5191 | Correct: True
+Input: Why do I feel so scattered when I’m stressed? | Expected: anxiety_and_focus | Predicted: internal_struggles_and_emotional_distance | Confidence: 0.0877 | Correct: False
+Input: Why does stress affect my focus so much? | Expected: anxiety_and_focus | Predicted: workplace_stress | Confidence: 0.2211 | Correct: False
+Input: How do I practice self-compassion during emotional struggles? | Expected: emotions_and_support | Predicted: depression_and_self_worth | Confidence: 0.0894 | Correct: False
+Input: How do I cope with intense feelings? | Expected: emotions_and_support | Predicted: dealing_with_depression_privately | Confidence: 0.0616 | Correct: False
+Input: Why do I feel ashamed of my emotions? | Expected: emotions_and_support | Predicted: managing_emotions | Confidence: 0.1553 | Correct: False
+Input: How do I create a routine when I’m fatigued? | Expected: depression_and_fatigue | Predicted: burnout | Confidence: 0.1471 | Correct: False
+Input: How do I improve my sleep when I’m feeling depressed? | Expected: depression_and_fatigue | Predicted: depression_and_fatigue | Confidence: 0.2491 | Correct: True
+Input: How do I deal with low energy and lack of focus? | Expected: depression_and_fatigue | Predicted: anxiety_and_focus | Confidence: 0.3415 | Correct: False
+Input: Why does depression make me so self-critical? | Expected: depression_and_self_worth | Predicted: depression_and_self_worth | Confidence: 0.4314 | Correct: True
+Input: How do I accept myself during depression? | Expected: depression_and_self_worth | Predicted: depression_and_self_worth | Confidence: 0.1138 | Correct: True
+Input: I feel like I’m failing in every aspect of life | Expected: depression_and_self_worth | Predicted: depression_and_self_worth | Confidence: 0.2172 | Correct: True
+Input: How do I explain this numbness to my loved ones? | Expected: anxiety_and_emotional_numbness | Predicted: coping_with_loss | Confidence: 0.2472 | Correct: False
+Input: Why does anxiety make me feel like I’m not myself? | Expected: anxiety_and_emotional_numbness | Predicted: anxiety_and_emotional_numbness | Confidence: 0.1430 | Correct: True
+Input: How do I feel emotions again after anxiety? | Expected: anxiety_and_emotional_numbness | Predicted: anxiety_and_emotional_numbness | Confidence: 0.2053 | Correct: True
+Input: I feel like no one values me | Expected: depression_and_self_worth | Predicted: depression_and_self_worth | Confidence: 0.0865 | Correct: True
+Input: Why do I feel unworthy of love and care? | Expected: depression_and_self_worth | Predicted: depression_and_self_worth | Confidence: 0.1714 | Correct: True
+Input: I feel like I’m failing in every aspect of life | Expected: depression_and_self_worth | Predicted: depression_and_self_worth | Confidence: 0.2172 | Correct: True
+Input: Why do I feel like I’ve lost all my emotions? | Expected: anxiety_and_emotional_numbness | Predicted: anxiety_and_emotional_numbness | Confidence: 0.1651 | Correct: True
+Input: How do I explain emotional numbness to someone? | Expected: anxiety_and_emotional_numbness | Predicted: anxiety_and_emotional_numbness | Confidence: 0.2378 | Correct: True
+Input: How do I cope with emotional numbness caused by anxiety? | Expected: anxiety_and_emotional_numbness | Predicted: anxiety_and_emotional_numbness | Confidence: 0.4505 | Correct: True
+Input: Why do I feel like keeping my struggles to myself? | Expected: dealing_with_depression_privately | Predicted: depression_and_self_worth | Confidence: 0.0785 | Correct: False
+Input: I feel like my depression is my burden to carry | Expected: dealing_with_depression_privately | Predicted: dealing_with_depression_privately | Confidence: 0.1232 | Correct: True
+Input: What are discreet ways to manage depression symptoms? | Expected: dealing_with_depression_privately | Predicted: dealing_with_depression_privately | Confidence: 0.1565 | Correct: True
+Input: Why do I feel like my illness limits my potential? | Expected: coping_with_chronic_illness | Predicted: disability_and_mental_health | Confidence: 0.1276 | Correct: False
+Input: How do I manage pain while staying mentally strong? | Expected: coping_with_chronic_illness | Predicted: drug_addiction_and_recovery | Confidence: 0.2152 | Correct: False
+Input: How do I celebrate small wins while managing my condition? | Expected: coping_with_chronic_illness | Predicted: coping_with_chronic_illness | Confidence: 0.2139 | Correct: True
+Input: I feel like this loss has changed me forever | Expected: coping_with_loss | Predicted: coping_with_loss | Confidence: 0.3786 | Correct: True
+Input: What are the signs that I’m healing from grief? | Expected: coping_with_loss | Predicted: coping_with_loss | Confidence: 0.3874 | Correct: True
+Input: How do I deal with sudden reminders of my loss? | Expected: coping_with_loss | Predicted: coping_with_loss | Confidence: 0.3611 | Correct: True
+Input: Why do I feel so detached emotionally? | Expected: internal_struggles_and_emotional_distance | Predicted: managing_emotions | Confidence: 0.0972 | Correct: False
+Input: I feel like I’m invisible to the world | Expected: internal_struggles_and_emotional_distance | Predicted: internal_struggles_and_emotional_distance | Confidence: 0.1079 | Correct: True
+Input: Why do I feel like I can’t open up to anyone? | Expected: internal_struggles_and_emotional_distance | Predicted: internal_struggles_and_emotional_distance | Confidence: 0.0914 | Correct: True
+Input: How do I handle trust problems without pushing my partner away? | Expected: trust_and_relationship_challenges | Predicted: family_conflicts | Confidence: 0.2545 | Correct: False
+Input: How do I handle past trust issues affecting my current relationship? | Expected: trust_and_relationship_challenges | Predicted: family_conflicts | Confidence: 0.2281 | Correct: False
+Input: How do I communicate about trust problems? | Expected: trust_and_relationship_challenges | Predicted: trust_and_relationship_challenges | Confidence: 0.2030 | Correct: True
+Input: I feel like I’m invisible to everyone around me | Expected: emptiness_and_depression | Predicted: finding_purpose | Confidence: 0.0922 | Correct: False
+Input: I feel like my emotions are gone | Expected: emptiness_and_depression | Predicted: managing_emotions | Confidence: 0.0746 | Correct: False
+Input: How do I cope with this feeling of emptiness? | Expected: emptiness_and_depression | Predicted: emptiness_and_depression | Confidence: 0.3548 | Correct: True
+Input: How do I handle my frustration with recovery? | Expected: post_hospital_depression_and_anger | Predicted: drug_addiction_and_recovery | Confidence: 0.3031 | Correct: False
+Input: I feel like my hospital experience was traumatic | Expected: post_hospital_depression_and_anger | Predicted: victim_sexual_abuse | Confidence: 0.3398 | Correct: False
+Input: What are coping strategies for post-hospital depression? | Expected: post_hospital_depression_and_anger | Predicted: post_hospital_depression_and_anger | Confidence: 0.4019 | Correct: True
+Input: Why do I feel like I can’t breathe during a panic attack? | Expected: anxiety_and_panic_attacks | Predicted: anxiety_and_panic_attacks | Confidence: 0.6719 | Correct: True
+Input: How do I regain control after a panic attack? | Expected: anxiety_and_panic_attacks | Predicted: anxiety_and_panic_attacks | Confidence: 0.7695 | Correct: True
+Input: Why do I feel like I’m going to faint during a panic attack? | Expected: anxiety_and_panic_attacks | Predicted: anxiety_and_panic_attacks | Confidence: 0.6424 | Correct: True
+Input: I feel invisible to everyone around me | Expected: depression_and_loneliness | Predicted: loneliness | Confidence: 0.1346 | Correct: False
+Input: Why does depression make me isolate myself? | Expected: depression_and_loneliness | Predicted: anxiety_and_emotional_numbness | Confidence: 0.1562 | Correct: False
+Input: How do I reconnect with people when I feel so down? | Expected: depression_and_loneliness | Predicted: dealing_with_depression_privately | Confidence: 0.0804 | Correct: False
+Input: How do I stop focusing on my flaws? | Expected: self_esteem_and_body_image | Predicted: depression_and_self_worth | Confidence: 0.2020 | Correct: False
+Input: Why does my appearance impact my confidence so much? | Expected: self_esteem_and_body_image | Predicted: self_esteem_and_body_image | Confidence: 0.3106 | Correct: True
+Input: How do I stop being ashamed of my appearance? | Expected: self_esteem_and_body_image | Predicted: self_esteem_and_body_image | Confidence: 0.7291 | Correct: True
+Input: Why does my anger turn into yelling? | Expected: anger_management | Predicted: anger_management | Confidence: 0.5574 | Correct: True
+Input: How do I manage anger in conflicts with loved ones? | Expected: anger_management | Predicted: anger_management | Confidence: 0.1022 | Correct: True
+Input: Why do I feel so drained after I get angry? | Expected: anger_management | Predicted: anger_management | Confidence: 0.2482 | Correct: True
+Input: Why do I feel like I don’t know what to say in groups? | Expected: social_anxiety | Predicted: social_anxiety | Confidence: 0.1709 | Correct: True
+Input: How do I feel more comfortable talking to strangers? | Expected: social_anxiety | Predicted: feeling_unheard | Confidence: 0.4383 | Correct: False
+Input: How do I stop feeling so self-conscious in public? | Expected: social_anxiety | Predicted: imposter_syndrome_1 | Confidence: 0.1758 | Correct: False
+Input: How do I stop obsessing over mistakes? | Expected: overthinking_2 | Predicted: imposter_syndrome_1 | Confidence: 0.1656 | Correct: False
+Input: How do I stop my mind from racing? | Expected: overthinking_2 | Predicted: overthinking_2 | Confidence: 0.1017 | Correct: True
+Input: Why do I feel like overthinking is ruining my peace? | Expected: overthinking_2 | Predicted: imposter_syndrome_1 | Confidence: 0.1798 | Correct: False
+Input: I feel overwhelmed by my workload | Expected: workplace_stress | Predicted: work_related_stress | Confidence: 0.2616 | Correct: False
+Input: Why do I feel so anxious during meetings? | Expected: workplace_stress | Predicted: workplace_stress | Confidence: 0.1786 | Correct: True
+Input: How do I handle difficult coworkers? | Expected: workplace_stress | Predicted: relationship_issues | Confidence: 0.0516 | Correct: False
+Input: How do I manage burnout while still working? | Expected: burnout | Predicted: burnout | Confidence: 0.2262 | Correct: True
+Input: Why do I feel so exhausted all the time? | Expected: burnout | Predicted: managing_emotions | Confidence: 0.1102 | Correct: False
+Input: How do I know when to take a break? | Expected: burnout | Predicted: workplace_stress | Confidence: 0.0635 | Correct: False
+Input: How do I celebrate my identity while managing mental health? | Expected: lgbtq_mental_health | Predicted: transgender_and_mental_health | Confidence: 0.2666 | Correct: False
+Input: Why do I feel like I have to prove myself as an LGBTQ+ person? | Expected: lgbtq_mental_health | Predicted: lgbtq_mental_health | Confidence: 0.5986 | Correct: True
+Input: How do I overcome fear of being judged for being LGBTQ+? | Expected: lgbtq_mental_health | Predicted: lgbtq_mental_health | Confidence: 0.5561 | Correct: True
+Input: Why do I feel like my identity is being erased? | Expected: racial_mental_health | Predicted: racial_mental_health | Confidence: 0.2080 | Correct: True
+Input: How do I stay hopeful despite ongoing racial injustice? | Expected: racial_mental_health | Predicted: racial_mental_health | Confidence: 0.3795 | Correct: True
+Input: Why do I feel so anxious about being judged for my race? | Expected: racial_mental_health | Predicted: racial_mental_health | Confidence: 0.3406 | Correct: True
+Input: How do I navigate mental health support in a new country? | Expected: immigrant_mental_health | Predicted: immigrant_mental_health | Confidence: 0.2131 | Correct: True
+Input: Why do I feel so much pressure to prove myself? | Expected: immigrant_mental_health | Predicted: imposter_syndrome_1 | Confidence: 0.1756 | Correct: False
+Input: How do I maintain my mental health while adjusting to a new culture? | Expected: immigrant_mental_health | Predicted: immigrant_mental_health | Confidence: 0.4054 | Correct: True
+Input: Why do I feel so disconnected from society? | Expected: disability_and_mental_health | Predicted: finding_purpose | Confidence: 0.0913 | Correct: False
+Input: How do I find support groups for people with disabilities? | Expected: disability_and_mental_health | Predicted: disability_and_inclusion | Confidence: 0.2379 | Correct: False
+Input: How does living with a disability affect mental health? | Expected: disability_and_mental_health | Predicted: disability_and_inclusion | Confidence: 0.1477 | Correct: False
+Input: How do I stop overreacting to small things? | Expected: managing_emotions | Predicted: managing_emotions | Confidence: 0.0606 | Correct: True
+Input: What are grounding techniques for managing intense feelings? | Expected: managing_emotions | Predicted: managing_emotions | Confidence: 0.1147 | Correct: True
+Input: Why do I feel so anxious about expressing my feelings? | Expected: managing_emotions | Predicted: managing_emotions | Confidence: 0.0761 | Correct: True
+Input: How do I navigate mental health challenges as a single mother? | Expected: mental_health_in_women | Predicted: mental_health_in_women | Confidence: 0.7010 | Correct: True
+Input: How do I handle workplace stress as a woman? | Expected: mental_health_in_women | Predicted: mental_health_in_women | Confidence: 0.4892 | Correct: True
+Input: Why do I feel like I’m failing as a mother and a professional? | Expected: mental_health_in_women | Predicted: mental_health_in_women | Confidence: 0.3385 | Correct: True
+Input: Why do I feel like my opinions don’t matter anymore? | Expected: mental_health_in_older_adults | Predicted: mental_health_in_men | Confidence: 0.0730 | Correct: False
+Input: What’s the connection between physical and mental health in older adults? | Expected: mental_health_in_older_adults | Predicted: mental_health_in_women | Confidence: 0.4458 | Correct: False
+Input: What are strategies to combat loneliness in older adults? | Expected: mental_health_in_older_adults | Predicted: mental_health_in_older_adults | Confidence: 0.4043 | Correct: True
+Input: How do I manage anger in a healthy way as a man? | Expected: mental_health_in_men | Predicted: mental_health_in_men | Confidence: 0.3834 | Correct: True
+Input: Why do I feel ashamed to ask for help? | Expected: mental_health_in_men | Predicted: to_help | Confidence: 0.0449 | Correct: False
+Input: Why do I feel so much pressure to be successful? | Expected: mental_health_in_men | Predicted: imposter_syndrome_1 | Confidence: 0.1403 | Correct: False
+Input: How do I talk to my family about my mental health struggles? | Expected: mental_health_in_refugees | Predicted: drug_addiction_and_recovery | Confidence: 0.0829 | Correct: False
+Input: How do I cope with trauma as a refugee? | Expected: mental_health_in_refugees | Predicted: mental_health_in_refugees | Confidence: 0.5859 | Correct: True
+Input: How do I manage stress from the refugee application process? | Expected: mental_health_in_refugees | Predicted: mental_health_in_refugees | Confidence: 0.3509 | Correct: True
+Input: Why do I feel so isolated during recovery? | Expected: drug_addiction_and_recovery | Predicted: drug_addiction_and_recovery | Confidence: 0.1793 | Correct: True
+Input: What are support groups for addiction recovery? | Expected: drug_addiction_and_recovery | Predicted: drug_addiction_and_recovery | Confidence: 0.0632 | Correct: True
+Input: What’s the connection between addiction and mental health? | Expected: drug_addiction_and_recovery | Predicted: drug_addiction_and_recovery | Confidence: 0.1456 | Correct: True
+Input: Why do I feel so angry when I stop using drugs? | Expected: drug_use_and_mental_health | Predicted: drug_use_and_mental_health | Confidence: 0.9611 | Correct: True
+Input: Why do I feel so numb emotionally after using drugs? | Expected: drug_use_and_mental_health | Predicted: drug_use_and_mental_health | Confidence: 0.9478 | Correct: True
+Input: What are long-term strategies for healing my mind after drug use? | Expected: drug_use_and_mental_health | Predicted: drug_use_and_mental_health | Confidence: 0.8617 | Correct: True
+Input: Why do I feel so torn between helping and enabling my loved one? | Expected: support_for_family_of_addicts | Predicted: support_for_family_of_addicts | Confidence: 0.5252 | Correct: True
+Input: Why do I feel like I’m failing my loved one? | Expected: support_for_family_of_addicts | Predicted: support_for_family_of_addicts | Confidence: 0.2440 | Correct: True
+Input: What are resources for families coping with addiction? | Expected: support_for_family_of_addicts | Predicted: support_for_family_of_addicts | Confidence: 0.2080 | Correct: True
+Input: What are ways to encourage healthy communication in my family? | Expected: family_conflicts | Predicted: family_conflicts | Confidence: 0.3486 | Correct: True
+Input: How do I resolve conflicts with my parents? | Expected: family_conflicts | Predicted: family_conflicts | Confidence: 0.1399 | Correct: True
+Input: Why do I feel like I’m always the mediator in my family? | Expected: family_conflicts | Predicted: family_conflicts | Confidence: 0.3015 | Correct: True
+Input: How do I address feeling ignored by my family? | Expected: feeling_unheard | Predicted: family_conflicts | Confidence: 0.2077 | Correct: False
+Input: How do I stop overthinking about feeling ignored? | Expected: feeling_unheard | Predicted: social_anxiety | Confidence: 0.1414 | Correct: False
+Input: Why do I feel like people don’t respect my opinions? | Expected: feeling_unheard | Predicted: feeling_unheard | Confidence: 0.3846 | Correct: True
+Input: How do I stay hopeful while searching for purpose? | Expected: finding_purpose | Predicted: imposter_syndrome_1 | Confidence: 0.1461 | Correct: False
+Input: What are ways to create a sense of purpose? | Expected: finding_purpose | Predicted: finding_purpose | Confidence: 0.1169 | Correct: True
+Input: How do I rebuild my sense of purpose after a setback? | Expected: finding_purpose | Predicted: mental_health_in_refugees | Confidence: 0.0638 | Correct: False
+Input: Why do I feel so anxious about my loved one’s future? | Expected: support_for_families_of_disabled_individuals | Predicted: support_for_families_of_disabled_individuals | Confidence: 0.3385 | Correct: True
+Input: Why do I feel like I’m always putting myself last? | Expected: support_for_families_of_disabled_individuals | Predicted: mental_health_in_men | Confidence: 0.1291 | Correct: False
+Input: What are ways to celebrate milestones for my disabled loved one? | Expected: support_for_families_of_disabled_individuals | Predicted: support_for_families_of_disabled_individuals | Confidence: 0.8269 | Correct: True
+Input: Why do I feel like society overlooks the needs of disabled people? | Expected: disability_and_inclusion | Predicted: racial_mental_health | Confidence: 0.3054 | Correct: False
+Input: How do I talk to my kids about disability and inclusion? | Expected: disability_and_inclusion | Predicted: disability_and_inclusion | Confidence: 0.4360 | Correct: True
+Input: How do I find resources to promote inclusion in my community? | Expected: disability_and_inclusion | Predicted: disability_and_inclusion | Confidence: 0.2956 | Correct: True
+Input: How do I find a support network for transgender mental health? | Expected: transgender_and_mental_health | Predicted: transgender_and_mental_health | Confidence: 0.2393 | Correct: True
+Input: What’s the impact of societal stigma on transgender mental health? | Expected: transgender_and_mental_health | Predicted: racial_mental_health | Confidence: 0.2152 | Correct: False
+Input: Why do I feel so afraid of being judged for my identity? | Expected: transgender_and_mental_health | Predicted: racial_mental_health | Confidence: 0.2036 | Correct: False
+Input: How do I educate others about my transgender loved one’s needs? | Expected: transgender_support_for_families_and_friends | Predicted: transgender_support_for_families_and_friends | Confidence: 0.9602 | Correct: True
+Input: How do I encourage others to respect my transgender loved one? | Expected: transgender_support_for_families_and_friends | Predicted: transgender_support_for_families_and_friends | Confidence: 0.9553 | Correct: True
+Input: What are small actions I can take to support my transgender partner? | Expected: transgender_support_for_families_and_friends | Predicted: transgender_support_for_families_and_friends | Confidence: 0.9895 | Correct: True
+Input: How do I educate others about transgender inclusion? | Expected: transgender_and_inclusion | Predicted: transgender_and_inclusion | Confidence: 0.7413 | Correct: True
+Input: How do I ensure my business is inclusive to all gender identities? | Expected: transgender_and_inclusion | Predicted: transgender_and_inclusion | Confidence: 0.4997 | Correct: True
+Input: How do I support inclusion initiatives for transgender people? | Expected: transgender_and_inclusion | Predicted: transgender_and_inclusion | Confidence: 0.7695 | Correct: True
+Input: What are ways to improve my mental health as a transgender individual? | Expected: transgender_and_mental_health_conversational | Predicted: transgender_and_mental_health | Confidence: 0.4090 | Correct: False
+Input: What are ways to build confidence in my transgender identity? | Expected: transgender_and_mental_health_conversational | Predicted: transgender_and_mental_health | Confidence: 0.3886 | Correct: False
+Input: What are affirmations I can use to boost my confidence? | Expected: transgender_and_mental_health_conversational | Predicted: transgender_and_mental_health | Confidence: 0.1039 | Correct: False
+Input: Who created Diversify? | Expected: general_inquiries | Predicted: skill | Confidence: 0.0706 | Correct: False
+Input: How does Diversify work? | Expected: general_inquiries | Predicted: social_connection | Confidence: 0.0713 | Correct: False
+Input: What is Diversify? | Expected: general_inquiries | Predicted: general_inquiries | Confidence: 0.1072 | Correct: True
+Input: How can the chatbot help me manage my emotions? | Expected: chatbot_support | Predicted: chatbot_support | Confidence: 1.0000 | Correct: True
+Input: Does the chatbot give general advice or specific help? | Expected: chatbot_support | Predicted: chatbot_support | Confidence: 1.0000 | Correct: True
+Input: Can the chatbot understand my feelings? | Expected: chatbot_support | Predicted: chatbot_support | Confidence: 1.0000 | Correct: True
+Input: Do you know any one-liners? | Expected: funny_easter_eggs_1 | Predicted: funny_easter_eggs_1 | Confidence: 0.4883 | Correct: True
+Input: Do you have a joke about AI? | Expected: funny_easter_eggs_1 | Predicted: funny_easter_eggs_1 | Confidence: 0.6673 | Correct: True
+Input: What's your favorite joke? | Expected: funny_easter_eggs_1 | Predicted: jokes | Confidence: 0.7885 | Correct: False
+Input: Do you know anything bizarre? | Expected: funny_easter_eggs_2 | Predicted: funny_easter_eggs_2 | Confidence: 0.7671 | Correct: True
+Input: Do you know any quirky historical events? | Expected: funny_easter_eggs_2 | Predicted: funny_easter_eggs_2 | Confidence: 0.5843 | Correct: True
+Input: What’s the weirdest historical event? | Expected: funny_easter_eggs_2 | Predicted: funny_easter_eggs_2 | Confidence: 0.7854 | Correct: True
+Input: How can communities recover after war? | Expected: recent_wars_1 | Predicted: recent_wars_1 | Confidence: 0.3112 | Correct: True
+Input: What’s the situation in Israel and Palestine? | Expected: recent_wars_1 | Predicted: recent_wars_1 | Confidence: 0.4699 | Correct: True
+Input: How can we teach future generations about peace? | Expected: recent_wars_1 | Predicted: recent_wars_1 | Confidence: 0.4185 | Correct: True
+Input: What should I do if the topic of war comes up in a conversation? | Expected: recent_wars_2 | Predicted: recent_wars_2 | Confidence: 0.6631 | Correct: True
+Input: How do organizations like the UN help during wars? | Expected: recent_wars_2 | Predicted: recent_wars_2 | Confidence: 0.6826 | Correct: True
+Input: Are there organizations helping people in war-torn areas? | Expected: recent_wars_2 | Predicted: recent_wars_2 | Confidence: 0.6978 | Correct: True
+Input: How do I cope when I feel like the world is falling apart due to war? | Expected: affected_by_war | Predicted: war_aftermath | Confidence: 0.3629 | Correct: False
+Input: What can people in war zones do to feel safe? | Expected: affected_by_war | Predicted: recent_wars_1 | Confidence: 0.3011 | Correct: False
+Input: Why does war feel never-ending? | Expected: affected_by_war | Predicted: recent_wars_1 | Confidence: 0.2931 | Correct: False
+Input: Why does war leave so much destruction? | Expected: war_aftermath | Predicted: affected_by_war | Confidence: 0.2913 | Correct: False
+Input: Why does war make recovery so difficult? | Expected: war_aftermath | Predicted: war_aftermath | Confidence: 0.3368 | Correct: True
+Input: What’s the hardest part of recovering from war? | Expected: war_aftermath | Predicted: war_aftermath | Confidence: 0.5870 | Correct: True
+Input: How do I silence my inner critic? | Expected: imposter_syndrome_1 | Predicted: mental_health_in_men | Confidence: 0.0795 | Correct: False
+Input: How do I celebrate my achievements? | Expected: imposter_syndrome_1 | Predicted: imposter_syndrome_1 | Confidence: 0.1210 | Correct: True
+Input: What are signs of imposter syndrome? | Expected: imposter_syndrome_1 | Predicted: imposter_syndrome_1 | Confidence: 0.2118 | Correct: True
+Input: How do I deal with bullying? | Expected: bullying | Predicted: bullying | Confidence: 0.4283 | Correct: True
+Input: How do I help someone being bullied? | Expected: bullying | Predicted: bullying | Confidence: 0.5019 | Correct: True
+Input: How do I handle bullying in a group setting? | Expected: bullying | Predicted: bullying | Confidence: 0.4652 | Correct: True
+Input: How do I handle online trolls? | Expected: cyberbullying | Predicted: cyberbullying | Confidence: 0.6526 | Correct: True
+Input: How do I help my child with cyberbullying? | Expected: cyberbullying | Predicted: cyberbullying | Confidence: 0.9634 | Correct: True
+Input: Why does cyberbullying feel so overwhelming? | Expected: cyberbullying | Predicted: cyberbullying | Confidence: 0.9992 | Correct: True
+Input: How does bullying impact friendships? | Expected: impact_of_bullying | Predicted: bullying | Confidence: 0.4453 | Correct: False
+Input: What are the effects of bullying on children? | Expected: impact_of_bullying | Predicted: bullying | Confidence: 0.4504 | Correct: False
+Input: What are examples of bullying’s emotional effects? | Expected: impact_of_bullying | Predicted: impact_of_bullying | Confidence: 0.4729 | Correct: True
+Input: How do I gain control over fear? | Expected: overcoming_fear_2 | Predicted: overcoming_fear_2 | Confidence: 0.2178 | Correct: True
+Input: How can I face my fears step by step? | Expected: overcoming_fear_2 | Predicted: internal_struggles_and_emotional_distance | Confidence: 0.0770 | Correct: False
+Input: How do I regain control when fear strikes? | Expected: overcoming_fear_2 | Predicted: anxiety_and_emotional_numbness | Confidence: 0.1762 | Correct: False
+Input: How do I educate others about LGBTQ+ topics? | Expected: lgbtq_community | Predicted: lgbtq_community | Confidence: 0.8850 | Correct: True
+Input: How can I be an ally to the LGBTQ+ community? | Expected: lgbtq_community | Predicted: lgbtq_community | Confidence: 0.7516 | Correct: True
+Input: What are ways to celebrate LGBTQ+ pride? | Expected: lgbtq_community | Predicted: lgbtq_community | Confidence: 0.8818 | Correct: True
+Input: Why is faith important to many communities? | Expected: religion_community | Predicted: religion_community | Confidence: 0.5724 | Correct: True
+Input: What are ways to support interfaith understanding? | Expected: religion_community | Predicted: lgbtq_community | Confidence: 0.3618 | Correct: False
+Input: How can religion promote kindness and inclusion? | Expected: religion_community | Predicted: religion_community | Confidence: 0.5078 | Correct: True
+Input: How do activists influence abortion laws? | Expected: abortion_laws | Predicted: abortion_laws | Confidence: 1.0000 | Correct: True
+Input: What are legal options for abortion? | Expected: abortion_laws | Predicted: abortion_laws | Confidence: 1.0000 | Correct: True
+Input: What are abortion laws in my country? | Expected: abortion_laws | Predicted: abortion_laws | Confidence: 1.0000 | Correct: True
+Input: What’s the role of governments in disability rights? | Expected: disability_laws | Predicted: disability_laws | Confidence: 0.7350 | Correct: True
+Input: How do disability laws promote independence? | Expected: disability_laws | Predicted: disability_laws | Confidence: 0.9382 | Correct: True
+Input: What’s the connection between disability and human rights? | Expected: disability_laws | Predicted: disability_laws | Confidence: 0.4744 | Correct: True
+Input: I enjoy experimenting with digital art. | Expected: hobbies | Predicted: hobbies | Confidence: 0.5505 | Correct: True
+Input: I enjoy building things with my hands. | Expected: hobbies | Predicted: work_or_study | Confidence: 0.2853 | Correct: False
+Input: I want to learn how to play an instrument. | Expected: hobbies | Predicted: hobbies | Confidence: 0.3059 | Correct: True
+Input: I feel more focused when I start with small wins. | Expected: daily_activities | Predicted: work_or_study | Confidence: 0.6181 | Correct: False
+Input: I start my day with a cup of coffee. | Expected: daily_activities | Predicted: daily_activities | Confidence: 0.8654 | Correct: True
+Input: I enjoy dedicating time to creative activities daily. | Expected: daily_activities | Predicted: daily_activities | Confidence: 0.4616 | Correct: True
+Input: I prefer reviewing my notes after every class. | Expected: work_or_study | Predicted: work_or_study | Confidence: 0.8902 | Correct: True
+Input: I prefer starting my workday with planning. | Expected: work_or_study | Predicted: work_or_study | Confidence: 0.6324 | Correct: True
+Input: I like focusing on practical applications of what I learn. | Expected: work_or_study | Predicted: work_or_study | Confidence: 0.6517 | Correct: True
+Input: I want to sleep in and recharge this weekend. | Expected: weekend_plans | Predicted: weekend_plans | Confidence: 0.2382 | Correct: True
+Input: I’m thinking of binge-watching a TV series. | Expected: weekend_plans | Predicted: entertainment | Confidence: 0.5650 | Correct: False
+Input: I want to catch up on some reading this weekend. | Expected: weekend_plans | Predicted: weekend_plans | Confidence: 0.8548 | Correct: True
+Input: I enjoy drinking tea in the evening. | Expected: food_and_drink | Predicted: food_and_drink | Confidence: 0.4718 | Correct: True
+Input: I’m craving something sweet today. | Expected: food_and_drink | Predicted: food_and_drink | Confidence: 0.9987 | Correct: True
+Input: I’m not a fan of fast food. | Expected: food_and_drink | Predicted: food_and_drink | Confidence: 0.9647 | Correct: True
+Input: The weather feels just right today. | Expected: weather | Predicted: weather | Confidence: 1.0000 | Correct: True
+Input: It’s freezing this morning. | Expected: weather | Predicted: weather | Confidence: 0.9997 | Correct: True
+Input: It’s too humid to be comfortable outside. | Expected: weather | Predicted: weather | Confidence: 0.9844 | Correct: True
+Input: I enjoy playing cricket with my neighbors. | Expected: sports | Predicted: sports | Confidence: 0.5839 | Correct: True
+Input: I enjoy going for a run in the morning. | Expected: sports | Predicted: sports | Confidence: 0.2439 | Correct: True
+Input: Tennis is my favorite sport to play. | Expected: sports | Predicted: sports | Confidence: 0.8500 | Correct: True
+Input: I want to explore different music genres. | Expected: entertainment | Predicted: entertainment | Confidence: 0.5301 | Correct: True
+Input: I like collecting memorabilia from my favorite shows. | Expected: entertainment | Predicted: entertainment | Confidence: 0.6756 | Correct: True
+Input: Exploring new activities keeps things interesting. | Expected: entertainment | Predicted: entertainment | Confidence: 0.7045 | Correct: True
+Input: I just got back from a road trip. | Expected: travel | Predicted: sports | Confidence: 0.4270 | Correct: False
+Input: I went camping last summer. | Expected: travel | Predicted: travel | Confidence: 0.5449 | Correct: True
+Input: I enjoy traveling by train to see the countryside. | Expected: travel | Predicted: travel | Confidence: 0.8927 | Correct: True
+Input: I love spending quiet evenings with my pet. | Expected: pets | Predicted: pets | Confidence: 0.9888 | Correct: True
+Input: I have a hamster named Max. | Expected: pets | Predicted: pets | Confidence: 0.9900 | Correct: True
+Input: My rabbit is so cute. | Expected: pets | Predicted: pets | Confidence: 0.9995 | Correct: True
+Input: I’m planning to get more sleep each night. | Expected: health | Predicted: personal_goals | Confidence: 0.5783 | Correct: False
+Input: I’m thinking of starting a meditation practice. | Expected: health | Predicted: personal_goals | Confidence: 0.3383 | Correct: False
+Input: I want to learn more about healthy habits. | Expected: health | Predicted: personal_goals | Confidence: 0.5671 | Correct: False
+Input: I want to focus on improving my overall well-being. | Expected: personal_goals | Predicted: personal_goals | Confidence: 0.8173 | Correct: True
+Input: I want to work on my personal development. | Expected: personal_goals | Predicted: personal_goals | Confidence: 0.9120 | Correct: True
+Input: I want to be more organized in my daily life. | Expected: personal_goals | Predicted: personal_goals | Confidence: 0.8492 | Correct: True
+Input: You make things so much easier. | Expected: compliments | Predicted: compliments | Confidence: 0.9759 | Correct: True
+Input: You’re doing a great job. | Expected: compliments | Predicted: compliments | Confidence: 0.9751 | Correct: True
+Input: I really appreciate your help. | Expected: compliments | Predicted: gratitude | Confidence: 0.5328 | Correct: False
+Input: I’m grateful for your support. | Expected: gratitude | Predicted: gratitude | Confidence: 0.8351 | Correct: True
+Input: Many thanks! | Expected: gratitude | Predicted: gratitude_expressions | Confidence: 0.5670 | Correct: False
+Input: Thank you for everything. | Expected: gratitude | Predicted: gratitude | Confidence: 0.6981 | Correct: True
+Input: My apologies for the confusion. | Expected: apologies | Predicted: apologies | Confidence: 0.9002 | Correct: True
+Input: I hope you can forgive me. | Expected: apologies | Predicted: apologies | Confidence: 0.7929 | Correct: True
+Input: I’m sorry if I caused any trouble. | Expected: apologies | Predicted: apologies | Confidence: 0.8779 | Correct: True
+Input: I’m feeling stuck. | Expected: motivational | Predicted: negative_emotions | Confidence: 0.5603 | Correct: False
+Input: Things aren’t going as planned. | Expected: motivational | Predicted: negative_emotions | Confidence: 0.4734 | Correct: False
+Input: I’m doubting myself. | Expected: motivational | Predicted: motivational | Confidence: 0.4689 | Correct: True
+Input: Do you ever get bored? | Expected: general_chitchat | Predicted: general_chitchat | Confidence: 0.7243 | Correct: True
+Input: Can we talk about something random? | Expected: general_chitchat | Predicted: general_chitchat | Confidence: 0.4971 | Correct: True
+Input: Can we have a casual chat? | Expected: general_chitchat | Predicted: something-else | Confidence: 0.5321 | Correct: False
+Input: I did really well on my test today! | Expected: good_academic_performance | Predicted: good_academic_performance | Confidence: 0.9195 | Correct: True
+Input: I’m excelling in all my subjects. | Expected: good_academic_performance | Predicted: good_academic_performance | Confidence: 0.6217 | Correct: True
+Input: My study efforts have been really effective. | Expected: good_academic_performance | Predicted: achievements | Confidence: 0.3668 | Correct: False
+Input: I’m feeling stuck in my studies. | Expected: bad_academic_performance | Predicted: bad_academic_performance | Confidence: 0.7424 | Correct: True
+Input: My grades are dropping. | Expected: bad_academic_performance | Predicted: bad_academic_performance | Confidence: 0.9747 | Correct: True
+Input: I’m falling further behind in my classes. | Expected: bad_academic_performance | Predicted: bad_academic_performance | Confidence: 0.8962 | Correct: True
+Input: I was thanked for my dedication. | Expected: positive_work_feedback | Predicted: positive_work_feedback | Confidence: 0.3849 | Correct: True
+Input: My team appreciated my contribution. | Expected: positive_work_feedback | Predicted: positive_work_feedback | Confidence: 0.4390 | Correct: True
+Input: My colleagues liked my ideas during the meeting. | Expected: positive_work_feedback | Predicted: positive_work_feedback | Confidence: 0.6142 | Correct: True
+Input: I feel disappointed by the feedback I received. | Expected: negative_work_feedback | Predicted: negative_work_feedback | Confidence: 0.2899 | Correct: True
+Input: I feel like I’m not meeting expectations. | Expected: negative_work_feedback | Predicted: self_reflection | Confidence: 0.2086 | Correct: False
+Input: I need to improve after the comments I got. | Expected: negative_work_feedback | Predicted: negative_work_feedback | Confidence: 0.2365 | Correct: True
+Input: I don’t feel supported by my friends. | Expected: relationship_issues | Predicted: relationship_issues | Confidence: 0.8372 | Correct: True
+Input: I feel distant from my best friend. | Expected: relationship_issues | Predicted: relationship_issues | Confidence: 0.8585 | Correct: True
+Input: I feel like I’ve lost trust in someone. | Expected: relationship_issues | Predicted: relationship_issues | Confidence: 0.1591 | Correct: True
+Input: I reached my savings target. | Expected: achievements | Predicted: achievements | Confidence: 0.6431 | Correct: True
+Input: I got accepted into my dream university. | Expected: achievements | Predicted: good_academic_performance | Confidence: 0.4374 | Correct: False
+Input: I’ve improved a lot in my studies. | Expected: achievements | Predicted: achievements | Confidence: 0.6395 | Correct: True
+Input: I feel like giving up. | Expected: negative_emotions | Predicted: negative_emotions | Confidence: 0.6418 | Correct: True
+Input: I can’t stop thinking about everything. | Expected: negative_emotions | Predicted: negative_emotions | Confidence: 0.6147 | Correct: True
+Input: I’m so stressed out lately. | Expected: negative_emotions | Predicted: negative_emotions | Confidence: 0.4787 | Correct: True
+Input: I feel great. | Expected: positive_emotions | Predicted: positive_emotions | Confidence: 0.8581 | Correct: True
+Input: I’m filled with gratitude. | Expected: positive_emotions | Predicted: positive_emotions | Confidence: 0.9706 | Correct: True
+Input: I’m in such a good mood. | Expected: positive_emotions | Predicted: positive_emotions | Confidence: 0.9714 | Correct: True
+Input: I feel like I’m learning more about myself every day. | Expected: self_reflection | Predicted: self_reflection | Confidence: 0.7860 | Correct: True
+Input: I realize I need to change some habits. | Expected: self_reflection | Predicted: self_reflection | Confidence: 0.8527 | Correct: True
+Input: I feel like I’ve gained some clarity about myself. | Expected: self_reflection | Predicted: self_reflection | Confidence: 0.8137 | Correct: True
+Input: My muscles feel sore after working out. | Expected: physical_health | Predicted: physical_health | Confidence: 0.5298 | Correct: True
+Input: I’ve been coughing a lot recently. | Expected: physical_health | Predicted: physical_health | Confidence: 0.8605 | Correct: True
+Input: I keep waking up in the middle of the night. | Expected: physical_health | Predicted: physical_health | Confidence: 0.6605 | Correct: True
+Input: I’ve been feeling really hopeless lately. | Expected: mental_health | Predicted: mental_health | Confidence: 0.4346 | Correct: True
+Input: I feel like my mind is racing all the time. | Expected: mental_health | Predicted: negative_emotions | Confidence: 0.4755 | Correct: False
+Input: I feel emotionally exhausted. | Expected: mental_health | Predicted: negative_emotions | Confidence: 0.4533 | Correct: False
+Input: I joined a new group and made some connections. | Expected: social_interactions | Predicted: achievements | Confidence: 0.3206 | Correct: False
+Input: I feel really grateful for the people in my life. | Expected: social_interactions | Predicted: social_interactions | Confidence: 0.2433 | Correct: True
+Input: I had a meaningful conversation with someone today. | Expected: social_interactions | Predicted: social_interactions | Confidence: 0.4409 | Correct: True
+Input: I planted herbs and they’re growing well. | Expected: hobbies_achievements | Predicted: hobbies_achievements | Confidence: 0.8154 | Correct: True
+Input: I learned a new dance routine. | Expected: hobbies_achievements | Predicted: hobbies_achievements | Confidence: 0.9916 | Correct: True
+Input: I improved my photography skills this week. | Expected: hobbies_achievements | Predicted: hobbies_achievements | Confidence: 0.8291 | Correct: True
+Input: Money is never enough | Expected: financial_stress | Predicted: frustrated | Confidence: 0.1570 | Correct: False
+Input: I have too much debt | Expected: financial_stress | Predicted: financial_stress | Confidence: 0.4630 | Correct: True
+Input: I'm going through a financially difficult time | Expected: financial_stress | Predicted: financial_stress | Confidence: 0.3824 | Correct: True
+Input: What if I make the wrong choices? | Expected: future_anxieties | Predicted: future_anxieties | Confidence: 0.2999 | Correct: True
+Input: I feel stuck and don't know where I'm headed | Expected: future_anxieties | Predicted: encouragement_needed | Confidence: 0.2199 | Correct: False
+Input: The future feels so unpredictable | Expected: future_anxieties | Predicted: frustrated | Confidence: 0.2070 | Correct: False
+Input: I'm so grateful to you | Expected: gratitude_expressions | Predicted: gratitude_expressions | Confidence: 0.7489 | Correct: True
+Input: Thanks for everything | Expected: gratitude_expressions | Predicted: gratitude_expressions | Confidence: 0.6022 | Correct: True
+Input: Thanks for taking the time to help me | Expected: gratitude_expressions | Predicted: gratitude_expressions | Confidence: 0.5657 | Correct: True
+Input: I feel like giving up | Expected: encouragement_needed | Predicted: suicide | Confidence: 0.0988 | Correct: False
+Input: I don't believe in myself anymore | Expected: encouragement_needed | Predicted: future_anxieties | Confidence: 0.2847 | Correct: False
+Input: I feel so overwhelmed | Expected: encouragement_needed | Predicted: stressed | Confidence: 0.0993 | Correct: False
+Input: Group projects make me feel even more stressed | Expected: academic_struggles | Predicted: academic_struggles | Confidence: 0.3351 | Correct: True
+Input: I feel like I’ll never pass this course | Expected: academic_struggles | Predicted: future_anxieties | Confidence: 0.1161 | Correct: False
+Input: I feel like I'm falling behind in school | Expected: academic_struggles | Predicted: academic_struggles | Confidence: 0.7684 | Correct: True
+Input: What if I regret changing jobs? | Expected: career_doubts | Predicted: career_doubts | Confidence: 0.3655 | Correct: True
+Input: What if this career isn't for me? | Expected: career_doubts | Predicted: future_anxieties | Confidence: 0.4673 | Correct: False
+Input: I don't know how to start a new career | Expected: career_doubts | Predicted: career_doubts | Confidence: 0.5281 | Correct: True
+Input: I'm constantly fighting with my siblings | Expected: conflicts | Predicted: conflicts | Confidence: 0.9434 | Correct: True
+Input: I feel disrespected in this relationship | Expected: conflicts | Predicted: unfair_treatment | Confidence: 0.2747 | Correct: False
+Input: We’re constantly arguing over small things | Expected: conflicts | Predicted: conflicts | Confidence: 0.7676 | Correct: True
+Input: I feel lucky to have such a caring family | Expected: family_bonding | Predicted: family_bonding | Confidence: 0.9085 | Correct: True
+Input: Spending quality time with my family is important to me | Expected: family_bonding | Predicted: family_bonding | Confidence: 0.6893 | Correct: True
+Input: I love the warmth of being with my family | Expected: family_bonding | Predicted: family_bonding | Confidence: 0.6215 | Correct: True
+Input: Being alone is hard for me | Expected: loneliness | Predicted: depression_and_self_worth | Confidence: 0.0801 | Correct: False
+Input: I feel unwanted and ignored | Expected: loneliness | Predicted: depression_and_self_worth | Confidence: 0.0840 | Correct: False
+Input: I feel so alone | Expected: loneliness | Predicted: suicide | Confidence: 0.1170 | Correct: False
+Input: I can’t seem to organize my life | Expected: overwhelmed | Predicted: overwhelmed | Confidence: 0.2988 | Correct: True
+Input: I’m completely overwhelmed by my workload | Expected: overwhelmed | Predicted: overwhelmed | Confidence: 0.1602 | Correct: True
+Input: There’s so much to do, and I don’t know where to start | Expected: overwhelmed | Predicted: overwhelmed | Confidence: 0.1920 | Correct: True
+Input: I wasn't expecting this to happen | Expected: unexpected_events | Predicted: unexpected_events | Confidence: 0.8995 | Correct: True
+Input: I don’t know how to handle what just happened | Expected: unexpected_events | Predicted: disappointed | Confidence: 0.3578 | Correct: False
+Input: An unforeseen situation came up today | Expected: unexpected_events | Predicted: unexpected_events | Confidence: 0.8148 | Correct: True
+Input: I feel so proud of myself | Expected: proud_moments | Predicted: proud_moments | Confidence: 0.6108 | Correct: True
+Input: I received praise for my skills | Expected: proud_moments | Predicted: proud_moments | Confidence: 0.5682 | Correct: True
+Input: Today was a great day for my self-confidence | Expected: proud_moments | Predicted: proud_moments | Confidence: 0.5711 | Correct: True
+Input: I made a mistake at work and felt embarrassed | Expected: daily_challenges | Predicted: daily_challenges | Confidence: 0.7547 | Correct: True
+Input: I got locked out of my car or house | Expected: daily_challenges | Predicted: daily_challenges | Confidence: 0.9998 | Correct: True
+Input: I felt clumsy all day long | Expected: daily_challenges | Predicted: daily_challenges | Confidence: 0.9789 | Correct: True
+Input: I’m being held to different standards than others | Expected: unfair_treatment | Predicted: unfair_treatment | Confidence: 0.6194 | Correct: True
+Input: I feel like I’m being excluded from my group | Expected: unfair_treatment | Predicted: unfair_treatment | Confidence: 0.5649 | Correct: True
+Input: I’m being excluded from important decisions | Expected: unfair_treatment | Predicted: unfair_treatment | Confidence: 0.5690 | Correct: True
+Input: I learned that resilience comes from small steps forward | Expected: learning_opportunities | Predicted: learning_opportunities | Confidence: 0.9770 | Correct: True
+Input: I’ve grown from this challenge | Expected: learning_opportunities | Predicted: learning_opportunities | Confidence: 0.9039 | Correct: True
+Input: This helped me appreciate the process, not just the outcome | Expected: learning_opportunities | Predicted: learning_opportunities | Confidence: 0.9243 | Correct: True
+Input: We’re gathering to celebrate an achievement | Expected: celebrations | Predicted: celebrations | Confidence: 0.9994 | Correct: True
+Input: I’m hosting a celebration for my friends | Expected: celebrations | Predicted: celebrations | Confidence: 0.9964 | Correct: True
+Input: We’re throwing a small gathering for the occasion | Expected: celebrations | Predicted: celebrations | Confidence: 0.9919 | Correct: True
+Input: I love how vibrant I feel today | Expected: poisitive_physical_appearance | Predicted: poisitive_physical_appearance | Confidence: 0.6382 | Correct: True
+Input: I like my smile | Expected: poisitive_physical_appearance | Predicted: poisitive_physical_appearance | Confidence: 0.9896 | Correct: True
+Input: I’m grateful for my unique style | Expected: poisitive_physical_appearance | Predicted: poisitive_physical_appearance | Confidence: 0.5366 | Correct: True
+Input: I hate how I look in photos | Expected: negative_thoughts | Predicted: negative_thoughts | Confidence: 0.9340 | Correct: True
+Input: I feel judged for my appearance | Expected: negative_thoughts | Predicted: negative_thoughts | Confidence: 0.7456 | Correct: True
+Input: I’m struggling to like anything about how I look | Expected: negative_thoughts | Predicted: negative_thoughts | Confidence: 0.9672 | Correct: True
+Input: I’m learning from my mistakes | Expected: personal_growth | Predicted: personal_growth | Confidence: 0.3355 | Correct: True
+Input: I’ve been practicing gratitude daily | Expected: personal_growth | Predicted: personal_growth | Confidence: 0.7333 | Correct: True
+Input: I’m setting personal goals to grow | Expected: personal_growth | Predicted: personal_growth | Confidence: 0.5806 | Correct: True
+Input: I believe in a better tomorrow | Expected: hopeful | Predicted: hopeful | Confidence: 0.5512 | Correct: True
+Input: I’m hopeful about finding happiness | Expected: hopeful | Predicted: hopeful | Confidence: 0.4818 | Correct: True
+Input: I trust that the future holds good things | Expected: hopeful | Predicted: hopeful | Confidence: 0.5579 | Correct: True
+Input: I’m stuck and don’t know how to move forward | Expected: frustrated | Predicted: frustrated | Confidence: 0.1144 | Correct: True
+Input: Why can’t I get this right? | Expected: frustrated | Predicted: frustrated | Confidence: 0.2129 | Correct: True
+Input: I can’t solve this problem | Expected: frustrated | Predicted: no-approach | Confidence: 0.2105 | Correct: False
+Input: I’m questioning if I’m making the right choice | Expected: confused | Predicted: confused | Confidence: 0.3691 | Correct: True
+Input: I don’t know who to trust for advice | Expected: confused | Predicted: frustrated | Confidence: 0.2462 | Correct: False
+Input: I don’t know which option to choose | Expected: confused | Predicted: no-approach | Confidence: 0.3522 | Correct: False
+Input: I’m disappointed that I couldn’t do better | Expected: disappointed | Predicted: disappointed | Confidence: 0.8756 | Correct: True
+Input: I’m disappointed in how I handled it | Expected: disappointed | Predicted: disappointed | Confidence: 0.5918 | Correct: True
+Input: It hurts that this didn’t work out | Expected: disappointed | Predicted: disappointed | Confidence: 0.7451 | Correct: True
+Input: I’m grateful for the lessons I’ve learned | Expected: grateful | Predicted: grateful | Confidence: 0.7283 | Correct: True
+Input: I feel grateful for the chance to grow and learn | Expected: grateful | Predicted: grateful | Confidence: 0.6669 | Correct: True
+Input: I’m grateful for the opportunity to make a difference in the world | Expected: grateful | Predicted: grateful | Confidence: 0.6247 | Correct: True
+Input: I know that hard work will bring success | Expected: optimistic | Predicted: hopeful | Confidence: 0.5436 | Correct: False
+Input: I’m confident that the effort I’m putting in will pay off | Expected: optimistic | Predicted: hopeful | Confidence: 0.5603 | Correct: False
+Input: I’m sure everything will work out | Expected: optimistic | Predicted: hopeful | Confidence: 0.5201 | Correct: False
+Input: I always have a coffee in the morning | Expected: daily_routine | Predicted: daily_routine | Confidence: 0.9998 | Correct: True
+Input: I have a specific morning skincare routine | Expected: daily_routine | Predicted: daily_routine | Confidence: 0.9969 | Correct: True
+Input: I review my goals every evening | Expected: daily_routine | Predicted: daily_routine | Confidence: 0.8132 | Correct: True
+Input: I love doing outdoor photography during free time | Expected: free_time | Predicted: free_time | Confidence: 0.9999 | Correct: True
+Input: I like reading in my free time | Expected: free_time | Predicted: free_time | Confidence: 0.9356 | Correct: True
+Input: I enjoy relaxing by the beach or in the park during free time | Expected: free_time | Predicted: free_time | Confidence: 0.9969 | Correct: True
+Input: I’m aiming to build a stronger social network | Expected: future_goals | Predicted: future_goals | Confidence: 0.9854 | Correct: True
+Input: I’m planning to learn coding as a new skill | Expected: future_goals | Predicted: future_goals | Confidence: 0.9903 | Correct: True
+Input: I’m aiming to stay more organized | Expected: future_goals | Predicted: future_goals | Confidence: 0.5181 | Correct: True
+Input: Looking back, I’m so grateful for those moments | Expected: good_memories | Predicted: good_memories | Confidence: 0.9909 | Correct: True
+Input: The day we planted our first garden is a beautiful memory | Expected: good_memories | Predicted: good_memories | Confidence: 1.0000 | Correct: True
+Input: I’ll always cherish that special moment | Expected: good_memories | Predicted: good_memories | Confidence: 0.9972 | Correct: True
+Input: I feel stuck on the bad memories of the past | Expected: bad_memories | Predicted: bad_memories | Confidence: 0.7098 | Correct: True
+Input: That situation still haunts me sometimes | Expected: bad_memories | Predicted: bad_memories | Confidence: 0.9915 | Correct: True
+Input: The arguments we had still hurt when I think about them | Expected: bad_memories | Predicted: bad_memories | Confidence: 0.9979 | Correct: True
+Input: I thought it was too late, but I still did it | Expected: unexpected_success | Predicted: unexpected_success | Confidence: 0.9887 | Correct: True
+Input: I surprised myself with my abilities | Expected: unexpected_success | Predicted: unexpected_success | Confidence: 0.7930 | Correct: True
+Input: I’m still processing this unexpected achievement | Expected: unexpected_success | Predicted: disappointed | Confidence: 0.2171 | Correct: False
+Baseline Accuracy: 65.62%
+
+=== GENERALIZATION TEST RESULTS ===
+Input: Hi friend! | Expected: greeting | Predicted: greeting | Confidence: 0.6381 | Correct: True
+Input: I need assistance, please | Expected: help | Predicted: help | Confidence: 0.1117 | Correct: True
+Input: What can you do? | Expected: capabilities | Predicted: about | Confidence: 0.2484 | Correct: False
+Input: Bye, see you later! | Expected: goodbye | Predicted: goodbye | Confidence: 0.8935 | Correct: True
+Input: Tell me a joke | Expected: funny | Predicted: funny_easter_eggs_1 | Confidence: 0.6174 | Correct: False
+Input: Tell me something about yourself | Expected: about | Predicted: about | Confidence: 0.2067 | Correct: True
+Input: I can't help but worry | Expected: anxious | Predicted: future_anxieties | Confidence: 0.2493 | Correct: False
+Input: I need to get some rest | Expected: sleep | Predicted: sleep | Confidence: 0.8711 | Correct: True
+Input: I'm really scared right now | Expected: scared | Predicted: negative_emotions | Confidence: 0.5582 | Correct: False
+Input: I've lost someone I care about | Expected: death | Predicted: drug_addiction_and_recovery | Confidence: 0.0411 | Correct: False
+Input: You are very annoying | Expected: hate-you | Predicted: stupid | Confidence: 0.7255 | Correct: False
+Input: I feel numb inside | Expected: depressed | Predicted: sad | Confidence: 0.1970 | Correct: False
+Input: I can't tolerate who I am | Expected: hate-me | Predicted: depression_and_self_worth | Confidence: 0.1365 | Correct: False
+Input: Do you have any jokes | Expected: jokes | Predicted: funny_easter_eggs_1 | Confidence: 0.4732 | Correct: False
+Input: How do you work? | Expected: creation | Predicted: about | Confidence: 0.4464 | Correct: False
+Input: You already mentioned that | Expected: repeat | Predicted: repeat | Confidence: 0.7654 | Correct: True
+Input: That’s not right | Expected: wrong | Predicted: repeat | Confidence: 0.5327 | Correct: False
+Input: I’m very proud of myself | Expected: happy | Predicted: proud_moments | Confidence: 0.4505 | Correct: False
+Input: You’re not smart! | Expected: stupid | Predicted: stupid | Confidence: 0.5503 | Correct: True
+Input: Where do you come from? | Expected: location | Predicted: location | Confidence: 0.3509 | Correct: True
+Input: Could we discuss something else? | Expected: something-else | Predicted: something-else | Confidence: 0.8579 | Correct: True
+Input: How can I make friends? | Expected: friends | Predicted: friends | Confidence: 0.7875 | Correct: True
+Input: May I ask you a question? | Expected: ask | Predicted: general_chitchat | Confidence: 0.3892 | Correct: False
+Input: I have an issue | Expected: problem | Predicted: relationship_issues | Confidence: 0.4992 | Correct: False
+Input: I don't know how to deal with this | Expected: no-approach | Predicted: frustrated | Confidence: 0.1143 | Correct: False
+Input: I'd like to learn more about this | Expected: learn-more | Predicted: something-else | Confidence: 0.8153 | Correct: False
+Input: You're correct | Expected: user-agree | Predicted: user-agree | Confidence: 0.8839 | Correct: True
+Input: I do meditation | Expected: user-meditation | Predicted: personal_growth | Confidence: 0.4679 | Correct: False
+Input: Could you give me your advice? | Expected: user-advice | Predicted: user-advice | Confidence: 0.4991 | Correct: True
+Input: What does mental health mean? | Expected: learn-mental-health | Predicted: mental_health_meaning | Confidence: 0.3646 | Correct: False
+Input: Could you explain what depression is? | Expected: depression_meaning | Predicted: depression_meaning | Confidence: 0.5256 | Correct: True
+Input: What is the role of a therapist? | Expected: therapist_role | Predicted: therapist_role | Confidence: 0.2792 | Correct: True
+Input: No answer | Expected: no-response | Predicted: no-response | Confidence: 0.5643 | Correct: True
+Input: I never thought I would be able to do it, but I did | Expected: unexpected_success | Predicted: unexpected_success | Confidence: 0.9263 | Correct: True
+Input: I'm going through a difficult time | Expected: problem | Predicted: overwhelmed | Confidence: 0.0609 | Correct: False
+Input: What's going on with you? | Expected: casual | Predicted: casual | Confidence: 0.7981 | Correct: True
+Input: I’m in such a good mood today! | Expected: happy | Predicted: proud_moments | Confidence: 0.4632 | Correct: False
+Input: Do you offer any emotional support? | Expected: skill | Predicted: goodbye | Confidence: 0.0772 | Correct: False
+Input: Who made you? | Expected: creation | Predicted: creation | Confidence: 0.5965 | Correct: True
+Input: I’m not feeling good | Expected: sad | Predicted: sad | Confidence: 0.1592 | Correct: True
+Input: I’m feeling so anxious! | Expected: stressed | Predicted: stressed | Confidence: 0.0708 | Correct: True
+Input: I feel like I have failed | Expected: worthless | Predicted: disappointed | Confidence: 0.2430 | Correct: False
+Input: I feel emotionless | Expected: depressed | Predicted: unwell | Confidence: 0.1189 | Correct: False
+Input: Evening! | Expected: evening | Predicted: evening | Confidence: 0.2423 | Correct: True
+Input: Night! | Expected: night | Predicted: casual | Confidence: 0.1793 | Correct: False
+Input: Thank! | Expected: thanks | Predicted: gratitude_expressions | Confidence: 0.5023 | Correct: False
+Generalization Accuracy: 45.65%
+
+=== THRESHOLD TEST RESULTS ===
+Input: Hi friend! | Expected: greeting | Predicted: greeting | Confidence: 0.6381 | Above Threshold: False
+Input: I need assistance, please | Expected: help | Predicted: help | Confidence: 0.1117 | Above Threshold: False
+Input: What can you do? | Expected: capabilities | Predicted: about | Confidence: 0.2484 | Above Threshold: False
+Input: Bye, see you later! | Expected: goodbye | Predicted: goodbye | Confidence: 0.8935 | Above Threshold: True
+Input: Tell me a joke | Expected: funny | Predicted: funny_easter_eggs_1 | Confidence: 0.6174 | Above Threshold: False
+Input: Tell me something about yourself | Expected: about | Predicted: about | Confidence: 0.2067 | Above Threshold: False
+Input: I can't help but worry | Expected: anxious | Predicted: future_anxieties | Confidence: 0.2493 | Above Threshold: False
+Input: I need to get some rest | Expected: sleep | Predicted: sleep | Confidence: 0.8711 | Above Threshold: True
+Input: I'm really scared right now | Expected: scared | Predicted: negative_emotions | Confidence: 0.5582 | Above Threshold: False
+Input: I've lost someone I care about | Expected: death | Predicted: drug_addiction_and_recovery | Confidence: 0.0411 | Above Threshold: False
+Input: You are very annoying | Expected: hate-you | Predicted: stupid | Confidence: 0.7255 | Above Threshold: False
+Input: I feel numb inside | Expected: depressed | Predicted: sad | Confidence: 0.1970 | Above Threshold: False
+Input: I can't tolerate who I am | Expected: hate-me | Predicted: depression_and_self_worth | Confidence: 0.1365 | Above Threshold: False
+Input: Do you have any jokes | Expected: jokes | Predicted: funny_easter_eggs_1 | Confidence: 0.4732 | Above Threshold: False
+Input: How do you work? | Expected: creation | Predicted: about | Confidence: 0.4464 | Above Threshold: False
+Input: You already mentioned that | Expected: repeat | Predicted: repeat | Confidence: 0.7654 | Above Threshold: True
+Input: That’s not right | Expected: wrong | Predicted: repeat | Confidence: 0.5327 | Above Threshold: False
+Input: I’m very proud of myself | Expected: happy | Predicted: proud_moments | Confidence: 0.4505 | Above Threshold: False
+Input: You’re not smart! | Expected: stupid | Predicted: stupid | Confidence: 0.5503 | Above Threshold: False
+Input: Where do you come from? | Expected: location | Predicted: location | Confidence: 0.3509 | Above Threshold: False
+Input: Could we discuss something else? | Expected: something-else | Predicted: something-else | Confidence: 0.8579 | Above Threshold: True
+Input: How can I make friends? | Expected: friends | Predicted: friends | Confidence: 0.7875 | Above Threshold: True
+Input: May I ask you a question? | Expected: ask | Predicted: general_chitchat | Confidence: 0.3892 | Above Threshold: False
+Input: I have an issue | Expected: problem | Predicted: relationship_issues | Confidence: 0.4992 | Above Threshold: False
+Input: I don't know how to deal with this | Expected: no-approach | Predicted: frustrated | Confidence: 0.1143 | Above Threshold: False
+Input: I'd like to learn more about this | Expected: learn-more | Predicted: something-else | Confidence: 0.8153 | Above Threshold: True
+Input: You're correct | Expected: user-agree | Predicted: user-agree | Confidence: 0.8839 | Above Threshold: True
+Input: I do meditation | Expected: user-meditation | Predicted: personal_growth | Confidence: 0.4679 | Above Threshold: False
+Input: Could you give me your advice? | Expected: user-advice | Predicted: user-advice | Confidence: 0.4991 | Above Threshold: False
+Input: What does mental health mean? | Expected: learn-mental-health | Predicted: mental_health_meaning | Confidence: 0.3646 | Above Threshold: False
+Input: Could you explain what depression is? | Expected: depression_meaning | Predicted: depression_meaning | Confidence: 0.5256 | Above Threshold: False
+Input: What is the role of a therapist? | Expected: therapist_role | Predicted: therapist_role | Confidence: 0.2792 | Above Threshold: False
+Input: No answer | Expected: no-response | Predicted: no-response | Confidence: 0.5643 | Above Threshold: False
+Input: I never thought I would be able to do it, but I did | Expected: unexpected_success | Predicted: unexpected_success | Confidence: 0.9263 | Above Threshold: True
+Input: I'm going through a difficult time | Expected: problem | Predicted: overwhelmed | Confidence: 0.0609 | Above Threshold: False
+Input: What's going on with you? | Expected: casual | Predicted: casual | Confidence: 0.7981 | Above Threshold: True
+Input: I’m in such a good mood today! | Expected: happy | Predicted: proud_moments | Confidence: 0.4632 | Above Threshold: False
+Input: Do you offer any emotional support? | Expected: skill | Predicted: goodbye | Confidence: 0.0772 | Above Threshold: False
+Input: Who made you? | Expected: creation | Predicted: creation | Confidence: 0.5965 | Above Threshold: False
+Input: I’m not feeling good | Expected: sad | Predicted: sad | Confidence: 0.1592 | Above Threshold: False
+Input: I’m feeling so anxious! | Expected: stressed | Predicted: stressed | Confidence: 0.0708 | Above Threshold: False
+Input: I feel like I have failed | Expected: worthless | Predicted: disappointed | Confidence: 0.2430 | Above Threshold: False
+Input: I feel emotionless | Expected: depressed | Predicted: unwell | Confidence: 0.1189 | Above Threshold: False
+Input: Evening! | Expected: evening | Predicted: evening | Confidence: 0.2423 | Above Threshold: False
+Input: Night! | Expected: night | Predicted: casual | Confidence: 0.1793 | Above Threshold: False
+Input: Thank! | Expected: thanks | Predicted: gratitude_expressions | Confidence: 0.5023 | Above Threshold: False
+Threshold Test Accuracy: 19.57%
