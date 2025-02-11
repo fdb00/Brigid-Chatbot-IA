@@ -12,6 +12,7 @@ import matplotlib.pyplot as plt
 import io
 import base64
 import time
+import seaborn as sns
 
 # Carica il tokenizer e il modello pre-addestrato di BERT
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
@@ -34,19 +35,10 @@ for intent in intents['intents']:
 
 classes = sorted(set(classes))
 
-
-def generate_training_report(model, train_x, train_y, history, output_file="training_report.html"):
+def generate_training_report(model, train_x, train_y, history, intents_to_include, output_file="training_report.html"):
     """
     Genera un file HTML con le metriche e i grafici del training.
-
-    :param model: Modello Keras addestrato.
-    :param train_x: Dati di input per il training.
-    :param train_y: Etichette di output (one-hot encoded) del training.
-    :param history: Cronologia del training (es. hist.history).
-    :param output_file: Nome del file HTML da generare.
     """
-
-    # Funzione per convertire un grafico in immagine base64
     def plot_to_base64(fig):
         buf = io.BytesIO()
         fig.savefig(buf, format='png')
@@ -55,7 +47,7 @@ def generate_training_report(model, train_x, train_y, history, output_file="trai
         buf.close()
         return base64_img
 
-    # 1. Grafico delle metriche di base
+    # 1. Grafico delle metriche di base (Loss e Accuracy)
     fig_loss = plt.figure(figsize=(8, 4))
     plt.plot(history['loss'], label='Loss', color='blue')
     plt.plot(history.get('val_loss', []), label='Val Loss', color='red', linestyle='dashed')
@@ -85,7 +77,7 @@ def generate_training_report(model, train_x, train_y, history, output_file="trai
     report = classification_report(y_true_classes, y_pred_classes, output_dict=True)
     precision = report['weighted avg']['precision']
     recall = report['weighted avg']['recall']
-    f1_score = report['weighted avg']['f1-score']
+    f1 = report['weighted avg']['f1-score']
 
     # 3. Confidence Distribution
     confidences = np.max(y_pred, axis=1)
@@ -98,11 +90,42 @@ def generate_training_report(model, train_x, train_y, history, output_file="trai
     confidence_img = plot_to_base64(fig_confidence)
     plt.close(fig_confidence)
 
-    # 4. Confusion Matrix
-    cm = confusion_matrix(y_true_classes, y_pred_classes)
-    fig_cm, ax = plt.subplots(figsize=(8, 8))
-    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=range(len(train_y[0])))
-    disp.plot(ax=ax, cmap='Blues', colorbar=False)
+    # 4. Confusion Matrix for Specific Intents
+    global classes
+
+    # Use the provided list of intents
+    top_intents = intents_to_include
+    top_indices = [classes.index(intent) for intent in top_intents if
+                   intent in classes]  # Handle cases where intent might not be in the list
+
+    if not top_indices:
+        print("Warning: None of the specified intents were found in the training data.")
+        return  # Exit early if no valid intents are found
+
+    # Filter predictions and true labels to include only the specified intents
+    mask = np.isin(np.argmax(train_y, axis=1), top_indices)  # Use np.argmax to get indices of true labels
+    y_true_top = np.argmax(train_y, axis=1)[mask]
+    y_pred_top = np.argmax(model.predict(train_x), axis=1)[
+        mask]  # Predict on the train_x and get the indices of the predicted labels
+
+    # Compute the confusion matrix for the specified intents
+    cm = confusion_matrix(y_true_top, y_pred_top, labels=top_indices, normalize='true')
+
+    # Compute the confusion matrix for top-N intents
+    cm = confusion_matrix(y_true_top, y_pred_top, labels=top_indices, normalize='true')  # top_indices are still needed for labels
+
+    # Create the confusion matrix plot
+    fig_cm, ax = plt.subplots(figsize=(12, 12))
+    sns.heatmap(cm, annot=True, fmt=".2f", xticklabels=top_intents, yticklabels=top_intents, cmap="Blues", ax=ax)
+    # Add labels to the confusion matrix plot
+    ax.set(
+        xlabel='Predicted Label (X-axis)',  # X-axis label
+        ylabel='True Label (Y-axis)',      # Y-axis label
+        title=f'Confusion Matrix (For Specified Intents, Normalized)'
+    )
+
+    plt.xticks(rotation=45, ha="right")
+    plt.yticks(rotation=0)
     confusion_img = plot_to_base64(fig_cm)
     plt.close(fig_cm)
 
@@ -113,14 +136,18 @@ def generate_training_report(model, train_x, train_y, history, output_file="trai
     end_time = time.time()
     avg_inference_time = (end_time - start_time) / (100 * 10)
 
-    # 6. Overfitting e Underfitting (differenza tra training e validation metrics)
+    # 6. Overfitting e Underfitting
     overfitting_analysis = ""
     if 'val_loss' in history:
         train_loss_final = history['loss'][-1]
         val_loss_final = history['val_loss'][-1]
-        overfitting_analysis = f"La differenza finale tra la perdita di training ({train_loss_final:.4f}) e validation ({val_loss_final:.4f}) suggerisce {'overfitting' if val_loss_final > train_loss_final else 'underfitting'}."
+        overfitting_analysis = (
+            f"La differenza finale tra la perdita di training ({train_loss_final:.4f}) "
+            f"e validation ({val_loss_final:.4f}) suggerisce "
+            f"{'overfitting' if val_loss_final > train_loss_final else 'underfitting'}."
+        )
 
-    # Struttura HTML
+    # Struttura HTML del report
     html_content = f"""
     <!DOCTYPE html>
     <html lang="en">
@@ -141,7 +168,7 @@ def generate_training_report(model, train_x, train_y, history, output_file="trai
         <h2>2. Metriche Aggiuntive</h2>
         <p><strong>Precision:</strong> {precision:.4f}</p>
         <p><strong>Recall:</strong> {recall:.4f}</p>
-        <p><strong>F1-Score:</strong> {f1_score:.4f}</p>
+        <p><strong>F1-Score:</strong> {f1:.4f}</p>
 
         <h2>3. Confidence Distribution</h2>
         <img src="data:image/png;base64,{confidence_img}" alt="Confidence Distribution">
@@ -163,7 +190,6 @@ def generate_training_report(model, train_x, train_y, history, output_file="trai
         f.write(html_content)
 
     print(f"Report HTML generato: {output_file}")
-
 
 # Funzione per generare embedding con BERT
 def get_bert_embedding(sentence):
@@ -220,11 +246,27 @@ f1 = f1_score(y_true_classes, y_pred_classes, average='weighted')
 print(f"F1-Score: {f1}")
 print("Modello addestrato con successo utilizzando BERT embeddings!")
 
+# Define the intents you want to include in the confusion matrix
+mental_health_intents = [
+    "mental_health",
+    "anxiety_and_panic_attacks",
+    "depression_and_loneliness",
+    "about",
+    "greeting",
+    "grief_and_loss",
+    "workplace_stress",
+    "lgbtq_mental_health",
+    "bullying",
+    "victim_panic_attacks",
+    "therapy_meaning"
+]
+
 # Chiamata alla funzione per generare il report
 generate_training_report(
     model=model,
     train_x=train_x,
     train_y=train_y,
-    history=hist.history,  # Passa lo storico dell'addestramento
-    output_file="training_report.html"  # Nome del file HTML
+    history=hist.history,
+    intents_to_include=mental_health_intents,  # Pass the list of intents
+    output_file="training_report.html"
 )
