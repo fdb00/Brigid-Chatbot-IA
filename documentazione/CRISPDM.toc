@@ -1,0 +1,81 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {section}{\numberline {1}Introduzione}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Dove trovare il progetto}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}L'obiettivo della chatbot Brigid}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Scelta nome \textit {Brigid}}{5}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Metodologia CRISP-DM e Applicazione nel Progetto}{5}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Comprensione del Business}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Contesto e Motivazioni}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Obiettivi della Chatbot}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Requisiti del Progetto}{8}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Requisiti Funzionali}{8}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Requisiti Tecnici}{8}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}Benefici Attesi}{8}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Comprensione dei dati}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Struttura del Dataset}{9}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Esempio di Struttura di un Intento}{9}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Tipologie di Intenti}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Analisi della Distribuzione dei Dati}{10}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Tipologia di Dati Utilizzati}{10}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Problematiche del Dataset Iniziale}{10}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Applicazione della Data Augmentation e Benefici}{11}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Espansione del Dataset}{11}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Ottimizzazione dei Pattern}{11}{subsubsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.3}Generazione di Nuovi Pattern con ChatGPT}{11}{subsubsection.3.6.3}%
+\contentsline {subsubsection}{\numberline {3.6.4}Benefici della Data Augmentation}{11}{subsubsection.3.6.4}%
+\contentsline {section}{\numberline {4}Preparazione dei Dati}{13}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Preparazione dei Dati per il Pretrain del Modello}{13}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Estrazione e Pulizia dei Dati}{13}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Tokenizzazione e Generazione degli Embedding}{13}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Addestramento del Modello}{14}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Preparazione dei Dati in Input nel Terminale}{15}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Pulizia del Testo Utente}{15}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Tokenizzazione e Generazione degli Embedding in Tempo Reale}{15}{subsubsection.4.2.2}%
+\contentsline {section}{\numberline {5}Modellazione}{17}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Embedding e Rappresentazione del Testo}{17}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Architettura del Modello di Classificazione}{17}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Struttura del modello}{17}{subsubsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.3}Predizione degli Intenti e Generazione delle Risposte}{18}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Preprocessing dell'Input Utente}{18}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Predizione dell'Intento}{19}{subsubsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.4}Utilizzo del Modello Generativo Gemini}{19}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Generazione di una risposta con Gemini}{19}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Selezione del Modello di Risposta}{20}{subsubsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.5}Metriche inerenti alla fase di training}{20}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Loss e Accuracy}{21}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Precision, Recall e F1-Score}{22}{subsubsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.3}Confusion Matrix}{23}{subsubsection.5.5.3}%
+\contentsline {subsubsection}{\numberline {5.5.4}Confidence Distribution}{24}{subsubsection.5.5.4}%
+\contentsline {subsubsection}{\numberline {5.5.5}Tempo di Inferenza}{24}{subsubsection.5.5.5}%
+\contentsline {section}{\numberline {6}Testing del Modello}{26}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Introduzione}{26}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Baseline Test}{26}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Metodo di esecuzione}{26}{subsubsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.3}Generalization Test}{26}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}Metodo di esecuzione}{27}{subsubsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.4}Threshold Test}{27}{subsection.6.4}%
+\contentsline {subsubsection}{\numberline {6.4.1}Metodo di esecuzione}{27}{subsubsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.5}Risultati e Considerazioni}{27}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Possibili Miglioramenti}{28}{subsection.6.6}%
+\contentsline {section}{\numberline {7}Deployment del Progetto}{28}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Introduzione}{28}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Configurazione dell'Ambiente in PyCharm}{28}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Passaggi per la Configurazione}{28}{subsubsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.3}Avvio della Chatbot}{29}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}Avvio del Modello}{29}{subsubsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.4}Possibili Problemi e Soluzioni}{29}{subsection.7.4}%
+\contentsline {subsubsection}{\numberline {7.4.1}Errore: Modulo non trovato (\texttt {ModuleNotFoundError})}{30}{subsubsection.7.4.1}%
+\contentsline {subsubsection}{\numberline {7.4.2}Errore: File \texttt {.keras} non trovato}{30}{subsubsection.7.4.2}%
+\contentsline {subsubsection}{\numberline {7.4.3}Errore: API Key mancante per Gemini}{30}{subsubsection.7.4.3}%
+\contentsline {subsection}{\numberline {7.5}Considerazioni Finali}{30}{subsection.7.5}%
+\contentsline {section}{\numberline {8}Miglioramenti Futuri e Evoluzione del Progetto}{30}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Introduzione}{30}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Comprensione del Business (Business Understanding)}{30}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Comprensione dei Dati (Data Understanding)}{31}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Preparazione dei Dati (Data Preparation)}{31}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Modellazione (Modeling)}{31}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Valutazione (Evaluation)}{32}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Deployment e Manutenzione}{32}{subsection.8.7}%
+\contentsline {subsection}{\numberline {8.8}Conclusione}{32}{subsection.8.8}%
+\contentsline {section}{\numberline {9}Glossario}{33}{section.9}%

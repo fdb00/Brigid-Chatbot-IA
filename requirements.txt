@@ -1,3 +1,14 @@
 numpy
+torch
+matplotlib
+transformers
 tensorflow
-spacy
+scikit-learn
+contractions
+google
+protobuf
+textblob
+NRCLex
+nltk
+Flask
+Flask-Cors

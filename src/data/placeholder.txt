@@ -1,1 +1,1 @@
-Questa cartella ha lo scopo di raggruppare tutti i dataset che il chatbot utilizzerà.
+Questa cartella ha lo scopo di raggruppare il dataset che il chatbot utilizzerà.
