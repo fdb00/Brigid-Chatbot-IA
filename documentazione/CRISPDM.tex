@@ -15,6 +15,8 @@
 \usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{longtable}
+\usepackage{float}
+\usepackage{fontawesome}
 \DeclareCaptionFormat{myformat}{\textbf{#1#2}#3} % Formato personalizzato
 \captionsetup[lstlisting]{format=myformat, labelsep=space}
 \renewcommand{\lstlistingname}{Codice} 
@@ -82,6 +84,9 @@
 	
 % Genera il titolo
 \maketitle
+\begin{center}
+\href{https://github.com/fdb00/Brigid-Chatbot-IA}{\scalebox{0.9}{\faGithub}~github.com/fdb00/Brigid-Chatbot-IA}
+\end{center}
 
 \vfill
 % Informazioni aggiuntive
@@ -155,11 +160,12 @@ Gli obiettivi principali della chatbot Brigid sono:
 \item Mantenere una struttura modulare e flessibile, con possibilità di espansione futura in interfacce più avanzate.
 \end{itemize}
 
+\newpage
 \subsection{Requisiti del Progetto}
 Per garantire il raggiungimento degli obiettivi sopra elencati, sono stati definiti i seguenti requisiti tecnici e funzionali:
 
 \subsubsection{Requisiti Funzionali}
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
 \begin{tabular}{|c|p{12cm}|}
@@ -177,9 +183,8 @@ RF\_4 & L'interazione deve avvenire tramite un’interfaccia a riga di comando (
 \end{tabular}
 \label{tab:requisiti_funzionali}
 \end{table}
-
 \subsubsection{Requisiti Tecnici}
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
 \begin{tabular}{|c|p{12cm}|}
@@ -197,8 +202,6 @@ RT\_4 & Struttura del codice organizzata in moduli (\texttt{pretrain.py}, \textt
 \end{tabular}
 \label{tab:requisiti_tecnici}
 \end{table}
-
-
 \subsection{Benefici Attesi}
 L’implementazione di Brigid porta diversi vantaggi:
 \begin{itemize}	\item \textbf{Maggiore accessibilità}: grazie alla possibilità di avviare la chatbot direttamente dal terminale senza necessità di un’interfaccia grafica.
@@ -612,6 +615,64 @@ La fase di modellazione ha portato alla creazione di una chatbot basato su:
 \end{itemize}
 Questa combinazione di tecnologie permette a Brigid di comprendere e rispondere in modo efficace, garantendo un'interazione naturale con gli utenti.
 
+\subsection{Metriche inerenti alla fase di training}
+Nel file \texttt{pretrain.py} è stata inserita una funzione chiamatasi \texttt{generate\_training\_report()} grazie alla quale riusciamo a ricavare delle metriche utili per descrivere l'efficienza del nostro sistema di apprendimento. I risultati e i grafici in seguito rappresentati provengo dal file HTML \texttt{training\_report.html} che è possibile consultare sulla repository nella cartella \texttt{train/}.\\
+\newline
+Le metriche calcolate sono:
+\begin{enumerate}
+	\item Loss,
+	\item Accuracy,
+	\item Precision,
+	\item Recall,
+	\item F1-Score,
+	\item Confusion Matrix,
+	\item Confidence Distribution,
+	\item Tempo Medio d'Inferenza.
+	\end{enumerate}
+	
+\subsubsection{Loss e Accuracy}
+\includegraphics[width=1\textwidth]{immagini/loss.png}
+\includegraphics[width=1\textwidth]{immagini/accuracy.png}\\
+
+\subsubsection{Precision, Recall e F1-Score}
+Oltre alla Loss e all’Accuracy, il report calcola tre metriche fondamentali per valutare le prestazioni del modello: Precision, Recall e F1-Score.
+\begin{itemize}
+	\item \textbf{Precision}: misura la percentuale di intenti correttamente classificati rispetto a tutte le predizioni effettuate per quell'intento. Un valore alto indica che il modello commette pochi falsi positivi.
+	\item \textbf{Recall}: valuta la capacità del modello di identificare correttamente tutti gli esempi di un determinato intento. Un recall elevato significa che pochi esempi vengono ignorati (falsi negativi).
+	\item \textbf{F1-Score}: rappresenta la media armonica tra Precision e Recall, fornendo un valore bilanciato tra queste due metriche.
+\end{itemize}
+Questi valori vengono calcolati confrontando le predizioni del modello con le etichette reali presenti nel dataset di training. Il modello elabora un input, genera una previsione e il risultato viene confrontato con il valore atteso. Il report include queste metriche in forma numerica per offrire una valutazione chiara della qualità del modello.
+
+\includegraphics[width=0.4\textwidth]{immagini/prf.png}
+\newpage
+\subsubsection{Confusion Matrix}
+La matrice di confusione è stata generata per valutare la capacità del modello di distinguere tra dieci intenti selezionati a campione dal dataset. Questa matrice è stata ottenuta confrontando le predizioni del modello con le etichette reali sui dati di addestramento.
+\includegraphics[width=1\textwidth]{immagini/cm.jpeg}\\
+\newline
+Analizzando la matrice ottenuta osserviamo come si sono verificate prestazioni elevate su diversi intenti quali: \texttt{mental\_health, depression\_and\_loneliness, about, greeting, workplace\_stress, lgbtq\_mental\_health, bullying} e \texttt{therapy\_meaning} sono stati classificati correttamente con una precisione del 100\%, indicando che il modello li distingue chiaramente.
+Analogamente a buoni risultati possiamo riscontrare delle imprecisioni, in particolare:
+\begin{itemize}
+\item \texttt{grief\_and\_loss} ha una precisione del 94\%, ma in 6\% dei casi è stato confuso con un altro intento.
+\item \texttt{anxiety\_and\_panic\_attacks} ha una piccola percentuale di errore (3\%), suggerendo che in alcuni casi può essere sovrapposto ad altri intenti simili.
+\item \texttt{victim\_panic\_attacks} presenta la maggiore confusione, con il 25\% delle predizioni errate.
+\end{itemize}
+
+\subsubsection{Confidence Distribution}
+Il report include un'analisi della confidence delle predizioni, ovvero il livello di sicurezza con cui il modello assegna un intento a una determinata frase.\\
+La confidence viene calcolata prendendo il valore più alto tra le probabilità assegnate dal modello a ciascun intento per una specifica frase. Se il valore di confidence è alto, significa che il modello è sicuro della sua previsione; se è basso, indica incertezza nella classificazione.\\
+\includegraphics[width=1\textwidth]{immagini/conf.png} \\
+Analizzando l’istogramma ottenuto possiamo dire che:
+\begin{itemize}
+	\item La parte centrale dell'istogramma mostra che molte predizioni hanno una confidence compresa tra 0.2 e 0.5, indicando che il modello spesso è incerto sulle sue risposte.
+	\item C'è un picco significativo attorno al valore 1.0, il che suggerisce che il modello in alcuni casi è estremamente sicuro delle sue previsioni.
+	\item Il graduale calo tra 0.5 e 0.9 potrebbe indicare che il modello non è sempre in grado di distinguere chiaramente tra intenti simili.
+\end{itemize}
+
+\subsubsection{Tempo di Inferenza}
+Il tempo medio di inferenza misura la rapidità con cui il modello elabora un input e restituisce una risposta. Per valutarlo, sono state eseguite 100 inferenze e misurato il tempo totale, ottenendo un valore medio di \textbf{0.002575 secondi} per campione.\\
+Questo risultato dimostra che il chatbot è in grado di rispondere quasi istantaneamente, garantendo un’interazione fluida e naturale. La bassa latenza è un aspetto fondamentale per mantenere un’esperienza utente efficace, specialmente nelle conversazioni in tempo reale.
+
+
 \newpage
 \section{Testing del Modello}
 
@@ -735,10 +796,6 @@ source .venv/bin/activate
 pip install -r requirements.txt
 		\end{lstlisting}
 		
-		\item Se il file \texttt{requirements.txt} non è presente, può essere creato eseguendo:
-		\begin{lstlisting}
-pip freeze > requirements.txt
-		\end{lstlisting}
 	\end{itemize}
 \end{enumerate}
 
