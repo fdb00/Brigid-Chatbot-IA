@@ -82,6 +82,7 @@
 	
 % Genera il titolo
 \maketitle
+
 \vfill
 % Informazioni aggiuntive
 \begin{center}
@@ -89,23 +90,26 @@ Prof. Fabio Palomba, Corso di Fondamenti di Intelligenza Artificiale\\
 Università degli Studi di Salerno, A.A. 2024/2025
 \end{center}
 	
+	
 \newpage
-\tableofcontents
+{\Large \textbf{Componenti del team}}
 \begin{table}[h]
 	\centering
+	\large % Aumenta la dimensione del testo nella tabella
 	\begin{tabular}{|c|c|c|}
 		\hline
 		\textbf{Nome} & \textbf{Cognome} & \textbf{Matricola} \\
 		\hline
-		Davide   & Viola      & 0512112445 \\
+		Davide  & Viola      & 0512112445 \\
 		Gabriella & Fede      & 0512117296 \\
 		Catello  & Martone    & 0512116840 \\
 		Pasquale & Anatriello & 0512118406 \\
 		\hline
 	\end{tabular}
-	\caption{Elenco degli studenti che hanno partecipato al progetto}
 	\label{tab:studenti}
 \end{table}
+\newpage
+\tableofcontents
 \newpage
 	
 \section{Introduzione}
@@ -134,6 +138,7 @@ Il CRISP-DM (Cross Industry Standard Process for Data Mining) è un modello di s
 \end{itemize}
 L’approccio CRISP-DM ha permesso di sviluppare Brigid in modo metodico, migliorando progressivamente il modello sulla base delle esigenze reali degli utenti e mantenendo una struttura flessibile per future estensioni.
 
+\newpage
 \section{Comprensione del Business}
 La fase di comprensione del business all'interno della metodologia CRISP-DM è fondamentale per definire gli obiettivi del progetto e garantire che il sistema sviluppato soddisfi le esigenze degli utenti finali. In questa sezione vengono analizzati il contesto, gli obiettivi e i requisiti della chatbot Brigid, con un focus sull'impatto che avrà nell'ambito di utilizzo previsto.
 
@@ -202,6 +207,7 @@ L’implementazione di Brigid porta diversi vantaggi:
 \end{itemize}
 Questa fase di comprensione del business ha guidato tutte le decisioni successive, permettendo di sviluppare la chatbot in modo mirato e orientato agli obiettivi definiti.
 
+\newpage
 \section{Comprensione dei dati}
 La fase di comprensione dei dati all’interno della metodologia CRISP-DM è essenziale per analizzare e strutturare le informazioni su cui il modello si basa. In questa sezione viene descritto il dataset utilizzato per addestrare la chatbot Brigid, il formato dei dati, le categorie di intenti e le loro caratteristiche.
 
@@ -296,7 +302,7 @@ L’applicazione della \textit{data augmentation} ha portato diversi vantaggi:
 \end{itemize}
 Grazie a queste ottimizzazioni, la chatbot Brigid è ora in grado di comprendere e rispondere con maggiore accuratezza e naturalezza agli input degli utenti.
 
-
+\newpage
 \section{Preparazione dei Dati}
 
 La fase di preparazione dei dati è fondamentale affinché la chatbot Brigid possa elaborare correttamente gli input testuali e fornire risposte adeguate. Nel nostro progetto, la preparazione dei dati è suddivisa in due fasi principali:
@@ -470,7 +476,7 @@ Il modello predice l’intento più probabile con il relativo confidence score.
 La fase di preparazione dei dati garantisce che la chatbot Brigid possa interpretare correttamente sia i dati di addestramento che gli input in tempo reale.
 
 Nel pretrain, il dataset viene elaborato e trasformato in embedding per addestrare la rete neurale. Nel terminale, l’input dell’utente viene normalizzato, tokenizzato e convertito in embedding per ottenere una predizione accurata dell’intento. Questa preparazione ottimizzata permette a Brigid di offrire risposte pertinenti e di adattarsi a diversi tipi di input utente.
-
+\newpage
 
 \section{Modellazione}
 La fase di modellazione nel processo CRISP-DM riguarda la selezione, l'implementazione e l'addestramento del modello di machine learning che permette alla chatbot Brigid di riconoscere gli intenti dell'utente e fornire risposte appropriate.
@@ -488,7 +494,6 @@ Esempio di embedding numerico per una frase:
 	Input: "Hello, how are you?"
 	Embedding generato: [0.12, -0.34, 0.56, ..., 0.98]
 \end{lstlisting}
-
 Questa rappresentazione vettoriale viene utilizzata come input per la rete neurale della chatbot.
 
 \subsection{Architettura del Modello di Classificazione}
@@ -498,10 +503,10 @@ Il modello di classificazione degli intenti è una rete neurale fully connected 
 Il modello è costituito da tre livelli principali:
 
 \begin{itemize}
-	\item \textbf{Input Layer}: accetta gli embedding di BERT (dimensione 768)
-	\item \textbf{Hidden Layers}: due livelli densi con attivazione ReLU per apprendere caratteristiche rilevanti
-	\item \textbf{Dropout Layers}: riducono il rischio di overfitting
-	\item \textbf{Output Layer}: utilizza la funzione di attivazione Softmax per restituire la probabilità di appartenenza a ciascun intento
+	\item \textbf{Input Layer}: accetta gli embedding di BERT (dimensione 768),
+	\item \textbf{Hidden Layers}: due livelli densi con attivazione ReLU per apprendere caratteristiche rilevanti,
+	\item \textbf{Dropout Layers}: riducono il rischio di overfitting,
+	\item \textbf{Output Layer}: utilizza la funzione di attivazione Softmax per restituire la probabilità di appartenenza a ciascun intento.
 \end{itemize}
 
 Il codice che definisce il modello è il seguente:
@@ -518,7 +523,6 @@ Il codice che definisce il modello è il seguente:
 	Dense(len(classes), activation='softmax')
 	])
 \end{lstlisting}
-
 Dopo la definizione dell'architettura, il modello viene compilato e addestrato con i dati ottenuti dalla fase di preparazione:
 
 \begin{lstlisting}[language=Python]
@@ -532,7 +536,6 @@ Dopo la definizione dell'architettura, il modello viene compilato e addestrato c
 	
 	model.fit(train_x, train_y, epochs=100, batch_size=8, verbose=1)
 \end{lstlisting}
-
 Viene utilizzato l'ottimizzatore Adam, che accelera la convergenza del modello. La funzione di perdita è categorical crossentropy, adatta alla classificazione multi-classe. La metrica di valutazione è l'accuratezza. Il modello viene addestrato per 100 epoche con un batch di 8 esempi alla volta. Al termine dell'addestramento, il modello viene salvato per essere utilizzato in fase di inferenza:
 
 \begin{lstlisting}[language=Python]
@@ -585,23 +588,22 @@ Quando il modello di classificazione non è in grado di identificare con certezz
 	def get_gemini_response(input_text):
 	model = genai.GenerativeModel("gemini-1.5-flash")
 	convo = model.start_chat(history=chat_history["contents"])
-	response = convo.send_message(input_text, max_output_tokens=50)
+	response = convo.send_message(
+	"You are Brigid a chatbot for psychological support. Generate a response of max 200 character for:" + input_text)
 	return response.text
 \end{lstlisting}
 Gemini analizza l'input e genera una risposta basata sul contesto della conversazione. Il numero massimo di token generati è limitato a 50, per garantire risposte concise.
-
 \subsubsection{Selezione del Modello di Risposta}
 \begin{lstlisting}[language=Python]
 	def get_response_from_pipeline(input_text):
 	predicted_class, confidence = predict_intent(input_text)
-	
-	if confidence > 0.75:
+	if confidence > 0.2:
 	return get_predefined_response(predicted_class)
 	else:
 	return get_gemini_response(input_text)
 \end{lstlisting}
 Se il classificatore ha confidence alta, viene selezionata una risposta predefinita. Se la confidence è bassa, viene utilizzato Gemini per generare una risposta dinamica.\\
-\newpage
+\newline
 La fase di modellazione ha portato alla creazione di una chatbot basato su:
 \begin{itemize}
 	\item BERT per la generazione degli embedding
@@ -610,6 +612,7 @@ La fase di modellazione ha portato alla creazione di una chatbot basato su:
 \end{itemize}
 Questa combinazione di tecnologie permette a Brigid di comprendere e rispondere in modo efficace, garantendo un'interazione naturale con gli utenti.
 
+\newpage
 \section{Testing del Modello}
 
 \subsection{Introduzione}
@@ -619,7 +622,7 @@ Per eseguire il testing, sono stati implementati tre test principali:
 \begin{itemize}
 	\item \textbf{Baseline Test}: verifica l'accuratezza del modello utilizzando frasi presenti nel dataset di addestramento.
 	\item \textbf{Generalization Test}: analizza la capacità del modello di classificare correttamente frasi nuove non presenti nel dataset.
-	\item \textbf{Threshold Test}: valuta il livello di confidenza delle predizioni per verificare se il modello gestisce correttamente l'incertezza.
+	\item \textbf{Threshold Test}: valuta il livello di confidence delle predizioni per verificare se il modello gestisce correttamente l'incertezza.
 \end{itemize}
 I risultati dei test sono stati salvati in un file \texttt{testing\_results.txt} per una facile analisi e monitoraggio delle prestazioni.
 
@@ -633,7 +636,9 @@ Il \textbf{Baseline Test} ha l'obiettivo di verificare se il modello ha appreso 
 	\item Si passa ogni frase al modello per ottenere la previsione dell'intento.
 	\item Si confronta l'intento predetto con quello atteso e si registra l'esito.
 \end{itemize}
-Questo test ci permette di valutare la capacità del modello di riconoscere frasi viste durante l'addestramento, fornendo una misura dell'accuratezza di base.
+Questo test ci permette di valutare la capacità del modello di riconoscere frasi viste durante l'addestramento, fornendo una misura dell'accuratezza di base.\\
+\newline
+Dall’esecuzione del test, il modello ha raggiunto un'accuratezza del \textbf{65,62\%}, indicando che, sebbene riesca a identificare correttamente alcuni intenti, c'è ancora margine di miglioramento nella sua capacità di generalizzare sugli esempi del dataset.
 
 \subsection{Generalization Test}
 
@@ -645,27 +650,31 @@ Il \textbf{Generalization Test} serve a valutare la capacità del modello di cla
 	\item Ogni frase viene passata al modello per ottenere la previsione dell'intento.
 	\item Il risultato viene confrontato con l'intento atteso.
 \end{itemize}
-Questo test è importante perché una chatbot deve essere in grado di generalizzare e non limitarsi a riconoscere solo le frasi apprese durante l’addestramento.
+Questo test è importante perché una chatbot deve essere in grado di generalizzare e non limitarsi a riconoscere solo le frasi apprese durante l’addestramento.\\
+\newline
+Dall’esecuzione del test, il modello ha ottenuto un'accuratezza del \textbf{45,65\%}, dimostrando una discreta capacità di adattarsi a formulazioni differenti. Tuttavia, il margine di errore evidenzia come il modello possa ancora essere migliorato, ad esempio ampliando il dataset o affinando le tecniche di pre-elaborazione del testo per gestire meglio le variazioni linguistiche.
 
 \subsection{Threshold Test}
 
-Il \textbf{Threshold Test} verifica se il valore di confidenza delle predizioni del modello è coerente con il livello di sicurezza richiesto.
+Il \textbf{Threshold Test} verifica se il valore di confidence delle predizioni del modello è coerente con il livello di sicurezza richiesto.
 
 \subsubsection{Metodo di esecuzione}
 \begin{itemize}
 	\item Si utilizzano le frasi definite nel Generalization Test.
-	\item Per ogni frase, viene calcolata la confidenza della predizione.
-	\item Se la confidenza è inferiore alla soglia impostata (0.75), la predizione viene considerata incerta.
+	\item Per ogni frase, viene calcolata la confidence della predizione.
+	\item Se la confidence è inferiore alla soglia impostata (0.2), la predizione viene considerata incerta.
 \end{itemize}
-Questo test aiuta a identificare situazioni in cui il modello potrebbe fare errori e assicura che, in caso di bassa confidenza, la chatbot possa eventualmente ricorrere a un fallback come Gemini.
+Questo test aiuta a identificare situazioni in cui il modello potrebbe fare errori e assicura che, in caso di bassa confidence, la chatbot possa eventualmente ricorrere a un fallback come Gemini.\\
+\newline
+Dai risultati ottenuti, il modello ha mostrato un'accuratezza del \textbf{19,57\%}, indicando che in molte situazioni la confidence delle risposte è troppo bassa per garantire una classificazione affidabile. Questo evidenzia la necessità di ottimizzare ulteriormente il modello, ad esempio regolando la soglia di confidence o migliorando la capacità del chatbot di gestire input ambigui. In questi casi, diventa essenziale l’utilizzo di un fallback come Gemini, per garantire comunque una risposta adeguata all’utente.
 
 \subsection{Risultati e Considerazioni}
 
 L’analisi dei risultati dei test ha permesso di ottenere una visione chiara delle prestazioni della chatbot.
 \begin{itemize}
-	\item \textbf{Il Baseline Test} ha mostrato un'alta accuratezza, confermando che il modello è in grado di riconoscere correttamente gli intenti appresi durante l’addestramento.
+	\item \textbf{Il Baseline Test} ha mostrato una discreta accuratezza, confermando che il modello è in grado di riconoscere parzialmente gli intenti appresi durante l’addestramento.
 	\item \textbf{Il Generalization Test} ha evidenziato alcune difficoltà nel riconoscere frasi formulate in modi molto diversi da quelli nel dataset, suggerendo possibili miglioramenti nel dataset di training.
-	\item \textbf{Il Threshold Test} ha mostrato che in alcuni casi il valore di confidenza era troppo basso per decisioni sicure, suggerendo la necessità di una gestione più attenta della soglia di sicurezza.
+	\item \textbf{Il Threshold Test} ha mostrato che in alcuni casi il valore di confidence era troppo basso per decisioni sicure, suggerendo la necessità di una gestione più attenta della soglia di sicurezza.
 \end{itemize}
 
 \subsection{Possibili Miglioramenti}
@@ -674,7 +683,8 @@ Dai test effettuati, emergono alcune possibili aree di miglioramento:
 \begin{enumerate}
 	\item \textbf{Espansione del dataset}: l’inclusione di un maggior numero di varianti per ogni intento potrebbe migliorare la capacità di generalizzazione del modello.
 	\item \textbf{Fine-tuning di BERT}: un ulteriore addestramento del modello su un dataset più ricco potrebbe migliorare l’accuratezza sulle frasi nuove.
-	\item \textbf{Gestione adattiva della soglia di confidenza}: potrebbe essere utile adattare dinamicamente la soglia di confidenza in base al tipo di intento.
+	\item \textbf{Gestione adattiva della soglia di confidence}: potrebbe essere utile adattare dinamicamente la soglia di confidence in base al tipo di intento.
+	\item \textbf{Utilizzo del Sentiment Analyzer}: Integrare un analizzatore di sentiment permetterebbe al chatbot di adattare il tono e il contenuto delle risposte in base allo stato emotivo dell’utente, migliorando l’esperienza di interazione e rendendo il dialogo più empatico.
 \end{enumerate}
 Questi miglioramenti possono essere implementati in future versioni della chatbot per aumentarne l’efficacia e la robustezza.
 
@@ -702,7 +712,7 @@ Per eseguire la chatbot su \textbf{PyCharm}, è necessario configurare correttam
 		\item Andare su \textbf{File} $\rightarrow$ \textbf{Settings} $\rightarrow$ \textbf{Project: [Nome Progetto]} $\rightarrow$ \textbf{Python Interpreter}.
 		\item Cliccare sull'icona dell'"ingranaggio" e selezionare \textbf{Add Interpreter} $\rightarrow$ \textbf{Virtualenv Environment}.
 		\item Scegliere la directory \texttt{.venv} all'interno della cartella del progetto oppure crearne una nuova.
-		\item Selezionare la versione di \textbf{Python} compatibile (es. Python 3.10 o 3.11).
+		\item Selezionare la versione di \textbf{Python} compatibile (Python 3.11.1).
 		\item Confermare e attendere la creazione dell'ambiente.
 	\end{itemize}
 	
@@ -711,23 +721,23 @@ Per eseguire la chatbot su \textbf{PyCharm}, è necessario configurare correttam
 		\item Aprire il \textbf{Terminale} di PyCharm e attivare l'ambiente virtuale:
 		
 		\textbf{Su Windows}:
-		\begin{lstlisting}
-			.venv\Scripts\activate
+	\begin{lstlisting}
+.venv\Scripts\activate
 		\end{lstlisting}
 		
 		\textbf{Su macOS/Linux}:
 		\begin{lstlisting}
-			source .venv/bin/activate
+source .venv/bin/activate
 		\end{lstlisting}
 		
 		\item Installare le dipendenze necessarie:
 		\begin{lstlisting}
-			pip install -r requirements.txt
+pip install -r requirements.txt
 		\end{lstlisting}
 		
 		\item Se il file \texttt{requirements.txt} non è presente, può essere creato eseguendo:
 		\begin{lstlisting}
-			pip freeze > requirements.txt
+pip freeze > requirements.txt
 		\end{lstlisting}
 	\end{itemize}
 \end{enumerate}
@@ -743,7 +753,7 @@ Dopo aver configurato l'ambiente virtuale e installato le dipendenze, è possibi
 	\item Assicurarsi che l'interprete Python selezionato sia quello dell'ambiente virtuale.
 	\item Cliccare sul pulsante \textbf{Run} oppure eseguire il file dal terminale con:
 	\begin{lstlisting}
-		python chatbot_terminal.py
+python chatbot_terminal.py
 	\end{lstlisting}
 \end{enumerate}
 Se tutto è stato configurato correttamente, la chatbot si avvierà e sarà pronto per ricevere input nel terminale.
@@ -800,8 +810,8 @@ Un miglioramento del modello richiede una preparazione più avanzata dei dati. L
 Alcune tecniche utili includono:
 \begin{itemize}
 	\item \textbf{Data augmentation}: generazione di varianti linguistiche delle frasi esistenti per rendere il modello più robusto.
-	\item Pulizia e normalizzazione dei dati, per eliminare rumore e incoerenze che potrebbero influenzare la qualità dell’addestramento.
-	\item Suddivisione del dataset in \textbf{training} e \textbf{validation set}, migliorando l'accuratezza e la valutazione del modello.
+	\item \textbf{Pulizia e normalizzazione dei dati}: per eliminare rumore e incoerenze che potrebbero influenzare la qualità dell’addestramento.
+	\item \textbf{Suddivisione del dataset in training e validation set}: migliorando l'accuratezza e la valutazione del modello.
 \end{itemize}
 
 \subsection{Modellazione (Modeling)}

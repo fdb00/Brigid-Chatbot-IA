@@ -98,7 +98,7 @@ def get_response_from_pipeline(input_text):
     global chat_history
     predicted_class, confidence = predict_intent(input_text)
     print(f"Confidence: {confidence}")
-    if confidence > 0.25:  # Threshold per il modello
+    if confidence > 0.2:  # Threshold per il modello
         intent_tag = classes[predicted_class]
         print("Generato dal modello. Tag individuato: "+intent_tag)
         for intent in intents['intents']:
