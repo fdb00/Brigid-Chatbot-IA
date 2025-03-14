@@ -78,12 +78,12 @@ def get_gemini_response(input_text):
     global chat_history
 
     # Configura il modello Gemini
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.0-flash")
     convo = model.start_chat(history=chat_history["contents"])
 
     # Genera una risposta usando Gemini
     response = convo.send_message(
-        "You are Brigid a chatbot for psychological support. Generate a response of max 200 character for:" + input_text)
+        "You are Brigid, a chatbot for psychological support. Generate a response of max 200 character for:" + input_text)
 
     # Aggiungi la risposta di Gemini alla cronologia
     chat_history["contents"].append({
