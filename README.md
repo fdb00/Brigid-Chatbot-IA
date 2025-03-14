@@ -1,6 +1,6 @@
 # Brigid - Chatbot IA
 
-Brigid è una chatbot basata sull'IA progettata per interagire con gli utenti e rispondere a domande basandosi su intenti predefiniti. La chatbot utilizza BERT per l'elaborazione del linguaggio naturale e segue il processo CRISP-DM per la gestione del ciclo di sviluppo. Inoltre, è capace di rispondere alla maggior parte degli input grazie all'integrazione del LLM Gemini, che risponderà nel caso in cui nel modello non ci siano intenti adatti.
+Brigid è una chatbot basata sull'IA progettata per interagire con gli utenti e rispondere a domande basandosi su intenti predefiniti. La chatbot utilizza BERT per l'elaborazione del linguaggio naturale e segue il processo CRISP-DM per la gestione del ciclo di sviluppo. Inoltre, è capace di rispondere alla maggior parte degli input grazie all'integrazione del LLM Gemini 2.0 Flash, che risponderà nel caso in cui nel modello non ci siano intenti adatti.
 
 Progettata in ![Python 3.11.1](https://img.shields.io/badge/Python-3.11.1-blue?logo=python)
 
